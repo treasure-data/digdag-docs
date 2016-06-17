@@ -64,7 +64,7 @@ Name                            Description                                 Exam
 **session_unixtime**            Seconds since the epoch time                1454140800
 =============================== =========================================== ==========================
 
-If `schedule: option is set <scheduling_workflow.html>`_, **last_session_time** and **next_session_time** are also available as following:
+If `schedule: option is set <scheduling_workflow.html>`_, **last_session_time** and **next_session_time** are also available as follows:
 
 ==================================== ========================== ==========================
 Name                                 Example (hourly schedule)  Example (daily schedule)

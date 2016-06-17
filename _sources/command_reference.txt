@@ -60,7 +60,7 @@ Options:
   Example: --rerun
 
 :command:`-s, --start +NAME`
-  If this option is set, Digdag runs this task and following tasks even if the tasks successfully finished before. The other tasks will be skipped if their state files are stored at ``-o, --save`` directory.
+  If this option is set, Digdag runs this task and the following tasks even if the tasks successfully finished before. The other tasks will be skipped if their state files are stored at ``-o, --save`` directory.
 
   Example: --start +step2
 
@@ -70,7 +70,7 @@ Options:
   Example: --goal +step2
 
 :command:`-e, --end +NAME`
-  Stops workflow right before this task. This task and following tasks will be skipped.
+  Stops workflow right before this task. This task and the following tasks will be skipped.
 
   Example: --end +step4
 
@@ -292,7 +292,7 @@ Runs a digdag server. --memory or --database option is required. Examples:
   Example: -c digdag.properties
 
 
-In the config file, following parameters are available
+In the config file, the following parameters are available
 
 * server.bind (ip address)
 * server.port (integer)
@@ -332,7 +332,7 @@ Client-mode common options:
 
   Example: -c digdag-server/client.properties
 
-You can include following parameters in ~/.config/digdag/config file:
+You can include the following parameters in ~/.config/digdag/config file:
 
 * cilent.http.endpoint = http://HOST:PORT or https://HOST:PORT
 * client.http.headers.KEY = VALUE (set custom HTTP header)
@@ -416,7 +416,7 @@ Examples:
   Retry only failed tasks. Successfully finished tasks are skipped.
 
 :command:`--resume-from +NAME`
-  Retry from this task. This task and all following tasks will be executed. All tasks before this task must have been successfully finished.
+  Retry from this task. This task and all of the following tasks will be executed. All tasks before this task must have been successfully finished.
 
 :command:`--name <name>`
   An unique identifier of this retry attempt. If another attempt with the same name already exists within the same session, request fails with 409 Conflict.

@@ -20,7 +20,7 @@ To run a workflow periodically, add a ``schedule:`` option to top-level workflow
     +step1:
       sh>: tasks/shell_sample.sh
 
-In ``schedule:`` directive, you can choose one of following options:
+In ``schedule:`` directive, you can choose one of the following options:
 
 =============================== =========================================== ==========================
 Syntax                          Description                                 Example
