@@ -187,28 +187,29 @@
   <div class="section" id="redshift-redshift-operations">
 <span id="redshift-redshift-operations"></span><h1>redshift&gt;: Redshift operations<a class="headerlink" href="#redshift-redshift-operations" title="Permalink to this headline">¶</a></h1>
 <p><strong>redshift&gt;</strong> operator runs queries and/or DDLs on Redshift.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>_export:
-  redshift:
-    host: my-redshift.1234abcd.us-east-1.redshift.amazonaws.com
-    # port: 5439
-    database: production_db
-    user: app_user
-    ssl: true
-    schema: myschema
-    # strict_transaction: false
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">_export</span><span class="p">:</span>
+  <span class="n">redshift</span><span class="p">:</span>
+    <span class="n">host</span><span class="p">:</span> <span class="n">my</span><span class="o">-</span><span class="n">redshift</span><span class="o">.</span><span class="mi">1234</span><span class="n">abcd</span><span class="o">.</span><span class="n">us</span><span class="o">-</span><span class="n">east</span><span class="o">-</span><span class="mf">1.</span><span class="n">redshift</span><span class="o">.</span><span class="n">amazonaws</span><span class="o">.</span><span class="n">com</span>
+    <span class="c1"># port: 5439</span>
+    <span class="n">database</span><span class="p">:</span> <span class="n">production_db</span>
+    <span class="n">user</span><span class="p">:</span> <span class="n">app_user</span>
+    <span class="n">ssl</span><span class="p">:</span> <span class="n">true</span>
+    <span class="n">schema</span><span class="p">:</span> <span class="n">myschema</span>
+    <span class="c1"># strict_transaction: false</span>
 
-+replace_deduplicated_master_table:
-  redshift&gt;: queries/dedup_master_table.sql
-  create_table: dedup_master
+<span class="o">+</span><span class="n">replace_deduplicated_master_table</span><span class="p">:</span>
+  <span class="n">redshift</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">queries</span><span class="o">/</span><span class="n">dedup_master_table</span><span class="o">.</span><span class="n">sql</span>
+  <span class="n">create_table</span><span class="p">:</span> <span class="n">dedup_master</span>
 
-+prepare_summary_table:
-  redshift&gt;: queries/create_summary_table_ddl.sql
+<span class="o">+</span><span class="n">prepare_summary_table</span><span class="p">:</span>
+  <span class="n">redshift</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">queries</span><span class="o">/</span><span class="n">create_summary_table_ddl</span><span class="o">.</span><span class="n">sql</span>
 
-+insert_to_summary_table:
-  redshift&gt;: queries/join_log_with_master.sql
-  insert_into: summary_table
-
-+select_members:
+<span class="o">+</span><span class="n">insert_to_summary_table</span><span class="p">:</span>
+  <span class="n">redshift</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">queries</span><span class="o">/</span><span class="n">join_log_with_master</span><span class="o">.</span><span class="n">sql</span>
+  <span class="n">insert_into</span><span class="p">:</span> <span class="n">summary_table</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span>+select_members:
   redshift&gt;: select_members.sql
   store_last_results: first
 
@@ -225,7 +226,7 @@
 <span id="secrets"></span><h2>Secrets<a class="headerlink" href="#secrets" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p class="first"><strong>aws.redshift.password</strong>: NAME</p>
-<p>Optional user password to use when connecting to the Redshift database. If you want to use multiple credentials, use <code class="docutils literal"><span class="pre">password_override</span></code> option.</p>
+<p>Optional user password to use when connecting to the Redshift database.</p>
 </li>
 </ul>
 </div>
@@ -349,13 +350,6 @@ This operator creates and uses a status table in the database to make an operati
 <p>The timeout value used for socket read operations. If reading from the server takes longer than this value, the connection is closed. <em>Default</em>: <code class="docutils literal"><span class="pre">1800s</span></code>(1800 seconds).</p>
 <p>Examples:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">socket_timeout</span><span class="p">:</span> <span class="mi">1800</span><span class="n">s</span>
-</pre></div>
-</div>
-</li>
-<li><p class="first"><strong>password_override</strong>: NAME</p>
-<p>Secret key name that has a non-default database password as its value. This would be useful whey you want to use multiple database credentials. If it&#8217;s set, Digdag looks up secrets with this value as a secret key name. If not, the default secret key <code class="docutils literal"><span class="pre">redshift.password</span></code> is used.</p>
-<p>Examples (let&#8217;s say you&#8217;ve already added a secret key value <code class="docutils literal"><span class="pre">redshift.another_password=password1234</span></code>):</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">password_override</span><span class="p">:</span> <span class="n">another_password</span>
 </pre></div>
 </div>
 </li>
