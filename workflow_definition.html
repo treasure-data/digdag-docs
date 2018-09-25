@@ -516,6 +516,20 @@
 </pre></div>
 </div>
 <p>Tasks also support <code class="docutils literal"><span class="pre">_retry:</span> <span class="pre">N</span></code> parameter to retry the specific task. Note that some operators don&#8217;t support the generic <code class="docutils literal"><span class="pre">_retry</span></code> option but has its own options to control retrying behavior.</p>
+<p>You can set interval to _retry as follows.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">+prepare</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">_retry</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">limit</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">3</span>
+    <span class="l l-Scalar l-Scalar-Plain">interval</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">10</span>
+    <span class="l l-Scalar l-Scalar-Plain">interval_type</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">exponential</span>
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">limit</span></code> is number of retry.
+<code class="docutils literal"><span class="pre">interval</span></code> is interval time (seconds).
+Additionaly you can choose <code class="docutils literal"><span class="pre">interval_type</span></code> as <code class="docutils literal"><span class="pre">constant</span></code> or <code class="docutils literal"><span class="pre">exponential</span></code>.
+If you set <code class="docutils literal"><span class="pre">constant</span></code> (default) , interval time is constant as set by <code class="docutils literal"><span class="pre">limit</span></code>.
+If you set <code class="docutils literal"><span class="pre">exponential</span></code>, interval time increases with each retry as <code class="docutils literal"><span class="pre">interval</span> <span class="pre">x</span> <span class="pre">2^(retry_count-1)</span></code>.
+In the above example, first retry interval is 10 secs, second is 20 secs, third is 40 secs.</p>
 </div>
 <div class="section" id="sending-error-notification">
 <h2><a class="toc-backref" href="#id14">Sending error notification</a><a class="headerlink" href="#sending-error-notification" title="Permalink to this headline">¶</a></h2>
