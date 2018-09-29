@@ -538,6 +538,8 @@
 <li>digdag.secret-encryption-key = (base64 encoded 128-bit AES encryption key)</li>
 <li>executor.task_ttl (string. default: 1d. A task is killed if it is running longer than this period.)</li>
 <li>executor.attempt_ttl (string. default: 7d. An attempt is killed if it is running longer than this period.)</li>
+<li>api.max_attempts_page_size (integer. The max number of rows of attempts in api response)</li>
+<li>api.max_sessions_page_size (integer. The max number of rows of sessions in api response)</li>
 </ul>
 <div class="section" id="secret-encryption-key">
 <h4><a class="toc-backref" href="#id9">Secret Encryption Key</a><a class="headerlink" href="#secret-encryption-key" title="Permalink to this headline">¶</a></h4>
@@ -738,6 +740,8 @@
 <dl class="docutils">
 <dt><strong class="command">-i, --last-id ID</strong></dt>
 <dd>Shows more sessions older than this id.</dd>
+<dt><strong class="command">-s, --page-size N</strong></dt>
+<dd>Shows more sessions of the number of N (in default up to 100).</dd>
 </dl>
 </div>
 <div class="section" id="attempts">
@@ -754,6 +758,8 @@
 <dl class="docutils">
 <dt><strong class="command">-i, --last-id ID</strong></dt>
 <dd>Shows more attempts older than this id.</dd>
+<dt><strong class="command">-s, --page-size N</strong></dt>
+<dd>Shows more attempts of the number of N (in default up to 100).</dd>
 </dl>
 </div>
 <div class="section" id="tasks">
