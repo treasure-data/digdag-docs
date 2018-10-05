@@ -195,6 +195,8 @@
   if&gt;: ${param}
   _do:
     echo&gt;: ${param} == true
+  _else_do:
+    echo&gt;: ${param} == false
 </pre></div>
 </div>
 <div class="section" id="options">
@@ -206,7 +208,11 @@
 <li><p class="first"><strong>_do</strong>: TASKS</p>
 <p>Tasks to run if <code class="docutils literal"><span class="pre">true</span></code> is given.</p>
 </li>
+<li><p class="first"><strong>_else_do</strong>: TASKS</p>
+<p>Tasks to run if <code class="docutils literal"><span class="pre">false</span></code> is given.</p>
+</li>
 </ul>
+<p>Note: _do or _else_do must be specified.</p>
 </div>
 </div>
 
