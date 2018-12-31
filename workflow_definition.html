@@ -472,7 +472,7 @@
     <span class="l l-Scalar l-Scalar-Plain">sh&gt;</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks/prepare_data3.sh</span>
 
 <span class="l l-Scalar l-Scalar-Plain">+analyze</span><span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">sh&gt;</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks/analyze_prepared_data_sets.sh</span>
+  <span class="l l-Scalar l-Scalar-Plain">sh&gt;</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks/analyze_prepared_data_sets.sh</span>
 </pre></div>
 </div>
 <p>If <code class="docutils literal"><span class="pre">_background:</span> <span class="pre">true</span></code> parameter is set to a task or group, the task or group run in parallel with previous tasks. Next task wait for the completion of the background task or group.</p>
@@ -490,7 +490,7 @@
     <span class="l l-Scalar l-Scalar-Plain">sh&gt;</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks/prepare_data3.sh</span>
 
 <span class="l l-Scalar l-Scalar-Plain">+analyze</span><span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">sh&gt;</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks/analyze_prepared_data_sets.sh</span>
+  <span class="l l-Scalar l-Scalar-Plain">sh&gt;</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks/analyze_prepared_data_sets.sh</span>
 </pre></div>
 </div>
 </div>
@@ -512,7 +512,7 @@
     <span class="l l-Scalar l-Scalar-Plain">sh&gt;</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks/check_loaded_data.sh</span>
 
 <span class="l l-Scalar l-Scalar-Plain">+analyze</span><span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">sh&gt;</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks/analyze_prepared_data_sets.sh</span>
+  <span class="l l-Scalar l-Scalar-Plain">sh&gt;</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks/analyze_prepared_data_sets.sh</span>
 </pre></div>
 </div>
 <p>Tasks also support <code class="docutils literal"><span class="pre">_retry:</span> <span class="pre">N</span></code> parameter to retry the specific task. Note that some operators don&#8217;t support the generic <code class="docutils literal"><span class="pre">_retry</span></code> option but has its own options to control retrying behavior.</p>
@@ -539,7 +539,7 @@ In the above example, first retry interval is 10 secs, second is 20 secs, third 
   <span class="l l-Scalar l-Scalar-Plain">sh&gt;</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks/runs_when_workflow_failed.sh</span>
 
 <span class="l l-Scalar l-Scalar-Plain">+analyze</span><span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">sh&gt;</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks/analyze_prepared_data_sets.sh</span>
+  <span class="l l-Scalar l-Scalar-Plain">sh&gt;</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks/analyze_prepared_data_sets.sh</span>
 </pre></div>
 </div>
 <p>To send mails, you can use <a class="reference external" href="operators.html#mail-sending-email">mail&gt; operator</a>.</p>
