@@ -198,12 +198,14 @@
   <span class="n">mail</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">body</span><span class="o">.</span><span class="n">txt</span>
   <span class="n">subject</span><span class="p">:</span> <span class="n">workflow</span> <span class="n">started</span>
   <span class="n">to</span><span class="p">:</span> <span class="p">[</span><span class="n">me</span><span class="nd">@example</span><span class="o">.</span><span class="n">com</span><span class="p">]</span>
+  <span class="n">cc</span><span class="p">:</span> <span class="p">[</span><span class="n">foo</span><span class="nd">@example</span><span class="o">.</span><span class="n">com</span><span class="p">,</span><span class="n">bar</span><span class="nd">@example</span><span class="o">.</span><span class="n">com</span><span class="p">]</span>
 
 <span class="o">+</span><span class="n">step2</span><span class="p">:</span>
   <span class="n">mail</span><span class="o">&gt;</span><span class="p">:</span>
     <span class="n">data</span><span class="p">:</span> <span class="n">this</span> <span class="ow">is</span> <span class="n">email</span> <span class="n">body</span> <span class="n">embedded</span> <span class="ow">in</span> <span class="n">a</span> <span class="o">.</span><span class="n">dig</span> <span class="n">file</span>
   <span class="n">subject</span><span class="p">:</span> <span class="n">workflow</span> <span class="n">started</span>
   <span class="n">to</span><span class="p">:</span> <span class="p">[</span><span class="n">me</span><span class="nd">@example</span><span class="o">.</span><span class="n">com</span><span class="p">]</span>
+  <span class="n">bcc</span><span class="p">:</span> <span class="p">[</span><span class="n">foo</span><span class="nd">@example</span><span class="o">.</span><span class="n">com</span><span class="p">,</span><span class="n">bar</span><span class="nd">@example</span><span class="o">.</span><span class="n">com</span><span class="p">]</span>
 
 <span class="o">+</span><span class="n">step3</span><span class="p">:</span>
   <span class="n">sh</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">this_task_might_fail</span><span class="o">.</span><span class="n">sh</span>
@@ -295,6 +297,20 @@ Alternatively, you can set <code class="docutils literal"><span class="pre">{dat
 <p>To addresses.</p>
 <p>Examples:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">to</span><span class="p">:</span> <span class="p">[</span><span class="n">analyst</span><span class="nd">@examile</span><span class="o">.</span><span class="n">com</span><span class="p">]</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first"><strong>cc</strong>: [ADDR1, ADDR2, ...]</p>
+<p>Cc addresses.</p>
+<p>Examples:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cc</span><span class="p">:</span> <span class="p">[</span><span class="n">analyst</span><span class="nd">@examile</span><span class="o">.</span><span class="n">com</span><span class="p">]</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first"><strong>bcc</strong>: [ADDR1, ADDR2, ...]</p>
+<p>Bcc addresses.</p>
+<p>Examples:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">bcc</span><span class="p">:</span> <span class="p">[</span><span class="n">analyst</span><span class="nd">@examile</span><span class="o">.</span><span class="n">com</span><span class="p">]</span>
 </pre></div>
 </div>
 </li>
