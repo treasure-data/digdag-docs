@@ -427,6 +427,14 @@
 </pre></div>
 </div>
 <p><code class="docutils literal"><span class="pre">digdag.env.store(dict)</span></code> stores variables so that all following tasks (including tasks which are not children of the task) can use them.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">digdag</span>
+
+<span class="k">class</span> <span class="nc">MyWorkflow</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+  <span class="k">def</span> <span class="nf">export_and_call_child</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">digdag</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">export</span><span class="p">({</span><span class="s2">&quot;my_param&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">})</span>
+    <span class="n">digdag</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">add_subtask</span><span class="p">({</span><span class="s1">&#39;_type&#39;</span><span class="p">:</span> <span class="s1">&#39;call&#39;</span><span class="p">,</span> <span class="s1">&#39;_command&#39;</span><span class="p">:</span> <span class="s1">&#39;child1.dig&#39;</span><span class="p">})</span>
+</pre></div>
+</div>
 <p><code class="docutils literal"><span class="pre">digdag.env.export(dict)</span></code> is same with &#8220;_export&#8221; directive in YAML file. It defines variables for their children.</p>
 <p>See language API documents for details:</p>
 <ul class="simple">
