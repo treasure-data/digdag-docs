@@ -118,6 +118,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#backfill">backfill</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#reschedule">reschedule</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#sessions">sessions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#session">session</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#attempts">attempts</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#attempt">attempt</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#tasks">tasks</a></li>
@@ -231,17 +232,18 @@
 <li><a class="reference internal" href="#backfill" id="id19">backfill</a></li>
 <li><a class="reference internal" href="#reschedule" id="id20">reschedule</a></li>
 <li><a class="reference internal" href="#sessions" id="id21">sessions</a></li>
-<li><a class="reference internal" href="#attempts" id="id22">attempts</a></li>
-<li><a class="reference internal" href="#attempt" id="id23">attempt</a></li>
-<li><a class="reference internal" href="#tasks" id="id24">tasks</a></li>
-<li><a class="reference internal" href="#push" id="id25">push</a></li>
-<li><a class="reference internal" href="#download" id="id26">download</a></li>
-<li><a class="reference internal" href="#delete" id="id27">delete</a></li>
-<li><a class="reference internal" href="#secrets" id="id28">secrets</a></li>
-<li><a class="reference internal" href="#version" id="id29">version</a></li>
+<li><a class="reference internal" href="#session" id="id22">session</a></li>
+<li><a class="reference internal" href="#attempts" id="id23">attempts</a></li>
+<li><a class="reference internal" href="#attempt" id="id24">attempt</a></li>
+<li><a class="reference internal" href="#tasks" id="id25">tasks</a></li>
+<li><a class="reference internal" href="#push" id="id26">push</a></li>
+<li><a class="reference internal" href="#download" id="id27">download</a></li>
+<li><a class="reference internal" href="#delete" id="id28">delete</a></li>
+<li><a class="reference internal" href="#secrets" id="id29">secrets</a></li>
+<li><a class="reference internal" href="#version" id="id30">version</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#common-options" id="id30">Common options</a></li>
+<li><a class="reference internal" href="#common-options" id="id31">Common options</a></li>
 </ul>
 </div>
 <div class="section" id="local-mode-commands">
@@ -790,8 +792,18 @@
 <dd>Shows more sessions of the number of N (in default up to 100).</dd>
 </dl>
 </div>
+<div class="section" id="session">
+<h3><a class="toc-backref" href="#id22">session</a><a class="headerlink" href="#session" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag session <span class="o">[</span>session-id<span class="o">]</span>
+</pre></div>
+</div>
+<p>Show a single session. Examples:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag session &lt;session-id&gt;
+</pre></div>
+</div>
+</div>
 <div class="section" id="attempts">
-<h3><a class="toc-backref" href="#id22">attempts</a><a class="headerlink" href="#attempts" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id23">attempts</a><a class="headerlink" href="#attempts" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag attempts <span class="o">[</span>session-id<span class="o">]</span>
 </pre></div>
 </div>
@@ -808,7 +820,7 @@
 </dl>
 </div>
 <div class="section" id="attempt">
-<h3><a class="toc-backref" href="#id23">attempt</a><a class="headerlink" href="#attempt" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id24">attempt</a><a class="headerlink" href="#attempt" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag attempt <span class="o">[</span>attempt-id<span class="o">]</span>
 </pre></div>
 </div>
@@ -818,7 +830,7 @@
 </div>
 </div>
 <div class="section" id="tasks">
-<h3><a class="toc-backref" href="#id24">tasks</a><a class="headerlink" href="#tasks" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id25">tasks</a><a class="headerlink" href="#tasks" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag tasks &lt;attempt-id&gt;
 </pre></div>
 </div>
@@ -828,7 +840,7 @@
 </div>
 </div>
 <div class="section" id="push">
-<h3><a class="toc-backref" href="#id25">push</a><a class="headerlink" href="#push" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id26">push</a><a class="headerlink" href="#push" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag push &lt;project&gt; <span class="o">[</span>options...<span class="o">]</span>
 </pre></div>
 </div>
@@ -853,7 +865,7 @@
 </dl>
 </div>
 <div class="section" id="download">
-<h3><a class="toc-backref" href="#id26">download</a><a class="headerlink" href="#download" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id27">download</a><a class="headerlink" href="#download" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag download &lt;project&gt;
 </pre></div>
 </div>
@@ -875,7 +887,7 @@
 </dl>
 </div>
 <div class="section" id="delete">
-<h3><a class="toc-backref" href="#id27">delete</a><a class="headerlink" href="#delete" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id28">delete</a><a class="headerlink" href="#delete" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag delete &lt;project&gt; <span class="o">[</span>options...<span class="o">]</span>
 </pre></div>
 </div>
@@ -889,7 +901,7 @@
 </dl>
 </div>
 <div class="section" id="secrets">
-<h3><a class="toc-backref" href="#id28">secrets</a><a class="headerlink" href="#secrets" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id29">secrets</a><a class="headerlink" href="#secrets" title="Permalink to this headline">¶</a></h3>
 <p>Digdag provides basic secret management that can be used to securely provide e.g. passwords and api keys etc to operators.</p>
 <p>Secrets are handled separately from normal workflow parameters and are stored encrypted by the server. Local secrets are stored in the user home directory.</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag secrets --project &lt;project&gt;
@@ -950,7 +962,7 @@ name on the command line and provide secret keys and values on stdin in JSON for
 <p>The above command deletes the local secrets <cite>foo</cite> and <cite>bar</cite>.</p>
 </div>
 <div class="section" id="version">
-<h3><a class="toc-backref" href="#id29">version</a><a class="headerlink" href="#version" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id30">version</a><a class="headerlink" href="#version" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag version
 </pre></div>
 </div>
@@ -958,7 +970,7 @@ name on the command line and provide secret keys and values on stdin in JSON for
 </div>
 </div>
 <div class="section" id="common-options">
-<h2><a class="toc-backref" href="#id30">Common options</a><a class="headerlink" href="#common-options" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id31">Common options</a><a class="headerlink" href="#common-options" title="Permalink to this headline">¶</a></h2>
 <dl class="docutils">
 <dt><strong class="command">-L, --log PATH</strong></dt>
 <dd>Output log messages to a file (default is STDOUT). If this option is set, log files are rotated every 10MB, compresses it using gzip, and keeps at most 5 old files.</dd>
