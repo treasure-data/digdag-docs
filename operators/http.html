@@ -313,6 +313,9 @@ content_type: application/xml
 <p>Client <code class="docutils literal"><span class="pre">4xx</span></code> errors (except for <code class="docutils literal"><span class="pre">408</span> <span class="pre">Request</span> <span class="pre">Timeout</span></code> and <code class="docutils literal"><span class="pre">429</span> <span class="pre">Too</span> <span class="pre">Many</span> <span class="pre">Requests</span></code>) will not be retried even if <code class="docutils literal"><span class="pre">retry</span></code> is set to <code class="docutils literal"><span class="pre">true</span></code>.</p>
 <p><em>Note:</em> Enabling retries might cause the target endpoint to receive multiple duplicate HTTP requests. Thus retries should only be enabled if duplicated requests are tolerable. E.g. when the outcome of the HTTP request is <em>idempotent</em>.</p>
 </li>
+<li><p class="first"><strong>timeout</strong>: INTEGER</p>
+<p>The timeout value used for http operations. <em>Default</em>: <code class="docutils literal"><span class="pre">30</span></code>(30 seconds).</p>
+</li>
 </ul>
 </div>
 </div>
