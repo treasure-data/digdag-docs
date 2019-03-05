@@ -101,6 +101,7 @@
 <li class="toctree-l3"><a class="reference internal" href="py.html">py&gt;: Python scripts</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">rb&gt;: Ruby scripts</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#options">Options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tips-run-ruby-with-bundler">TIPS: Run ruby with bundler</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="embulk.html">embulk&gt;: Embulk data transfer</a></li>
@@ -214,7 +215,40 @@
 </pre></div>
 </div>
 </li>
+<li><p class="first"><strong>ruby</strong>: PATH STRING or COMMAND ARGUMENTS LIST</p>
+<p>The ruby defaults to <code class="docutils literal"><span class="pre">ruby</span></code>. If an alternate ruby and options are desired, use the <code class="docutils literal"><span class="pre">ruby</span></code> option.</p>
+<p>Examples:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ruby</span><span class="p">:</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">ruby</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ruby</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;ruby&quot;</span><span class="p">,</span> <span class="s2">&quot;-rbundler/setup&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>It is also possible to configure in <code class="docutils literal"><span class="pre">_export</span></code> section.</p>
+<p>Examples:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">_export</span><span class="p">:</span>
+  <span class="n">rb</span><span class="p">:</span>
+    <span class="n">ruby</span><span class="p">:</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">ruby</span>
+</pre></div>
+</div>
+</li>
 </ul>
+</div>
+<div class="section" id="tips-run-ruby-with-bundler">
+<span id="tips-run-ruby-with-bundler"></span><h2>TIPS: Run ruby with bundler<a class="headerlink" href="#tips-run-ruby-with-bundler" title="Permalink to this headline">¶</a></h2>
+<p>It is possible to run ruby scripts with <a class="reference external" href="https://bundler.io/">bundler</a> using <code class="docutils literal"><span class="pre">BUNDLE_GEMFILE</span></code> environment variable and <code class="docutils literal"><span class="pre">-rbundler/setup</span></code> option as:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">_export</span><span class="p">:</span>
+  <span class="n">BUNDLE_GEMFILE</span><span class="p">:</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">Gemfile</span>
+  <span class="n">rb</span><span class="p">:</span>
+    <span class="n">require</span><span class="p">:</span> <span class="n">tasks</span><span class="o">/</span><span class="n">my_workflow</span>
+    <span class="n">ruby</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;ruby&quot;</span><span class="p">,</span> <span class="s2">&quot;-rbundler/setup&quot;</span><span class="p">]</span>
+
+<span class="o">+</span><span class="n">step1</span><span class="p">:</span>
+  <span class="n">rb</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">my_step1_method</span>
+<span class="o">+</span><span class="n">step2</span><span class="p">:</span>
+  <span class="n">rb</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">Task</span><span class="p">::</span><span class="n">MyWorkflow</span><span class="o">.</span><span class="n">step2</span>
+</pre></div>
+</div>
 </div>
 </div>
 
