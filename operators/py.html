@@ -203,16 +203,24 @@
 </pre></div>
 </div>
 </li>
-</ul>
-<p>The python defaults to <code class="docutils literal"><span class="pre">python</span></code>. If an alternate python such as <code class="docutils literal"><span class="pre">/opt/conda/bin/python</span></code> is desired, use the <code class="docutils literal"><span class="pre">python</span></code> option in the <code class="docutils literal"><span class="pre">_export</span></code> section.</p>
+<li><p class="first"><strong>python</strong>: PATH STRING or COMMAND ARGUMENTS LIST</p>
+<p>The python defaults to <code class="docutils literal"><span class="pre">python</span></code>. If an alternate python and options are desired, use the <code class="docutils literal"><span class="pre">python</span></code> option.</p>
+<p>Examples:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">python</span><span class="p">:</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">conda</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">python</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">python</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;python&quot;</span><span class="p">,</span> <span class="s2">&quot;-v&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>It is also possible to configure in <code class="docutils literal"><span class="pre">_export</span></code> section.</p>
+<p>Examples:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">_export</span><span class="p">:</span>
   <span class="n">py</span><span class="p">:</span>
     <span class="n">python</span><span class="p">:</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">conda</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">python</span>
-
-<span class="o">+</span><span class="n">step1</span><span class="p">:</span>
-  <span class="n">py</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">tasks</span><span class="o">.</span><span class="n">MyWorkflow</span><span class="o">.</span><span class="n">my_task2</span>
 </pre></div>
 </div>
+</li>
+</ul>
 </div>
 </div>
 
