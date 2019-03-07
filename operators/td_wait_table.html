@@ -214,7 +214,7 @@
 <div class="section" id="options">
 <span id="options"></span><h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
 <ul>
-<li><p class="first"><strong>td_wait_table&gt;</strong>: FILE.sql</p>
+<li><p class="first"><strong>td_wait_table&gt;</strong>: NAME</p>
 <p>Name of a table.</p>
 <p>Examples:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">td_wait_table</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">target_table</span>
@@ -271,6 +271,14 @@ Applicable only when <code class="docutils literal"><span class="pre">engine</sp
 <p>Examples:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">engine</span><span class="p">:</span> <span class="n">hive</span>
 <span class="n">hive_pool_name</span><span class="p">:</span> <span class="n">poc</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first"><strong>engine_version</strong>: NAME</p>
+<p>Specify engine version for Hive and Presto.</p>
+<p>Examples:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">engine</span><span class="p">:</span> <span class="n">hive</span>
+<span class="n">engine_version</span><span class="p">:</span> <span class="n">stable</span>
 </pre></div>
 </div>
 </li>
