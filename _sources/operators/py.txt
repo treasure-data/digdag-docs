@@ -21,26 +21,11 @@ See [Python API documents](../../python_api.html) for details including variable
   py>: tasks.MyWorkflow.my_task
   ```
 
-* **python**: PATH STRING or COMMAND ARGUMENTS LIST
+The python defaults to `python`. If an alternate python such as `/opt/conda/bin/python` is desired, use the `python` option in the `_export` section.
 
-  The python defaults to `python`. If an alternate python and options are desired, use the `python` option.
+    _export:
+      py:
+        python: /opt/conda/bin/python
 
-  Examples:
-
-  ```
-  python: /opt/conda/bin/python
-  ```
-
-  ```
-  python: ["python", "-v"]
-  ```
-
-  It is also possible to configure in `_export` section.
-
-  Examples:
-
-  ```
-  _export:
-    py:
-      python: /opt/conda/bin/python
-  ```
+    +step1:
+      py>: tasks.MyWorkflow.my_task2
