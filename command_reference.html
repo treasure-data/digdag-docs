@@ -492,6 +492,11 @@
 <p>This option is useful when there&#8217;re multiple servers sharing the same underlay database and some of the servers are prepared only for task execution or REST API. See also <code class="docutils literal"><span class="pre">--disable-local-agent</span></code> option.</p>
 <p class="last">Example: <code class="docutils literal"><span class="pre">--disable-executor-loop</span></code></p>
 </dd>
+<dt><strong class="command">--disable-scheduler</strong></dt>
+<dd><p class="first">Disable a schedule executor on this server.</p>
+<p>This option is useful when you want to disable all schedules without modifying workflow files. See also <code class="docutils literal"><span class="pre">--disable-executor-loop</span></code> option.</p>
+<p class="last">Example: <code class="docutils literal"><span class="pre">--disable-scheduler</span></code></p>
+</dd>
 <dt><strong class="command">-p, --param KEY=VALUE</strong></dt>
 <dd><p class="first">Add a session parameter (use multiple times to set many parameters) in KEY=VALUE syntax. This parameter is available using <code class="docutils literal"><span class="pre">${...}</span></code> syntax in the YAML file, or using language API.</p>
 <p class="last">Example: <code class="docutils literal"><span class="pre">-p</span> <span class="pre">environment=staging</span></code></p>
