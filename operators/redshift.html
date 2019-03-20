@@ -319,7 +319,8 @@
 </li>
 <li><p class="first"><strong>strict_transaction</strong>: BOOLEAN</p>
 <p>Whether this operator uses a strict transaction to prevent generating unexpected duplicated records just in case. <em>Default</em>: <code class="docutils literal"><span class="pre">true</span></code>.
-This operator creates and uses a status table in the database to make an operation idempotent. But if creating a table isn&#8217;t allowed, this option should be false.</p>
+This operator creates and uses a status table in the database to make an operation idempotent. But if creating a table isn&#8217;t allowed, this option should be false.
+If the query that created the status table completed 24 hours ago, this operator drop the table in the cleanup step.</p>
 <p>Examples:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">strict_transaction</span><span class="p">:</span> <span class="n">false</span>
 </pre></div>
