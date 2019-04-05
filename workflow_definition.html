@@ -331,6 +331,14 @@
 <td>1454137200</td>
 <td>1454054400</td>
 </tr>
+<tr class="row-even"><td><strong>last_executed_session_time</strong></td>
+<td>2016-01-29T23:00:00-08:00</td>
+<td>2016-01-29T00:00:00-08:00</td>
+</tr>
+<tr class="row-odd"><td><strong>last_executed_session_unixtime</strong></td>
+<td>1454137200</td>
+<td>1454054400</td>
+</tr>
 <tr class="row-even"><td><strong>next_session_time</strong></td>
 <td>2016-01-30T01:00:00-08:00</td>
 <td>2016-01-31T00:00:00-08:00</td>
@@ -357,7 +365,8 @@
 </tr>
 </tbody>
 </table>
-<p>last_session_time is the timestamp of the last schedule. If the schedule is hourly, it&#8217;s the last hour. If the schedule is daily, it&#8217;s yesterday. It doesn&#8217;t matter whether the last schedule actually ran or not. It&#8217;s simply set to the last timestamp calculated from the current session time.</p>
+<p>last_session_time is the timestamp of the last schedule. If the schedule is hourly, it&#8217;s the last hour. If the schedule is daily, it&#8217;s yesterday. It doesn&#8217;t matter whether the last schedule actually ran or not. It&#8217;s simply set to the last timestamp calculated from the current session time.
+last_executed_session_time variable is the previously executed session time.</p>
 </div>
 <div class="section" id="calculating-variables">
 <h2><a class="toc-backref" href="#id6">Calculating variables</a><a class="headerlink" href="#calculating-variables" title="Permalink to this headline">¶</a></h2>
