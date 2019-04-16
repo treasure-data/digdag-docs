@@ -235,7 +235,7 @@ Updates the executable binary file to the latest version or specified version. E
 .. code-block:: console
 
     $ digdag selfupdate
-    $ digdag selfupdate 0.9.35
+    $ digdag selfupdate 0.9.36
 
 Server-mode commands
 ----------------------------------
@@ -539,6 +539,20 @@ Kills a session attempt. Examples:
 
     $ digdag kill 32
 
+
+projects
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: console
+
+    $ digdag projects [name]
+
+Shows list of projects or details of a project. Examples:
+
+.. code-block:: console
+
+    $ digdag projects
+    $ digdag projects myproj
 
 workflows
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
