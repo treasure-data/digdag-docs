@@ -17,13 +17,29 @@
   
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'0.9.36',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
@@ -31,21 +47,16 @@
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Command reference" href="../command_reference.html" />
     <link rel="prev" title="param_get&gt;: Get persistent data from ParamServer and set it as a value of store parameters" href="param_get.html" /> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -169,7 +180,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/operators/param_set.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/operators/param_set.md.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -183,7 +194,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="param-set-set-a-value-into-a-paramserver-as-persistent-data">
-<span id="param-set-set-a-value-into-a-paramserver-as-persistent-data"></span><h1>param_set&gt;: Set a value into a ParamServer as persistent data<a class="headerlink" href="#param-set-set-a-value-into-a-paramserver-as-persistent-data" title="Permalink to this headline">¶</a></h1>
+<h1>param_set&gt;: Set a value into a ParamServer as persistent data<a class="headerlink" href="#param-set-set-a-value-into-a-paramserver-as-persistent-data" title="Permalink to this headline">¶</a></h1>
 <p><strong>param_set&gt;</strong> operator saves a specified value into a ParamServer</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">set_single_value</span><span class="p">:</span>
   <span class="n">param_set</span><span class="o">&gt;</span><span class="p">:</span>
@@ -198,9 +209,9 @@
 <p>(Note: Each parameter has expired time (TTL).
 The value is 7,776,000 seconds (90days: 60sec * 60min * 24hours * 90days)).</p>
 <div class="section" id="system-configurations">
-<span id="system-configurations"></span><h2>System configurations<a class="headerlink" href="#system-configurations" title="Permalink to this headline">¶</a></h2>
+<h2>System configurations<a class="headerlink" href="#system-configurations" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="common">
-<span id="common"></span><h3>Common<a class="headerlink" href="#common" title="Permalink to this headline">¶</a></h3>
+<h3>Common<a class="headerlink" href="#common" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p class="first"><strong>param_server.type (required)</strong>:</p>
 <p>String of the database type of ParamServer ( <code class="docutils literal"><span class="pre">postgresql</span></code> or <code class="docutils literal"><span class="pre">redis</span></code> )</p>
@@ -208,7 +219,7 @@ The value is 7,776,000 seconds (90days: 60sec * 60min * 24hours * 90days)).</p>
 </ul>
 </div>
 <div class="section" id="when-using-postgresql">
-<span id="when-using-postgresql"></span><h3>When using PostgreSQL<a class="headerlink" href="#when-using-postgresql" title="Permalink to this headline">¶</a></h3>
+<h3>When using PostgreSQL<a class="headerlink" href="#when-using-postgresql" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p class="first"><strong>param_server.host (required)</strong>:</p>
 <p>String of the host of the ParamServer</p>
@@ -224,7 +235,7 @@ The value is 7,776,000 seconds (90days: 60sec * 60min * 24hours * 90days)).</p>
 </li>
 </ul>
 <div class="section" id="sample">
-<span id="sample"></span><h4>Sample<a class="headerlink" href="#sample" title="Permalink to this headline">¶</a></h4>
+<h4>Sample<a class="headerlink" href="#sample" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">param_server</span><span class="o">.</span><span class="n">type</span><span class="o">=</span><span class="n">postgresql</span>
 <span class="n">param_server</span><span class="o">.</span><span class="n">host</span><span class="o">=</span><span class="n">my_params</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">com</span>
 <span class="n">param_server</span><span class="o">.</span><span class="n">user</span><span class="o">=</span><span class="n">serizawa</span>
@@ -235,7 +246,7 @@ The value is 7,776,000 seconds (90days: 60sec * 60min * 24hours * 90days)).</p>
 </div>
 </div>
 <div class="section" id="when-using-redis">
-<span id="when-using-redis"></span><h3>When using Redis<a class="headerlink" href="#when-using-redis" title="Permalink to this headline">¶</a></h3>
+<h3>When using Redis<a class="headerlink" href="#when-using-redis" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p class="first"><strong>param_server.host (required)</strong>:</p>
 <p>String of the host of the ParamServer</p>
@@ -248,8 +259,8 @@ The value is 7,776,000 seconds (90days: 60sec * 60min * 24hours * 90days)).</p>
 <p>The Default value is <code class="docutils literal"><span class="pre">false</span></code></p>
 </li>
 </ul>
-<div class="section" id="sample">
-<span id="id1"></span><h4>Sample<a class="headerlink" href="#sample" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id1">
+<h4>Sample<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">param_server</span><span class="o">.</span><span class="n">type</span><span class="o">=</span><span class="n">redis</span>
 <span class="n">param_server</span><span class="o">.</span><span class="n">host</span><span class="o">=</span><span class="n">my_params</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">com</span>
 <span class="n">param_server</span><span class="o">.</span><span class="n">password</span><span class="o">=</span><span class="n">AQ5e5EvdiVzlLNsDI0Pm4A</span>
@@ -260,7 +271,7 @@ The value is 7,776,000 seconds (90days: 60sec * 60min * 24hours * 90days)).</p>
 </div>
 </div>
 <div class="section" id="options">
-<span id="options"></span><h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p class="first"><strong>{key}: {value}</strong></p>
 <p>The name of the key/value of the record which you want to save to ParamServer</p>
@@ -287,7 +298,7 @@ The value is 7,776,000 seconds (90days: 60sec * 60min * 24hours * 90days)).</p>
         <a href="../command_reference.html" class="btn btn-neutral float-right" title="Command reference" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="param_get.html" class="btn btn-neutral" title="param_get&gt;: Get persistent data from ParamServer and set it as a value of store parameters" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="param_get.html" class="btn btn-neutral float-left" title="param_get&gt;: Get persistent data from ParamServer and set it as a value of store parameters" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -296,7 +307,7 @@ The value is 7,776,000 seconds (90days: 60sec * 60min * 24hours * 90days)).</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016-2019, Digdag Project.
+        &copy; Copyright 2016-2019, Digdag Project
 
     </p>
   </div>
@@ -318,32 +329,16 @@ The value is 7,776,000 seconds (90days: 60sec * 60min * 24hours * 90days)).</p>
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'0.9.36',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: ''
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

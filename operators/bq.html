@@ -17,13 +17,29 @@
   
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'0.9.36',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
@@ -31,21 +47,16 @@
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="bq_ddl&gt;: Managing Google BigQuery Datasets and Tables" href="bq_ddl.html" />
     <link rel="prev" title="gcs_wait&gt;: Wait for a file in Google Cloud Storage" href="gcs_wait.html" /> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -173,7 +184,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/operators/bq.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/operators/bq.md.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -187,7 +198,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="bq-running-google-bigquery-queries">
-<span id="bq-running-google-bigquery-queries"></span><h1>bq&gt;: Running Google BigQuery queries<a class="headerlink" href="#bq-running-google-bigquery-queries" title="Permalink to this headline">¶</a></h1>
+<h1>bq&gt;: Running Google BigQuery queries<a class="headerlink" href="#bq-running-google-bigquery-queries" title="Permalink to this headline">¶</a></h1>
 <p><strong>bq&gt;</strong> operator runs a query on Google BigQuery.</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">_export</span><span class="p">:</span>
   <span class="n">bq</span><span class="p">:</span>
@@ -205,7 +216,7 @@
 </div>
 <p>Note: The <strong>bq&gt;</strong> operator uses <a class="reference external" href="https://cloud.google.com/bigquery/sql-reference/index">standard SQL</a> by default, whereas the default in the BigQuery console is <a class="reference external" href="https://cloud.google.com/bigquery/query-reference">legacy SQL</a>. To run <em>legacy</em> SQL queries, please set <code class="docutils literal"><span class="pre">use_legacy_sql:</span> <span class="pre">true</span></code>. For more information about <em>standard</em> SQL on BigQuery, see <a class="reference external" href="https://cloud.google.com/bigquery/sql-reference/migrating-from-legacy-sql">Migrating from legacy SQL</a>.</p>
 <div class="section" id="secrets">
-<span id="secrets"></span><h2>Secrets<a class="headerlink" href="#secrets" title="Permalink to this headline">¶</a></h2>
+<h2>Secrets<a class="headerlink" href="#secrets" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p class="first"><strong>gcp.credential</strong>: CREDENTIAL</p>
 <p>The <a class="reference external" href="https://cloud.google.com/docs/authentication#user_accounts_and_service_accounts">Google Cloud Platform account</a> credential private key to use, in JSON format.</p>
@@ -216,7 +227,7 @@
 </ul>
 </div>
 <div class="section" id="options">
-<span id="options"></span><h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p class="first"><strong>bq&gt;</strong>: query.sql</p>
 <p>Path to a query template file. This file can contain <code class="docutils literal"><span class="pre">${...}</span></code> syntax to embed variables.</p>
@@ -312,7 +323,7 @@ See <a class="reference external" href="https://cloud.google.com/bigquery/docs/c
 </ul>
 </div>
 <div class="section" id="output-parameters">
-<span id="output-parameters"></span><h2>Output parameters<a class="headerlink" href="#output-parameters" title="Permalink to this headline">¶</a></h2>
+<h2>Output parameters<a class="headerlink" href="#output-parameters" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p class="first"><strong>bq.last_job_id</strong></p>
 <p>The id of the BigQuery job that executed this query.</p>
@@ -332,7 +343,7 @@ See <a class="reference external" href="https://cloud.google.com/bigquery/docs/c
         <a href="bq_ddl.html" class="btn btn-neutral float-right" title="bq_ddl&gt;: Managing Google BigQuery Datasets and Tables" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="gcs_wait.html" class="btn btn-neutral" title="gcs_wait&gt;: Wait for a file in Google Cloud Storage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="gcs_wait.html" class="btn btn-neutral float-left" title="gcs_wait&gt;: Wait for a file in Google Cloud Storage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -341,7 +352,7 @@ See <a class="reference external" href="https://cloud.google.com/bigquery/docs/c
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016-2019, Digdag Project.
+        &copy; Copyright 2016-2019, Digdag Project
 
     </p>
   </div>
@@ -363,32 +374,16 @@ See <a class="reference external" href="https://cloud.google.com/bigquery/docs/c
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'0.9.36',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: ''
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

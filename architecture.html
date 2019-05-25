@@ -17,13 +17,29 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'./',
+              VERSION:'0.9.36',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -31,21 +47,16 @@
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Concepts" href="concepts.html" />
     <link rel="prev" title="Getting started" href="getting_started.html" /> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -161,7 +172,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/architecture.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/architecture.md.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -175,41 +186,41 @@
            <div itemprop="articleBody">
             
   <div class="section" id="architecture">
-<span id="architecture"></span><h1>Architecture<a class="headerlink" href="#architecture" title="Permalink to this headline">¶</a></h1>
+<h1>Architecture<a class="headerlink" href="#architecture" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="automating-workflow-with-digdag">
-<span id="automating-workflow-with-digdag"></span><h2>Automating workflow with Digdag<a class="headerlink" href="#automating-workflow-with-digdag" title="Permalink to this headline">¶</a></h2>
-<p>A workflow automates any kinds of manual operations. You&#8217;ll define a sequence of tasks as workflow, then Digdag keeps running it for you. Tasks are defined using operator plugins so that you can control various kinds of systems from the central workflow engine (see also <a class="reference external" href="operators.html">list of built-in operator plugins</a>).</p>
-<p>As the runtime framework of the plugins, Digdag takes care of the rest of issues around workload automation so that you can focus on automation. If a task fails, Digdag sends an alerts. If the workflow doesn&#8217;t finish within expected amount of time, Digdag sends a notification. Digdag starts workflow automatically based on scheduling options.</p>
+<h2>Automating workflow with Digdag<a class="headerlink" href="#automating-workflow-with-digdag" title="Permalink to this headline">¶</a></h2>
+<p>A workflow automates any kinds of manual operations. You&#8216;ll define a sequence of tasks as workflow, then Digdag keeps running it for you. Tasks are defined using operator plugins so that you can control various kinds of systems from the central workflow engine (see also <a class="reference external" href="operators.html">list of built-in operator plugins</a>).</p>
+<p>As the runtime framework of the plugins, Digdag takes care of the rest of issues around workload automation so that you can focus on automation. If a task fails, Digdag sends an alerts. If the workflow doesn&#8216;t finish within expected amount of time, Digdag sends a notification. Digdag starts workflow automatically based on scheduling options.</p>
 <p>Tasks can run on local machine, distributed servers, or in a Docker container.</p>
 </div>
 <div class="section" id="organizing-tasks-by-groups">
-<span id="organizing-tasks-by-groups"></span><h2>Organizing tasks by groups<a class="headerlink" href="#organizing-tasks-by-groups" title="Permalink to this headline">¶</a></h2>
-<p>As you automate complex workflow, the definition becomes complicated quickly. Using Digdag, you can organize tasks into groups. When you review the definition, you will see from a bird&#8217;s view, then dive in to details. It makes it easy to debug and review your workflow during development. In production environment, it helps administrators to know what&#8217;s happening and how to fix problems.</p>
-<p><img alt="Grouping tasks" src="_images/grouping-tasks.png" /></p>
-<p>A task starts if there&#8217;re no dependent siblings, or all of them successfully completed. When a parent of a group runs, it runs its children. When all of them completed successfully, their parent also completes successfully. But when a child failed, the failed child and its parent also fails. The entire execution finishes when the root task completes or fails.</p>
+<h2>Organizing tasks by groups<a class="headerlink" href="#organizing-tasks-by-groups" title="Permalink to this headline">¶</a></h2>
+<p>As you automate complex workflow, the definition becomes complicated quickly. Using Digdag, you can organize tasks into groups. When you review the definition, you will see from a bird&#8216;s view, then dive in to details. It makes it easy to debug and review your workflow during development. In production environment, it helps administrators to know what&#8216;s happening and how to fix problems.</p>
+<p><img alt="_images/grouping-tasks.png" src="_images/grouping-tasks.png" />Grouping tasks</p>
+<p>A task starts if there&#8216;re no dependent siblings, or all of them successfully completed. When a parent of a group runs, it runs its children. When all of them completed successfully, their parent also completes successfully. But when a child failed, the failed child and its parent also fails. The entire execution finishes when the root task completes or fails.</p>
 <div class="section" id="parameters">
-<span id="parameters"></span><h3>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h3>
-<p>Grouping tasks is used also for passing parameters between tasks. A parent task can export variables for children tasks (as like UNIX shell&#8217;s <em>export</em> command sets environment variables). A parent can generate children tasks at run time so that it can run different tasks depending on the results of previous tasks. See <a class="reference external" href="workflow_definition.html#defining-variables">defining variables</a> section for details.</p>
-<p><img alt="Exporting parameters" src="_images/export-params.png" /></p>
+<h3>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h3>
+<p>Grouping tasks is used also for passing parameters between tasks. A parent task can export variables for children tasks (as like UNIX shell&#8216;s <em>export</em> command sets environment variables). A parent can generate children tasks at run time so that it can run different tasks depending on the results of previous tasks. See <a class="reference external" href="workflow_definition.html#defining-variables">defining variables</a> section for details.</p>
+<p><img alt="_images/export-params.png" src="_images/export-params.png" />Exporting parameters</p>
 <p>See <a class="reference external" href="workflow_definition.html">workflow definition</a> section for the definition syntax.</p>
 </div>
 </div>
 <div class="section" id="workflow-as-code">
-<span id="workflow-as-code"></span><h2>Workflow as code<a class="headerlink" href="#workflow-as-code" title="Permalink to this headline">¶</a></h2>
-<p><img alt="Workflow as code" src="_images/workflow-as-code.png" /></p>
+<h2>Workflow as code<a class="headerlink" href="#workflow-as-code" title="Permalink to this headline">¶</a></h2>
+<p><img alt="_images/workflow-as-code.png" src="_images/workflow-as-code.png" />Workflow as code</p>
 <p>Digdag workflow is defined as code. This brings best practice of software development: version management, code review, tests, and collaboration using pull-requests. You can push a workflow to a git repository, and anyone can pull it to reproduce the same results with you.</p>
 </div>
 <div class="section" id="running-with-local-mode">
-<span id="running-with-local-mode"></span><h2>Running with local mode<a class="headerlink" href="#running-with-local-mode" title="Permalink to this headline">¶</a></h2>
+<h2>Running with local mode<a class="headerlink" href="#running-with-local-mode" title="Permalink to this headline">¶</a></h2>
 <p>Digdag is a single-file executable command. Creating and running a new workflow is as easy as Makefile.</p>
 <p>Files with <code class="docutils literal"><span class="pre">*.dig</span></code> suffix are used for workflow definitions. <code class="docutils literal"><span class="pre">digdag</span> <span class="pre">run</span> <span class="pre">my_workflow.dig</span></code> command runs the workflow.</p>
 <p>Once you developed and tested a workflow on a local machine, you will want to push it to a server so that the workflow runs periodically.</p>
 </div>
 <div class="section" id="running-on-a-server">
-<span id="running-on-a-server"></span><h2>Running on a server<a class="headerlink" href="#running-on-a-server" title="Permalink to this headline">¶</a></h2>
+<h2>Running on a server<a class="headerlink" href="#running-on-a-server" title="Permalink to this headline">¶</a></h2>
 <p>Files with <code class="docutils literal"><span class="pre">*.dig</span></code> suffix and other files at the same directory are called <strong>project</strong>. You can push an entire project to a Digdag server so that Digdag server runs workflows on the server.</p>
 <div class="section" id="running-tasks-on-docker">
-<span id="running-tasks-on-docker"></span><h3>Running tasks on Docker<a class="headerlink" href="#running-tasks-on-docker" title="Permalink to this headline">¶</a></h3>
+<h3>Running tasks on Docker<a class="headerlink" href="#running-tasks-on-docker" title="Permalink to this headline">¶</a></h3>
 <p>You can use <a class="reference external" href="https://www.docker.com/">Docker</a> to run tasks in a container.  If <code class="docutils literal"><span class="pre">docker</span></code> option is set, tasks run in a docker container.</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">_export</span><span class="p">:</span>
   <span class="n">docker</span><span class="p">:</span>
@@ -232,7 +243,7 @@
 </div>
 </div>
 <div class="section" id="next-steps">
-<span id="next-steps"></span><h2>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
+<h2>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><a class="reference external" href="concepts.html">Concepts</a></li>
 <li><a class="reference external" href="scheduling_workflow.html">Getting started</a></li>
@@ -252,7 +263,7 @@
         <a href="concepts.html" class="btn btn-neutral float-right" title="Concepts" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="getting_started.html" class="btn btn-neutral" title="Getting started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="getting_started.html" class="btn btn-neutral float-left" title="Getting started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -261,7 +272,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016-2019, Digdag Project.
+        &copy; Copyright 2016-2019, Digdag Project
 
     </p>
   </div>
@@ -283,32 +294,16 @@
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'0.9.36',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: ''
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  <script type="text/javascript" src="_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

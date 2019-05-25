@@ -17,13 +17,29 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'./',
+              VERSION:'0.9.36',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -31,21 +47,16 @@
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Scheduling workflow" href="scheduling_workflow.html" />
     <link rel="prev" title="Concepts" href="concepts.html" /> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -164,7 +175,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/workflow_definition.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/workflow_definition.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -202,18 +213,18 @@
 <h2><a class="toc-backref" href="#id2">Workflow definition: *.dig files</a><a class="headerlink" href="#workflow-definition-dig-files" title="Permalink to this headline">¶</a></h2>
 <p>A digdag workflow is defined in a file named with <code class="docutils literal"><span class="pre">.dig</span></code> suffix. Name of the file is name of the workflow.</p>
 <p>For example, if you create <code class="docutils literal"><span class="pre">hello_world</span></code> workflow, you will create <code class="docutils literal"><span class="pre">hello_world.dig</span></code> file. Contents of the file looks like this:</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">timezone</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">UTC</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="nt">timezone</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">UTC</span>
 
-<span class="l l-Scalar l-Scalar-Plain">+step1</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">sh&gt;</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks/shell_sample.sh</span>
+<span class="nt">+step1</span><span class="p">:</span>
+  <span class="nt">sh&gt;</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks/shell_sample.sh</span>
 
-<span class="l l-Scalar l-Scalar-Plain">+step2</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">py&gt;</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks.MyWorkflow.step2</span>
-  <span class="l l-Scalar l-Scalar-Plain">param1</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">this is param1</span>
+<span class="nt">+step2</span><span class="p">:</span>
+  <span class="nt">py&gt;</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks.MyWorkflow.step2</span>
+  <span class="nt">param1</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">this is param1</span>
 
-<span class="l l-Scalar l-Scalar-Plain">+step3</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">rb&gt;</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">MyWorkflow.step3</span>
-  <span class="l l-Scalar l-Scalar-Plain">require</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks/ruby_sample.rb</span>
+<span class="nt">+step3</span><span class="p">:</span>
+  <span class="nt">rb&gt;</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">MyWorkflow.step3</span>
+  <span class="nt">require</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks/ruby_sample.rb</span>
 </pre></div>
 </div>
 <p>The <code class="docutils literal"><span class="pre">timezone</span></code> parameter is used to configure the time zone of the workflow and affects session timestamp variables and scheduling. The default time zone is <code class="docutils literal"><span class="pre">UTC</span></code>. Some examples of other valid time zones are <code class="docutils literal"><span class="pre">America/Los_Angeles</span></code>, <code class="docutils literal"><span class="pre">Europe/Berlin</span></code>, <code class="docutils literal"><span class="pre">Asia/Tokyo</span></code>, etc.</p>
@@ -372,23 +383,23 @@ last_executed_session_time variable is the previously executed session time.</p>
 <h2><a class="toc-backref" href="#id6">Calculating variables</a><a class="headerlink" href="#calculating-variables" title="Permalink to this headline">¶</a></h2>
 <p>You can use basic JavaScript scripts in <code class="docutils literal"><span class="pre">${...}</span></code> syntax to calculate variables.</p>
 <p>A common use case is formatting timestamp in different format. Digdag bundles <a class="reference external" href="http://momentjs.com/">Moment.js</a> for time calculation.</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">timezone</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">America/Los_Angeles</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="nt">timezone</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">America/Los_Angeles</span>
 
-<span class="l l-Scalar l-Scalar-Plain">+format_session_time</span><span class="p p-Indicator">:</span>
+<span class="nt">+format_session_time</span><span class="p">:</span>
   <span class="c1"># &quot;2016-09-24 00:00:00 -0700&quot;</span>
-  <span class="l l-Scalar l-Scalar-Plain">echo&gt;</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">${moment(session_time).format(&quot;YYYY-MM-DD HH:mm:ss Z&quot;)}</span>
+  <span class="nt">echo&gt;</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">${moment(session_time).format(&quot;YYYY-MM-DD HH:mm:ss Z&quot;)}</span>
 
-<span class="l l-Scalar l-Scalar-Plain">+format_in_utc</span><span class="p p-Indicator">:</span>
+<span class="nt">+format_in_utc</span><span class="p">:</span>
   <span class="c1"># &quot;2016-09-24 07:00:00&quot;</span>
-  <span class="l l-Scalar l-Scalar-Plain">echo&gt;</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">${moment(session_time).utc().format(&quot;YYYY-MM-DD HH:mm:ss&quot;)}</span>
+  <span class="nt">echo&gt;</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">${moment(session_time).utc().format(&quot;YYYY-MM-DD HH:mm:ss&quot;)}</span>
 
-<span class="l l-Scalar l-Scalar-Plain">+format_tomorrow</span><span class="p p-Indicator">:</span>
+<span class="nt">+format_tomorrow</span><span class="p">:</span>
   <span class="c1"># &quot;September 24, 2016 12:00 AM&quot;</span>
-  <span class="l l-Scalar l-Scalar-Plain">echo&gt;</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">${moment(session_time).add(1, &#39;days&#39;).format(&quot;LLL&quot;)}</span>
+  <span class="nt">echo&gt;</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">${moment(session_time).add(1, &#39;days&#39;).format(&quot;LLL&quot;)}</span>
 
-<span class="l l-Scalar l-Scalar-Plain">+get_execution_time</span><span class="p p-Indicator">:</span>
+<span class="nt">+get_execution_time</span><span class="p">:</span>
   <span class="c1"># &quot;2016-09-24 05:24:49 -0700&quot;</span>
-  <span class="l l-Scalar l-Scalar-Plain">echo&gt;</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">${moment().format(&quot;YYYY-MM-DD HH:mm:ss Z&quot;)}</span>
+  <span class="nt">echo&gt;</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">${moment().format(&quot;YYYY-MM-DD HH:mm:ss Z&quot;)}</span>
 </pre></div>
 </div>
 </div>
@@ -404,21 +415,21 @@ last_executed_session_time variable is the previously executed session time.</p>
 <h3><a class="toc-backref" href="#id8">Using _export: parameter</a><a class="headerlink" href="#using-export-parameter" title="Permalink to this headline">¶</a></h3>
 <p>In a YAML file, <code class="docutils literal"><span class="pre">_export:</span></code> directive defines variables. This is useful to load static configurations such as host name of a database.</p>
 <p>If a task has <code class="docutils literal"><span class="pre">_export</span></code> directive, the task and its children can use the variables because it defines variables in a scope. With following example, all tasks can use <code class="docutils literal"><span class="pre">foo=1</span></code> but only +step1 (and +analyze) can use <code class="docutils literal"><span class="pre">bar=2</span></code>.</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">_export</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">foo</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="nt">_export</span><span class="p">:</span>
+  <span class="nt">foo</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
 
-<span class="l l-Scalar l-Scalar-Plain">+prepare</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">py&gt;</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks.MyWorkflow.prepare</span>
+<span class="nt">+prepare</span><span class="p">:</span>
+  <span class="nt">py&gt;</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks.MyWorkflow.prepare</span>
 
-<span class="l l-Scalar l-Scalar-Plain">+analyze</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">_export</span><span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">bar</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="nt">+analyze</span><span class="p">:</span>
+  <span class="nt">_export</span><span class="p">:</span>
+    <span class="nt">bar</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
 
-  <span class="l l-Scalar l-Scalar-Plain">+step1</span><span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">py&gt;</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks.MyWorkflow.analyze_step1</span>
+  <span class="nt">+step1</span><span class="p">:</span>
+    <span class="nt">py&gt;</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks.MyWorkflow.analyze_step1</span>
 
-<span class="l l-Scalar l-Scalar-Plain">+dump</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">py&gt;</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks.MyWorkflow.dump</span>
+<span class="nt">+dump</span><span class="p">:</span>
+  <span class="nt">py&gt;</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks.MyWorkflow.dump</span>
 </pre></div>
 </div>
 </div>
@@ -462,13 +473,13 @@ last_executed_session_time variable is the previously executed session time.</p>
 <div class="section" id="include-another-file">
 <h2><a class="toc-backref" href="#id11">!include another file</a><a class="headerlink" href="#include-another-file" title="Permalink to this headline">¶</a></h2>
 <p>You can divide a YAML file into small files to organize complex workflow. <code class="docutils literal"><span class="pre">!include</span></code> directive is used to gather those files:</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">_export</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">mysql</span><span class="p p-Indicator">:</span>
-    <span class="kt">!include</span> <span class="p p-Indicator">:</span> <span class="s">&#39;config/mysql.dig&#39;</span>
-  <span class="l l-Scalar l-Scalar-Plain">hive</span><span class="p p-Indicator">:</span>
-    <span class="kt">!include</span> <span class="p p-Indicator">:</span> <span class="s">&#39;config/hive.dig&#39;</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="nt">_export</span><span class="p">:</span>
+  <span class="nt">mysql</span><span class="p">:</span>
+    <span class="nt">!include </span><span class="p">:</span> <span class="s">&#39;config/mysql.dig&#39;</span>
+  <span class="nt">hive</span><span class="p">:</span>
+    <span class="nt">!include </span><span class="p">:</span> <span class="s">&#39;config/hive.dig&#39;</span>
 
-<span class="kt">!include</span> <span class="p p-Indicator">:</span> <span class="s">&#39;tasks/foo.dig&#39;</span>
+<span class="nt">!include </span><span class="p">:</span> <span class="s">&#39;tasks/foo.dig&#39;</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -479,70 +490,70 @@ last_executed_session_time variable is the previously executed session time.</p>
 <div class="section" id="parallel-execution">
 <h2><a class="toc-backref" href="#id12">Parallel execution</a><a class="headerlink" href="#parallel-execution" title="Permalink to this headline">¶</a></h2>
 <p>If <code class="docutils literal"><span class="pre">_parallel:</span> <span class="pre">true</span></code> parameter is set to a group, child tasks in the group run in parallel (grandchildren are not affected):</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">+prepare</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="nt">+prepare</span><span class="p">:</span>
   <span class="c1"># +data1, +data2, and +data3 run in parallel.</span>
-  <span class="l l-Scalar l-Scalar-Plain">_parallel</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+  <span class="nt">_parallel</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
 
-  <span class="l l-Scalar l-Scalar-Plain">+data1</span><span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">sh&gt;</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks/prepare_data1.sh</span>
+  <span class="nt">+data1</span><span class="p">:</span>
+    <span class="nt">sh&gt;</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks/prepare_data1.sh</span>
 
-  <span class="l l-Scalar l-Scalar-Plain">+data2</span><span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">sh&gt;</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks/prepare_data2.sh</span>
+  <span class="nt">+data2</span><span class="p">:</span>
+    <span class="nt">sh&gt;</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks/prepare_data2.sh</span>
 
-  <span class="l l-Scalar l-Scalar-Plain">+data3</span><span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">sh&gt;</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks/prepare_data3.sh</span>
+  <span class="nt">+data3</span><span class="p">:</span>
+    <span class="nt">sh&gt;</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks/prepare_data3.sh</span>
 
-<span class="l l-Scalar l-Scalar-Plain">+analyze</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">sh&gt;</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks/analyze_prepared_data_sets.sh</span>
+<span class="nt">+analyze</span><span class="p">:</span>
+  <span class="nt">sh&gt;</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks/analyze_prepared_data_sets.sh</span>
 </pre></div>
 </div>
 <p>If <code class="docutils literal"><span class="pre">_background:</span> <span class="pre">true</span></code> parameter is set to a task or group, the task or group run in parallel with previous tasks. Next task wait for the completion of the background task or group.</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">+prepare</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">+data1</span><span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">sh&gt;</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks/prepare_data1.sh</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="nt">+prepare</span><span class="p">:</span>
+  <span class="nt">+data1</span><span class="p">:</span>
+    <span class="nt">sh&gt;</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks/prepare_data1.sh</span>
 
   <span class="c1"># +data1 and +data2 run in parallel.</span>
-  <span class="l l-Scalar l-Scalar-Plain">+data2</span><span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">_background</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-    <span class="l l-Scalar l-Scalar-Plain">sh&gt;</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks/prepare_data2.sh</span>
+  <span class="nt">+data2</span><span class="p">:</span>
+    <span class="nt">_background</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+    <span class="nt">sh&gt;</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks/prepare_data2.sh</span>
 
   <span class="c1"># +data3 runs after +data1 and +data2.</span>
-  <span class="l l-Scalar l-Scalar-Plain">+data3</span><span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">sh&gt;</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks/prepare_data3.sh</span>
+  <span class="nt">+data3</span><span class="p">:</span>
+    <span class="nt">sh&gt;</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks/prepare_data3.sh</span>
 
-<span class="l l-Scalar l-Scalar-Plain">+analyze</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">sh&gt;</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks/analyze_prepared_data_sets.sh</span>
+<span class="nt">+analyze</span><span class="p">:</span>
+  <span class="nt">sh&gt;</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks/analyze_prepared_data_sets.sh</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="retrying-failed-tasks-automatically">
 <h2><a class="toc-backref" href="#id13">Retrying failed tasks automatically</a><a class="headerlink" href="#retrying-failed-tasks-automatically" title="Permalink to this headline">¶</a></h2>
 <p>If <code class="docutils literal"><span class="pre">_retry:</span> <span class="pre">N</span></code> (N is an integer: 1, 2, 3, ...) parameter is set to a group, it retires the group from the beginning when one or more children failed.</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">+prepare</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="nt">+prepare</span><span class="p">:</span>
   <span class="c1"># If +erase_table, +load_data, or +check_loaded_data fail, it retries from</span>
   <span class="c1"># +erase_table again.</span>
-  <span class="l l-Scalar l-Scalar-Plain">_retry</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">3</span>
+  <span class="nt">_retry</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">3</span>
 
-  <span class="l l-Scalar l-Scalar-Plain">+erase_table</span><span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">sh&gt;</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks/erase_table.sh</span>
+  <span class="nt">+erase_table</span><span class="p">:</span>
+    <span class="nt">sh&gt;</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks/erase_table.sh</span>
 
-  <span class="l l-Scalar l-Scalar-Plain">+load_data</span><span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">sh&gt;</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks/load_data.sh</span>
+  <span class="nt">+load_data</span><span class="p">:</span>
+    <span class="nt">sh&gt;</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks/load_data.sh</span>
 
-  <span class="l l-Scalar l-Scalar-Plain">+check_loaded_data</span><span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">sh&gt;</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks/check_loaded_data.sh</span>
+  <span class="nt">+check_loaded_data</span><span class="p">:</span>
+    <span class="nt">sh&gt;</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks/check_loaded_data.sh</span>
 
-<span class="l l-Scalar l-Scalar-Plain">+analyze</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">sh&gt;</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks/analyze_prepared_data_sets.sh</span>
+<span class="nt">+analyze</span><span class="p">:</span>
+  <span class="nt">sh&gt;</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks/analyze_prepared_data_sets.sh</span>
 </pre></div>
 </div>
 <p>Tasks also support <code class="docutils literal"><span class="pre">_retry:</span> <span class="pre">N</span></code> parameter to retry the specific task. Note that some operators don&#8217;t support the generic <code class="docutils literal"><span class="pre">_retry</span></code> option but has its own options to control retrying behavior.</p>
 <p>You can set interval to _retry as follows.</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">+prepare</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">_retry</span><span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">limit</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">3</span>
-    <span class="l l-Scalar l-Scalar-Plain">interval</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">10</span>
-    <span class="l l-Scalar l-Scalar-Plain">interval_type</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">exponential</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="nt">+prepare</span><span class="p">:</span>
+  <span class="nt">_retry</span><span class="p">:</span>
+    <span class="nt">limit</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">3</span>
+    <span class="nt">interval</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10</span>
+    <span class="nt">interval_type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">exponential</span>
 </pre></div>
 </div>
 <p><code class="docutils literal"><span class="pre">limit</span></code> is number of retry.
@@ -556,11 +567,11 @@ In the above example, first retry interval is 10 secs, second is 20 secs, third 
 <h2><a class="toc-backref" href="#id14">Sending error notification</a><a class="headerlink" href="#sending-error-notification" title="Permalink to this headline">¶</a></h2>
 <p>If an operator configuration is set at <code class="docutils literal"><span class="pre">_error:</span></code> parameter, the operator runs when the workflow fails.</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="c1"># this task runs when a workflow fails.</span>
-<span class="l l-Scalar l-Scalar-Plain">_error</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">sh&gt;</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks/runs_when_workflow_failed.sh</span>
+<span class="nt">_error</span><span class="p">:</span>
+  <span class="nt">sh&gt;</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks/runs_when_workflow_failed.sh</span>
 
-<span class="l l-Scalar l-Scalar-Plain">+analyze</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">sh&gt;</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks/analyze_prepared_data_sets.sh</span>
+<span class="nt">+analyze</span><span class="p">:</span>
+  <span class="nt">sh&gt;</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks/analyze_prepared_data_sets.sh</span>
 </pre></div>
 </div>
 <p>To send mails, you can use <a class="reference external" href="operators.html#mail-sending-email">mail&gt; operator</a>.</p>
@@ -578,7 +589,7 @@ In the above example, first retry interval is 10 secs, second is 20 secs, third 
         <a href="scheduling_workflow.html" class="btn btn-neutral float-right" title="Scheduling workflow" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="concepts.html" class="btn btn-neutral" title="Concepts" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="concepts.html" class="btn btn-neutral float-left" title="Concepts" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -587,7 +598,7 @@ In the above example, first retry interval is 10 secs, second is 20 secs, third 
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016-2019, Digdag Project.
+        &copy; Copyright 2016-2019, Digdag Project
 
     </p>
   </div>
@@ -609,32 +620,16 @@ In the above example, first retry interval is 10 secs, second is 20 secs, third 
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'0.9.36',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: ''
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  <script type="text/javascript" src="_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

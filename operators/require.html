@@ -17,13 +17,29 @@
   
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'0.9.36',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
@@ -31,21 +47,16 @@
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="loop&gt;: Repeat tasks" href="loop.html" />
     <link rel="prev" title="call&gt;: Calls another workflow" href="call.html" /> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -174,7 +185,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/operators/require.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/operators/require.md.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -188,8 +199,8 @@
            <div itemprop="articleBody">
             
   <div class="section" id="require-depends-on-another-workflow">
-<span id="require-depends-on-another-workflow"></span><h1>require&gt;: Depends on another workflow<a class="headerlink" href="#require-depends-on-another-workflow" title="Permalink to this headline">¶</a></h1>
-<p><strong>require&gt;</strong> operator requires completion of another workflow. This operator is similar to <a class="reference external" href="call.html">call&gt; operator</a>, but this operator doesn&#8217;t start the other workflow if it&#8217;s already running or has done for the same session time of this workflow. If the workflow is running or newly started, this operator waits until it completes.</p>
+<h1>require&gt;: Depends on another workflow<a class="headerlink" href="#require-depends-on-another-workflow" title="Permalink to this headline">¶</a></h1>
+<p><strong>require&gt;</strong> operator requires completion of another workflow. This operator is similar to <a class="reference external" href="../call.html">call&gt; operator</a>, but this operator doesn&#8216;t start the other workflow if it&#8216;s already running or has done for the same session time of this workflow. If the workflow is running or newly started, this operator waits until it completes.</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># workflow1.dig</span>
 <span class="o">+</span><span class="n">step1</span><span class="p">:</span>
   <span class="n">require</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">another_workflow</span>
@@ -201,7 +212,7 @@
 </pre></div>
 </div>
 <div class="section" id="options">
-<span id="options"></span><h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p class="first"><strong>require&gt;</strong>: NAME</p>
 <p>Name of a workflow.</p>
@@ -252,7 +263,7 @@ schedule:
         <a href="loop.html" class="btn btn-neutral float-right" title="loop&gt;: Repeat tasks" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="call.html" class="btn btn-neutral" title="call&gt;: Calls another workflow" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="call.html" class="btn btn-neutral float-left" title="call&gt;: Calls another workflow" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -261,7 +272,7 @@ schedule:
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016-2019, Digdag Project.
+        &copy; Copyright 2016-2019, Digdag Project
 
     </p>
   </div>
@@ -283,32 +294,16 @@ schedule:
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'0.9.36',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: ''
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

@@ -17,13 +17,29 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'./',
+              VERSION:'0.9.36',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -31,21 +47,16 @@
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Operators" href="operators.html" />
     <link rel="prev" title="Workflow definition" href="workflow_definition.html" /> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -155,7 +166,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/scheduling_workflow.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/scheduling_workflow.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -183,13 +194,13 @@
 <div class="section" id="setting-up-a-schedule">
 <h2><a class="toc-backref" href="#id2">Setting up a schedule:</a><a class="headerlink" href="#setting-up-a-schedule" title="Permalink to this headline">¶</a></h2>
 <p>To run a workflow periodically, add a <code class="docutils literal"><span class="pre">schedule:</span></code> option to top-level workflow definitions.</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">timezone</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">UTC</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="nt">timezone</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">UTC</span>
 
-<span class="l l-Scalar l-Scalar-Plain">schedule</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">daily&gt;</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">07:00:00</span>
+<span class="nt">schedule</span><span class="p">:</span>
+  <span class="nt">daily&gt;</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">07:00:00</span>
 
-<span class="l l-Scalar l-Scalar-Plain">+step1</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">sh&gt;</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks/shell_sample.sh</span>
+<span class="nt">+step1</span><span class="p">:</span>
+  <span class="nt">sh&gt;</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks/shell_sample.sh</span>
 </pre></div>
 </div>
 <p>In <code class="docutils literal"><span class="pre">schedule:</span></code> directive, you can choose one of following options:</p>
@@ -305,19 +316,19 @@
 </div>
 <div class="section" id="setting-an-alert-if-a-workflow-doesn-t-finish-within-expected-time">
 <h2><a class="toc-backref" href="#id5">Setting an alert if a workflow doesn&#8217;t finish within expected time</a><a class="headerlink" href="#setting-an-alert-if-a-workflow-doesn-t-finish-within-expected-time" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">timezone</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">UTC</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="nt">timezone</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">UTC</span>
 
-<span class="l l-Scalar l-Scalar-Plain">schedule</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">daily&gt;</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">07:00:00</span>
+<span class="nt">schedule</span><span class="p">:</span>
+  <span class="nt">daily&gt;</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">07:00:00</span>
 
-<span class="l l-Scalar l-Scalar-Plain">sla</span><span class="p p-Indicator">:</span>
+<span class="nt">sla</span><span class="p">:</span>
   <span class="c1"># triggers this task at 02:00</span>
-  <span class="l l-Scalar l-Scalar-Plain">time</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">02:00</span>
-  <span class="l l-Scalar l-Scalar-Plain">+notice</span><span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">sh&gt;</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">notice.sh</span>
+  <span class="nt">time</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">02:00</span>
+  <span class="nt">+notice</span><span class="p">:</span>
+    <span class="nt">sh&gt;</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">notice.sh</span>
 
-<span class="l l-Scalar l-Scalar-Plain">+long_running_job</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">sh&gt;</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">long_running_job.sh</span>
+<span class="nt">+long_running_job</span><span class="p">:</span>
+  <span class="nt">sh&gt;</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">long_running_job.sh</span>
 </pre></div>
 </div>
 </div>
@@ -335,12 +346,12 @@
 <h2><a class="toc-backref" href="#id7">Skipping backfill.</a><a class="headerlink" href="#skipping-backfill" title="Permalink to this headline">¶</a></h2>
 <p>The <cite>skip_delayed_by</cite> option enables <a class="reference external" href="https://docs.digdag.io/command_reference.html#backfill">backfill</a> command to skip creating sessions delayed by the specified time. When Digdag restarts, sessions of a schedule are automatically created until the next of <cite>last_session_time</cite>.</p>
 <p>For example, If Digdag restarts at 20:00:00 and a workflow scheduled as below, it creates three sessions (19:59:00, 19:58:00 and 19:57:00). And then, Digdag doesn&#8217;t create sessions which are before 19:56:00 by the option.</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">schedule</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">minutes_interval&gt;</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
-  <span class="l l-Scalar l-Scalar-Plain">skip_delayed_by</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">3m</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="nt">schedule</span><span class="p">:</span>
+  <span class="nt">minutes_interval&gt;</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
+  <span class="nt">skip_delayed_by</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">3m</span>
 
-<span class="l l-Scalar l-Scalar-Plain">+setup</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">sh&gt;</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">echo ${session_time}</span>
+<span class="nt">+setup</span><span class="p">:</span>
+  <span class="nt">sh&gt;</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">echo ${session_time}</span>
 </pre></div>
 </div>
 </div>
@@ -357,7 +368,7 @@
         <a href="operators.html" class="btn btn-neutral float-right" title="Operators" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="workflow_definition.html" class="btn btn-neutral" title="Workflow definition" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="workflow_definition.html" class="btn btn-neutral float-left" title="Workflow definition" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -366,7 +377,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016-2019, Digdag Project.
+        &copy; Copyright 2016-2019, Digdag Project
 
     </p>
   </div>
@@ -388,32 +399,16 @@
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'0.9.36',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: ''
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  <script type="text/javascript" src="_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

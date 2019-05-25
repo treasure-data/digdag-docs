@@ -17,13 +17,29 @@
   
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'0.9.36',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
@@ -31,21 +47,16 @@
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="embulk&gt;: Embulk data transfer" href="embulk.html" />
     <link rel="prev" title="py&gt;: Python scripts" href="py.html" /> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -171,7 +182,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/operators/rb.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/operators/rb.md.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -185,9 +196,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="rb-ruby-scripts">
-<span id="rb-ruby-scripts"></span><h1>rb&gt;: Ruby scripts<a class="headerlink" href="#rb-ruby-scripts" title="Permalink to this headline">¶</a></h1>
+<h1>rb&gt;: Ruby scripts<a class="headerlink" href="#rb-ruby-scripts" title="Permalink to this headline">¶</a></h1>
 <p><strong>rb&gt;</strong> operator runs a Ruby script using <code class="docutils literal"><span class="pre">ruby</span></code> command.</p>
-<p>See <a class="reference external" href="../ruby_api.html">Ruby API documents</a> for details including best practices how to configure the workflow using <code class="docutils literal"><span class="pre">_export:</span> <span class="pre">require:</span></code>.</p>
+<p>See <a class="reference external" href="../../ruby_api.html">Ruby API documents</a> for details including best practices how to configure the workflow using <code class="docutils literal"><span class="pre">_export:</span> <span class="pre">require:</span></code>.</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">_export</span><span class="p">:</span>
   <span class="n">rb</span><span class="p">:</span>
     <span class="n">require</span><span class="p">:</span> <span class="n">tasks</span><span class="o">/</span><span class="n">my_workflow</span>
@@ -199,7 +210,7 @@
 </pre></div>
 </div>
 <div class="section" id="options">
-<span id="options"></span><h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p class="first"><strong>rb&gt;</strong>: [MODULE::CLASS.]METHOD</p>
 <p>Name of a method to run.</p>
@@ -235,7 +246,7 @@
 </ul>
 </div>
 <div class="section" id="tips-run-ruby-with-bundler">
-<span id="tips-run-ruby-with-bundler"></span><h2>TIPS: Run ruby with bundler<a class="headerlink" href="#tips-run-ruby-with-bundler" title="Permalink to this headline">¶</a></h2>
+<h2>TIPS: Run ruby with bundler<a class="headerlink" href="#tips-run-ruby-with-bundler" title="Permalink to this headline">¶</a></h2>
 <p>It is possible to run ruby scripts with <a class="reference external" href="https://bundler.io/">bundler</a> using <code class="docutils literal"><span class="pre">BUNDLE_GEMFILE</span></code> environment variable and <code class="docutils literal"><span class="pre">-rbundler/setup</span></code> option as:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">_export</span><span class="p">:</span>
   <span class="n">BUNDLE_GEMFILE</span><span class="p">:</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">Gemfile</span>
@@ -263,7 +274,7 @@
         <a href="embulk.html" class="btn btn-neutral float-right" title="embulk&gt;: Embulk data transfer" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="py.html" class="btn btn-neutral" title="py&gt;: Python scripts" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="py.html" class="btn btn-neutral float-left" title="py&gt;: Python scripts" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -272,7 +283,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016-2019, Digdag Project.
+        &copy; Copyright 2016-2019, Digdag Project
 
     </p>
   </div>
@@ -294,32 +305,16 @@
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'0.9.36',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: ''
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

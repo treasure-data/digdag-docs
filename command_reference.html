@@ -17,13 +17,29 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'./',
+              VERSION:'0.9.36',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -31,21 +47,16 @@
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Language API - Python" href="python_api.html" />
     <link rel="prev" title="param_set&gt;: Set a value into a ParamServer as persistent data" href="operators/param_set.html" /> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -189,7 +200,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/command_reference.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/command_reference.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -570,6 +581,9 @@
 <p>The secret encryption key is used to encrypt secrets when they are stored in the digdag server database. It must be a valid 128-bit AES key, base64 encoded.</p>
 <p>Example:</p>
 <div class="highlight-none"><div class="highlight"><pre><span></span>digdag.secret-encryption-key = MDEyMzQ1Njc4OTAxMjM0NQ==
+# example
+echo -n &#39;16_bytes_phrase!&#39; | openssl base64
+MTZfYnl0ZXNfcGhyYXNlIQ==
 </pre></div>
 </div>
 </div>
@@ -1016,7 +1030,7 @@ name on the command line and provide secret keys and values on stdin in JSON for
         <a href="python_api.html" class="btn btn-neutral float-right" title="Language API - Python" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="operators/param_set.html" class="btn btn-neutral" title="param_set&gt;: Set a value into a ParamServer as persistent data" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="operators/param_set.html" class="btn btn-neutral float-left" title="param_set&gt;: Set a value into a ParamServer as persistent data" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -1025,7 +1039,7 @@ name on the command line and provide secret keys and values on stdin in JSON for
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016-2019, Digdag Project.
+        &copy; Copyright 2016-2019, Digdag Project
 
     </p>
   </div>
@@ -1047,32 +1061,16 @@ name on the command line and provide secret keys and values on stdin in JSON for
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'0.9.36',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: ''
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  <script type="text/javascript" src="_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

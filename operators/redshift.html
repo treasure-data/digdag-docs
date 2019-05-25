@@ -17,13 +17,29 @@
   
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'0.9.36',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
@@ -31,21 +47,16 @@
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="redshift_load&gt;: Redshift load operations" href="redshift_load.html" />
     <link rel="prev" title="s3_wait&gt;: Wait for a file in Amazon S3" href="s3_wait.html" /> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -172,7 +183,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/operators/redshift.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/operators/redshift.md.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -186,7 +197,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="redshift-redshift-operations">
-<span id="redshift-redshift-operations"></span><h1>redshift&gt;: Redshift operations<a class="headerlink" href="#redshift-redshift-operations" title="Permalink to this headline">¶</a></h1>
+<h1>redshift&gt;: Redshift operations<a class="headerlink" href="#redshift-redshift-operations" title="Permalink to this headline">¶</a></h1>
 <p><strong>redshift&gt;</strong> operator runs queries and/or DDLs on Redshift.</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span>_export:
   redshift:
@@ -223,7 +234,7 @@
 </pre></div>
 </div>
 <div class="section" id="secrets">
-<span id="secrets"></span><h2>Secrets<a class="headerlink" href="#secrets" title="Permalink to this headline">¶</a></h2>
+<h2>Secrets<a class="headerlink" href="#secrets" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p class="first"><strong>aws.redshift.password</strong>: NAME</p>
 <p>Optional user password to use when connecting to the Redshift database. If you want to use multiple credentials, use <code class="docutils literal"><span class="pre">password_override</span></code> option.</p>
@@ -231,7 +242,7 @@
 </ul>
 </div>
 <div class="section" id="options">
-<span id="options"></span><h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p class="first"><strong>redshift&gt;</strong>: FILE.sql</p>
 <p>Path of the query template file. This file can contain <code class="docutils literal"><span class="pre">${...}</span></code> syntax to embed variables.</p>
@@ -319,7 +330,7 @@
 </li>
 <li><p class="first"><strong>strict_transaction</strong>: BOOLEAN</p>
 <p>Whether this operator uses a strict transaction to prevent generating unexpected duplicated records just in case. <em>Default</em>: <code class="docutils literal"><span class="pre">true</span></code>.
-This operator creates and uses a status table in the database to make an operation idempotent. But if creating a table isn&#8217;t allowed, this option should be false.
+This operator creates and uses a status table in the database to make an operation idempotent. But if creating a table isn&#8216;t allowed, this option should be false.
 If the query that created the status table completed 24 hours ago, this operator drop the table in the cleanup step.</p>
 <p>Examples:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">strict_transaction</span><span class="p">:</span> <span class="n">false</span>
@@ -355,8 +366,8 @@ If the query that created the status table completed 24 hours ago, this operator
 </div>
 </li>
 <li><p class="first"><strong>password_override</strong>: NAME</p>
-<p>Secret key name that has a non-default database password as its value. This would be useful whey you want to use multiple database credentials. If it&#8217;s set, Digdag looks up secrets with this value as a secret key name. If not, the default secret key <code class="docutils literal"><span class="pre">redshift.password</span></code> is used.</p>
-<p>Examples (let&#8217;s say you&#8217;ve already added a secret key value <code class="docutils literal"><span class="pre">redshift.another_password=password1234</span></code>):</p>
+<p>Secret key name that has a non-default database password as its value. This would be useful whey you want to use multiple database credentials. If it&#8216;s set, Digdag looks up secrets with this value as a secret key name. If not, the default secret key <code class="docutils literal"><span class="pre">redshift.password</span></code> is used.</p>
+<p>Examples (let&#8216;s say you&#8216;ve already added a secret key value <code class="docutils literal"><span class="pre">redshift.another_password=password1234</span></code>):</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">password_override</span><span class="p">:</span> <span class="n">another_password</span>
 </pre></div>
 </div>
@@ -376,7 +387,7 @@ If the query that created the status table completed 24 hours ago, this operator
         <a href="redshift_load.html" class="btn btn-neutral float-right" title="redshift_load&gt;: Redshift load operations" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="s3_wait.html" class="btn btn-neutral" title="s3_wait&gt;: Wait for a file in Amazon S3" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="s3_wait.html" class="btn btn-neutral float-left" title="s3_wait&gt;: Wait for a file in Amazon S3" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -385,7 +396,7 @@ If the query that created the status table completed 24 hours ago, this operator
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016-2019, Digdag Project.
+        &copy; Copyright 2016-2019, Digdag Project
 
     </p>
   </div>
@@ -407,32 +418,16 @@ If the query that created the status table completed 24 hours ago, this operator
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'0.9.36',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: ''
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

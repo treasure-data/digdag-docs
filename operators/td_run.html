@@ -17,13 +17,29 @@
   
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'0.9.36',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
@@ -31,21 +47,16 @@
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="td_ddl&gt;: Treasure Data operations" href="td_ddl.html" />
     <link rel="prev" title="td&gt;: Treasure Data queries" href="td.html" /> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -178,7 +189,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/operators/td_run.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/operators/td_run.md.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -192,7 +203,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="td-run-treasure-data-saved-queries">
-<span id="td-run-treasure-data-saved-queries"></span><h1>td_run&gt;: Treasure Data saved queries<a class="headerlink" href="#td-run-treasure-data-saved-queries" title="Permalink to this headline">¶</a></h1>
+<h1>td_run&gt;: Treasure Data saved queries<a class="headerlink" href="#td-run-treasure-data-saved-queries" title="Permalink to this headline">¶</a></h1>
 <p><strong>td_run&gt;</strong> operator runs a query saved on Treasure Data.</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">_export</span><span class="p">:</span>
   <span class="n">td</span><span class="p">:</span>
@@ -206,23 +217,23 @@
 </pre></div>
 </div>
 <div class="section" id="examples">
-<span id="examples"></span><h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><a class="reference external" href="https://github.com/treasure-data/workflow-examples/tree/master/td_run">Examples</a>.</li>
 </ul>
 </div>
 <div class="section" id="secrets">
-<span id="secrets"></span><h2>Secrets<a class="headerlink" href="#secrets" title="Permalink to this headline">¶</a></h2>
+<h2>Secrets<a class="headerlink" href="#secrets" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><strong>td.apikey</strong>: API_KEY
 The Treasure Data API key to use when running Treasure Data queries.</li>
 </ul>
 </div>
 <div class="section" id="options">
-<span id="options"></span><h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p class="first"><strong>td_run&gt;</strong>: SAVED_QUERY_ID or SAVED_QUERY_NAME</p>
-<p>Runs saved query. If number was specified, it&#8217;s considered as an ID of saved query. Otherwise it&#8217;s considered as a name of a saved query.</p>
+<p>Runs saved query. If number was specified, it&#8216;s considered as an ID of saved query. Otherwise it&#8216;s considered as a name of a saved query.</p>
 <p>Examples:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">td_run</span><span class="o">&gt;</span><span class="p">:</span> <span class="mi">12345</span>
 </pre></div>
@@ -263,7 +274,7 @@ td.last_results is a map of column name and a value. To access to a single value
 </ul>
 </div>
 <div class="section" id="output-parameters">
-<span id="output-parameters"></span><h2>Output parameters<a class="headerlink" href="#output-parameters" title="Permalink to this headline">¶</a></h2>
+<h2>Output parameters<a class="headerlink" href="#output-parameters" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p class="first"><strong>td.last_job_id</strong> or <strong>td.last_job.id</strong></p>
 <p>The job id this task executed.</p>
@@ -301,7 +312,7 @@ td.last_results is a map of column name and a value. To access to a single value
         <a href="td_ddl.html" class="btn btn-neutral float-right" title="td_ddl&gt;: Treasure Data operations" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="td.html" class="btn btn-neutral" title="td&gt;: Treasure Data queries" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="td.html" class="btn btn-neutral float-left" title="td&gt;: Treasure Data queries" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -310,7 +321,7 @@ td.last_results is a map of column name and a value. To access to a single value
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016-2019, Digdag Project.
+        &copy; Copyright 2016-2019, Digdag Project
 
     </p>
   </div>
@@ -332,32 +343,16 @@ td.last_results is a map of column name and a value. To access to a single value
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'0.9.36',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: ''
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

@@ -17,35 +17,46 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'./',
+              VERSION:'0.9.36',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/custom.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Architecture" href="architecture.html" />
-    <link rel="prev" title="What’s Digdag?" href="index.html" /> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
+    <link rel="prev" title="What‘s Digdag?" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -87,6 +98,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Getting started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#downloading-the-latest-version">1. Downloading the latest version</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#on-windows">On Windows?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#using-packages">Using packages?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#curl-did-not-work">curl did not work?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#got-error">Got error?</a></li>
 </ul>
@@ -157,7 +169,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/getting_started.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/getting_started.md.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -171,9 +183,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="getting-started">
-<span id="getting-started"></span><h1>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+<h1>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="downloading-the-latest-version">
-<span id="downloading-the-latest-version"></span><h2>1. Downloading the latest version<a class="headerlink" href="#downloading-the-latest-version" title="Permalink to this headline">¶</a></h2>
+<h2>1. Downloading the latest version<a class="headerlink" href="#downloading-the-latest-version" title="Permalink to this headline">¶</a></h2>
 <p>Digdag is a single executable file. You can install the file to <code class="docutils literal"><span class="pre">~/bin</span></code> using <code class="docutils literal"><span class="pre">curl</span></code> command as following:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span>$ curl -o ~/bin/digdag --create-dirs -L &quot;https://dl.digdag.io/digdag-latest&quot;
 $ chmod +x ~/bin/digdag
@@ -185,9 +197,9 @@ $ echo &#39;export PATH=&quot;$HOME/bin:$PATH&quot;&#39; &gt;&gt; ~/.bashrc
 </pre></div>
 </div>
 <p>If <code class="docutils literal"><span class="pre">digdag</span> <span class="pre">--help</span></code> command works, Digdag is installed successfully.</p>
-<p>(Note: if you&#8217;re using zsh, modify your<code class="docutils literal"><span class="pre">~/.zshrc</span></code> file instead of <code class="docutils literal"><span class="pre">~/.bashrc</span></code>).</p>
+<p>(Note: if you&#8216;re using zsh, modify your<code class="docutils literal"><span class="pre">~/.zshrc</span></code> file instead of <code class="docutils literal"><span class="pre">~/.bashrc</span></code>).</p>
 <div class="section" id="on-windows">
-<span id="on-windows"></span><h3>On Windows?<a class="headerlink" href="#on-windows" title="Permalink to this headline">¶</a></h3>
+<h3>On Windows?<a class="headerlink" href="#on-windows" title="Permalink to this headline">¶</a></h3>
 <p>On Windows, please open cmd.exe or PowerShell.exe and type following command exactly:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">PowerShell</span> <span class="o">-</span><span class="n">Command</span> <span class="s2">&quot;&amp; {[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::TLS12; mkdir -Force $env:USERPROFILE</span><span class="se">\b</span><span class="s2">in; Invoke-WebRequest http://dl.digdag.io/digdag-latest.jar -OutFile $env:USERPROFILE</span><span class="se">\b</span><span class="s2">in\digdag.bat}&quot;</span>
 </pre></div>
@@ -199,8 +211,13 @@ $ echo &#39;export PATH=&quot;$HOME/bin:$PATH&quot;&#39; &gt;&gt; ~/.bashrc
 </div>
 <p>Please reopen your command window. If <code class="docutils literal"><span class="pre">digdag</span> <span class="pre">--help</span></code> command shows usage message, Digdag is installed successfully.</p>
 </div>
+<div class="section" id="using-packages">
+<h3>Using packages?<a class="headerlink" href="#using-packages" title="Permalink to this headline">¶</a></h3>
+<p>Digdag has already been packaged for multiple platforms.</p>
+<p><a class="reference external" href="https://repology.org/project/digdag/versions"><img alt="https://repology.org/badge/vertical-allrepos/digdag.svg" src="https://repology.org/badge/vertical-allrepos/digdag.svg" />Packaging status</a></p>
+</div>
 <div class="section" id="curl-did-not-work">
-<span id="curl-did-not-work"></span><h3>curl did not work?<a class="headerlink" href="#curl-did-not-work" title="Permalink to this headline">¶</a></h3>
+<h3>curl did not work?<a class="headerlink" href="#curl-did-not-work" title="Permalink to this headline">¶</a></h3>
 <p>Some environments (ex: Ubuntu 16.04) may produce the following error:</p>
 <div class="highlight-shell"><div class="highlight"><pre><span></span>curl: <span class="o">(</span><span class="m">77</span><span class="o">)</span> error setting certificate verify locations:
   CAfile: /etc/pki/tls/certs/ca-bundle.crt
@@ -215,12 +232,12 @@ $ sudo cp /etc/ssl/certs/ca-certificates.crt /etc/pki/tls/certs/ca-bundle.crt
 <p>Then, run Step 1 again.</p>
 </div>
 <div class="section" id="got-error">
-<span id="got-error"></span><h3>Got error?<a class="headerlink" href="#got-error" title="Permalink to this headline">¶</a></h3>
-<p>If you got an error such as <strong>&#8216;Unsupported major.minor version 52.0&#8217;</strong>, please download and install the latest <a class="reference external" href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">Java SE Development Kit 8</a> (must be newer than <strong>8u72</strong>).</p>
+<h3>Got error?<a class="headerlink" href="#got-error" title="Permalink to this headline">¶</a></h3>
+<p>If you got an error such as <strong>&#8216;Unsupported major.minor version 52.0&#8216;</strong>, please download and install the latest <a class="reference external" href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">Java SE Development Kit 8</a> (must be newer than <strong>8u72</strong>).</p>
 </div>
 </div>
 <div class="section" id="running-sample-workflow">
-<span id="running-sample-workflow"></span><h2>2. Running sample workflow<a class="headerlink" href="#running-sample-workflow" title="Permalink to this headline">¶</a></h2>
+<h2>2. Running sample workflow<a class="headerlink" href="#running-sample-workflow" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal"><span class="pre">digdag</span> <span class="pre">init</span> <span class="pre">&lt;dir&gt;</span></code> command generates sample workflow for you:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span>$ digdag init mydag
 $ cd mydag
@@ -230,7 +247,7 @@ $ digdag run mydag.dig
 <p>Did it work? Next step is adding tasks to <code class="docutils literal"><span class="pre">digdag.dig</span></code> file to automate your jobs.</p>
 </div>
 <div class="section" id="next-steps">
-<span id="next-steps"></span><h2>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
+<h2>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><a class="reference external" href="architecture.html">Architecture</a></li>
 <li><a class="reference external" href="scheduling_workflow.html">Scheduling workflow</a></li>
@@ -251,7 +268,7 @@ $ digdag run mydag.dig
         <a href="architecture.html" class="btn btn-neutral float-right" title="Architecture" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral" title="What’s Digdag?" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral float-left" title="What‘s Digdag?" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -260,7 +277,7 @@ $ digdag run mydag.dig
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016-2019, Digdag Project.
+        &copy; Copyright 2016-2019, Digdag Project
 
     </p>
   </div>
@@ -282,32 +299,16 @@ $ digdag run mydag.dig
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'0.9.36',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: ''
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  <script type="text/javascript" src="_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

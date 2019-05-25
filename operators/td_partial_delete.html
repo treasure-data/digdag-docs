@@ -17,13 +17,29 @@
   
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'0.9.36',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
@@ -31,21 +47,16 @@
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="td_table_export&gt;: Treasure Data table export to S3" href="td_table_export.html" />
     <link rel="prev" title="td_wait_table&gt;: Waits for data arriving at Treasure Data table" href="td_wait_table.html" /> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -176,7 +187,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/operators/td_partial_delete.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/operators/td_partial_delete.md.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -190,9 +201,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="td-partial-delete-delete-range-of-treasure-data-table">
-<span id="td-partial-delete-delete-range-of-treasure-data-table"></span><h1>td_partial_delete&gt;: Delete range of Treasure Data table<a class="headerlink" href="#td-partial-delete-delete-range-of-treasure-data-table" title="Permalink to this headline">¶</a></h1>
+<h1>td_partial_delete&gt;: Delete range of Treasure Data table<a class="headerlink" href="#td-partial-delete-delete-range-of-treasure-data-table" title="Permalink to this headline">¶</a></h1>
 <p><strong>td_partial_delete&gt;</strong> operator deletes records from a Treasure Data table.</p>
-<p>Please be aware that records imported using streaming import can&#8217;t be deleted for several hours using td_partial_delete. Records imported by INSERT INTO, Data Connector (<a class="reference external" href="https://docs.treasuredata.com/articles/data-connector-hadoop-executor">MapReduce Executor</a>), and bulk imports can be deleted immediately.</p>
+<p>Please be aware that records imported using streaming import can&#8216;t be deleted for several hours using td_partial_delete. Records imported by INSERT INTO, Data Connector (<a class="reference external" href="https://docs.treasuredata.com/articles/data-connector-hadoop-executor">MapReduce Executor</a>), and bulk imports can be deleted immediately.</p>
 <p>Time range needs to be hourly. Setting non-zero values to minutes or seconds will be rejected.</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">step1</span><span class="p">:</span>
   <span class="n">td_partial_delete</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">my_table</span>
@@ -202,14 +213,14 @@
 </pre></div>
 </div>
 <div class="section" id="secrets">
-<span id="secrets"></span><h2>Secrets<a class="headerlink" href="#secrets" title="Permalink to this headline">¶</a></h2>
+<h2>Secrets<a class="headerlink" href="#secrets" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><strong>td.apikey</strong>: API_KEY
 The Treasure Data API key to use when running Treasure Data queries.</li>
 </ul>
 </div>
 <div class="section" id="parameters">
-<span id="parameters"></span><h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p class="first"><strong>td_partial_delete&gt;</strong>: NAME</p>
 <p>Name of the table.</p>
@@ -260,7 +271,7 @@ The Treasure Data API key to use when running Treasure Data queries.</li>
         <a href="td_table_export.html" class="btn btn-neutral float-right" title="td_table_export&gt;: Treasure Data table export to S3" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="td_wait_table.html" class="btn btn-neutral" title="td_wait_table&gt;: Waits for data arriving at Treasure Data table" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="td_wait_table.html" class="btn btn-neutral float-left" title="td_wait_table&gt;: Waits for data arriving at Treasure Data table" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -269,7 +280,7 @@ The Treasure Data API key to use when running Treasure Data queries.</li>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016-2019, Digdag Project.
+        &copy; Copyright 2016-2019, Digdag Project
 
     </p>
   </div>
@@ -291,32 +302,16 @@ The Treasure Data API key to use when running Treasure Data queries.</li>
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'0.9.36',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: ''
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

@@ -17,13 +17,29 @@
   
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'0.9.36',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
@@ -31,21 +47,16 @@
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="bq_extract&gt;: Exporting Data from Google BigQuery" href="bq_extract.html" />
     <link rel="prev" title="bq&gt;: Running Google BigQuery queries" href="bq.html" /> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -172,7 +183,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/operators/bq_ddl.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/operators/bq_ddl.md.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -186,7 +197,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="bq-ddl-managing-google-bigquery-datasets-and-tables">
-<span id="bq-ddl-managing-google-bigquery-datasets-and-tables"></span><h1>bq_ddl&gt;: Managing Google BigQuery Datasets and Tables<a class="headerlink" href="#bq-ddl-managing-google-bigquery-datasets-and-tables" title="Permalink to this headline">¶</a></h1>
+<h1>bq_ddl&gt;: Managing Google BigQuery Datasets and Tables<a class="headerlink" href="#bq-ddl-managing-google-bigquery-datasets-and-tables" title="Permalink to this headline">¶</a></h1>
 <p><strong>bq_ddl&gt;</strong> operator can be used to create, delete and clear Google BigQuery Datasets and Tables.</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span>_export:
   bq:
@@ -209,15 +220,15 @@
 </pre></div>
 </div>
 <div class="section" id="secrets">
-<span id="secrets"></span><h2>Secrets<a class="headerlink" href="#secrets" title="Permalink to this headline">¶</a></h2>
+<h2>Secrets<a class="headerlink" href="#secrets" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p class="first"><strong>gcp.credential</strong>: CREDENTIAL</p>
-<p>See <a class="reference external" href="bq.html#secrets">gcp.credential</a>.</p>
+<p>See <a class="reference external" href="../bq.html#secrets">gcp.credential</a>.</p>
 </li>
 </ul>
 </div>
 <div class="section" id="options">
-<span id="options"></span><h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p class="first"><strong>create_datasets</strong>: LIST</p>
 <p>Create new datasets.</p>
@@ -393,7 +404,7 @@ Delete tables, if they exist.</p>
         <a href="bq_extract.html" class="btn btn-neutral float-right" title="bq_extract&gt;: Exporting Data from Google BigQuery" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="bq.html" class="btn btn-neutral" title="bq&gt;: Running Google BigQuery queries" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="bq.html" class="btn btn-neutral float-left" title="bq&gt;: Running Google BigQuery queries" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -402,7 +413,7 @@ Delete tables, if they exist.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016-2019, Digdag Project.
+        &copy; Copyright 2016-2019, Digdag Project
 
     </p>
   </div>
@@ -424,32 +435,16 @@ Delete tables, if they exist.</p>
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'0.9.36',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: ''
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

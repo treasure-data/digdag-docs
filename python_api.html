@@ -17,13 +17,29 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'./',
+              VERSION:'0.9.36',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -31,21 +47,16 @@
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Language API - Ruby" href="ruby_api.html" />
     <link rel="prev" title="Command reference" href="command_reference.html" /> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -153,7 +164,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/python_api.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/python_api.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -171,11 +182,11 @@
 <div class="section" id="programmable-workflow-in-python">
 <h2>Programmable workflow in Python<a class="headerlink" href="#programmable-workflow-in-python" title="Permalink to this headline">¶</a></h2>
 <p>workflow.dig:</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">+step1</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">py&gt;</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks.MyWorkflow.step1</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="nt">+step1</span><span class="p">:</span>
+  <span class="nt">py&gt;</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks.MyWorkflow.step1</span>
 
-<span class="l l-Scalar l-Scalar-Plain">+step2</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">py&gt;</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks.MyWorkflow.step2</span>
+<span class="nt">+step2</span><span class="p">:</span>
+  <span class="nt">py&gt;</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks.MyWorkflow.step2</span>
 </pre></div>
 </div>
 <p>tasks/__init__.py:</p>
@@ -257,7 +268,7 @@
         <a href="ruby_api.html" class="btn btn-neutral float-right" title="Language API - Ruby" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="command_reference.html" class="btn btn-neutral" title="Command reference" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="command_reference.html" class="btn btn-neutral float-left" title="Command reference" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -266,7 +277,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016-2019, Digdag Project.
+        &copy; Copyright 2016-2019, Digdag Project
 
     </p>
   </div>
@@ -288,32 +299,16 @@
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'0.9.36',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: ''
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  <script type="text/javascript" src="_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

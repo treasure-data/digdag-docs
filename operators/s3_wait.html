@@ -17,13 +17,29 @@
   
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'0.9.36',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
@@ -31,21 +47,16 @@
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="redshift&gt;: Redshift operations" href="redshift.html" />
     <link rel="prev" title="Amazon Web Services operators" href="aws.html" /> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -173,7 +184,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/operators/s3_wait.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/operators/s3_wait.md.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -187,14 +198,14 @@
            <div itemprop="articleBody">
             
   <div class="section" id="s3-wait-wait-for-a-file-in-amazon-s3">
-<span id="s3-wait-wait-for-a-file-in-amazon-s3"></span><h1>s3_wait&gt;: Wait for a file in Amazon S3<a class="headerlink" href="#s3-wait-wait-for-a-file-in-amazon-s3" title="Permalink to this headline">¶</a></h1>
+<h1>s3_wait&gt;: Wait for a file in Amazon S3<a class="headerlink" href="#s3-wait-wait-for-a-file-in-amazon-s3" title="Permalink to this headline">¶</a></h1>
 <p><strong>s3_wait&gt;</strong> operator waits for file to appear in Amazon S3.</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">wait</span><span class="p">:</span>
   <span class="n">s3_wait</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">my</span><span class="o">-</span><span class="n">bucket</span><span class="o">/</span><span class="n">my</span><span class="o">-</span><span class="n">key</span>
 </pre></div>
 </div>
 <div class="section" id="secrets">
-<span id="secrets"></span><h2>Secrets<a class="headerlink" href="#secrets" title="Permalink to this headline">¶</a></h2>
+<h2>Secrets<a class="headerlink" href="#secrets" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p class="first"><strong>aws.s3.access_key_id, aws.access_key_id</strong></p>
 <p>The AWS Access Key ID to use when accessing S3.</p>
@@ -221,7 +232,7 @@
 <p>For more information about SSE-C, See the <a class="reference external" href="http://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">AWS S3 Documentation</a>.</p>
 </div>
 <div class="section" id="options">
-<span id="options"></span><h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p class="first"><strong>s3_wait&gt;</strong>: BUCKET/KEY</p>
 <p>Path to the file in Amazon S3 to wait for.</p>
@@ -256,7 +267,7 @@
 </ul>
 </div>
 <div class="section" id="output-parameters">
-<span id="output-parameters"></span><h2>Output Parameters<a class="headerlink" href="#output-parameters" title="Permalink to this headline">¶</a></h2>
+<h2>Output Parameters<a class="headerlink" href="#output-parameters" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p class="first"><strong>s3.last_object</strong></p>
 <p>Information about the detected file.</p>
@@ -294,7 +305,7 @@
         <a href="redshift.html" class="btn btn-neutral float-right" title="redshift&gt;: Redshift operations" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="aws.html" class="btn btn-neutral" title="Amazon Web Services operators" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="aws.html" class="btn btn-neutral float-left" title="Amazon Web Services operators" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -303,7 +314,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016-2019, Digdag Project.
+        &copy; Copyright 2016-2019, Digdag Project
 
     </p>
   </div>
@@ -325,32 +336,16 @@
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'0.9.36',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: ''
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

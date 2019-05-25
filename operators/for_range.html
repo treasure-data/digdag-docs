@@ -17,13 +17,29 @@
   
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'0.9.36',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
@@ -31,21 +47,16 @@
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="if&gt;: Conditional execution" href="if.html" />
     <link rel="prev" title="for_each&gt;: Repeat tasks for values" href="for_each.html" /> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -171,7 +182,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/operators/for_range.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/operators/for_range.md.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -185,7 +196,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="for-range-repeat-tasks-for-a-range">
-<span id="for-range-repeat-tasks-for-a-range"></span><h1>for_range&gt;: Repeat tasks for a range<a class="headerlink" href="#for-range-repeat-tasks-for-a-range" title="Permalink to this headline">¶</a></h1>
+<h1>for_range&gt;: Repeat tasks for a range<a class="headerlink" href="#for-range-repeat-tasks-for-a-range" title="Permalink to this headline">¶</a></h1>
 <p><strong>for_range&gt;</strong> operator runs subtasks multiple times using sets of variables.</p>
 <p>This operator exports <code class="docutils literal"><span class="pre">${range.from}</span></code>, <code class="docutils literal"><span class="pre">${range.to}</span></code>, and <code class="docutils literal"><span class="pre">${range.index}</span></code> variables for the subtasks. Index begins from 0.</p>
 <p>(This operator is EXPERIMENTAL. Parameters may change in a future release)</p>
@@ -211,8 +222,6 @@
 <li><p class="first"><strong>for_each&gt;</strong>: object of from, to, and slices or step</p>
 <p>This nested object is used to declare a range from <strong>from</strong> to <strong>to</strong>.</p>
 <p>Then you divide the range into fixed number of slices using <strong>slices</strong> option, or divide the range by width by <strong>step</strong> option. Setting both slices and step is error.</p>
-</li>
-</ul>
 <p>Examples:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span>for_range&gt;:
   from: 0
@@ -239,7 +248,7 @@ _do:
   echo&gt;: from ${range.from} to ${range.to}
 </pre></div>
 </div>
-<ul>
+</li>
 <li><p class="first"><strong>_parallel</strong>: BOOLEAN</p>
 <p>Runs the repeating tasks in parallel.</p>
 <p>Examples:</p>
@@ -264,7 +273,7 @@ _do:
         <a href="if.html" class="btn btn-neutral float-right" title="if&gt;: Conditional execution" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="for_each.html" class="btn btn-neutral" title="for_each&gt;: Repeat tasks for values" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="for_each.html" class="btn btn-neutral float-left" title="for_each&gt;: Repeat tasks for values" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -273,7 +282,7 @@ _do:
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016-2019, Digdag Project.
+        &copy; Copyright 2016-2019, Digdag Project
 
     </p>
   </div>
@@ -295,32 +304,16 @@ _do:
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'0.9.36',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: ''
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>
