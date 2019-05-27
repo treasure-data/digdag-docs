@@ -1,0 +1,282 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>http_call&gt;: Call workflow fetched by HTTP &mdash; Digdag 0.9.36 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'0.9.36',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="require&gt;: Depends on another workflow" href="require.html" />
+    <link rel="prev" title="call&gt;: Calls another workflow" href="call.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Digdag
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.9
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture.html">Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts.html">Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workflow_definition.html">Workflow definition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scheduling_workflow.html">Scheduling workflow</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../operators.html">Operators</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="workflow_control.html">Workflow control operators</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="call.html">call&gt;: Calls another workflow</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">http_call&gt;: Call workflow fetched by HTTP</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#options">Options</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="require.html">require&gt;: Depends on another workflow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="loop.html">loop&gt;: Repeat tasks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="for_each.html">for_each&gt;: Repeat tasks for values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="for_range.html">for_range&gt;: Repeat tasks for a range</a></li>
+<li class="toctree-l3"><a class="reference internal" href="if.html">if&gt;: Conditional execution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fail.html">fail&gt;: Makes the workflow failed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="echo.html">echo&gt;: Shows a message</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="treasure_data.html">Treasure Data operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="database.html">Database operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="network.html">Network operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aws.html">Amazon Web Services operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gcp.html">Google Cloud Platform operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripting.html">Scripting operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="param.html">Param operators</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../command_reference.html">Command reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_api.html">Language API - Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ruby_api.html">Language API - Ruby</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../internal.html">Internal architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../releases.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logo.html">Logo</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Digdag</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../operators.html">Operators</a> &raquo;</li>
+        
+          <li><a href="workflow_control.html">Workflow control operators</a> &raquo;</li>
+        
+      <li>http_call&gt;: Call workflow fetched by HTTP</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/operators/http_call.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="http-call-call-workflow-fetched-by-http">
+<h1>http_call&gt;: Call workflow fetched by HTTP<a class="headerlink" href="#http-call-call-workflow-fetched-by-http" title="Permalink to this headline">¶</a></h1>
+<p><strong>http_call&gt;</strong> operator makes a HTTP request, parse response body as workflow, and embeds it as a subtask. The operator is similar to <a class="reference external" href="../call.html">call&gt; operator</a>. The difference is that another workflow is fetched from HTTP.</p>
+<p>This operator parses response body based on returned Content-Type header. Content-Type must be set and following values are supported:</p>
+<ul class="simple">
+<li><strong>application/json</strong>: Parse the response as JSON.</li>
+<li><strong>application/x-yaml</strong>: Use the returned body as-is.</li>
+</ul>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first"><strong>http_call&gt;</strong>: URI</p>
+<p>The URI of the HTTP request.</p>
+<p>Examples:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">http_call</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">api</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">foobar</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>Same parameters with <strong>http&gt;</strong> operator are also supported except the parameters listed bellow. The name of the operator is similar to <a class="reference external" href="../http.html">http&gt; operator</a>. But the role is different. See also <a class="reference external" href="../http.html">http&gt; operator document</a>.</p>
+<ul class="simple">
+<li>store_content</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="require.html" class="btn btn-neutral float-right" title="require&gt;: Depends on another workflow" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="call.html" class="btn btn-neutral float-left" title="call&gt;: Calls another workflow" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016-2019, Digdag Project
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+    <br/>
+    <br/>
+    <p><a href="https://digdag.io/">Digdag</a> is an open source project, invented and sponsored by <a href="https://www.treasuredata.com/">Treasure Data, Inc.</a> under the Apache 2.0 Licence.</p>
+     
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
