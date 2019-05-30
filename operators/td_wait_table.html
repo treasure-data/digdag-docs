@@ -268,6 +268,10 @@
 <li><p class="first"><strong>priority</strong>: 0</p>
 <p>Set Priority (From <code class="docutils literal"><span class="pre">-2</span></code> (VERY LOW) to <code class="docutils literal"><span class="pre">2</span></code> (VERY HIGH) , default: 0 (NORMAL)).</p>
 </li>
+<li><p class="first"><strong>job_retry</strong>: 0</p>
+<p>Set automatic job retry count (default: 0).</p>
+<p>We recommend that you not set retry count over 10. If the job is not succeessful less than 10 times retry, it needs some fix a cause of failure.</p>
+</li>
 <li><p class="first"><strong>presto_pool_name</strong>: NAME</p>
 <p>Name of a resource pool to run the queries in.
 Applicable only when <code class="docutils literal"><span class="pre">engine</span></code> is <code class="docutils literal"><span class="pre">presto</span></code>.</p>

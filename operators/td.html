@@ -327,6 +327,10 @@ Output the query results to the URL:</p>
 <li><p class="first"><strong>priority</strong>: 0</p>
 <p>Set Priority (From <code class="docutils literal"><span class="pre">-2</span></code> (VERY LOW) to <code class="docutils literal"><span class="pre">2</span></code> (VERY HIGH) , default: 0 (NORMAL)).</p>
 </li>
+<li><p class="first"><strong>job_retry</strong>: 0</p>
+<p>Set automatic job retry count (default: 0).</p>
+<p>We recommend that you not set retry count over 10. If the job is not succeessful less than 10 times retry, it needs some fix a cause of failure.</p>
+</li>
 <li><p class="first"><strong>result_connection</strong>: NAME</p>
 <p>Use a connection to write the query results to an external system.</p>
 <p>You can create a connection using the web console.</p>
