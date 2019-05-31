@@ -201,7 +201,7 @@
             
   <div class="section" id="require-depends-on-another-workflow">
 <h1>require&gt;: Depends on another workflow<a class="headerlink" href="#require-depends-on-another-workflow" title="Permalink to this headline">¶</a></h1>
-<p><strong>require&gt;</strong> operator requires completion of another workflow. This operator is similar to <a class="reference external" href="../call.html">call&gt; operator</a>, but this operator doesn&#8216;t start the other workflow if it&#8216;s already running or has done for the same session time of this workflow. If the workflow is running or newly started, this operator waits until it completes.</p>
+<p><strong>require&gt;</strong> operator requires completion of another workflow. This operator is similar to <a class="reference external" href="call.html">call&gt; operator</a>, but this operator doesn&#8216;t start the other workflow if it&#8216;s already running or has done for the same session time of this workflow. If the workflow is running or newly started, this operator waits until it completes.</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># workflow1.dig</span>
 <span class="o">+</span><span class="n">step1</span><span class="p">:</span>
   <span class="n">require</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">another_workflow</span>
