@@ -210,24 +210,67 @@
 <li><p class="first"><strong>py&gt;</strong>: [PACKAGE.CLASS.]METHOD</p>
 <p>Name of a method to run.</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">py</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">tasks</span><span class="o">.</span><span class="n">MyWorkflow</span><span class="o">.</span><span class="n">my_task</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="c1"># sample.dig</span>
+<span class="nt">py&gt;</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks.MyWorkflow.my_task</span>
+</pre></div>
+</div>
+<p>This example assume the following directory structure:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>.
+├── sample.dig
+└── tasks
+    └── __init__.py
+</pre></div>
+</div>
+<p>You can write <code class="docutils literal"><span class="pre">__init__.py</span></code> like:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># __init__.py</span>
+<span class="k">class</span> <span class="nc">MyWorkflow</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">my_task</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;awesome execution&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Or, you can create put a Python script named <code class="docutils literal"><span class="pre">tasks.py</span></code> in a same directory as dig file.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>.
+├── sample.dig
+└── tasks.py
+</pre></div>
+</div>
+<p>Here is the example of <code class="docutils literal"><span class="pre">tasks.py</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># tasks.py</span>
+<span class="k">class</span> <span class="nc">MyWorkflow</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">my_task</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;awesome execution&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You can write a function without creating a class as the following:</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="c1"># simple_sample.dig</span>
+<span class="nt">py&gt;</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">simple_tasks.my_func</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span>.
+├── simple_sample.dig
+└── simple_tasks.py
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># simple_tasks.py</span>
+<span class="k">def</span> <span class="nf">my_func</span><span class="p">():</span>
+  <span class="k">print</span><span class="p">(</span><span class="s2">&quot;simple execution&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first"><strong>python</strong>: PATH STRING or COMMAND ARGUMENTS LIST</p>
 <p>The python defaults to <code class="docutils literal"><span class="pre">python</span></code>. If an alternate python and options are desired, use the <code class="docutils literal"><span class="pre">python</span></code> option.</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">python</span><span class="p">:</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">conda</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">python</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="nt">python</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/opt/conda/bin/python</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">python</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;python&quot;</span><span class="p">,</span> <span class="s2">&quot;-v&quot;</span><span class="p">]</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="nt">python</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&quot;python&quot;</span><span class="p p-Indicator">,</span> <span class="s">&quot;-v&quot;</span><span class="p p-Indicator">]</span>
 </pre></div>
 </div>
 <p>It is also possible to configure in <code class="docutils literal"><span class="pre">_export</span></code> section.</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">_export</span><span class="p">:</span>
-  <span class="n">py</span><span class="p">:</span>
-    <span class="n">python</span><span class="p">:</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">conda</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">python</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="nt">_export</span><span class="p">:</span>
+  <span class="nt">py</span><span class="p">:</span>
+    <span class="nt">python</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/opt/conda/bin/python</span>
 </pre></div>
 </div>
 </li>
