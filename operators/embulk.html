@@ -20,20 +20,11 @@
   <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
   
     
-      <script type="text/javascript">
-          var DOCUMENTATION_OPTIONS = {
-              URL_ROOT:'../',
-              VERSION:'0.9.37',
-              LANGUAGE:'None',
-              COLLAPSE_INDEX:false,
-              FILE_SUFFIX:'.html',
-              HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: '.txt'
-          };
-      </script>
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -193,10 +184,10 @@
             
   <div class="section" id="embulk-embulk-data-transfer">
 <h1>embulk&gt;: Embulk data transfer<a class="headerlink" href="#embulk-embulk-data-transfer" title="Permalink to this headline">¶</a></h1>
-<p><strong>This operator is obsoleted</strong>. <code class="docutils literal"><span class="pre">embulk&gt;</span></code> operator is going to be removed, or rewritten with backward incompatibility.</p>
-<p>Please use <code class="docutils literal"><span class="pre">sh&gt;:</span> <span class="pre">embulk</span> <span class="pre">&lt;options&gt;</span></code> instead.</p>
+<p><strong>This operator is obsoleted</strong>. <code class="docutils literal notranslate"><span class="pre">embulk&gt;</span></code> operator is going to be removed, or rewritten with backward incompatibility.</p>
+<p>Please use <code class="docutils literal notranslate"><span class="pre">sh&gt;:</span> <span class="pre">embulk</span> <span class="pre">&lt;options&gt;</span></code> instead.</p>
 <p><strong>embulk&gt;</strong> operator was used to run a <a class="reference external" href="http://www.embulk.org">Embulk</a> script to transfer data across storages.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">load</span><span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">load</span><span class="p">:</span>
   <span class="n">sh</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">embulk</span> <span class="n">data</span><span class="o">/</span><span class="n">load</span><span class="o">.</span><span class="n">yml</span>
 </pre></div>
 </div>

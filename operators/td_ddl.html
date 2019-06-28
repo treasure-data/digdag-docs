@@ -20,20 +20,11 @@
   <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
   
     
-      <script type="text/javascript">
-          var DOCUMENTATION_OPTIONS = {
-              URL_ROOT:'../',
-              VERSION:'0.9.37',
-              LANGUAGE:'None',
-              COLLAPSE_INDEX:false,
-              FILE_SUFFIX:'.html',
-              HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: '.txt'
-          };
-      </script>
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -203,7 +194,7 @@
   <div class="section" id="td-ddl-treasure-data-operations">
 <h1>td_ddl&gt;: Treasure Data operations<a class="headerlink" href="#td-ddl-treasure-data-operations" title="Permalink to this headline">¶</a></h1>
 <p><strong>td_ddl&gt;</strong> operator runs an operational task on Treasure Data.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">_export</span><span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">_export</span><span class="p">:</span>
   <span class="n">td</span><span class="p">:</span>
     <span class="n">database</span><span class="p">:</span> <span class="n">www_access</span>
 
@@ -225,7 +216,7 @@
 <h2>Secrets<a class="headerlink" href="#secrets" title="Permalink to this headline">¶</a></h2>
 <p>When you set those parameters, use <a class="reference external" href="https://docs.digdag.io/command_reference.html#secrets">digdag secrets command</a>.</p>
 <ul>
-<li><p class="first"><strong>td.apikey:</strong> API_KEY</p>
+<li><p><strong>td.apikey:</strong> API_KEY</p>
 <p>The Treasure Data API key to use when performing Treasure Data operations.</p>
 </li>
 </ul>
@@ -233,65 +224,65 @@
 <div class="section" id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
 <ul>
-<li><p class="first"><strong>create_tables</strong>: [ARRAY OF NAMES]</p>
+<li><p><strong>create_tables</strong>: [ARRAY OF NAMES]</p>
 <p>Create new tables if not exists.</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">create_tables</span><span class="p">:</span> <span class="p">[</span><span class="n">my_table1</span><span class="p">,</span> <span class="n">my_table2</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">create_tables</span><span class="p">:</span> <span class="p">[</span><span class="n">my_table1</span><span class="p">,</span> <span class="n">my_table2</span><span class="p">]</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>empty_tables</strong>: [ARRAY OF NAME]</p>
+<li><p><strong>empty_tables</strong>: [ARRAY OF NAME]</p>
 <p>Create new tables (drop it first if it exists).</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">empty_tables</span><span class="p">:</span> <span class="p">[</span><span class="n">my_table1</span><span class="p">,</span> <span class="n">my_table2</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">empty_tables</span><span class="p">:</span> <span class="p">[</span><span class="n">my_table1</span><span class="p">,</span> <span class="n">my_table2</span><span class="p">]</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>drop_tables</strong>: [ARRAY OF NAMES]</p>
+<li><p><strong>drop_tables</strong>: [ARRAY OF NAMES]</p>
 <p>Drop tables if exists.</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">drop_tables</span><span class="p">:</span> <span class="p">[</span><span class="n">my_table1</span><span class="p">,</span> <span class="n">my_table2</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">drop_tables</span><span class="p">:</span> <span class="p">[</span><span class="n">my_table1</span><span class="p">,</span> <span class="n">my_table2</span><span class="p">]</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>rename_tables</strong>: [ARRAY OF {to:, from:}]</p>
+<li><p><strong>rename_tables</strong>: [ARRAY OF {to:, from:}]</p>
 <p>Rename a table to another name (override the destination table if it already exists).</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">rename_tables</span><span class="p">:</span> <span class="p">[{</span><span class="n">from</span><span class="p">:</span> <span class="n">my_table1</span><span class="p">,</span> <span class="n">to</span><span class="p">:</span> <span class="n">my_table2</span><span class="p">}]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rename_tables</span><span class="p">:</span> <span class="p">[{</span><span class="n">from</span><span class="p">:</span> <span class="n">my_table1</span><span class="p">,</span> <span class="n">to</span><span class="p">:</span> <span class="n">my_table2</span><span class="p">}]</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>create_databases</strong>: [ARRAY OF NAMES]</p>
+<li><p><strong>create_databases</strong>: [ARRAY OF NAMES]</p>
 <p>Create new databases if not exists.</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">create_databases</span><span class="p">:</span> <span class="p">[</span><span class="n">my_database1</span><span class="p">,</span> <span class="n">my_database2</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">create_databases</span><span class="p">:</span> <span class="p">[</span><span class="n">my_database1</span><span class="p">,</span> <span class="n">my_database2</span><span class="p">]</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>empty_databases</strong>: [ARRAY OF NAME]</p>
+<li><p><strong>empty_databases</strong>: [ARRAY OF NAME]</p>
 <p>Create new databases (drop it first if it exists).</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">empty_databases</span><span class="p">:</span> <span class="p">[</span><span class="n">my_database1</span><span class="p">,</span> <span class="n">my_database2</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">empty_databases</span><span class="p">:</span> <span class="p">[</span><span class="n">my_database1</span><span class="p">,</span> <span class="n">my_database2</span><span class="p">]</span>
 </pre></div>
 </div>
 </li>
 </ul>
 <p>.. note::</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>Database permissions for the restricted users are not inherited. You need to grant permission again after ran `empty_databases`.
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Database permissions for the restricted users are not inherited. You need to grant permission again after ran `empty_databases`.
 </pre></div>
 </div>
 <ul>
-<li><p class="first"><strong>drop_databases</strong>: [ARRAY OF NAMES]</p>
+<li><p><strong>drop_databases</strong>: [ARRAY OF NAMES]</p>
 <p>Drop databases if exists.</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">drop_databases</span><span class="p">:</span> <span class="p">[</span><span class="n">my_database1</span><span class="p">,</span> <span class="n">my_database2</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">drop_databases</span><span class="p">:</span> <span class="p">[</span><span class="n">my_database1</span><span class="p">,</span> <span class="n">my_database2</span><span class="p">]</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>endpoint</strong>: ADDRESS</p>
+<li><p><strong>endpoint</strong>: ADDRESS</p>
 <p>API endpoint (default: api.treasuredata.com).</p>
 </li>
-<li><p class="first"><strong>use_ssl</strong>: BOOLEAN</p>
+<li><p><strong>use_ssl</strong>: BOOLEAN</p>
 <p>Enable SSL (https) to access to the endpoint (default: true).</p>
 </li>
 </ul>

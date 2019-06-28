@@ -20,20 +20,11 @@
   <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
   
     
-      <script type="text/javascript">
-          var DOCUMENTATION_OPTIONS = {
-              URL_ROOT:'../',
-              VERSION:'0.9.37',
-              LANGUAGE:'None',
-              COLLAPSE_INDEX:false,
-              FILE_SUFFIX:'.html',
-              HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: '.txt'
-          };
-      </script>
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -283,28 +274,28 @@
 <div class="section" id="cli-changes">
 <h2>CLI changes<a class="headerlink" href="#cli-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Added <code class="docutils literal"><span class="pre">--max-task-threads</span></code> to the <code class="docutils literal"><span class="pre">run</span></code> subcommand. When this option is set, local-mode execution limits number of max running tasks as like <code class="docutils literal"><span class="pre">digdag</span> <span class="pre">server</span> <span class="pre">--max-task-threads</span></code> option. (&#64;gfx++)</li>
-<li>Fixed wrong time formatting when the time is past. (&#64;akirakw++)</li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">--max-task-threads</span></code> to the <code class="docutils literal notranslate"><span class="pre">run</span></code> subcommand. When this option is set, local-mode execution limits number of max running tasks as like <code class="docutils literal notranslate"><span class="pre">digdag</span> <span class="pre">server</span> <span class="pre">--max-task-threads</span></code> option. (&#64;gfx++)</p></li>
+<li><p>Fixed wrong time formatting when the time is past. (&#64;akirakw++)</p></li>
 </ul>
 </div>
 <div class="section" id="operator-changes">
 <h2>Operator Changes<a class="headerlink" href="#operator-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">http&gt;</span></code> operator supports <code class="docutils literal"><span class="pre">timeout:</span> <span class="pre">SECONDS</span></code> option. (&#64;duck8823++)</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">http&gt;</span></code> operator supports <code class="docutils literal notranslate"><span class="pre">timeout:</span> <span class="pre">SECONDS</span></code> option. (&#64;duck8823++)</p></li>
 </ul>
 </div>
 <div class="section" id="general-changes">
 <h2>General Changes<a class="headerlink" href="#general-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Let operator plugins inject CommandLogger instance. This is useful to copy log messages displayed by a subprocess to task logs. (&#64;akirakw++)</li>
-<li>Added config.td.default_endpoint system configuration which sets the default td.endpoint parameter for Treasure Data operators.</li>
+<li><p>Let operator plugins inject CommandLogger instance. This is useful to copy log messages displayed by a subprocess to task logs. (&#64;akirakw++)</p></li>
+<li><p>Added config.td.default_endpoint system configuration which sets the default td.endpoint parameter for Treasure Data operators.</p></li>
 </ul>
 </div>
 <div class="section" id="ui-changes">
 <h2>UI Changes<a class="headerlink" href="#ui-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Improved next-run time format to include a duration until the time (&#64;szyn++)</li>
-<li>Added success/warning/error messages when editing a workflow definition (&#64;szyn++)</li>
+<li><p>Improved next-run time format to include a duration until the time (&#64;szyn++)</p></li>
+<li><p>Added success/warning/error messages when editing a workflow definition (&#64;szyn++)</p></li>
 </ul>
 </div>
 <div class="section" id="release-date">
@@ -314,21 +305,21 @@
 <div class="section" id="contributors">
 <h2>Contributors<a class="headerlink" href="#contributors" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Akira KAWAGUCHI</li>
-<li>Akira Koyasu</li>
-<li>FUJI Goro (gfx)</li>
-<li>Hiroyuki Sato</li>
-<li>KAWACHI Takashi</li>
-<li>Mitsunori Komatsu</li>
-<li>Sadayuki Furuhashi</li>
-<li>Shota Suzuki</li>
-<li>Shunsuke Maeda</li>
-<li>Takehiro Shiozaki</li>
-<li>Toru Takahashi</li>
-<li>Yoichi Nakayama</li>
-<li>shio-phys</li>
-<li>shunsuke maeda</li>
-<li>uu59</li>
+<li><p>Akira KAWAGUCHI</p></li>
+<li><p>Akira Koyasu</p></li>
+<li><p>FUJI Goro (gfx)</p></li>
+<li><p>Hiroyuki Sato</p></li>
+<li><p>KAWACHI Takashi</p></li>
+<li><p>Mitsunori Komatsu</p></li>
+<li><p>Sadayuki Furuhashi</p></li>
+<li><p>Shota Suzuki</p></li>
+<li><p>Shunsuke Maeda</p></li>
+<li><p>Takehiro Shiozaki</p></li>
+<li><p>Toru Takahashi</p></li>
+<li><p>Yoichi Nakayama</p></li>
+<li><p>shio-phys</p></li>
+<li><p>shunsuke maeda</p></li>
+<li><p>uu59</p></li>
 </ul>
 </div>
 </div>

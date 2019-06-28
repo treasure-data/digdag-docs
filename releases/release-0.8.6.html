@@ -20,20 +20,11 @@
   <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
   
     
-      <script type="text/javascript">
-          var DOCUMENTATION_OPTIONS = {
-              URL_ROOT:'../',
-              VERSION:'0.9.37',
-              LANGUAGE:'None',
-              COLLAPSE_INDEX:false,
-              FILE_SUFFIX:'.html',
-              HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: '.txt'
-          };
-      </script>
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -281,16 +272,16 @@
 <div class="section" id="client-mode-changes">
 <h2>Client mode changes<a class="headerlink" href="#client-mode-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>When a new workflow is pushed with a schedule option, the first execution time will be calculated based on the execution time instead of session_time. This solves issue #149.</li>
-<li>Added <code class="docutils literal"><span class="pre">--schedule-from</span></code> option to <code class="docutils literal"><span class="pre">push</span></code> command to control the first scheduled execution time.</li>
-<li>Fixed web UI not to be able to show task execution logs.</li>
-<li>HTTP contents and headers are hidden to not show security information when <code class="docutils literal"><span class="pre">-l</span> <span class="pre">debug</span></code> is set.</li>
+<li><p>When a new workflow is pushed with a schedule option, the first execution time will be calculated based on the execution time instead of session_time. This solves issue #149.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">--schedule-from</span></code> option to <code class="docutils literal notranslate"><span class="pre">push</span></code> command to control the first scheduled execution time.</p></li>
+<li><p>Fixed web UI not to be able to show task execution logs.</p></li>
+<li><p>HTTP contents and headers are hidden to not show security information when <code class="docutils literal notranslate"><span class="pre">-l</span> <span class="pre">debug</span></code> is set.</p></li>
 </ul>
 </div>
 <div class="section" id="general-changes">
 <h2>General changes<a class="headerlink" href="#general-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Added <code class="docutils literal"><span class="pre">queue.db.max_concurrency</span></code> option that limits number of concurrently running tasks per site across all servers.</li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">queue.db.max_concurrency</span></code> option that limits number of concurrently running tasks per site across all servers.</p></li>
 </ul>
 </div>
 <div class="section" id="release-date">
@@ -300,10 +291,10 @@
 <div class="section" id="contributors">
 <h2>Contributors<a class="headerlink" href="#contributors" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Daniel Norberg</li>
-<li>Sadayuki Furuhashi</li>
-<li>Toru Takahashi</li>
-<li>ariarijp</li>
+<li><p>Daniel Norberg</p></li>
+<li><p>Sadayuki Furuhashi</p></li>
+<li><p>Toru Takahashi</p></li>
+<li><p>ariarijp</p></li>
 </ul>
 </div>
 </div>

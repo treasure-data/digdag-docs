@@ -20,20 +20,11 @@
   <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
   
     
-      <script type="text/javascript">
-          var DOCUMENTATION_OPTIONS = {
-              URL_ROOT:'../',
-              VERSION:'0.9.37',
-              LANGUAGE:'None',
-              COLLAPSE_INDEX:false,
-              FILE_SUFFIX:'.html',
-              HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: '.txt'
-          };
-      </script>
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -282,24 +273,24 @@
 <div class="section" id="client-mode-changes">
 <h2>Client mode changes<a class="headerlink" href="#client-mode-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">start</span></code> command now hints about <code class="docutils literal"><span class="pre">retry</span></code> command when trying to start an already existing session.</li>
-<li>CLI now respects <code class="docutils literal"><span class="pre">https_proxy</span></code>, <code class="docutils literal"><span class="pre">HTTPS_PROXY</span></code>, <code class="docutils literal"><span class="pre">http_proxy</span></code> and <code class="docutils literal"><span class="pre">HTTP_PROXY</span></code> environment variables.</li>
-<li>Added a new <code class="docutils literal"><span class="pre">secrets</span></code> command that an be used to set, list and delete per-project secrets.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">start</span></code> command now hints about <code class="docutils literal notranslate"><span class="pre">retry</span></code> command when trying to start an already existing session.</p></li>
+<li><p>CLI now respects <code class="docutils literal notranslate"><span class="pre">https_proxy</span></code>, <code class="docutils literal notranslate"><span class="pre">HTTPS_PROXY</span></code>, <code class="docutils literal notranslate"><span class="pre">http_proxy</span></code> and <code class="docutils literal notranslate"><span class="pre">HTTP_PROXY</span></code> environment variables.</p></li>
+<li><p>Added a new <code class="docutils literal notranslate"><span class="pre">secrets</span></code> command that an be used to set, list and delete per-project secrets.</p></li>
 </ul>
 </div>
 <div class="section" id="server-mode-changes">
 <h2>Server mode changes<a class="headerlink" href="#server-mode-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Starting an attempt of a workflow with more than 1000 tasks now fails with <code class="docutils literal"><span class="pre">400</span> <span class="pre">Bad</span> <span class="pre">Request</span></code> instead of <code class="docutils literal"><span class="pre">500</span> <span class="pre">Internal</span> <span class="pre">Error</span></code>.</li>
+<li><p>Starting an attempt of a workflow with more than 1000 tasks now fails with <code class="docutils literal notranslate"><span class="pre">400</span> <span class="pre">Bad</span> <span class="pre">Request</span></code> instead of <code class="docutils literal notranslate"><span class="pre">500</span> <span class="pre">Internal</span> <span class="pre">Error</span></code>.</p></li>
 </ul>
 </div>
 <div class="section" id="general-changes">
 <h2>General changes<a class="headerlink" href="#general-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Added <code class="docutils literal"><span class="pre">td.proxy.use_ssl</span></code> parameter to support HTTPS forward proxies.</li>
-<li><code class="docutils literal"><span class="pre">td_partial_delete&gt;</span></code> operator now accepts raw epoch integers in <code class="docutils literal"><span class="pre">from:</span></code> and <code class="docutils literal"><span class="pre">to:</span></code> parameters.</li>
-<li><code class="docutils literal"><span class="pre">td</span></code> operators now respects <code class="docutils literal"><span class="pre">https_proxy</span></code>, <code class="docutils literal"><span class="pre">HTTPS_PROXY</span></code>, <code class="docutils literal"><span class="pre">http_proxy</span></code> and <code class="docutils literal"><span class="pre">HTTP_PROXY</span></code> environment variables.</li>
-<li>Added a secret management mechanism that can be used to securely provide operators with credentials such as api keys, user names and passwords.</li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">td.proxy.use_ssl</span></code> parameter to support HTTPS forward proxies.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">td_partial_delete&gt;</span></code> operator now accepts raw epoch integers in <code class="docutils literal notranslate"><span class="pre">from:</span></code> and <code class="docutils literal notranslate"><span class="pre">to:</span></code> parameters.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">td</span></code> operators now respects <code class="docutils literal notranslate"><span class="pre">https_proxy</span></code>, <code class="docutils literal notranslate"><span class="pre">HTTPS_PROXY</span></code>, <code class="docutils literal notranslate"><span class="pre">http_proxy</span></code> and <code class="docutils literal notranslate"><span class="pre">HTTP_PROXY</span></code> environment variables.</p></li>
+<li><p>Added a secret management mechanism that can be used to securely provide operators with credentials such as api keys, user names and passwords.</p></li>
 </ul>
 </div>
 <div class="section" id="release-date">
@@ -309,12 +300,12 @@
 <div class="section" id="contributors">
 <h2>Contributors<a class="headerlink" href="#contributors" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Daniel Norberg</li>
-<li>Kohei Nozaki</li>
-<li>Mitsunori Komatsu</li>
-<li>Sadayuki Furuhashi</li>
-<li>Y.Kentaro</li>
-<li>kiyoto</li>
+<li><p>Daniel Norberg</p></li>
+<li><p>Kohei Nozaki</p></li>
+<li><p>Mitsunori Komatsu</p></li>
+<li><p>Sadayuki Furuhashi</p></li>
+<li><p>Y.Kentaro</p></li>
+<li><p>kiyoto</p></li>
 </ul>
 </div>
 </div>

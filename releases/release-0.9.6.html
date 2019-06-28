@@ -20,20 +20,11 @@
   <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
   
     
-      <script type="text/javascript">
-          var DOCUMENTATION_OPTIONS = {
-              URL_ROOT:'../',
-              VERSION:'0.9.37',
-              LANGUAGE:'None',
-              COLLAPSE_INDEX:false,
-              FILE_SUFFIX:'.html',
-              HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: '.txt'
-          };
-      </script>
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -281,19 +272,19 @@
 <div class="section" id="general-changes">
 <h2>General Changes<a class="headerlink" href="#general-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">require&gt;</span></code> operator is fixed so that it fails when dependent workflow fails.</li>
-<li>Added <code class="docutils literal"><span class="pre">ignore_failure:</span> <span class="pre">BOOLEAN</span></code> option to <code class="docutils literal"><span class="pre">require&gt;</span></code> operator. If it is set to true, <code class="docutils literal"><span class="pre">require&gt;</span></code> operator ignores failure of dependent workflow.</li>
-<li>Added <code class="docutils literal"><span class="pre">result_connection:</span> <span class="pre">NAME</span></code> and <code class="docutils literal"><span class="pre">result_settings:</span> <span class="pre">{...}</span></code> options to <code class="docutils literal"><span class="pre">td&gt;</span></code> operator.</li>
-<li>Fixed unexpected duplicated (retried) execution of tasks when <code class="docutils literal"><span class="pre">--max-task-threads</span></code> is set and <code class="docutils literal"><span class="pre">_parallel:</span></code> is used. See <a class="reference external" href="https://github.com/treasure-data/digdag/issues/487">issue #487</a> for the detailed condition to reproduce.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">require&gt;</span></code> operator is fixed so that it fails when dependent workflow fails.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">ignore_failure:</span> <span class="pre">BOOLEAN</span></code> option to <code class="docutils literal notranslate"><span class="pre">require&gt;</span></code> operator. If it is set to true, <code class="docutils literal notranslate"><span class="pre">require&gt;</span></code> operator ignores failure of dependent workflow.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">result_connection:</span> <span class="pre">NAME</span></code> and <code class="docutils literal notranslate"><span class="pre">result_settings:</span> <span class="pre">{...}</span></code> options to <code class="docutils literal notranslate"><span class="pre">td&gt;</span></code> operator.</p></li>
+<li><p>Fixed unexpected duplicated (retried) execution of tasks when <code class="docutils literal notranslate"><span class="pre">--max-task-threads</span></code> is set and <code class="docutils literal notranslate"><span class="pre">_parallel:</span></code> is used. See <a class="reference external" href="https://github.com/treasure-data/digdag/issues/487">issue #487</a> for the detailed condition to reproduce.</p></li>
 </ul>
 </div>
 <div class="section" id="server-changes">
 <h2>Server Changes<a class="headerlink" href="#server-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Added <code class="docutils literal"><span class="pre">userInfo</span></code> field to <code class="docutils literal"><span class="pre">/api/projects/{id}/revisions</span></code>.</li>
-<li>Added <code class="docutils literal"><span class="pre">index</span></code> field to <code class="docutils literal"><span class="pre">/api/sessions/{id}/attempts</span></code>. Index of an attempt is a sequence number (1, 2, 3, ...) in a session. Intention of this change is to obsolete attempt id to avoid confusion from session id.</li>
-<li>Starting server on admin port is now optional. <code class="docutils literal"><span class="pre">--admin-port</span></code> argument is required to enable admin API.</li>
-<li>Fixed hard timeout of long-running tasks (1 day). It was killing an attempt if the attempt is running longer than 1 day. Now it kills if a single task is running longer than 1 day. Attempt is killed if it is running longer than 7 days (<code class="docutils literal"><span class="pre">executor.attempt_ttl</span></code> and <code class="docutils literal"><span class="pre">executor.task_ttl</span></code> are the configuration parameters of the durations).</li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">userInfo</span></code> field to <code class="docutils literal notranslate"><span class="pre">/api/projects/{id}/revisions</span></code>.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">index</span></code> field to <code class="docutils literal notranslate"><span class="pre">/api/sessions/{id}/attempts</span></code>. Index of an attempt is a sequence number (1, 2, 3, …) in a session. Intention of this change is to obsolete attempt id to avoid confusion from session id.</p></li>
+<li><p>Starting server on admin port is now optional. <code class="docutils literal notranslate"><span class="pre">--admin-port</span></code> argument is required to enable admin API.</p></li>
+<li><p>Fixed hard timeout of long-running tasks (1 day). It was killing an attempt if the attempt is running longer than 1 day. Now it kills if a single task is running longer than 1 day. Attempt is killed if it is running longer than 7 days (<code class="docutils literal notranslate"><span class="pre">executor.attempt_ttl</span></code> and <code class="docutils literal notranslate"><span class="pre">executor.task_ttl</span></code> are the configuration parameters of the durations).</p></li>
 </ul>
 </div>
 <div class="section" id="release-date">
@@ -303,9 +294,9 @@
 <div class="section" id="contributors">
 <h2>Contributors<a class="headerlink" href="#contributors" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Sadayuki Furuhashi</li>
-<li>Toru Takahashi</li>
-<li>szyn</li>
+<li><p>Sadayuki Furuhashi</p></li>
+<li><p>Toru Takahashi</p></li>
+<li><p>szyn</p></li>
 </ul>
 </div>
 </div>

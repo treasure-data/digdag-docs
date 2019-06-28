@@ -20,20 +20,11 @@
   <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
   
     
-      <script type="text/javascript">
-          var DOCUMENTATION_OPTIONS = {
-              URL_ROOT:'../',
-              VERSION:'0.9.37',
-              LANGUAGE:'None',
-              COLLAPSE_INDEX:false,
-              FILE_SUFFIX:'.html',
-              HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: '.txt'
-          };
-      </script>
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -282,24 +273,24 @@
 <div class="section" id="client-changes">
 <h2>Client Changes<a class="headerlink" href="#client-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Added a <code class="docutils literal"><span class="pre">--type</span></code> flag to <code class="docutils literal"><span class="pre">digdag</span> <span class="pre">init</span></code> to select the type of project to generate.</li>
+<li><p>Added a <code class="docutils literal notranslate"><span class="pre">--type</span></code> flag to <code class="docutils literal notranslate"><span class="pre">digdag</span> <span class="pre">init</span></code> to select the type of project to generate.</p></li>
 </ul>
 </div>
 <div class="section" id="server-changes">
 <h2>Server Changes<a class="headerlink" href="#server-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Added a new <code class="docutils literal"><span class="pre">/api/workflows</span></code> endpoint that can be used to list all current workflows.</li>
-<li>Added <code class="docutils literal"><span class="pre">/api/schedules/{id}/disable</span></code> and <code class="docutils literal"><span class="pre">/api/schedules/{id}/enable</span></code> endpoints that can be used to disable and re-enable scheduled execution of a workflow.</li>
-<li>Added <code class="docutils literal"><span class="pre">/api/schedules</span></code> and <code class="docutils literal"><span class="pre">/api/projects/{id}/schedules</span></code> endpoint that can be used to list all schedules and the schedules of a project.</li>
-<li>The number of active attempts per site is now limited. The default limit is <code class="docutils literal"><span class="pre">100</span></code> and it an be controlled using the <code class="docutils literal"><span class="pre">io.digdag.limits.maxAttempts</span></code> system property.</li>
+<li><p>Added a new <code class="docutils literal notranslate"><span class="pre">/api/workflows</span></code> endpoint that can be used to list all current workflows.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">/api/schedules/{id}/disable</span></code> and <code class="docutils literal notranslate"><span class="pre">/api/schedules/{id}/enable</span></code> endpoints that can be used to disable and re-enable scheduled execution of a workflow.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">/api/schedules</span></code> and <code class="docutils literal notranslate"><span class="pre">/api/projects/{id}/schedules</span></code> endpoint that can be used to list all schedules and the schedules of a project.</p></li>
+<li><p>The number of active attempts per site is now limited. The default limit is <code class="docutils literal notranslate"><span class="pre">100</span></code> and it an be controlled using the <code class="docutils literal notranslate"><span class="pre">io.digdag.limits.maxAttempts</span></code> system property.</p></li>
 </ul>
 </div>
 <div class="section" id="workflow-changes">
 <h2>Workflow Changes<a class="headerlink" href="#workflow-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Added an <code class="docutils literal"><span class="pre">s3_wait&gt;</span></code> operator that can be used to wait for a file to come into existence in AWS S3.</li>
-<li>The <code class="docutils literal"><span class="pre">mail&gt;</span></code> operator now requires the <code class="docutils literal"><span class="pre">password</span></code> to be provided as a secret.</li>
-<li>The <code class="docutils literal"><span class="pre">td_table_export</span></code> operator now requires S3 credentials to be provided as secrets.</li>
+<li><p>Added an <code class="docutils literal notranslate"><span class="pre">s3_wait&gt;</span></code> operator that can be used to wait for a file to come into existence in AWS S3.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">mail&gt;</span></code> operator now requires the <code class="docutils literal notranslate"><span class="pre">password</span></code> to be provided as a secret.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">td_table_export</span></code> operator now requires S3 credentials to be provided as secrets.</p></li>
 </ul>
 </div>
 <div class="section" id="release-date">
@@ -309,10 +300,10 @@
 <div class="section" id="contributors">
 <h2>Contributors<a class="headerlink" href="#contributors" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Daniel Norberg</li>
-<li>Daniele Zannotti</li>
-<li>Mitsunori Komatsu</li>
-<li>Sadayuki Furuhashi</li>
+<li><p>Daniel Norberg</p></li>
+<li><p>Daniele Zannotti</p></li>
+<li><p>Mitsunori Komatsu</p></li>
+<li><p>Sadayuki Furuhashi</p></li>
 </ul>
 </div>
 </div>

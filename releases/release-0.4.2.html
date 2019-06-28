@@ -20,20 +20,11 @@
   <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
   
     
-      <script type="text/javascript">
-          var DOCUMENTATION_OPTIONS = {
-              URL_ROOT:'../',
-              VERSION:'0.9.37',
-              LANGUAGE:'None',
-              COLLAPSE_INDEX:false,
-              FILE_SUFFIX:'.html',
-              HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: '.txt'
-          };
-      </script>
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -280,11 +271,11 @@
 <div class="section" id="server-mode-changes">
 <h2>Server-mode changes<a class="headerlink" href="#server-mode-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Changed /api/sessions to /api/attempts. No backward compatibility is provided.</li>
-<li>Client library class RestSession is renamed to RestSessionAttempt.</li>
-<li>Added /api/repository?name= and /api/repositories/{id}/workflow?name= REST API. This API is useful to lookup a repository or workflow by name.</li>
-<li>Added <code class="docutils literal"><span class="pre">io.digdag.server.ServerBootstrap</span></code> class. This is useful to embed digdag server to a custom application.</li>
-<li>Added <code class="docutils literal"><span class="pre">DigdagEmbed.Bootstrap.overrideModulesWith</span></code> method that allows an user application to override Guice bindings.</li>
+<li><p>Changed /api/sessions to /api/attempts. No backward compatibility is provided.</p></li>
+<li><p>Client library class RestSession is renamed to RestSessionAttempt.</p></li>
+<li><p>Added /api/repository?name= and /api/repositories/{id}/workflow?name= REST API. This API is useful to lookup a repository or workflow by name.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">io.digdag.server.ServerBootstrap</span></code> class. This is useful to embed digdag server to a custom application.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">DigdagEmbed.Bootstrap.overrideModulesWith</span></code> method that allows an user application to override Guice bindings.</p></li>
 </ul>
 </div>
 <div class="section" id="release-date">
@@ -294,7 +285,7 @@
 <div class="section" id="contributors">
 <h2>Contributors<a class="headerlink" href="#contributors" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Sadayuki Furuhashi</li>
+<li><p>Sadayuki Furuhashi</p></li>
 </ul>
 </div>
 </div>

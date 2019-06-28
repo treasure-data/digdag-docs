@@ -20,20 +20,11 @@
   <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
   
     
-      <script type="text/javascript">
-          var DOCUMENTATION_OPTIONS = {
-              URL_ROOT:'../',
-              VERSION:'0.9.37',
-              LANGUAGE:'None',
-              COLLAPSE_INDEX:false,
-              FILE_SUFFIX:'.html',
-              HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: '.txt'
-          };
-      </script>
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -282,24 +273,24 @@
 <div class="section" id="local-line-changes">
 <h2>Local-line changes<a class="headerlink" href="#local-line-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><strong>IMPORTANT</strong>: <code class="docutils literal"><span class="pre">run</span></code> command uses session_time of the last execution as the default session_time (previous default value was today&#8217;s 00:00:00).</li>
-<li>Added new <code class="docutils literal"><span class="pre">--session</span></code> argument. This accepts <code class="docutils literal"><span class="pre">daily</span></code>, <code class="docutils literal"><span class="pre">hourly</span></code>, <code class="docutils literal"><span class="pre">schedule</span></code>, or timestamp in <code class="docutils literal"><span class="pre">yyyy-MM-dd[</span> <span class="pre">HH:mm:ss]</span></code> format.</li>
-<li><code class="docutils literal"><span class="pre">-t</span></code> and <code class="docutils literal"><span class="pre">--session-time</span></code> arguments are deprecated.</li>
+<li><p><strong>IMPORTANT</strong>: <code class="docutils literal notranslate"><span class="pre">run</span></code> command uses session_time of the last execution as the default session_time (previous default value was today’s 00:00:00).</p></li>
+<li><p>Added new <code class="docutils literal notranslate"><span class="pre">--session</span></code> argument. This accepts <code class="docutils literal notranslate"><span class="pre">daily</span></code>, <code class="docutils literal notranslate"><span class="pre">hourly</span></code>, <code class="docutils literal notranslate"><span class="pre">schedule</span></code>, or timestamp in <code class="docutils literal notranslate"><span class="pre">yyyy-MM-dd[</span> <span class="pre">HH:mm:ss]</span></code> format.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-t</span></code> and <code class="docutils literal notranslate"><span class="pre">--session-time</span></code> arguments are deprecated.</p></li>
 </ul>
 </div>
 <div class="section" id="server-mode-changes">
 <h2>Server-mode changes<a class="headerlink" href="#server-mode-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Added support for PostgreSQL database backend. Tested with PostgreSQL &gt;= 9.4. PostgreSQL &gt;= 9.5 is preferred (because SELECT ... FOR UPDATE SKIP RECORD statement is available).</li>
-<li>Database parameters such as maximumPoolSize, loginTimeout, socketTimeout are now configurable.</li>
+<li><p>Added support for PostgreSQL database backend. Tested with PostgreSQL &gt;= 9.4. PostgreSQL &gt;= 9.5 is preferred (because SELECT … FOR UPDATE SKIP RECORD statement is available).</p></li>
+<li><p>Database parameters such as maximumPoolSize, loginTimeout, socketTimeout are now configurable.</p></li>
 </ul>
 </div>
 <div class="section" id="general-changes">
 <h2>General Changes<a class="headerlink" href="#general-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Added validation to task names. Now task name can&#8217;t include some symbols. Allowed characters are <code class="docutils literal"><span class="pre">[a-zA-Z_0-9]</span></code> and <code class="docutils literal"><span class="pre">-</span> <span class="pre">=</span> <span class="pre">[</span> <span class="pre">]</span> <span class="pre">{</span> <span class="pre">}</span> <span class="pre">&#64;</span> <span class="pre">,</span> <span class="pre">.</span></code>.</li>
-<li>Added validation to repository name, revision name, and retry attempt name are strictly validated.</li>
-<li>Adding workflows to existent revision is now prohibited (server mode only).</li>
+<li><p>Added validation to task names. Now task name can’t include some symbols. Allowed characters are <code class="docutils literal notranslate"><span class="pre">[a-zA-Z_0-9]</span></code> and <code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">=</span> <span class="pre">[</span> <span class="pre">]</span> <span class="pre">{</span> <span class="pre">}</span> <span class="pre">&#64;</span> <span class="pre">,</span> <span class="pre">.</span></code>.</p></li>
+<li><p>Added validation to repository name, revision name, and retry attempt name are strictly validated.</p></li>
+<li><p>Adding workflows to existent revision is now prohibited (server mode only).</p></li>
 </ul>
 </div>
 <div class="section" id="release-date">
@@ -309,7 +300,7 @@
 <div class="section" id="contributors">
 <h2>Contributors<a class="headerlink" href="#contributors" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Sadayuki Furuhashi</li>
+<li><p>Sadayuki Furuhashi</p></li>
 </ul>
 </div>
 </div>

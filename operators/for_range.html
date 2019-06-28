@@ -20,20 +20,11 @@
   <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
   
     
-      <script type="text/javascript">
-          var DOCUMENTATION_OPTIONS = {
-              URL_ROOT:'../',
-              VERSION:'0.9.37',
-              LANGUAGE:'None',
-              COLLAPSE_INDEX:false,
-              FILE_SUFFIX:'.html',
-              HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: '.txt'
-          };
-      </script>
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -199,9 +190,9 @@
   <div class="section" id="for-range-repeat-tasks-for-a-range">
 <h1>for_range&gt;: Repeat tasks for a range<a class="headerlink" href="#for-range-repeat-tasks-for-a-range" title="Permalink to this headline">¶</a></h1>
 <p><strong>for_range&gt;</strong> operator runs subtasks multiple times using sets of variables.</p>
-<p>This operator exports <code class="docutils literal"><span class="pre">${range.from}</span></code>, <code class="docutils literal"><span class="pre">${range.to}</span></code>, and <code class="docutils literal"><span class="pre">${range.index}</span></code> variables for the subtasks. Index begins from 0.</p>
+<p>This operator exports <code class="docutils literal notranslate"><span class="pre">${range.from}</span></code>, <code class="docutils literal notranslate"><span class="pre">${range.to}</span></code>, and <code class="docutils literal notranslate"><span class="pre">${range.index}</span></code> variables for the subtasks. Index begins from 0.</p>
 <p>(This operator is EXPERIMENTAL. Parameters may change in a future release)</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>+repeat:
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>+repeat:
   for_range&gt;:
     from: 10
     to: 50
@@ -220,11 +211,11 @@
 </pre></div>
 </div>
 <ul>
-<li><p class="first"><strong>for_each&gt;</strong>: object of from, to, and slices or step</p>
+<li><p><strong>for_each&gt;</strong>: object of from, to, and slices or step</p>
 <p>This nested object is used to declare a range from <strong>from</strong> to <strong>to</strong>.</p>
 <p>Then you divide the range into fixed number of slices using <strong>slices</strong> option, or divide the range by width by <strong>step</strong> option. Setting both slices and step is error.</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>for_range&gt;:
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>for_range&gt;:
   from: 0
   to: 10
   step: 3
@@ -237,7 +228,7 @@ _do:
   echo&gt;: from ${range.from} to ${range.to}
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span>for_range&gt;:
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>for_range&gt;:
   from: 0
   to: 10
   slices: 3
@@ -250,14 +241,14 @@ _do:
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>_parallel</strong>: BOOLEAN</p>
+<li><p><strong>_parallel</strong>: BOOLEAN</p>
 <p>Runs the repeating tasks in parallel.</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">_parallel</span><span class="p">:</span> <span class="n">true</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">_parallel</span><span class="p">:</span> <span class="n">true</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>_do</strong>: TASKS</p>
+<li><p><strong>_do</strong>: TASKS</p>
 <p>Tasks to run.</p>
 </li>
 </ul>

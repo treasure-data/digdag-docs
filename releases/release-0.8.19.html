@@ -20,20 +20,11 @@
   <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
   
     
-      <script type="text/javascript">
-          var DOCUMENTATION_OPTIONS = {
-              URL_ROOT:'../',
-              VERSION:'0.9.37',
-              LANGUAGE:'None',
-              COLLAPSE_INDEX:false,
-              FILE_SUFFIX:'.html',
-              HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: '.txt'
-          };
-      </script>
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -282,26 +273,26 @@
 <div class="section" id="server-changes">
 <h2>Server Changes<a class="headerlink" href="#server-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Added an <code class="docutils literal"><span class="pre">isAdmin</span></code> flag to the <code class="docutils literal"><span class="pre">Authenticator.Result</span></code> interface that can be used to grant users administrator rights.</li>
-<li>Added an administration API with an endpoint that can be used by administrators to get <code class="docutils literal"><span class="pre">userinfo</span></code> metadata for a session attempt.</li>
+<li><p>Added an <code class="docutils literal notranslate"><span class="pre">isAdmin</span></code> flag to the <code class="docutils literal notranslate"><span class="pre">Authenticator.Result</span></code> interface that can be used to grant users administrator rights.</p></li>
+<li><p>Added an administration API with an endpoint that can be used by administrators to get <code class="docutils literal notranslate"><span class="pre">userinfo</span></code> metadata for a session attempt.</p></li>
 </ul>
 </div>
 <div class="section" id="ui-changes">
 <h2>UI Changes<a class="headerlink" href="#ui-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Added a button for retrying failed attempts.</li>
-<li>Added a button for pausing scheduled workflow execution.</li>
+<li><p>Added a button for retrying failed attempts.</p></li>
+<li><p>Added a button for pausing scheduled workflow execution.</p></li>
 </ul>
 </div>
 <div class="section" id="workflow-changes">
 <h2>Workflow Changes<a class="headerlink" href="#workflow-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>The <code class="docutils literal"><span class="pre">gcs_wait&gt;</span></code> operator now allows <code class="docutils literal"><span class="pre">gs://</span></code> URI&#8217;s on the operator command line.</li>
-<li>Added an <code class="docutils literal"><span class="pre">http&gt;</span></code> operator that can be used to make HTTP requests.</li>
-<li>The <code class="docutils literal"><span class="pre">for_each</span></code> operator now generates subtasks with shorter names.</li>
-<li>Fixed an issue where the <code class="docutils literal"><span class="pre">td_table_export&gt;</span></code> operator was not able to use <code class="docutils literal"><span class="pre">aws.s3.*</span></code> secrets.</li>
-<li>The <code class="docutils literal"><span class="pre">s3_wait&gt;</span></code> operator will now not retry <code class="docutils literal"><span class="pre">4xx`</span> <span class="pre">HTTP</span> <span class="pre">errors</span> <span class="pre">except</span> <span class="pre">for</span> <span class="pre">``429</span> <span class="pre">Too</span> <span class="pre">Many</span> <span class="pre">Requests</span></code> and <code class="docutils literal"><span class="pre">408</span> <span class="pre">Request</span> <span class="pre">Timeout</span></code>.</li>
-<li>Fixed an issue where the <code class="docutils literal"><span class="pre">td&gt;</span></code> operator <code class="docutils literal"><span class="pre">download_file</span></code> option would sometimes download a corrupt file.</li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">gcs_wait&gt;</span></code> operator now allows <code class="docutils literal notranslate"><span class="pre">gs://</span></code> URI’s on the operator command line.</p></li>
+<li><p>Added an <code class="docutils literal notranslate"><span class="pre">http&gt;</span></code> operator that can be used to make HTTP requests.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">for_each</span></code> operator now generates subtasks with shorter names.</p></li>
+<li><p>Fixed an issue where the <code class="docutils literal notranslate"><span class="pre">td_table_export&gt;</span></code> operator was not able to use <code class="docutils literal notranslate"><span class="pre">aws.s3.*</span></code> secrets.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">s3_wait&gt;</span></code> operator will now not retry <code class="docutils literal notranslate"><span class="pre">4xx`</span> <span class="pre">HTTP</span> <span class="pre">errors</span> <span class="pre">except</span> <span class="pre">for</span> <span class="pre">``429</span> <span class="pre">Too</span> <span class="pre">Many</span> <span class="pre">Requests</span></code> and <code class="docutils literal notranslate"><span class="pre">408</span> <span class="pre">Request</span> <span class="pre">Timeout</span></code>.</p></li>
+<li><p>Fixed an issue where the <code class="docutils literal notranslate"><span class="pre">td&gt;</span></code> operator <code class="docutils literal notranslate"><span class="pre">download_file</span></code> option would sometimes download a corrupt file.</p></li>
 </ul>
 </div>
 <div class="section" id="release-date">
@@ -311,9 +302,9 @@
 <div class="section" id="contributors">
 <h2>Contributors<a class="headerlink" href="#contributors" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Daniel Norberg</li>
-<li>Daniele Zannotti</li>
-<li>Tony Wei</li>
+<li><p>Daniel Norberg</p></li>
+<li><p>Daniele Zannotti</p></li>
+<li><p>Tony Wei</p></li>
 </ul>
 </div>
 </div>

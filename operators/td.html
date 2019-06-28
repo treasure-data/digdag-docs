@@ -20,20 +20,11 @@
   <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
   
     
-      <script type="text/javascript">
-          var DOCUMENTATION_OPTIONS = {
-              URL_ROOT:'../',
-              VERSION:'0.9.37',
-              LANGUAGE:'None',
-              COLLAPSE_INDEX:false,
-              FILE_SUFFIX:'.html',
-              HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: '.txt'
-          };
-      </script>
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -205,7 +196,7 @@
   <div class="section" id="td-treasure-data-queries">
 <h1>td&gt;: Treasure Data queries<a class="headerlink" href="#td-treasure-data-queries" title="Permalink to this headline">¶</a></h1>
 <p><strong>td&gt;</strong> operator runs a Hive or Presto query on Treasure Data.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>_export:
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>_export:
   td:
     database: www_access
 
@@ -235,14 +226,14 @@
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><a class="reference external" href="https://github.com/treasure-data/workflow-examples/tree/master/td">Examples</a></li>
+<li><p><a class="reference external" href="https://github.com/treasure-data/workflow-examples/tree/master/td">Examples</a></p></li>
 </ul>
 </div>
 <div class="section" id="secrets">
 <h2>Secrets<a class="headerlink" href="#secrets" title="Permalink to this headline">¶</a></h2>
 <p>When you set those parameters, use <a class="reference external" href="https://docs.digdag.io/command_reference.html#secrets">digdag secrets command</a>.</p>
 <ul>
-<li><p class="first"><strong>td.apikey</strong>: API_KEY</p>
+<li><p><strong>td.apikey</strong>: API_KEY</p>
 <p>The Treasure Data API key to use when running Treasure Data queries.</p>
 </li>
 </ul>
@@ -250,133 +241,133 @@
 <div class="section" id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
 <ul>
-<li><p class="first"><strong>td&gt;</strong>: FILE.sql</p>
-<p>Path to a query template file. This file can contain <code class="docutils literal"><span class="pre">${...}</span></code> syntax to embed variables.</p>
+<li><p><strong>td&gt;</strong>: FILE.sql</p>
+<p>Path to a query template file. This file can contain <code class="docutils literal notranslate"><span class="pre">${...}</span></code> syntax to embed variables.</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">td</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">queries</span><span class="o">/</span><span class="n">step1</span><span class="o">.</span><span class="n">sql</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">td</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">queries</span><span class="o">/</span><span class="n">step1</span><span class="o">.</span><span class="n">sql</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>create_table</strong>: NAME</p>
+<li><p><strong>create_table</strong>: NAME</p>
 <p>Name of a table to create from the results. This option deletes the table if it already exists.</p>
-<p>This option adds DROP TABLE IF EXISTS; CREATE TABLE AS (Presto) or INSERT OVERWRITE (Hive) commands before the SELECT statement. If the query includes a <code class="docutils literal"><span class="pre">--</span> <span class="pre">DIGDAG_INSERT_LINE</span></code> line, the commands are inserted there.</p>
+<p>This option adds DROP TABLE IF EXISTS; CREATE TABLE AS (Presto) or INSERT OVERWRITE (Hive) commands before the SELECT statement. If the query includes a <code class="docutils literal notranslate"><span class="pre">--</span> <span class="pre">DIGDAG_INSERT_LINE</span></code> line, the commands are inserted there.</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">create_table</span><span class="p">:</span> <span class="n">my_table</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">create_table</span><span class="p">:</span> <span class="n">my_table</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>insert_into</strong>: NAME</p>
+<li><p><strong>insert_into</strong>: NAME</p>
 <p>Name of a table to append results into. The table is created if it does not already exist.</p>
-<p>This option adds INSERT INTO (Presto) or INSERT INTO TABLE (Hive) command at the beginning of SELECT statement. If the query includes <code class="docutils literal"><span class="pre">--</span> <span class="pre">DIGDAG_INSERT_LINE</span></code> line, the command is inserted to the line.</p>
+<p>This option adds INSERT INTO (Presto) or INSERT INTO TABLE (Hive) command at the beginning of SELECT statement. If the query includes <code class="docutils literal notranslate"><span class="pre">--</span> <span class="pre">DIGDAG_INSERT_LINE</span></code> line, the command is inserted to the line.</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">insert_into</span><span class="p">:</span> <span class="n">my_table</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">insert_into</span><span class="p">:</span> <span class="n">my_table</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>download_file</strong>: NAME</p>
+<li><p><strong>download_file</strong>: NAME</p>
 <p>Saves query result as a local CSV file.</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">download_file</span><span class="p">:</span> <span class="n">output</span><span class="o">.</span><span class="n">csv</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">download_file</span><span class="p">:</span> <span class="n">output</span><span class="o">.</span><span class="n">csv</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>store_last_results</strong>: BOOLEAN</p>
-<p>Stores the first 1 row of the query results to <code class="docutils literal"><span class="pre">${td.last_results}</span></code> variable (default: false).
-td.last_results is a map of column name and a value. To access to a single value, you can use <code class="docutils literal"><span class="pre">${td.last_results.my_count}</span></code> syntax.</p>
+<li><p><strong>store_last_results</strong>: BOOLEAN</p>
+<p>Stores the first 1 row of the query results to <code class="docutils literal notranslate"><span class="pre">${td.last_results}</span></code> variable (default: false).
+td.last_results is a map of column name and a value. To access to a single value, you can use <code class="docutils literal notranslate"><span class="pre">${td.last_results.my_count}</span></code> syntax.</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">store_last_results</span><span class="p">:</span> <span class="n">true</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">store_last_results</span><span class="p">:</span> <span class="n">true</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>preview</strong>: BOOLEAN</p>
+<li><p><strong>preview</strong>: BOOLEAN</p>
 <p>Tries to show some query results to confirm the results of a query.</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">preview</span><span class="p">:</span> <span class="n">true</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">preview</span><span class="p">:</span> <span class="n">true</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>result_url</strong>: NAME
+<li><p><strong>result_url</strong>: NAME
 Output the query results to the URL:</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>result_url: tableau://username:password@my.tableauserver.com/?mode=replace
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>result_url: tableau://username:password@my.tableauserver.com/?mode=replace
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>database</strong>: NAME</p>
+<li><p><strong>database</strong>: NAME</p>
 <p>Name of a database.</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">database</span><span class="p">:</span> <span class="n">my_db</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">database</span><span class="p">:</span> <span class="n">my_db</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>endpoint</strong>: ADDRESS</p>
+<li><p><strong>endpoint</strong>: ADDRESS</p>
 <p>API endpoint (default: api.treasuredata.com).</p>
 </li>
-<li><p class="first"><strong>use_ssl</strong>: BOOLEAN</p>
+<li><p><strong>use_ssl</strong>: BOOLEAN</p>
 <p>Enable SSL (https) to access to the endpoint (default: true).</p>
 </li>
-<li><p class="first"><strong>engine</strong>: presto</p>
-<p>Query engine (<code class="docutils literal"><span class="pre">presto</span></code> or <code class="docutils literal"><span class="pre">hive</span></code>).</p>
+<li><p><strong>engine</strong>: presto</p>
+<p>Query engine (<code class="docutils literal notranslate"><span class="pre">presto</span></code> or <code class="docutils literal notranslate"><span class="pre">hive</span></code>).</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">engine</span><span class="p">:</span> <span class="n">hive</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">engine</span><span class="p">:</span> <span class="n">hive</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">engine</span><span class="p">:</span> <span class="n">presto</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">engine</span><span class="p">:</span> <span class="n">presto</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>priority</strong>: 0</p>
-<p>Set Priority (From <code class="docutils literal"><span class="pre">-2</span></code> (VERY LOW) to <code class="docutils literal"><span class="pre">2</span></code> (VERY HIGH) , default: 0 (NORMAL)).</p>
+<li><p><strong>priority</strong>: 0</p>
+<p>Set Priority (From <code class="docutils literal notranslate"><span class="pre">-2</span></code> (VERY LOW) to <code class="docutils literal notranslate"><span class="pre">2</span></code> (VERY HIGH) , default: 0 (NORMAL)).</p>
 </li>
-<li><p class="first"><strong>job_retry</strong>: 0</p>
+<li><p><strong>job_retry</strong>: 0</p>
 <p>Set automatic job retry count (default: 0).</p>
 <p>We recommend that you not set retry count over 10. If the job is not succeessful less than 10 times retry, it needs some fix a cause of failure.</p>
 </li>
-<li><p class="first"><strong>result_connection</strong>: NAME</p>
+<li><p><strong>result_connection</strong>: NAME</p>
 <p>Use a connection to write the query results to an external system.</p>
 <p>You can create a connection using the web console.</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">result_connection</span><span class="p">:</span> <span class="n">my_s3_connection</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">result_connection</span><span class="p">:</span> <span class="n">my_s3_connection</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>result_settings</strong>: MAP</p>
+<li><p><strong>result_settings</strong>: MAP</p>
 <p>Add additional settings to the result connection.</p>
-<p>This option is valid only if <code class="docutils literal"><span class="pre">result_connection</span></code> option is set.</p>
+<p>This option is valid only if <code class="docutils literal notranslate"><span class="pre">result_connection</span></code> option is set.</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">result_connection</span><span class="p">:</span> <span class="n">my_s3_connection</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">result_connection</span><span class="p">:</span> <span class="n">my_s3_connection</span>
 <span class="n">result_settings</span><span class="p">:</span>
   <span class="n">bucket</span><span class="p">:</span> <span class="n">my_s3_bucket</span>
   <span class="n">path</span><span class="p">:</span> <span class="o">/</span><span class="n">logs</span><span class="o">/</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">result_connection</span><span class="p">:</span> <span class="n">my_http</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">result_connection</span><span class="p">:</span> <span class="n">my_http</span>
 <span class="n">result_settings</span><span class="p">:</span>
   <span class="n">path</span><span class="p">:</span> <span class="o">/</span><span class="n">endpoint</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>presto_pool_name</strong>: NAME</p>
+<li><p><strong>presto_pool_name</strong>: NAME</p>
 <p>Name of a resource pool to run the query in.
-Applicable only when <code class="docutils literal"><span class="pre">engine</span></code> is <code class="docutils literal"><span class="pre">presto</span></code>.</p>
+Applicable only when <code class="docutils literal notranslate"><span class="pre">engine</span></code> is <code class="docutils literal notranslate"><span class="pre">presto</span></code>.</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">presto_pool_name</span><span class="p">:</span> <span class="n">poc</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">presto_pool_name</span><span class="p">:</span> <span class="n">poc</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>hive_pool_name</strong>: NAME</p>
+<li><p><strong>hive_pool_name</strong>: NAME</p>
 <p>Name of a resource pool to run the query in.
-Applicable only when <code class="docutils literal"><span class="pre">engine</span></code> is <code class="docutils literal"><span class="pre">hive</span></code>.</p>
+Applicable only when <code class="docutils literal notranslate"><span class="pre">engine</span></code> is <code class="docutils literal notranslate"><span class="pre">hive</span></code>.</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">engine</span><span class="p">:</span> <span class="n">hive</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">engine</span><span class="p">:</span> <span class="n">hive</span>
 <span class="n">hive_pool_name</span><span class="p">:</span> <span class="n">poc</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>engine_version</strong>: NAME</p>
+<li><p><strong>engine_version</strong>: NAME</p>
 <p>Specify engine version for Hive and Presto.</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">engine</span><span class="p">:</span> <span class="n">hive</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">engine</span><span class="p">:</span> <span class="n">hive</span>
 <span class="n">engine_version</span><span class="p">:</span> <span class="n">stable</span>
 </pre></div>
 </div>
@@ -386,24 +377,24 @@ Applicable only when <code class="docutils literal"><span class="pre">engine</sp
 <div class="section" id="output-parameters">
 <h2>Output parameters<a class="headerlink" href="#output-parameters" title="Permalink to this headline">¶</a></h2>
 <ul>
-<li><p class="first"><strong>td.last_job_id</strong> or <strong>td.last_job.id</strong></p>
+<li><p><strong>td.last_job_id</strong> or <strong>td.last_job.id</strong></p>
 <p>The job id this task executed.</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="mi">52036074</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">52036074</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>td.last_results</strong></p>
-<p>The first 1 row of the query results as a map. This is available only when <code class="docutils literal"><span class="pre">store_last_results:</span> <span class="pre">true</span></code> is set.</p>
+<li><p><strong>td.last_results</strong></p>
+<p>The first 1 row of the query results as a map. This is available only when <code class="docutils literal notranslate"><span class="pre">store_last_results:</span> <span class="pre">true</span></code> is set.</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;path&quot;</span><span class="p">:</span><span class="s2">&quot;/index.html&quot;</span><span class="p">,</span><span class="s2">&quot;count&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;path&quot;</span><span class="p">:</span><span class="s2">&quot;/index.html&quot;</span><span class="p">,</span><span class="s2">&quot;count&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>td.last_job.num_records</strong></p>
+<li><p><strong>td.last_job.num_records</strong></p>
 <p>The number of records of this job output.</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="mi">10</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">10</span>
 </pre></div>
 </div>
 </li>

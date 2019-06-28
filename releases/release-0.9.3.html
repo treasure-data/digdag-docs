@@ -20,20 +20,11 @@
   <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
   
     
-      <script type="text/javascript">
-          var DOCUMENTATION_OPTIONS = {
-              URL_ROOT:'../',
-              VERSION:'0.9.37',
-              LANGUAGE:'None',
-              COLLAPSE_INDEX:false,
-              FILE_SUFFIX:'.html',
-              HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: '.txt'
-          };
-      </script>
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -282,27 +273,27 @@
 <div class="section" id="server-mode-changes">
 <h2>Server mode changes<a class="headerlink" href="#server-mode-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Project archives can now be stored in S3 instead of the database. This is configured using the <code class="docutils literal"><span class="pre">archive.s3.bucket</span></code>, <code class="docutils literal"><span class="pre">archive.s3.credentials.access-key-id</span></code> and <code class="docutils literal"><span class="pre">archive.s3.credentials.secret-access-key</span></code> configuration parameters.</li>
+<li><p>Project archives can now be stored in S3 instead of the database. This is configured using the <code class="docutils literal notranslate"><span class="pre">archive.s3.bucket</span></code>, <code class="docutils literal notranslate"><span class="pre">archive.s3.credentials.access-key-id</span></code> and <code class="docutils literal notranslate"><span class="pre">archive.s3.credentials.secret-access-key</span></code> configuration parameters.</p></li>
 </ul>
 </div>
 <div class="section" id="workflow-changes">
 <h2>Workflow changes<a class="headerlink" href="#workflow-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>The <code class="docutils literal"><span class="pre">emr&gt;</span></code> operator now uses <code class="docutils literal"><span class="pre">${secret:&lt;key&gt;}</span></code> syntax.</li>
-<li>The <code class="docutils literal"><span class="pre">http&gt;</span></code> operator now allows secrets in headers, content and uri using <code class="docutils literal"><span class="pre">${secret:&lt;key&gt;}</span></code> syntax.</li>
-<li>Declaring secret access using <code class="docutils literal"><span class="pre">_secrets</span></code> is no longer necessary and has been deprecated.</li>
-<li>It is now possible to use secrets in <code class="docutils literal"><span class="pre">td_load&gt;</span></code> and <code class="docutils literal"><span class="pre">embulk&gt;</span></code> configuration using <code class="docutils literal"><span class="pre">${secret:&lt;key&gt;}</span></code> syntax.</li>
-<li>The <code class="docutils literal"><span class="pre">td_run&gt;</span></code> operator can now run a saved query by id. If the operator command is a number, the query with that id will be run.</li>
-<li>The <code class="docutils literal"><span class="pre">td_ddl&gt;</span></code> operator now allows entire parameter lists to be parameterized.</li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">emr&gt;</span></code> operator now uses <code class="docutils literal notranslate"><span class="pre">${secret:&lt;key&gt;}</span></code> syntax.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">http&gt;</span></code> operator now allows secrets in headers, content and uri using <code class="docutils literal notranslate"><span class="pre">${secret:&lt;key&gt;}</span></code> syntax.</p></li>
+<li><p>Declaring secret access using <code class="docutils literal notranslate"><span class="pre">_secrets</span></code> is no longer necessary and has been deprecated.</p></li>
+<li><p>It is now possible to use secrets in <code class="docutils literal notranslate"><span class="pre">td_load&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">embulk&gt;</span></code> configuration using <code class="docutils literal notranslate"><span class="pre">${secret:&lt;key&gt;}</span></code> syntax.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">td_run&gt;</span></code> operator can now run a saved query by id. If the operator command is a number, the query with that id will be run.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">td_ddl&gt;</span></code> operator now allows entire parameter lists to be parameterized.</p></li>
 </ul>
 </div>
 <div class="section" id="general-changes">
 <h2>General Changes<a class="headerlink" href="#general-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Secret access limits and policies have been removed. Operators can now access any secret.</li>
-<li>Backfills now run sequentially instead of all sessions in parallel.</li>
-<li>The Digdag client now sends a <code class="docutils literal"><span class="pre">User-Agent</span></code> header that includes the build artifact version.</li>
-<li>Project metadata compilation has been moved to the server. The project tarball no longer needs to include a <code class="docutils literal"><span class="pre">.digdag.dig</span></code> file when pushing.</li>
+<li><p>Secret access limits and policies have been removed. Operators can now access any secret.</p></li>
+<li><p>Backfills now run sequentially instead of all sessions in parallel.</p></li>
+<li><p>The Digdag client now sends a <code class="docutils literal notranslate"><span class="pre">User-Agent</span></code> header that includes the build artifact version.</p></li>
+<li><p>Project metadata compilation has been moved to the server. The project tarball no longer needs to include a <code class="docutils literal notranslate"><span class="pre">.digdag.dig</span></code> file when pushing.</p></li>
 </ul>
 </div>
 <div class="section" id="release-date">
@@ -312,9 +303,9 @@
 <div class="section" id="contributors">
 <h2>Contributors<a class="headerlink" href="#contributors" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Daniel Norberg</li>
-<li>Mitsunori Komatsu</li>
-<li>Sadayuki Furuhashi</li>
+<li><p>Daniel Norberg</p></li>
+<li><p>Mitsunori Komatsu</p></li>
+<li><p>Sadayuki Furuhashi</p></li>
 </ul>
 </div>
 </div>

@@ -20,20 +20,11 @@
   <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
   
     
-      <script type="text/javascript">
-          var DOCUMENTATION_OPTIONS = {
-              URL_ROOT:'../',
-              VERSION:'0.9.37',
-              LANGUAGE:'None',
-              COLLAPSE_INDEX:false,
-              FILE_SUFFIX:'.html',
-              HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: '.txt'
-          };
-      </script>
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -280,10 +271,11 @@
 <div class="section" id="general-changes">
 <h2>General Changes<a class="headerlink" href="#general-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Added experimental support for per-task logging.<ul>
-<li>If server or scheduler runs with <code class="docutils literal"><span class="pre">-O,</span> <span class="pre">--task-log</span> <span class="pre">DIR</span></code> option, it stores task logs to the directory.</li>
-<li><code class="docutils literal"><span class="pre">digdag</span> <span class="pre">log</span> <span class="pre">&lt;session-id&gt;</span> <span class="pre">[+task</span> <span class="pre">name</span> <span class="pre">prefix]</span></code> command shows logs of tasks. This command works even if the server runs on a remote machine (<code class="docutils literal"><span class="pre">-e,</span> <span class="pre">--endpoint</span></code> option is required in this case).</li>
-<li>This is useful when you run digdag server on a remote machine.</li>
+<li><p>Added experimental support for per-task logging.</p>
+<ul>
+<li><p>If server or scheduler runs with <code class="docutils literal notranslate"><span class="pre">-O,</span> <span class="pre">--task-log</span> <span class="pre">DIR</span></code> option, it stores task logs to the directory.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">digdag</span> <span class="pre">log</span> <span class="pre">&lt;session-id&gt;</span> <span class="pre">[+task</span> <span class="pre">name</span> <span class="pre">prefix]</span></code> command shows logs of tasks. This command works even if the server runs on a remote machine (<code class="docutils literal notranslate"><span class="pre">-e,</span> <span class="pre">--endpoint</span></code> option is required in this case).</p></li>
+<li><p>This is useful when you run digdag server on a remote machine.</p></li>
 </ul>
 </li>
 </ul>
@@ -295,7 +287,7 @@
 <div class="section" id="contributors">
 <h2>Contributors<a class="headerlink" href="#contributors" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Sadayuki Furuhashi</li>
+<li><p>Sadayuki Furuhashi</p></li>
 </ul>
 </div>
 </div>

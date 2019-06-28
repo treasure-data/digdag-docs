@@ -20,20 +20,11 @@
   <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
   
     
-      <script type="text/javascript">
-          var DOCUMENTATION_OPTIONS = {
-              URL_ROOT:'../',
-              VERSION:'0.9.37',
-              LANGUAGE:'None',
-              COLLAPSE_INDEX:false,
-              FILE_SUFFIX:'.html',
-              HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: '.txt'
-          };
-      </script>
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -281,25 +272,25 @@
 <div class="section" id="cli-changes">
 <h2>CLI changes<a class="headerlink" href="#cli-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>All commands support <code class="docutils literal"><span class="pre">-c,</span> <span class="pre">--config</span> <span class="pre">PATH</span></code> argument. Default is <code class="docutils literal"><span class="pre">~/.digdag/config</span></code>.</li>
-<li>Client-mode commands (<code class="docutils literal"><span class="pre">start</span></code>, <code class="docutils literal"><span class="pre">push</span></code>, etc.) no longer read <code class="docutils literal"><span class="pre">~/.digdag/client.properties</span></code> file.</li>
-<li><code class="docutils literal"><span class="pre">run</span></code>, <code class="docutils literal"><span class="pre">push</span></code>, and <code class="docutils literal"><span class="pre">check</span></code> commands use <code class="docutils literal"><span class="pre">params.KEY</span> <span class="pre">=</span> <span class="pre">VALUE</span></code> parameters written in <code class="docutils literal"><span class="pre">~/.digdag/config</span></code> file. This is useful to set default parameters such as hostname, username, and password of a remote service.</li>
-<li><code class="docutils literal"><span class="pre">run</span></code> command stores status files in <code class="docutils literal"><span class="pre">.digdag/status</span></code> instead of <code class="docutils literal"><span class="pre">digdag.status</span></code>.</li>
-<li>Command exited with a error no longer shows stacktrace.</li>
-<li><code class="docutils literal"><span class="pre">header.KEY</span> <span class="pre">=</span> <span class="pre">VALUE</span></code> parameters are changed to <code class="docutils literal"><span class="pre">client.http.headers.KEY</span> <span class="pre">=</span> <span class="pre">VALUE</span></code>.</li>
-<li><code class="docutils literal"><span class="pre">endpoint</span> <span class="pre">=</span> <span class="pre">HOST:PORT</span></code> parameter is changed to <code class="docutils literal"><span class="pre">client.http.endpoint</span> <span class="pre">=</span> <span class="pre">http[s]://HOST:PORT</span></code>.</li>
-<li>Client-mode commands support SSL (https).</li>
-<li>Parameters on task groups are validated. If a task group includes an unknown key (such as <code class="docutils literal"><span class="pre">parallel</span></code>), digdag shows a suggestion (such as <code class="docutils literal"><span class="pre">did</span> <span class="pre">mean</span> <span class="pre">[_parallel]?</span></code>) and exits.</li>
-<li>JVM version check runs only with <code class="docutils literal"><span class="pre">run</span></code>, <code class="docutils literal"><span class="pre">scheduler</span></code> and <code class="docutils literal"><span class="pre">server</span></code> commands. Other commands such as <code class="docutils literal"><span class="pre">push</span></code> and <code class="docutils literal"><span class="pre">workflows</span></code> can use older version of JDK 8.</li>
-<li><code class="docutils literal"><span class="pre">_retry:</span> <span class="pre">N</span></code> option on a task group works.</li>
-<li><code class="docutils literal"><span class="pre">digdag</span></code> without command name no longer runs <code class="docutils literal"><span class="pre">run</span></code> command implicitly.</li>
-<li>Built-in authentication mechanism is removed. <code class="docutils literal"><span class="pre">genapikey</span></code> command is removed. <code class="docutils literal"><span class="pre">-a,</span> <span class="pre">--apikey</span></code> option is removed.</li>
+<li><p>All commands support <code class="docutils literal notranslate"><span class="pre">-c,</span> <span class="pre">--config</span> <span class="pre">PATH</span></code> argument. Default is <code class="docutils literal notranslate"><span class="pre">~/.digdag/config</span></code>.</p></li>
+<li><p>Client-mode commands (<code class="docutils literal notranslate"><span class="pre">start</span></code>, <code class="docutils literal notranslate"><span class="pre">push</span></code>, etc.) no longer read <code class="docutils literal notranslate"><span class="pre">~/.digdag/client.properties</span></code> file.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">run</span></code>, <code class="docutils literal notranslate"><span class="pre">push</span></code>, and <code class="docutils literal notranslate"><span class="pre">check</span></code> commands use <code class="docutils literal notranslate"><span class="pre">params.KEY</span> <span class="pre">=</span> <span class="pre">VALUE</span></code> parameters written in <code class="docutils literal notranslate"><span class="pre">~/.digdag/config</span></code> file. This is useful to set default parameters such as hostname, username, and password of a remote service.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">run</span></code> command stores status files in <code class="docutils literal notranslate"><span class="pre">.digdag/status</span></code> instead of <code class="docutils literal notranslate"><span class="pre">digdag.status</span></code>.</p></li>
+<li><p>Command exited with a error no longer shows stacktrace.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">header.KEY</span> <span class="pre">=</span> <span class="pre">VALUE</span></code> parameters are changed to <code class="docutils literal notranslate"><span class="pre">client.http.headers.KEY</span> <span class="pre">=</span> <span class="pre">VALUE</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">endpoint</span> <span class="pre">=</span> <span class="pre">HOST:PORT</span></code> parameter is changed to <code class="docutils literal notranslate"><span class="pre">client.http.endpoint</span> <span class="pre">=</span> <span class="pre">http[s]://HOST:PORT</span></code>.</p></li>
+<li><p>Client-mode commands support SSL (https).</p></li>
+<li><p>Parameters on task groups are validated. If a task group includes an unknown key (such as <code class="docutils literal notranslate"><span class="pre">parallel</span></code>), digdag shows a suggestion (such as <code class="docutils literal notranslate"><span class="pre">did</span> <span class="pre">mean</span> <span class="pre">[_parallel]?</span></code>) and exits.</p></li>
+<li><p>JVM version check runs only with <code class="docutils literal notranslate"><span class="pre">run</span></code>, <code class="docutils literal notranslate"><span class="pre">scheduler</span></code> and <code class="docutils literal notranslate"><span class="pre">server</span></code> commands. Other commands such as <code class="docutils literal notranslate"><span class="pre">push</span></code> and <code class="docutils literal notranslate"><span class="pre">workflows</span></code> can use older version of JDK 8.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">_retry:</span> <span class="pre">N</span></code> option on a task group works.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">digdag</span></code> without command name no longer runs <code class="docutils literal notranslate"><span class="pre">run</span></code> command implicitly.</p></li>
+<li><p>Built-in authentication mechanism is removed. <code class="docutils literal notranslate"><span class="pre">genapikey</span></code> command is removed. <code class="docutils literal notranslate"><span class="pre">-a,</span> <span class="pre">--apikey</span></code> option is removed.</p></li>
 </ul>
 </div>
 <div class="section" id="server-mode-changes">
 <h2>Server mode changes<a class="headerlink" href="#server-mode-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Added access logging. Disabled by default. <code class="docutils literal"><span class="pre">-A,</span> <span class="pre">--access-log</span> <span class="pre">DIR</span></code> parameter enables it.</li>
+<li><p>Added access logging. Disabled by default. <code class="docutils literal notranslate"><span class="pre">-A,</span> <span class="pre">--access-log</span> <span class="pre">DIR</span></code> parameter enables it.</p></li>
 </ul>
 </div>
 <div class="section" id="release-date">
@@ -309,8 +300,8 @@
 <div class="section" id="contributors">
 <h2>Contributors<a class="headerlink" href="#contributors" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Daniel Norberg</li>
-<li>Sadayuki Furuhashi</li>
+<li><p>Daniel Norberg</p></li>
+<li><p>Sadayuki Furuhashi</p></li>
 </ul>
 </div>
 </div>

@@ -20,20 +20,11 @@
   <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
   
     
-      <script type="text/javascript">
-          var DOCUMENTATION_OPTIONS = {
-              URL_ROOT:'../',
-              VERSION:'0.9.37',
-              LANGUAGE:'None',
-              COLLAPSE_INDEX:false,
-              FILE_SUFFIX:'.html',
-              HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: '.txt'
-          };
-      </script>
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -195,7 +186,7 @@
   <div class="section" id="pg-postgresql-operations">
 <h1>pg&gt;: PostgreSQL operations<a class="headerlink" href="#pg-postgresql-operations" title="Permalink to this headline">¶</a></h1>
 <p><strong>pg&gt;</strong> operator runs queries and/or DDLs on PostgreSQL.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>_export:
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>_export:
   pg:
     host: 192.0.2.1
     port: 5430
@@ -233,124 +224,124 @@
 <h2>Secrets<a class="headerlink" href="#secrets" title="Permalink to this headline">¶</a></h2>
 <p>When you set those parameters, use <a class="reference external" href="https://docs.digdag.io/command_reference.html#secrets">digdag secrets command</a>.</p>
 <ul>
-<li><p class="first"><strong>pg.password</strong>: NAME</p>
-<p>Optional user password to use when connecting to the Postgres database. If you want to use multiple credentials, use <code class="docutils literal"><span class="pre">password_override</span></code> option.</p>
+<li><p><strong>pg.password</strong>: NAME</p>
+<p>Optional user password to use when connecting to the Postgres database. If you want to use multiple credentials, use <code class="docutils literal notranslate"><span class="pre">password_override</span></code> option.</p>
 </li>
 </ul>
 </div>
 <div class="section" id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
 <ul>
-<li><p class="first"><strong>pg&gt;</strong>: FILE.sql</p>
-<p>Path of the query template file. This file can contain <code class="docutils literal"><span class="pre">${...}</span></code> syntax to embed variables.</p>
+<li><p><strong>pg&gt;</strong>: FILE.sql</p>
+<p>Path of the query template file. This file can contain <code class="docutils literal notranslate"><span class="pre">${...}</span></code> syntax to embed variables.</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">pg</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">queries</span><span class="o">/</span><span class="n">complex_queries</span><span class="o">.</span><span class="n">sql</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pg</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">queries</span><span class="o">/</span><span class="n">complex_queries</span><span class="o">.</span><span class="n">sql</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>create_table</strong>: NAME</p>
+<li><p><strong>create_table</strong>: NAME</p>
 <p>Table name to create from the results. This option deletes the table if it already exists.</p>
 <p>This option adds DROP TABLE IF EXISTS; CREATE TABLE AS before the statements written in the query template file. Also, CREATE TABLE statement can be written in the query template file itself without this command.</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">create_table</span><span class="p">:</span> <span class="n">dest_table</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">create_table</span><span class="p">:</span> <span class="n">dest_table</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>insert_into</strong>: NAME</p>
+<li><p><strong>insert_into</strong>: NAME</p>
 <p>Table name to append results into.</p>
 <p>This option adds INSERT INTO before the statements written in the query template file. Also, INSERT INTO statement can be written in the query template file itself without this command.</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">insert_into</span><span class="p">:</span> <span class="n">dest_table</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">insert_into</span><span class="p">:</span> <span class="n">dest_table</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>download_file</strong>: NAME</p>
+<li><p><strong>download_file</strong>: NAME</p>
 <p>Local CSV file name to be downloaded. The file includes the result of query.</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">download_file</span><span class="p">:</span> <span class="n">output</span><span class="o">.</span><span class="n">csv</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">download_file</span><span class="p">:</span> <span class="n">output</span><span class="o">.</span><span class="n">csv</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>store_last_results</strong>: false | first | all</p>
-<p>Whether to store the query results to <code class="docutils literal"><span class="pre">pg.last_results</span></code> parameter. <em>Default:</em> <code class="docutils literal"><span class="pre">false</span></code>.</p>
-<p>Setting <code class="docutils literal"><span class="pre">first</span></code> stores the first row to the parameter as an object (e.g. <code class="docutils literal"><span class="pre">${pg.last_results.count}</span></code>).</p>
-<p>Setting <code class="docutils literal"><span class="pre">all</span></code> stores all rows to the parameter as an array of objects (e.g. <code class="docutils literal"><span class="pre">${pg.last_results[0].name}</span></code>). If number of rows exceeds limit, task fails.</p>
+<li><p><strong>store_last_results</strong>: false | first | all</p>
+<p>Whether to store the query results to <code class="docutils literal notranslate"><span class="pre">pg.last_results</span></code> parameter. <em>Default:</em> <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+<p>Setting <code class="docutils literal notranslate"><span class="pre">first</span></code> stores the first row to the parameter as an object (e.g. <code class="docutils literal notranslate"><span class="pre">${pg.last_results.count}</span></code>).</p>
+<p>Setting <code class="docutils literal notranslate"><span class="pre">all</span></code> stores all rows to the parameter as an array of objects (e.g. <code class="docutils literal notranslate"><span class="pre">${pg.last_results[0].name}</span></code>). If number of rows exceeds limit, task fails.</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">store_last_results</span><span class="p">:</span> <span class="n">first</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">store_last_results</span><span class="p">:</span> <span class="n">first</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">store_last_results</span><span class="p">:</span> <span class="nb">all</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">store_last_results</span><span class="p">:</span> <span class="nb">all</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>database</strong>: NAME</p>
+<li><p><strong>database</strong>: NAME</p>
 <p>Database name.</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">database</span><span class="p">:</span> <span class="n">my_db</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">database</span><span class="p">:</span> <span class="n">my_db</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>host</strong>: NAME</p>
+<li><p><strong>host</strong>: NAME</p>
 <p>Hostname or IP address of the database.</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">host</span><span class="p">:</span> <span class="n">db</span><span class="o">.</span><span class="n">foobar</span><span class="o">.</span><span class="n">com</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">host</span><span class="p">:</span> <span class="n">db</span><span class="o">.</span><span class="n">foobar</span><span class="o">.</span><span class="n">com</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>port</strong>: NUMBER</p>
-<p>Port number to connect to the database. <em>Default</em>: <code class="docutils literal"><span class="pre">5432</span></code>.</p>
+<li><p><strong>port</strong>: NUMBER</p>
+<p>Port number to connect to the database. <em>Default</em>: <code class="docutils literal notranslate"><span class="pre">5432</span></code>.</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">port</span><span class="p">:</span> <span class="mi">2345</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">port</span><span class="p">:</span> <span class="mi">2345</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>user</strong>: NAME</p>
+<li><p><strong>user</strong>: NAME</p>
 <p>User to connect to the database</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">user</span><span class="p">:</span> <span class="n">app_user</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">user</span><span class="p">:</span> <span class="n">app_user</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>ssl</strong>: BOOLEAN</p>
-<p>Enable SSL to connect to the database. <em>Default</em>: <code class="docutils literal"><span class="pre">false</span></code>.</p>
+<li><p><strong>ssl</strong>: BOOLEAN</p>
+<p>Enable SSL to connect to the database. <em>Default</em>: <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ssl</span><span class="p">:</span> <span class="n">true</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssl</span><span class="p">:</span> <span class="n">true</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>schema</strong>: NAME</p>
-<p>Default schema name. <em>Default</em>: <code class="docutils literal"><span class="pre">public</span></code>.</p>
+<li><p><strong>schema</strong>: NAME</p>
+<p>Default schema name. <em>Default</em>: <code class="docutils literal notranslate"><span class="pre">public</span></code>.</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">schema</span><span class="p">:</span> <span class="n">my_schema</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">schema</span><span class="p">:</span> <span class="n">my_schema</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>strict_transaction</strong>: BOOLEAN</p>
-<p>Whether this operator uses a strict transaction to prevent generating unexpected duplicated records just in case. <em>Default</em>: <code class="docutils literal"><span class="pre">true</span></code>.
-This operator creates and uses a status table in the database to make an operation idempotent. But if creating a table isn&#8216;t allowed, this option should be false.</p>
+<li><p><strong>strict_transaction</strong>: BOOLEAN</p>
+<p>Whether this operator uses a strict transaction to prevent generating unexpected duplicated records just in case. <em>Default</em>: <code class="docutils literal notranslate"><span class="pre">true</span></code>.
+This operator creates and uses a status table in the database to make an operation idempotent. But if creating a table isn’t allowed, this option should be false.</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">strict_transaction</span><span class="p">:</span> <span class="n">false</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">strict_transaction</span><span class="p">:</span> <span class="n">false</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>status_table_schema</strong>: NAME</p>
-<p>Schema name of status table. <em>Default</em>: same as the value of <code class="docutils literal"><span class="pre">schema</span></code> option.</p>
+<li><p><strong>status_table_schema</strong>: NAME</p>
+<p>Schema name of status table. <em>Default</em>: same as the value of <code class="docutils literal notranslate"><span class="pre">schema</span></code> option.</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">status_table_schema</span><span class="p">:</span> <span class="n">writable_schema</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">status_table_schema</span><span class="p">:</span> <span class="n">writable_schema</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>status_table</strong>: NAME</p>
-<p>Table name of status table. <em>Default</em>: <code class="docutils literal"><span class="pre">__digdag_status</span></code>.</p>
+<li><p><strong>status_table</strong>: NAME</p>
+<p>Table name of status table. <em>Default</em>: <code class="docutils literal notranslate"><span class="pre">__digdag_status</span></code>.</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">status_table</span><span class="p">:</span> <span class="n">customized_status_table</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">status_table</span><span class="p">:</span> <span class="n">customized_status_table</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>password_override</strong>: NAME</p>
-<p>Secret key name that has a non-default database password as its value. This would be useful whey you want to use multiple database credentials. If it&#8216;s set, Digdag looks up secrets with this value as a secret key name. If not, the default secret key <code class="docutils literal"><span class="pre">pg.password</span></code> is used.</p>
-<p>Examples (let&#8216;s say you&#8216;ve already added a secret key value <code class="docutils literal"><span class="pre">pg.another_password=password1234</span></code>):</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">password_override</span><span class="p">:</span> <span class="n">another_password</span>
+<li><p><strong>password_override</strong>: NAME</p>
+<p>Secret key name that has a non-default database password as its value. This would be useful whey you want to use multiple database credentials. If it’s set, Digdag looks up secrets with this value as a secret key name. If not, the default secret key <code class="docutils literal notranslate"><span class="pre">pg.password</span></code> is used.</p>
+<p>Examples (let’s say you’ve already added a secret key value <code class="docutils literal notranslate"><span class="pre">pg.another_password=password1234</span></code>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">password_override</span><span class="p">:</span> <span class="n">another_password</span>
 </pre></div>
 </div>
 </li>

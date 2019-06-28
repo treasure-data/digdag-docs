@@ -20,20 +20,11 @@
   <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
   
     
-      <script type="text/javascript">
-          var DOCUMENTATION_OPTIONS = {
-              URL_ROOT:'../',
-              VERSION:'0.9.37',
-              LANGUAGE:'None',
-              COLLAPSE_INDEX:false,
-              FILE_SUFFIX:'.html',
-              HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: '.txt'
-          };
-      </script>
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -203,7 +194,7 @@
   <div class="section" id="td-wait-table-waits-for-data-arriving-at-treasure-data-table">
 <h1>td_wait_table&gt;: Waits for data arriving at Treasure Data table<a class="headerlink" href="#td-wait-table-waits-for-data-arriving-at-treasure-data-table" title="Permalink to this headline">¶</a></h1>
 <p><strong>td_wait_table&gt;</strong> operator checks a table periodically until it has certain number of records in a configured range. This is useful to wait execution of following tasks until some records are imported to a table.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">_export</span><span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">_export</span><span class="p">:</span>
   <span class="n">td</span><span class="p">:</span>
     <span class="n">database</span><span class="p">:</span> <span class="n">www_access</span>
 
@@ -218,7 +209,7 @@
 <h2>Secrets<a class="headerlink" href="#secrets" title="Permalink to this headline">¶</a></h2>
 <p>When you set those parameters, use <a class="reference external" href="https://docs.digdag.io/command_reference.html#secrets">digdag secrets command</a>.</p>
 <ul>
-<li><p class="first"><strong>td.apikey</strong>: API_KEY</p>
+<li><p><strong>td.apikey</strong>: API_KEY</p>
 <p>The Treasure Data API key to use when running Treasure Data queries.</p>
 </li>
 </ul>
@@ -226,74 +217,74 @@
 <div class="section" id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
 <ul>
-<li><p class="first"><strong>td_wait_table&gt;</strong>: NAME</p>
+<li><p><strong>td_wait_table&gt;</strong>: NAME</p>
 <p>Name of a table.</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">td_wait_table</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">target_table</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">td_wait_table</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">target_table</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>rows</strong>: N</p>
+<li><p><strong>rows</strong>: N</p>
 <p>Number of rows to wait (default: 0).</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">rows</span><span class="p">:</span> <span class="mi">10</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rows</span><span class="p">:</span> <span class="mi">10</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>database</strong>: NAME</p>
+<li><p><strong>database</strong>: NAME</p>
 <p>Name of a database.</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">database</span><span class="p">:</span> <span class="n">my_db</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">database</span><span class="p">:</span> <span class="n">my_db</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>endpoint</strong>: ADDRESS</p>
+<li><p><strong>endpoint</strong>: ADDRESS</p>
 <p>API endpoint (default: api.treasuredata.com).</p>
 </li>
-<li><p class="first"><strong>use_ssl</strong>: BOOLEAN</p>
+<li><p><strong>use_ssl</strong>: BOOLEAN</p>
 <p>Enable SSL (https) to access to the endpoint (default: true).</p>
 </li>
-<li><p class="first"><strong>engine</strong>: presto</p>
-<p>Query engine (<code class="docutils literal"><span class="pre">presto</span></code> or <code class="docutils literal"><span class="pre">hive</span></code>).</p>
+<li><p><strong>engine</strong>: presto</p>
+<p>Query engine (<code class="docutils literal notranslate"><span class="pre">presto</span></code> or <code class="docutils literal notranslate"><span class="pre">hive</span></code>).</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">engine</span><span class="p">:</span> <span class="n">hive</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">engine</span><span class="p">:</span> <span class="n">hive</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">engine</span><span class="p">:</span> <span class="n">presto</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">engine</span><span class="p">:</span> <span class="n">presto</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>interval</strong>: 30s</p>
+<li><p><strong>interval</strong>: 30s</p>
 <p>Set Interval (default: 30s (30 second)).</p>
 </li>
-<li><p class="first"><strong>priority</strong>: 0</p>
-<p>Set Priority (From <code class="docutils literal"><span class="pre">-2</span></code> (VERY LOW) to <code class="docutils literal"><span class="pre">2</span></code> (VERY HIGH) , default: 0 (NORMAL)).</p>
+<li><p><strong>priority</strong>: 0</p>
+<p>Set Priority (From <code class="docutils literal notranslate"><span class="pre">-2</span></code> (VERY LOW) to <code class="docutils literal notranslate"><span class="pre">2</span></code> (VERY HIGH) , default: 0 (NORMAL)).</p>
 </li>
-<li><p class="first"><strong>job_retry</strong>: 0</p>
+<li><p><strong>job_retry</strong>: 0</p>
 <p>Set automatic job retry count (default: 0).</p>
 <p>We recommend that you not set retry count over 10. If the job is not succeessful less than 10 times retry, it needs some fix a cause of failure.</p>
 </li>
-<li><p class="first"><strong>presto_pool_name</strong>: NAME</p>
+<li><p><strong>presto_pool_name</strong>: NAME</p>
 <p>Name of a resource pool to run the queries in.
-Applicable only when <code class="docutils literal"><span class="pre">engine</span></code> is <code class="docutils literal"><span class="pre">presto</span></code>.</p>
+Applicable only when <code class="docutils literal notranslate"><span class="pre">engine</span></code> is <code class="docutils literal notranslate"><span class="pre">presto</span></code>.</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">presto_pool_name</span><span class="p">:</span> <span class="n">poc</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">presto_pool_name</span><span class="p">:</span> <span class="n">poc</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>hive_pool_name</strong>: NAME</p>
+<li><p><strong>hive_pool_name</strong>: NAME</p>
 <p>Name of a resource pool to run the queries in.
-Applicable only when <code class="docutils literal"><span class="pre">engine</span></code> is <code class="docutils literal"><span class="pre">presto</span></code>.</p>
+Applicable only when <code class="docutils literal notranslate"><span class="pre">engine</span></code> is <code class="docutils literal notranslate"><span class="pre">presto</span></code>.</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">engine</span><span class="p">:</span> <span class="n">hive</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">engine</span><span class="p">:</span> <span class="n">hive</span>
 <span class="n">hive_pool_name</span><span class="p">:</span> <span class="n">poc</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>engine_version</strong>: NAME</p>
+<li><p><strong>engine_version</strong>: NAME</p>
 <p>Specify engine version for Hive and Presto.</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">engine</span><span class="p">:</span> <span class="n">hive</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">engine</span><span class="p">:</span> <span class="n">hive</span>
 <span class="n">engine_version</span><span class="p">:</span> <span class="n">stable</span>
 </pre></div>
 </div>

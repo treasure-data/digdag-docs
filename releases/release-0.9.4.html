@@ -20,20 +20,11 @@
   <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
   
     
-      <script type="text/javascript">
-          var DOCUMENTATION_OPTIONS = {
-              URL_ROOT:'../',
-              VERSION:'0.9.37',
-              LANGUAGE:'None',
-              COLLAPSE_INDEX:false,
-              FILE_SUFFIX:'.html',
-              HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: '.txt'
-          };
-      </script>
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -283,26 +274,26 @@
 <div class="section" id="cli-changes">
 <h2>CLI Changes<a class="headerlink" href="#cli-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Added local secrets. New <code class="docutils literal"><span class="pre">digdag</span> <span class="pre">secret</span> <span class="pre">--local</span></code> command lets you to set secrets for local mode.</li>
-<li>Version checking become less restricted. CLI checks there is a recommended upgrade or not using Digdag server&#8217;s REST API and upgrades only if one exists. If CLI is executed as a batch command (STDOUT is not TTY), force upgrade won&#8217;t be required.</li>
+<li><p>Added local secrets. New <code class="docutils literal notranslate"><span class="pre">digdag</span> <span class="pre">secret</span> <span class="pre">--local</span></code> command lets you to set secrets for local mode.</p></li>
+<li><p>Version checking become less restricted. CLI checks there is a recommended upgrade or not using Digdag server’s REST API and upgrades only if one exists. If CLI is executed as a batch command (STDOUT is not TTY), force upgrade won’t be required.</p></li>
 </ul>
 </div>
 <div class="section" id="operator-changes">
 <h2>Operator Changes<a class="headerlink" href="#operator-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">td_run</span></code> operator accepts ID of a bulk loading in addition to name.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">td_run</span></code> operator accepts ID of a bulk loading in addition to name.</p></li>
 </ul>
 </div>
 <div class="section" id="ui-changes">
 <h2>UI Changes<a class="headerlink" href="#ui-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Web UI has a new interface that creates a new project or edits workflow definitions.</li>
+<li><p>Web UI has a new interface that creates a new project or edits workflow definitions.</p></li>
 </ul>
 </div>
 <div class="section" id="general-changes">
 <h2>General Changes<a class="headerlink" href="#general-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>S3 storage extension is now bundled with the released package. Digdag server uses S3 as the project archive storage if <code class="docutils literal"><span class="pre">archive.type</span> <span class="pre">=</span> <span class="pre">s3</span></code> and <code class="docutils literal"><span class="pre">archive.s3.bucket</span></code> options are set, and uses S3 as the log file storage if <code class="docutils literal"><span class="pre">log-server.type</span> <span class="pre">=</span> <span class="pre">s3</span></code> and <code class="docutils literal"><span class="pre">log-server.s3.bucket</span></code> options are set.</li>
+<li><p>S3 storage extension is now bundled with the released package. Digdag server uses S3 as the project archive storage if <code class="docutils literal notranslate"><span class="pre">archive.type</span> <span class="pre">=</span> <span class="pre">s3</span></code> and <code class="docutils literal notranslate"><span class="pre">archive.s3.bucket</span></code> options are set, and uses S3 as the log file storage if <code class="docutils literal notranslate"><span class="pre">log-server.type</span> <span class="pre">=</span> <span class="pre">s3</span></code> and <code class="docutils literal notranslate"><span class="pre">log-server.s3.bucket</span></code> options are set.</p></li>
 </ul>
 </div>
 <div class="section" id="release-date">
@@ -312,11 +303,11 @@
 <div class="section" id="contributors">
 <h2>Contributors<a class="headerlink" href="#contributors" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Daniel Norberg</li>
-<li>Daniele Zannotti</li>
-<li>Kazuki Ohta</li>
-<li>Mitsunori Komatsu</li>
-<li>Sadayuki Furuhashi</li>
+<li><p>Daniel Norberg</p></li>
+<li><p>Daniele Zannotti</p></li>
+<li><p>Kazuki Ohta</p></li>
+<li><p>Mitsunori Komatsu</p></li>
+<li><p>Sadayuki Furuhashi</p></li>
 </ul>
 </div>
 </div>

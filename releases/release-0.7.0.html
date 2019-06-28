@@ -20,20 +20,11 @@
   <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
   
     
-      <script type="text/javascript">
-          var DOCUMENTATION_OPTIONS = {
-              URL_ROOT:'../',
-              VERSION:'0.9.37',
-              LANGUAGE:'None',
-              COLLAPSE_INDEX:false,
-              FILE_SUFFIX:'.html',
-              HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: '.txt'
-          };
-      </script>
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -281,18 +272,18 @@
 <div class="section" id="cli-changes">
 <h2>CLI changes<a class="headerlink" href="#cli-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Client-mode commands now verify that the server and cli version match and prompts the user to run <code class="docutils literal"><span class="pre">digdag</span> <span class="pre">selfupdate</span></code> if the cli is out of date. This check can be disabled using the <code class="docutils literal"><span class="pre">--disable-version-check</span></code> flag.</li>
-<li><code class="docutils literal"><span class="pre">digdag</span> <span class="pre">attempts</span> <span class="pre">&lt;id&gt;</span></code> can now be used to show a single workflow session attempt.</li>
-<li><code class="docutils literal"><span class="pre">digdag</span> <span class="pre">push</span> <span class="pre">-c</span> <span class="pre">&lt;config</span> <span class="pre">file&gt;</span></code> now correctly uses the specified configuration while when creating the project archive.</li>
-<li><code class="docutils literal"><span class="pre">digdag</span> <span class="pre">push</span></code> now creates the project archive in a the system temp directory instead of in the current working directory.</li>
-<li>Default digdag configuration location has been moved from <code class="docutils literal"><span class="pre">$HOME/.digdag/config</span></code> to <code class="docutils literal"><span class="pre">$HOME/.config/digdag/config</span></code>. Digdag now also respects the <code class="docutils literal"><span class="pre">XDG_CONFIG_HOME</span></code> environment variable for specifying a different configuration location. See: <a class="reference external" href="https://standards.freedesktop.org/basedir-spec/latest/index.html">https://standards.freedesktop.org/basedir-spec/latest/index.html</a></li>
+<li><p>Client-mode commands now verify that the server and cli version match and prompts the user to run <code class="docutils literal notranslate"><span class="pre">digdag</span> <span class="pre">selfupdate</span></code> if the cli is out of date. This check can be disabled using the <code class="docutils literal notranslate"><span class="pre">--disable-version-check</span></code> flag.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">digdag</span> <span class="pre">attempts</span> <span class="pre">&lt;id&gt;</span></code> can now be used to show a single workflow session attempt.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">digdag</span> <span class="pre">push</span> <span class="pre">-c</span> <span class="pre">&lt;config</span> <span class="pre">file&gt;</span></code> now correctly uses the specified configuration while when creating the project archive.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">digdag</span> <span class="pre">push</span></code> now creates the project archive in a the system temp directory instead of in the current working directory.</p></li>
+<li><p>Default digdag configuration location has been moved from <code class="docutils literal notranslate"><span class="pre">$HOME/.digdag/config</span></code> to <code class="docutils literal notranslate"><span class="pre">$HOME/.config/digdag/config</span></code>. Digdag now also respects the <code class="docutils literal notranslate"><span class="pre">XDG_CONFIG_HOME</span></code> environment variable for specifying a different configuration location. See: <a class="reference external" href="https://standards.freedesktop.org/basedir-spec/latest/index.html">https://standards.freedesktop.org/basedir-spec/latest/index.html</a></p></li>
 </ul>
 </div>
 <div class="section" id="server-mode-changes">
 <h2>Server mode changes<a class="headerlink" href="#server-mode-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Json access log now includes request time.</li>
-<li>The Digdag server now picks up parameters from <code class="docutils literal"><span class="pre">$HOME/.config/digdag/config</span></code>. All workflows executed by the server can make use of these parameters. This can be useful to e.g. have a server side SMTP configuration.</li>
+<li><p>Json access log now includes request time.</p></li>
+<li><p>The Digdag server now picks up parameters from <code class="docutils literal notranslate"><span class="pre">$HOME/.config/digdag/config</span></code>. All workflows executed by the server can make use of these parameters. This can be useful to e.g. have a server side SMTP configuration.</p></li>
 </ul>
 </div>
 <div class="section" id="release-date">
@@ -302,8 +293,8 @@
 <div class="section" id="contributors">
 <h2>Contributors<a class="headerlink" href="#contributors" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Daniel Norberg</li>
-<li>Sadayuki Furuhashi</li>
+<li><p>Daniel Norberg</p></li>
+<li><p>Sadayuki Furuhashi</p></li>
 </ul>
 </div>
 </div>

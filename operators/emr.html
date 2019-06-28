@@ -20,20 +20,11 @@
   <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
   
     
-      <script type="text/javascript">
-          var DOCUMENTATION_OPTIONS = {
-              URL_ROOT:'../',
-              VERSION:'0.9.37',
-              LANGUAGE:'None',
-              COLLAPSE_INDEX:false,
-              FILE_SUFFIX:'.html',
-              HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: '.txt'
-          };
-      </script>
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -201,7 +192,7 @@
 <h1>emr&gt;: Amazon Elastic Map Reduce<a class="headerlink" href="#emr-amazon-elastic-map-reduce" title="Permalink to this headline">¶</a></h1>
 <p><strong>emr&gt;</strong> operator can be used to run EMR jobs, create clusters and submit steps to existing clusters.</p>
 <p>For detailed information about EMR, see the <a class="reference external" href="https://aws.amazon.com/documentation/elastic-mapreduce/">Amazon Elastic MapReduce Documentation</a>.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>+emr_job:
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>+emr_job:
   emr&gt;:
   cluster:
     name: my-cluster
@@ -229,31 +220,31 @@
 <h2>Secrets<a class="headerlink" href="#secrets" title="Permalink to this headline">¶</a></h2>
 <p>When you set those parameters, use <a class="reference external" href="https://docs.digdag.io/command_reference.html#secrets">digdag secrets command</a>.</p>
 <ul>
-<li><p class="first"><strong>aws.emr.access_key_id, aws.access_key_id</strong></p>
+<li><p><strong>aws.emr.access_key_id, aws.access_key_id</strong></p>
 <p>The AWS Access Key ID to use when submitting EMR jobs.</p>
 </li>
-<li><p class="first"><strong>aws.emr.secret_access_key, aws.secret_access_key</strong></p>
+<li><p><strong>aws.emr.secret_access_key, aws.secret_access_key</strong></p>
 <p>The AWS Secret Access Key to use when submitting EMR jobs.</p>
 </li>
-<li><p class="first"><strong>aws.emr.role_arn, aws.role_arn</strong></p>
+<li><p><strong>aws.emr.role_arn, aws.role_arn</strong></p>
 <p>The AWS Role to assume when submitting EMR jobs.</p>
 </li>
-<li><p class="first"><strong>aws.emr.region, aws.region</strong></p>
+<li><p><strong>aws.emr.region, aws.region</strong></p>
 <p>The AWS region to use for EMR service.</p>
 </li>
-<li><p class="first"><strong>aws.emr.endpoint</strong></p>
+<li><p><strong>aws.emr.endpoint</strong></p>
 <p>The AWS EMR <a class="reference external" href="http://docs.aws.amazon.com/general/latest/gr/rande.html">endpoint address</a> to use.</p>
 </li>
-<li><p class="first"><strong>aws.s3.region, aws.region</strong></p>
+<li><p><strong>aws.s3.region, aws.region</strong></p>
 <p>The AWS region to use for S3 service to store staging files.</p>
 </li>
-<li><p class="first"><strong>aws.s3.endpoint</strong></p>
+<li><p><strong>aws.s3.endpoint</strong></p>
 <p>The AWS S3 <a class="reference external" href="http://docs.aws.amazon.com/general/latest/gr/rande.html">endpoint address</a> to use for staging files.</p>
 </li>
-<li><p class="first"><strong>aws.kms.region, aws.region</strong></p>
+<li><p><strong>aws.kms.region, aws.region</strong></p>
 <p>The AWS region to use for KMS service to encrypt variables passed to EMR jobs.</p>
 </li>
-<li><p class="first"><strong>aws.kms.endpoint</strong></p>
+<li><p><strong>aws.kms.endpoint</strong></p>
 <p>The AWS KMS <a class="reference external" href="http://docs.aws.amazon.com/general/latest/gr/rande.html">endpoint address</a> to use for EMR variable encryption.</p>
 </li>
 </ul>
@@ -261,21 +252,21 @@
 <div class="section" id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
 <ul>
-<li><p class="first"><strong>cluster</strong>: STRING | OBJECT</p>
+<li><p><strong>cluster</strong>: STRING | OBJECT</p>
 <p>Specifies either the ID of an existing cluster to submit steps to or the configuration of a new cluster to create.</p>
 <p><strong>Using an existing cluster:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cluster</span><span class="p">:</span> <span class="n">j</span><span class="o">-</span><span class="mi">7</span><span class="n">KHU3VCWGNAFL</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cluster</span><span class="p">:</span> <span class="n">j</span><span class="o">-</span><span class="mi">7</span><span class="n">KHU3VCWGNAFL</span>
 </pre></div>
 </div>
 <p><strong>Creating a new minimal ephemeral cluster with just one node:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cluster</span><span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cluster</span><span class="p">:</span>
   <span class="n">ec2</span><span class="p">:</span>
     <span class="n">key</span><span class="p">:</span> <span class="n">my</span><span class="o">-</span><span class="n">ec2</span><span class="o">-</span><span class="n">key</span>
   <span class="n">logs</span><span class="p">:</span> <span class="n">s3</span><span class="p">:</span><span class="o">//</span><span class="n">my</span><span class="o">-</span><span class="n">bucket</span><span class="o">/</span><span class="n">logs</span><span class="o">/</span>
 </pre></div>
 </div>
 <p><strong>Creating a customized cluster with several hosts:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cluster</span><span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cluster</span><span class="p">:</span>
   <span class="n">name</span><span class="p">:</span> <span class="n">my</span><span class="o">-</span><span class="n">cluster</span>
   <span class="n">auto_terminate</span><span class="p">:</span> <span class="n">false</span>
   <span class="n">release</span><span class="p">:</span> <span class="n">emr</span><span class="o">-</span><span class="mf">5.2</span><span class="o">.</span><span class="mi">0</span>
@@ -314,37 +305,37 @@
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>staging</strong>: S3_URI</p>
+<li><p><strong>staging</strong>: S3_URI</p>
 <p>A S3 folder to use for staging local files for execution on the EMR cluster. <em>Note:</em> the configured AWS credentials must have permission to put and get objects in this folder.</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">staging</span><span class="p">:</span> <span class="n">s3</span><span class="p">:</span><span class="o">//</span><span class="n">my</span><span class="o">-</span><span class="n">bucket</span><span class="o">/</span><span class="n">staging</span><span class="o">/</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">staging</span><span class="p">:</span> <span class="n">s3</span><span class="p">:</span><span class="o">//</span><span class="n">my</span><span class="o">-</span><span class="n">bucket</span><span class="o">/</span><span class="n">staging</span><span class="o">/</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>emr.region</strong></p>
+<li><p><strong>emr.region</strong></p>
 <p>The AWS region to use for EMR service.</p>
 </li>
-<li><p class="first"><strong>emr.endpoint</strong></p>
+<li><p><strong>emr.endpoint</strong></p>
 <p>The AWS EMR <a class="reference external" href="http://docs.aws.amazon.com/general/latest/gr/rande.html">endpoint address</a> to use.</p>
 </li>
-<li><p class="first"><strong>s3.region</strong></p>
+<li><p><strong>s3.region</strong></p>
 <p>The AWS region to use for S3 service to store staging files.</p>
 </li>
-<li><p class="first"><strong>s3.endpoint</strong></p>
+<li><p><strong>s3.endpoint</strong></p>
 <p>The AWS S3 <a class="reference external" href="http://docs.aws.amazon.com/general/latest/gr/rande.html">endpoint address</a> to use for staging files.</p>
 </li>
-<li><p class="first"><strong>kms.region</strong></p>
+<li><p><strong>kms.region</strong></p>
 <p>The AWS region to use for KMS service to encrypt variables passed to EMR jobs.</p>
 </li>
-<li><p class="first"><strong>kms.endpoint</strong></p>
+<li><p><strong>kms.endpoint</strong></p>
 <p>The AWS KMS <a class="reference external" href="http://docs.aws.amazon.com/general/latest/gr/rande.html">endpoint address</a> to use for EMR variable encryption.</p>
 </li>
-<li><p class="first"><strong>steps</strong>: LIST</p>
+<li><p><strong>steps</strong>: LIST</p>
 <p>A list of steps to submit to the EMR cluster.</p>
 <p>steps:
 - type: flink
 application: flink/WordCount.jar</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>- type: hive
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>- type: hive
   script: queries/hive-query.q
   vars:
     INPUT: s3://my-bucket/data/
@@ -388,7 +379,7 @@ application: flink/WordCount.jar</p>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>action_on_failure</strong>: TERMINATE_JOB_FLOW | TERMINATE_CLUSTER | CANCEL_AND_WAIT | CONTINUE</p>
+<li><p><strong>action_on_failure</strong>: TERMINATE_JOB_FLOW | TERMINATE_CLUSTER | CANCEL_AND_WAIT | CONTINUE</p>
 <p>The action EMR should take in response to a job step failing.</p>
 </li>
 </ul>
@@ -396,7 +387,7 @@ application: flink/WordCount.jar</p>
 <div class="section" id="output-parameters">
 <h2>Output parameters<a class="headerlink" href="#output-parameters" title="Permalink to this headline">¶</a></h2>
 <ul>
-<li><p class="first"><strong>emr.last_cluster_id</strong></p>
+<li><p><strong>emr.last_cluster_id</strong></p>
 <p>The ID of the cluster created. If a pre-existing cluster was used, this parameter will not be set.</p>
 </li>
 </ul>

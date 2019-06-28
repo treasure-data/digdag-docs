@@ -20,20 +20,11 @@
   <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
   
     
-      <script type="text/javascript">
-          var DOCUMENTATION_OPTIONS = {
-              URL_ROOT:'../',
-              VERSION:'0.9.37',
-              LANGUAGE:'None',
-              COLLAPSE_INDEX:false,
-              FILE_SUFFIX:'.html',
-              HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: '.txt'
-          };
-      </script>
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -198,12 +189,12 @@
 <h1>sh&gt;: Shell scripts<a class="headerlink" href="#sh-shell-scripts" title="Permalink to this headline">¶</a></h1>
 <p><strong>sh&gt;</strong> operator runs a shell script.</p>
 <p>Running a shell command (Note: you can use <a class="reference external" href="echo.html">echo&gt; operator</a> to show a message):</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">step1</span><span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">step1</span><span class="p">:</span>
   <span class="n">sh</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">echo</span> <span class="s2">&quot;hello world&quot;</span>
 </pre></div>
 </div>
 <p>Running a shell script:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">step1</span><span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">step1</span><span class="p">:</span>
   <span class="n">sh</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">tasks</span><span class="o">/</span><span class="n">step1</span><span class="o">.</span><span class="n">sh</span>
 <span class="o">+</span><span class="n">step2</span><span class="p">:</span>
   <span class="n">sh</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">tasks</span><span class="o">/</span><span class="n">step2</span><span class="o">.</span><span class="n">sh</span>
@@ -212,16 +203,16 @@
 <div class="section" id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
 <ul>
-<li><p class="first"><strong>sh&gt;</strong>: COMMAND [ARGS...]</p>
+<li><p><strong>sh&gt;</strong>: COMMAND [ARGS…]</p>
 <p>Name of the command to run.</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sh</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">tasks</span><span class="o">/</span><span class="n">workflow</span><span class="o">.</span><span class="n">sh</span> <span class="o">--</span><span class="n">task1</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sh</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">tasks</span><span class="o">/</span><span class="n">workflow</span><span class="o">.</span><span class="n">sh</span> <span class="o">--</span><span class="n">task1</span>
 </pre></div>
 </div>
 </li>
 </ul>
-<p>The shell defaults to <code class="docutils literal"><span class="pre">/bin/sh</span></code>. If an alternate shell such as <code class="docutils literal"><span class="pre">zsh</span></code> is desired, use the <code class="docutils literal"><span class="pre">shell</span></code> option in the <code class="docutils literal"><span class="pre">_export</span></code> section.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">_export</span><span class="p">:</span>
+<p>The shell defaults to <code class="docutils literal notranslate"><span class="pre">/bin/sh</span></code>. If an alternate shell such as <code class="docutils literal notranslate"><span class="pre">zsh</span></code> is desired, use the <code class="docutils literal notranslate"><span class="pre">shell</span></code> option in the <code class="docutils literal notranslate"><span class="pre">_export</span></code> section.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">_export</span><span class="p">:</span>
   <span class="n">sh</span><span class="p">:</span>
     <span class="n">shell</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;/usr/bin/zsh&quot;</span><span class="p">]</span>
 
@@ -229,8 +220,8 @@
   <span class="n">sh</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">tasks</span><span class="o">/</span><span class="n">step2</span><span class="o">.</span><span class="n">sh</span>
 </pre></div>
 </div>
-<p>On Windows, you can set PowerShell.exe to the <code class="docutils literal"><span class="pre">shell</span></code> option:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">_export</span><span class="p">:</span>
+<p>On Windows, you can set PowerShell.exe to the <code class="docutils literal notranslate"><span class="pre">shell</span></code> option:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">_export</span><span class="p">:</span>
   <span class="n">sh</span><span class="p">:</span>
     <span class="n">shell</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;powershell.exe&quot;</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">]</span>
 

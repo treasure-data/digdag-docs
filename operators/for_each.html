@@ -20,20 +20,11 @@
   <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
   
     
-      <script type="text/javascript">
-          var DOCUMENTATION_OPTIONS = {
-              URL_ROOT:'../',
-              VERSION:'0.9.37',
-              LANGUAGE:'None',
-              COLLAPSE_INDEX:false,
-              FILE_SUFFIX:'.html',
-              HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: '.txt'
-          };
-      </script>
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -203,7 +194,7 @@
 <h1>for_each&gt;: Repeat tasks for values<a class="headerlink" href="#for-each-repeat-tasks-for-values" title="Permalink to this headline">¶</a></h1>
 <p><strong>for_each&gt;</strong> operator runs subtasks multiple times using sets of variables.</p>
 <p>(This operator is EXPERIMENTAL. Parameters may change in a future release)</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>+repeat:
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>+repeat:
   for_each&gt;:
     fruit: [apple, orange]
     verb: [eat, throw]
@@ -223,25 +214,25 @@
 <div class="section" id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
 <ul>
-<li><p class="first"><strong>for_each&gt;</strong>: VARIABLES</p>
-<p>Variables used for the loop in <code class="docutils literal"><span class="pre">key:</span> <span class="pre">[value,</span> <span class="pre">value,</span> <span class="pre">...]</span></code> syntax. Variables can be an object or JSON string.</p>
+<li><p><strong>for_each&gt;</strong>: VARIABLES</p>
+<p>Variables used for the loop in <code class="docutils literal notranslate"><span class="pre">key:</span> <span class="pre">[value,</span> <span class="pre">value,</span> <span class="pre">...]</span></code> syntax. Variables can be an object or JSON string.</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">for_each</span><span class="o">&gt;</span><span class="p">:</span> <span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]}</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">for_each</span><span class="o">&gt;</span><span class="p">:</span> <span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]}</span>
 </pre></div>
 </div>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">for_each</span><span class="o">&gt;</span><span class="p">:</span> <span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="s1">&#39;[1, 2, 3]&#39;</span><span class="p">}</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">for_each</span><span class="o">&gt;</span><span class="p">:</span> <span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="s1">&#39;[1, 2, 3]&#39;</span><span class="p">}</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>_parallel</strong>: BOOLEAN</p>
+<li><p><strong>_parallel</strong>: BOOLEAN</p>
 <p>Runs the repeating tasks in parallel.</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">_parallel</span><span class="p">:</span> <span class="n">true</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">_parallel</span><span class="p">:</span> <span class="n">true</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>_do</strong>: TASKS</p>
+<li><p><strong>_do</strong>: TASKS</p>
 <p>Tasks to run.</p>
 </li>
 </ul>

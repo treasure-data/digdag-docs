@@ -20,20 +20,11 @@
   <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
   
     
-      <script type="text/javascript">
-          var DOCUMENTATION_OPTIONS = {
-              URL_ROOT:'../',
-              VERSION:'0.9.37',
-              LANGUAGE:'None',
-              COLLAPSE_INDEX:false,
-              FILE_SUFFIX:'.html',
-              HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: '.txt'
-          };
-      </script>
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -196,7 +187,7 @@
   <div class="section" id="param-set-set-a-value-into-a-paramserver-as-persistent-data">
 <h1>param_set&gt;: Set a value into a ParamServer as persistent data<a class="headerlink" href="#param-set-set-a-value-into-a-paramserver-as-persistent-data" title="Permalink to this headline">¶</a></h1>
 <p><strong>param_set&gt;</strong> operator saves a specified value into a ParamServer</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">set_single_value</span><span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">set_single_value</span><span class="p">:</span>
   <span class="n">param_set</span><span class="o">&gt;</span><span class="p">:</span>
   <span class="n">key1</span><span class="p">:</span> <span class="n">value1</span>
 
@@ -213,30 +204,30 @@ The value is 7,776,000 seconds (90days: 60sec * 60min * 24hours * 90days)).</p>
 <div class="section" id="common">
 <h3>Common<a class="headerlink" href="#common" title="Permalink to this headline">¶</a></h3>
 <ul>
-<li><p class="first"><strong>param_server.type (required)</strong>:</p>
-<p>String of the database type of ParamServer ( <code class="docutils literal"><span class="pre">postgresql</span></code> or <code class="docutils literal"><span class="pre">redis</span></code> )</p>
+<li><p><strong>param_server.type (required)</strong>:</p>
+<p>String of the database type of ParamServer ( <code class="docutils literal notranslate"><span class="pre">postgresql</span></code> or <code class="docutils literal notranslate"><span class="pre">redis</span></code> )</p>
 </li>
 </ul>
 </div>
 <div class="section" id="when-using-postgresql">
 <h3>When using PostgreSQL<a class="headerlink" href="#when-using-postgresql" title="Permalink to this headline">¶</a></h3>
 <ul>
-<li><p class="first"><strong>param_server.host (required)</strong>:</p>
+<li><p><strong>param_server.host (required)</strong>:</p>
 <p>String of the host of the ParamServer</p>
 </li>
-<li><p class="first"><strong>param_server.database (required)</strong>:</p>
+<li><p><strong>param_server.database (required)</strong>:</p>
 <p>String of the database name of PostgreSQL</p>
 </li>
-<li><p class="first"><strong>param_server.user (required)</strong>:</p>
+<li><p><strong>param_server.user (required)</strong>:</p>
 <p>String of the user of the ParamServer</p>
 </li>
-<li><p class="first"><strong>param_server.password (optional)</strong>:</p>
+<li><p><strong>param_server.password (optional)</strong>:</p>
 <p>String of the password of the ParamServer</p>
 </li>
 </ul>
 <div class="section" id="sample">
 <h4>Sample<a class="headerlink" href="#sample" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">param_server</span><span class="o">.</span><span class="n">type</span><span class="o">=</span><span class="n">postgresql</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">param_server</span><span class="o">.</span><span class="n">type</span><span class="o">=</span><span class="n">postgresql</span>
 <span class="n">param_server</span><span class="o">.</span><span class="n">host</span><span class="o">=</span><span class="n">my_params</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">com</span>
 <span class="n">param_server</span><span class="o">.</span><span class="n">user</span><span class="o">=</span><span class="n">serizawa</span>
 <span class="n">param_server</span><span class="o">.</span><span class="n">password</span><span class="o">=</span><span class="n">QD8</span><span class="o">-</span><span class="n">_7nE4eMoaZ4FbKE2pA</span>
@@ -248,20 +239,20 @@ The value is 7,776,000 seconds (90days: 60sec * 60min * 24hours * 90days)).</p>
 <div class="section" id="when-using-redis">
 <h3>When using Redis<a class="headerlink" href="#when-using-redis" title="Permalink to this headline">¶</a></h3>
 <ul>
-<li><p class="first"><strong>param_server.host (required)</strong>:</p>
+<li><p><strong>param_server.host (required)</strong>:</p>
 <p>String of the host of the ParamServer</p>
 </li>
-<li><p class="first"><strong>param_server.password (optional)</strong>:</p>
+<li><p><strong>param_server.password (optional)</strong>:</p>
 <p>String of the password of the ParamServer</p>
 </li>
-<li><p class="first"><strong>param_server.ssl (optional)</strong>:</p>
+<li><p><strong>param_server.ssl (optional)</strong>:</p>
 <p>The boolean flag of whether connection with SSL or not SSL.</p>
-<p>The Default value is <code class="docutils literal"><span class="pre">false</span></code></p>
+<p>The Default value is <code class="docutils literal notranslate"><span class="pre">false</span></code></p>
 </li>
 </ul>
 <div class="section" id="id1">
 <h4>Sample<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">param_server</span><span class="o">.</span><span class="n">type</span><span class="o">=</span><span class="n">redis</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">param_server</span><span class="o">.</span><span class="n">type</span><span class="o">=</span><span class="n">redis</span>
 <span class="n">param_server</span><span class="o">.</span><span class="n">host</span><span class="o">=</span><span class="n">my_params</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">com</span>
 <span class="n">param_server</span><span class="o">.</span><span class="n">password</span><span class="o">=</span><span class="n">AQ5e5EvdiVzlLNsDI0Pm4A</span>
 <span class="n">param_server</span><span class="o">.</span><span class="n">ssl</span><span class="o">=</span><span class="n">true</span>
@@ -273,13 +264,13 @@ The value is 7,776,000 seconds (90days: 60sec * 60min * 24hours * 90days)).</p>
 <div class="section" id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
 <ul>
-<li><p class="first"><strong>{key}: {value}</strong></p>
+<li><p><strong>{key}: {value}</strong></p>
 <p>The name of the key/value of the record which you want to save to ParamServer</p>
 <ul>
-<li><p class="first">About data type of {value}</p>
+<li><p>About data type of {value}</p>
 <p>{value} is saved as a String data, so {value} must be a String like value</p>
-<p>OK: <code class="docutils literal"><span class="pre">1234</span></code>, <code class="docutils literal"><span class="pre">abcd</span></code></p>
-<p>NG: <code class="docutils literal"><span class="pre">{a:</span> <span class="pre">1}</span></code>, <code class="docutils literal"><span class="pre">[1,2,3,4,5]</span></code></p>
+<p>OK: <code class="docutils literal notranslate"><span class="pre">1234</span></code>, <code class="docutils literal notranslate"><span class="pre">abcd</span></code></p>
+<p>NG: <code class="docutils literal notranslate"><span class="pre">{a:</span> <span class="pre">1}</span></code>, <code class="docutils literal notranslate"><span class="pre">[1,2,3,4,5]</span></code></p>
 </li>
 </ul>
 </li>

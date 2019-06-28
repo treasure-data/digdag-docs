@@ -20,20 +20,11 @@
   <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
   
     
-      <script type="text/javascript">
-          var DOCUMENTATION_OPTIONS = {
-              URL_ROOT:'./',
-              VERSION:'0.9.37',
-              LANGUAGE:'None',
-              COLLAPSE_INDEX:false,
-              FILE_SUFFIX:'.html',
-              HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: '.txt'
-          };
-      </script>
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
         <script type="text/javascript" src="_static/jquery.js"></script>
         <script type="text/javascript" src="_static/underscore.js"></script>
         <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -217,75 +208,78 @@
 <h1>Command reference<a class="headerlink" href="#command-reference" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#local-mode-commands" id="id1">Local-mode commands</a><ul>
-<li><a class="reference internal" href="#init" id="id2">init</a></li>
-<li><a class="reference internal" href="#run" id="id3">run</a></li>
-<li><a class="reference internal" href="#check" id="id4">check</a></li>
-<li><a class="reference internal" href="#scheduler" id="id5">scheduler</a></li>
-<li><a class="reference internal" href="#selfupdate" id="id6">selfupdate</a></li>
+<li><p><a class="reference internal" href="#local-mode-commands" id="id1">Local-mode commands</a></p>
+<ul>
+<li><p><a class="reference internal" href="#init" id="id2">init</a></p></li>
+<li><p><a class="reference internal" href="#run" id="id3">run</a></p></li>
+<li><p><a class="reference internal" href="#check" id="id4">check</a></p></li>
+<li><p><a class="reference internal" href="#scheduler" id="id5">scheduler</a></p></li>
+<li><p><a class="reference internal" href="#selfupdate" id="id6">selfupdate</a></p></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#server-mode-commands" id="id7">Server-mode commands</a><ul>
-<li><a class="reference internal" href="#server" id="id8">server</a><ul>
-<li><a class="reference internal" href="#secret-encryption-key" id="id9">Secret Encryption Key</a></li>
+<li><p><a class="reference internal" href="#server-mode-commands" id="id7">Server-mode commands</a></p>
+<ul>
+<li><p><a class="reference internal" href="#server" id="id8">server</a></p>
+<ul>
+<li><p><a class="reference internal" href="#secret-encryption-key" id="id9">Secret Encryption Key</a></p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a class="reference internal" href="#client-mode-commands" id="id10">Client-mode commands</a><ul>
-<li><a class="reference internal" href="#start" id="id11">start</a></li>
-<li><a class="reference internal" href="#retry" id="id12">retry</a></li>
-<li><a class="reference internal" href="#log" id="id13">log</a></li>
-<li><a class="reference internal" href="#kill" id="id14">kill</a></li>
-<li><a class="reference internal" href="#projects" id="id15">projects</a></li>
-<li><a class="reference internal" href="#workflows" id="id16">workflows</a></li>
-<li><a class="reference internal" href="#schedules" id="id17">schedules</a></li>
-<li><a class="reference internal" href="#disable" id="id18">disable</a></li>
-<li><a class="reference internal" href="#enable" id="id19">enable</a></li>
-<li><a class="reference internal" href="#backfill" id="id20">backfill</a></li>
-<li><a class="reference internal" href="#reschedule" id="id21">reschedule</a></li>
-<li><a class="reference internal" href="#sessions" id="id22">sessions</a></li>
-<li><a class="reference internal" href="#session" id="id23">session</a></li>
-<li><a class="reference internal" href="#attempts" id="id24">attempts</a></li>
-<li><a class="reference internal" href="#attempt" id="id25">attempt</a></li>
-<li><a class="reference internal" href="#tasks" id="id26">tasks</a></li>
-<li><a class="reference internal" href="#push" id="id27">push</a></li>
-<li><a class="reference internal" href="#download" id="id28">download</a></li>
-<li><a class="reference internal" href="#delete" id="id29">delete</a></li>
-<li><a class="reference internal" href="#secrets" id="id30">secrets</a></li>
-<li><a class="reference internal" href="#version" id="id31">version</a></li>
+<li><p><a class="reference internal" href="#client-mode-commands" id="id10">Client-mode commands</a></p>
+<ul>
+<li><p><a class="reference internal" href="#start" id="id11">start</a></p></li>
+<li><p><a class="reference internal" href="#retry" id="id12">retry</a></p></li>
+<li><p><a class="reference internal" href="#log" id="id13">log</a></p></li>
+<li><p><a class="reference internal" href="#kill" id="id14">kill</a></p></li>
+<li><p><a class="reference internal" href="#projects" id="id15">projects</a></p></li>
+<li><p><a class="reference internal" href="#workflows" id="id16">workflows</a></p></li>
+<li><p><a class="reference internal" href="#schedules" id="id17">schedules</a></p></li>
+<li><p><a class="reference internal" href="#disable" id="id18">disable</a></p></li>
+<li><p><a class="reference internal" href="#enable" id="id19">enable</a></p></li>
+<li><p><a class="reference internal" href="#backfill" id="id20">backfill</a></p></li>
+<li><p><a class="reference internal" href="#reschedule" id="id21">reschedule</a></p></li>
+<li><p><a class="reference internal" href="#sessions" id="id22">sessions</a></p></li>
+<li><p><a class="reference internal" href="#session" id="id23">session</a></p></li>
+<li><p><a class="reference internal" href="#attempts" id="id24">attempts</a></p></li>
+<li><p><a class="reference internal" href="#attempt" id="id25">attempt</a></p></li>
+<li><p><a class="reference internal" href="#tasks" id="id26">tasks</a></p></li>
+<li><p><a class="reference internal" href="#push" id="id27">push</a></p></li>
+<li><p><a class="reference internal" href="#download" id="id28">download</a></p></li>
+<li><p><a class="reference internal" href="#delete" id="id29">delete</a></p></li>
+<li><p><a class="reference internal" href="#secrets" id="id30">secrets</a></p></li>
+<li><p><a class="reference internal" href="#version" id="id31">version</a></p></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#common-options" id="id32">Common options</a></li>
+<li><p><a class="reference internal" href="#common-options" id="id32">Common options</a></p></li>
 </ul>
 </div>
 <div class="section" id="local-mode-commands">
 <h2><a class="toc-backref" href="#id1">Local-mode commands</a><a class="headerlink" href="#local-mode-commands" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="init">
 <h3><a class="toc-backref" href="#id2">init</a><a class="headerlink" href="#init" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag init &lt;dir&gt;
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag init &lt;dir&gt;
 </pre></div>
 </div>
 <p>Creates a new workflow project. This command generates a sample .dig file, scripts used in the workflow, and .gitignore file in <strong>&lt;dir&gt;</strong> directory. Examples:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag init mydag
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag init mydag
 </pre></div>
 </div>
 <p>Options:</p>
-<dl class="docutils">
-<dt><strong class="command">-t, --type EXAMPLE_TYPE</strong></dt>
-<dd><p class="first">Use specified example project type (default: echo).</p>
+<dl>
+<dt><strong class="command">-t, --type EXAMPLE_TYPE</strong></dt><dd><p>Use specified example project type (default: echo).</p>
 <p>Available types are <cite>echo</cite>, <cite>sh</cite>, <cite>ruby</cite>, <cite>python</cite>, <cite>td</cite> or <cite>postgresql</cite>.</p>
-<p class="last">Example: <code class="docutils literal"><span class="pre">-t</span> <span class="pre">sh</span></code></p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">-t</span> <span class="pre">sh</span></code></p>
 </dd>
 </dl>
 </div>
 <div class="section" id="run">
 <h3><a class="toc-backref" href="#id3">run</a><a class="headerlink" href="#run" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag run &lt;workflow.dig&gt; <span class="o">[</span>+task<span class="o">]</span> <span class="o">[</span>options...<span class="o">]</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag run &lt;workflow.dig&gt; <span class="o">[</span>+task<span class="o">]</span> <span class="o">[</span>options...<span class="o">]</span>
 </pre></div>
 </div>
 <p>Runs workflow.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag run workflow.dig
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag run workflow.dig
 <span class="gp">$</span> digdag run workflow.dig +step2
 <span class="gp">$</span> digdag run another.dig --start +step2
 <span class="gp">$</span> digdag run another.dig --start +step2 --end +step4
@@ -295,162 +289,136 @@
 </pre></div>
 </div>
 <p>Options:</p>
-<dl class="docutils">
-<dt><strong class="command">--project DIR</strong></dt>
-<dd><p class="first">Use this directory as the project directory (default: current directory).</p>
-<p class="last">Example: <code class="docutils literal"><span class="pre">--project</span> <span class="pre">workflow/</span></code></p>
+<dl>
+<dt><strong class="command">--project DIR</strong></dt><dd><p>Use this directory as the project directory (default: current directory).</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">--project</span> <span class="pre">workflow/</span></code></p>
 </dd>
-<dt><strong class="command">-o, --save DIR</strong></dt>
-<dd><p class="first">Use this directory to read and write session status (default: .digdag/status).</p>
+<dt><strong class="command">-o, --save DIR</strong></dt><dd><p>Use this directory to read and write session status (default: .digdag/status).</p>
 <p>Digdag creates a file in this directory when a task successfully finishes. When digdag runs again, it skips tasks if this a file exists in this directory. This is useful to resume a failed workflow from the middle.</p>
-<p class="last">Example: <code class="docutils literal"><span class="pre">-o</span> <span class="pre">.digdag/status</span></code></p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">-o</span> <span class="pre">.digdag/status</span></code></p>
 </dd>
-<dt><strong class="command">-a, --rerun</strong></dt>
-<dd><p class="first">Rerun all tasks even if the tasks successfully finished before. In other words, ignore files at <code class="docutils literal"><span class="pre">-o,</span> <span class="pre">--save</span></code> directory.</p>
-<p class="last">Example: <code class="docutils literal"><span class="pre">--rerun</span></code></p>
+<dt><strong class="command">-a, --rerun</strong></dt><dd><p>Rerun all tasks even if the tasks successfully finished before. In other words, ignore files at <code class="docutils literal notranslate"><span class="pre">-o,</span> <span class="pre">--save</span></code> directory.</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">--rerun</span></code></p>
 </dd>
-<dt><strong class="command">-s, --start +NAME</strong></dt>
-<dd><p class="first">If this option is set, Digdag runs this task and following tasks even if the tasks successfully finished before. The other tasks will be skipped if their state files are stored at <code class="docutils literal"><span class="pre">-o,</span> <span class="pre">--save</span></code> directory.</p>
-<p class="last">Example: <code class="docutils literal"><span class="pre">--start</span> <span class="pre">+step2</span></code></p>
+<dt><strong class="command">-s, --start +NAME</strong></dt><dd><p>If this option is set, Digdag runs this task and following tasks even if the tasks successfully finished before. The other tasks will be skipped if their state files are stored at <code class="docutils literal notranslate"><span class="pre">-o,</span> <span class="pre">--save</span></code> directory.</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">--start</span> <span class="pre">+step2</span></code></p>
 </dd>
-<dt><strong class="command">-g, --goal +NAME</strong></dt>
-<dd><p class="first">If this option is set, Digdag runs this task and its children tasks even if the tasks successfully finished before. The other tasks will be skipped if their state files are stored at <code class="docutils literal"><span class="pre">-o,</span> <span class="pre">--save</span></code> directory.</p>
-<p class="last">Example: <code class="docutils literal"><span class="pre">--goal</span> <span class="pre">+step2</span></code></p>
+<dt><strong class="command">-g, --goal +NAME</strong></dt><dd><p>If this option is set, Digdag runs this task and its children tasks even if the tasks successfully finished before. The other tasks will be skipped if their state files are stored at <code class="docutils literal notranslate"><span class="pre">-o,</span> <span class="pre">--save</span></code> directory.</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">--goal</span> <span class="pre">+step2</span></code></p>
 </dd>
-<dt><strong class="command">-e, --end +NAME</strong></dt>
-<dd><p class="first">Stops workflow right before this task. This task and following tasks will be skipped.</p>
-<p class="last">Example: <code class="docutils literal"><span class="pre">--end</span> <span class="pre">+step4</span></code></p>
+<dt><strong class="command">-e, --end +NAME</strong></dt><dd><p>Stops workflow right before this task. This task and following tasks will be skipped.</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">--end</span> <span class="pre">+step4</span></code></p>
 </dd>
-<dt><strong class="command">--session EXPR</strong></dt>
-<dd><p class="first">Set session_time to this time. Argument is either of:</p>
+<dt><strong class="command">--session EXPR</strong></dt><dd><p>Set session_time to this time. Argument is either of:</p>
 <blockquote>
 <div><ul class="simple">
-<li>daily: uses today&#8217;s 00:00:00 as the session time (update session time every day).</li>
-<li>hourly: uses current hour&#8217;s 00:00 as the session time (update session time every hour).</li>
-<li>schedule: calculates time based on <code class="docutils literal"><span class="pre">schedule</span></code> configuration of the workflow. Error if <code class="docutils literal"><span class="pre">schedule</span></code> is not set.</li>
-<li>last: reuses the last session time of the last execution. If it&#8217;s not available, tries to calculate based on <code class="docutils literal"><span class="pre">schedule</span></code>, or uses today&#8217;s 00:00:00.</li>
-<li>timestamp in <em>yyyy-MM-dd</em> or <em>yyyy-MM-dd HH:mm:ss</em> format: uses the specified time as the session time.</li>
+<li><p>daily: uses today’s 00:00:00 as the session time (update session time every day).</p></li>
+<li><p>hourly: uses current hour’s 00:00 as the session time (update session time every hour).</p></li>
+<li><p>schedule: calculates time based on <code class="docutils literal notranslate"><span class="pre">schedule</span></code> configuration of the workflow. Error if <code class="docutils literal notranslate"><span class="pre">schedule</span></code> is not set.</p></li>
+<li><p>last: reuses the last session time of the last execution. If it’s not available, tries to calculate based on <code class="docutils literal notranslate"><span class="pre">schedule</span></code>, or uses today’s 00:00:00.</p></li>
+<li><p>timestamp in <em>yyyy-MM-dd</em> or <em>yyyy-MM-dd HH:mm:ss</em> format: uses the specified time as the session time.</p></li>
 </ul>
 </div></blockquote>
-<p>Default is &#8220;last&#8221;.</p>
-<p class="last">Example: <code class="docutils literal"><span class="pre">--session</span> <span class="pre">2016-01-01</span></code></p>
+<p>Default is “last”.</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">--session</span> <span class="pre">2016-01-01</span></code></p>
 </dd>
-<dt><strong class="command">--no-save</strong></dt>
-<dd><p class="first">Disables session state files completely.</p>
-<p class="last">Example: <code class="docutils literal"><span class="pre">--no-save</span></code></p>
+<dt><strong class="command">--no-save</strong></dt><dd><p>Disables session state files completely.</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">--no-save</span></code></p>
 </dd>
-<dt><strong class="command">--max-task-threads N</strong></dt>
-<dd><p class="first">Limit maximum number of task execution threads.</p>
-<p class="last">Example: <code class="docutils literal"><span class="pre">--max-task-threads</span> <span class="pre">5</span></code></p>
+<dt><strong class="command">--max-task-threads N</strong></dt><dd><p>Limit maximum number of task execution threads.</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">--max-task-threads</span> <span class="pre">5</span></code></p>
 </dd>
-<dt><strong class="command">-O, --task-log DIR</strong></dt>
-<dd><p class="first">Store task logs to this directory.</p>
-<p class="last">Example: <code class="docutils literal"><span class="pre">--task-log</span> <span class="pre">log/tasks</span></code></p>
+<dt><strong class="command">-O, --task-log DIR</strong></dt><dd><p>Store task logs to this directory.</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">--task-log</span> <span class="pre">log/tasks</span></code></p>
 </dd>
-<dt><strong class="command">-p, --param KEY=VALUE</strong></dt>
-<dd><p class="first">Add a session parameter (use multiple times to set many parameters) in KEY=VALUE syntax. This parameter is available using <code class="docutils literal"><span class="pre">${...}</span></code> syntax in the YAML file, or using language API.</p>
-<p>Example: <code class="docutils literal"><span class="pre">-p</span> <span class="pre">environment=staging</span></code></p>
-<p class="last">Note: Variable defined in _export is not overwritable by &#8211;param option.</p>
+<dt><strong class="command">-p, --param KEY=VALUE</strong></dt><dd><p>Add a session parameter (use multiple times to set many parameters) in KEY=VALUE syntax. This parameter is available using <code class="docutils literal notranslate"><span class="pre">${...}</span></code> syntax in the YAML file, or using language API.</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">-p</span> <span class="pre">environment=staging</span></code></p>
+<p>Note: Variable defined in _export is not overwritable by –param option.</p>
 </dd>
-<dt><strong class="command">-P, --params-file PATH</strong></dt>
-<dd><p class="first">Read parameters from a YAML/JSON file. Nested parameter (like {mysql: {user: me}}) are accessible using &#8221;.&#8221; syntax (like ${mysql.user}).</p>
-<p class="last">Example: <code class="docutils literal"><span class="pre">-P</span> <span class="pre">params.yml</span></code></p>
+<dt><strong class="command">-P, --params-file PATH</strong></dt><dd><p>Read parameters from a YAML/JSON file. Nested parameter (like {mysql: {user: me}}) are accessible using “.” syntax (like ${mysql.user}).</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">-P</span> <span class="pre">params.yml</span></code></p>
 </dd>
-<dt><strong class="command">-d, --dry-run</strong></dt>
-<dd><p class="first">Dry-run mode. This mode doesn&#8217;t run tasks.</p>
-<p class="last">Example: <code class="docutils literal"><span class="pre">-d</span></code></p>
+<dt><strong class="command">-d, --dry-run</strong></dt><dd><p>Dry-run mode. This mode doesn’t run tasks.</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">-d</span></code></p>
 </dd>
-<dt><strong class="command">-E, --show-params</strong></dt>
-<dd><p class="first">Show calculated parameters given to a task before running the task. Useful to use with dry-run mode.</p>
-<p class="last">Example: <code class="docutils literal"><span class="pre">-dE</span></code></p>
+<dt><strong class="command">-E, --show-params</strong></dt><dd><p>Show calculated parameters given to a task before running the task. Useful to use with dry-run mode.</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">-dE</span></code></p>
 </dd>
 </dl>
 </div>
 <div class="section" id="check">
 <h3><a class="toc-backref" href="#id4">check</a><a class="headerlink" href="#check" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag check <span class="o">[</span>workflow.dig<span class="o">]</span> <span class="o">[</span>options...<span class="o">]</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag check <span class="o">[</span>workflow.dig<span class="o">]</span> <span class="o">[</span>options...<span class="o">]</span>
 </pre></div>
 </div>
-<p>Shows workflow definitions and schedules. &#8220;c&#8221; is alias of check command. Examples:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag c
+<p>Shows workflow definitions and schedules. “c” is alias of check command. Examples:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag c
 <span class="gp">$</span> digdag check
 <span class="gp">$</span> digdag check another.dig
 </pre></div>
 </div>
-<dl class="docutils">
-<dt><strong class="command">--project DIR</strong></dt>
-<dd><p class="first">Use this directory as the project directory (default: current directory).</p>
-<p class="last">Example: <code class="docutils literal"><span class="pre">--project</span> <span class="pre">workflow/</span></code></p>
+<dl>
+<dt><strong class="command">--project DIR</strong></dt><dd><p>Use this directory as the project directory (default: current directory).</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">--project</span> <span class="pre">workflow/</span></code></p>
 </dd>
-<dt><strong class="command">-p, --param KEY=VALUE</strong></dt>
-<dd><p class="first">Overwrite a parameter (use multiple times to set many parameters) in KEY=VALUE syntax. This parameter is available using <code class="docutils literal"><span class="pre">${...}</span></code> syntax in the YAML file, or using language API.</p>
-<p>Example: <code class="docutils literal"><span class="pre">-p</span> <span class="pre">environment=staging</span></code></p>
-<p class="last">Note: Variable defined in _export is not overwritable by &#8211;param option.</p>
+<dt><strong class="command">-p, --param KEY=VALUE</strong></dt><dd><p>Overwrite a parameter (use multiple times to set many parameters) in KEY=VALUE syntax. This parameter is available using <code class="docutils literal notranslate"><span class="pre">${...}</span></code> syntax in the YAML file, or using language API.</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">-p</span> <span class="pre">environment=staging</span></code></p>
+<p>Note: Variable defined in _export is not overwritable by –param option.</p>
 </dd>
-<dt><strong class="command">-P, --params-file PATH</strong></dt>
-<dd><p class="first">Read parameters from a YAML file. Nested parameter (like {mysql: {user: me}}) are accessible using &#8221;.&#8221; syntax (like ${mysql.user}).</p>
-<p class="last">Example: <code class="docutils literal"><span class="pre">-P</span> <span class="pre">params.yml</span></code></p>
+<dt><strong class="command">-P, --params-file PATH</strong></dt><dd><p>Read parameters from a YAML file. Nested parameter (like {mysql: {user: me}}) are accessible using “.” syntax (like ${mysql.user}).</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">-P</span> <span class="pre">params.yml</span></code></p>
 </dd>
 </dl>
 </div>
 <div class="section" id="scheduler">
 <h3><a class="toc-backref" href="#id5">scheduler</a><a class="headerlink" href="#scheduler" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag scheduler <span class="o">[</span>options...<span class="o">]</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag scheduler <span class="o">[</span>options...<span class="o">]</span>
 </pre></div>
 </div>
-<p>Runs a workflow scheduler that runs schedules periodically. This picks up all workflow definition files named with <code class="docutils literal"><span class="pre">.dig</span></code> suffix at the current directory. Examples:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag scheduler
+<p>Runs a workflow scheduler that runs schedules periodically. This picks up all workflow definition files named with <code class="docutils literal notranslate"><span class="pre">.dig</span></code> suffix at the current directory. Examples:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag scheduler
 <span class="gp">$</span> digdag scheduler -d status
 <span class="gp">$</span> digdag scheduler -b <span class="m">0</span>.0.0.0
 </pre></div>
 </div>
-<dl class="docutils">
-<dt><strong class="command">--project DIR</strong></dt>
-<dd><p class="first">Use this directory as the project directory (default: current directory).</p>
-<p class="last">Example: <code class="docutils literal"><span class="pre">--project</span> <span class="pre">workflow/</span></code></p>
+<dl>
+<dt><strong class="command">--project DIR</strong></dt><dd><p>Use this directory as the project directory (default: current directory).</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">--project</span> <span class="pre">workflow/</span></code></p>
 </dd>
-<dt><strong class="command">-n, --port PORT</strong></dt>
-<dd><p class="first">Port number to listen for web interface and api clients (default: 65432).</p>
-<p class="last">Example: <code class="docutils literal"><span class="pre">-p</span> <span class="pre">8080</span></code></p>
+<dt><strong class="command">-n, --port PORT</strong></dt><dd><p>Port number to listen for web interface and api clients (default: 65432).</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">-p</span> <span class="pre">8080</span></code></p>
 </dd>
-<dt><strong class="command">-b, --bind ADDRESS</strong></dt>
-<dd><p class="first">IP address to listen HTTP clients (default: 127.0.0.1).</p>
-<p class="last">Example: <code class="docutils literal"><span class="pre">-b</span> <span class="pre">0.0.0.0</span></code></p>
+<dt><strong class="command">-b, --bind ADDRESS</strong></dt><dd><p>IP address to listen HTTP clients (default: 127.0.0.1).</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">-b</span> <span class="pre">0.0.0.0</span></code></p>
 </dd>
-<dt><strong class="command">-o, --database DIR</strong></dt>
-<dd><p class="first">Store status to this database. Default is memory that doesn&#8217;t save status.</p>
-<p class="last">Example: <code class="docutils literal"><span class="pre">--database</span> <span class="pre">digdag</span></code></p>
+<dt><strong class="command">-o, --database DIR</strong></dt><dd><p>Store status to this database. Default is memory that doesn’t save status.</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">--database</span> <span class="pre">digdag</span></code></p>
 </dd>
-<dt><strong class="command">-O, --task-log DIR</strong></dt>
-<dd><p class="first">Store task logs to this directory. If this option is not set, <code class="docutils literal"><span class="pre">digdag</span> <span class="pre">log</span></code> command doesn&#8217;t work.</p>
-<p class="last">Example: <code class="docutils literal"><span class="pre">--task-log</span> <span class="pre">digdag.log</span></code></p>
+<dt><strong class="command">-O, --task-log DIR</strong></dt><dd><p>Store task logs to this directory. If this option is not set, <code class="docutils literal notranslate"><span class="pre">digdag</span> <span class="pre">log</span></code> command doesn’t work.</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">--task-log</span> <span class="pre">digdag.log</span></code></p>
 </dd>
-<dt><strong class="command">--max-task-threads N</strong></dt>
-<dd><p class="first">Limit maximum number of task execution threads on this server.</p>
-<p class="last">Example: <code class="docutils literal"><span class="pre">--max-task-threads</span> <span class="pre">5</span></code></p>
+<dt><strong class="command">--max-task-threads N</strong></dt><dd><p>Limit maximum number of task execution threads on this server.</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">--max-task-threads</span> <span class="pre">5</span></code></p>
 </dd>
-<dt><strong class="command">-p, --param KEY=VALUE</strong></dt>
-<dd><p class="first">Add a session parameter (use multiple times to set many parameters) in KEY=VALUE syntax. This parameter is available using <code class="docutils literal"><span class="pre">${...}</span></code> syntax in the YAML file, or using language API.</p>
-<p>Example: <code class="docutils literal"><span class="pre">-p</span> <span class="pre">environment=staging</span></code></p>
-<p class="last">Note: Variable defined in _export is not overwritable by &#8211;param option.</p>
+<dt><strong class="command">-p, --param KEY=VALUE</strong></dt><dd><p>Add a session parameter (use multiple times to set many parameters) in KEY=VALUE syntax. This parameter is available using <code class="docutils literal notranslate"><span class="pre">${...}</span></code> syntax in the YAML file, or using language API.</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">-p</span> <span class="pre">environment=staging</span></code></p>
+<p>Note: Variable defined in _export is not overwritable by –param option.</p>
 </dd>
-<dt><strong class="command">-P, --params-file PATH</strong></dt>
-<dd><p class="first">Read parameters from a YAML file. Nested parameter (like {mysql: {user: me}}) are accessible using &#8221;.&#8221; syntax (like ${mysql.user}).</p>
-<p class="last">Example: <code class="docutils literal"><span class="pre">-P</span> <span class="pre">params.yml</span></code></p>
+<dt><strong class="command">-P, --params-file PATH</strong></dt><dd><p>Read parameters from a YAML file. Nested parameter (like {mysql: {user: me}}) are accessible using “.” syntax (like ${mysql.user}).</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">-P</span> <span class="pre">params.yml</span></code></p>
 </dd>
-<dt><strong class="command">-c, --config PATH</strong></dt>
-<dd><p class="first">Configuration file to load. (default: ~/.config/digdag/config)</p>
-<p class="last">Example: <code class="docutils literal"><span class="pre">-c</span> <span class="pre">digdag-server/server.properties</span></code></p>
+<dt><strong class="command">-c, --config PATH</strong></dt><dd><p>Configuration file to load. (default: ~/.config/digdag/config)</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">-c</span> <span class="pre">digdag-server/server.properties</span></code></p>
 </dd>
 </dl>
 </div>
 <div class="section" id="selfupdate">
 <h3><a class="toc-backref" href="#id6">selfupdate</a><a class="headerlink" href="#selfupdate" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag selfupdate <span class="o">[</span>version<span class="o">]</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag selfupdate <span class="o">[</span>version<span class="o">]</span>
 </pre></div>
 </div>
 <p>Updates the executable binary file to the latest version or specified version. Examples:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag selfupdate
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag selfupdate
 <span class="gp">$</span> digdag selfupdate <span class="m">0</span>.9.37
 </pre></div>
 </div>
@@ -460,131 +428,118 @@
 <h2><a class="toc-backref" href="#id7">Server-mode commands</a><a class="headerlink" href="#server-mode-commands" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="server">
 <h3><a class="toc-backref" href="#id8">server</a><a class="headerlink" href="#server" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag server <span class="o">[</span>options...<span class="o">]</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag server <span class="o">[</span>options...<span class="o">]</span>
 </pre></div>
 </div>
-<p>Runs a digdag server. &#8211;memory or &#8211;database option is required. Examples:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag server --memory
+<p>Runs a digdag server. –memory or –database option is required. Examples:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag server --memory
 <span class="gp">$</span> digdag server -o digdag-server
 <span class="gp">$</span> digdag server -o digdag-server -b <span class="m">0</span>.0.0.0
 </pre></div>
 </div>
-<dl class="docutils">
-<dt><strong class="command">-n, --port PORT</strong></dt>
-<dd><p class="first">Port number to listen for web interface and api clients (default: 65432).</p>
-<p class="last">Example: <code class="docutils literal"><span class="pre">-n</span> <span class="pre">8080</span></code></p>
+<dl>
+<dt><strong class="command">-n, --port PORT</strong></dt><dd><p>Port number to listen for web interface and api clients (default: 65432).</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">-n</span> <span class="pre">8080</span></code></p>
 </dd>
-<dt><strong class="command">-b, --bind ADDRESS</strong></dt>
-<dd><p class="first">IP address to listen HTTP clients (default: 127.0.0.1).</p>
-<p class="last">Example: <code class="docutils literal"><span class="pre">-b</span> <span class="pre">0.0.0.0</span></code></p>
+<dt><strong class="command">-b, --bind ADDRESS</strong></dt><dd><p>IP address to listen HTTP clients (default: 127.0.0.1).</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">-b</span> <span class="pre">0.0.0.0</span></code></p>
 </dd>
-<dt><strong class="command">-o, --database DIR</strong></dt>
-<dd><p class="first">Store status to this database.</p>
-<p class="last">Example: <code class="docutils literal"><span class="pre">--database</span> <span class="pre">digdag</span></code></p>
+<dt><strong class="command">-o, --database DIR</strong></dt><dd><p>Store status to this database.</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">--database</span> <span class="pre">digdag</span></code></p>
 </dd>
-<dt><strong class="command">-m, --memory</strong></dt>
-<dd><p class="first">Store status in memory. Data will be removed when the server exits.</p>
-<p class="last">Example: <code class="docutils literal"><span class="pre">--memory</span></code></p>
+<dt><strong class="command">-m, --memory</strong></dt><dd><p>Store status in memory. Data will be removed when the server exits.</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">--memory</span></code></p>
 </dd>
-<dt><strong class="command">-O, --task-log DIR</strong></dt>
-<dd><p class="first">Store task logs to this directory. If this option is not set, <code class="docutils literal"><span class="pre">digdag</span> <span class="pre">log</span></code> command doesn&#8217;t work.</p>
-<p class="last">Example: <code class="docutils literal"><span class="pre">--task-log</span> <span class="pre">digdag/sessions</span></code></p>
+<dt><strong class="command">-O, --task-log DIR</strong></dt><dd><p>Store task logs to this directory. If this option is not set, <code class="docutils literal notranslate"><span class="pre">digdag</span> <span class="pre">log</span></code> command doesn’t work.</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">--task-log</span> <span class="pre">digdag/sessions</span></code></p>
 </dd>
-<dt><strong class="command">-A, --access-log DIR</strong></dt>
-<dd><p class="first">Store access logs to this directory.</p>
-<p class="last">Example: <code class="docutils literal"><span class="pre">--access-log</span> <span class="pre">digdag/log</span></code></p>
+<dt><strong class="command">-A, --access-log DIR</strong></dt><dd><p>Store access logs to this directory.</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">--access-log</span> <span class="pre">digdag/log</span></code></p>
 </dd>
-<dt><strong class="command">--disable-local-agent</strong></dt>
-<dd><p class="first">Disable task execution on this server.</p>
-<p>This option is useful when there&#8217;re multiple servers sharing the same underlay database and some of the servers are prepared only for REST API. See also <code class="docutils literal"><span class="pre">--disable-executor-loop</span></code> option.</p>
-<p class="last">Example: <code class="docutils literal"><span class="pre">--disable-local-agent</span></code></p>
+<dt><strong class="command">--disable-local-agent</strong></dt><dd><p>Disable task execution on this server.</p>
+<p>This option is useful when there’re multiple servers sharing the same underlay database and some of the servers are prepared only for REST API. See also <code class="docutils literal notranslate"><span class="pre">--disable-executor-loop</span></code> option.</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">--disable-local-agent</span></code></p>
 </dd>
-<dt><strong class="command">--max-task-threads N</strong></dt>
-<dd><p class="first">Limit maximum number of task execution threads on this server.</p>
-<p class="last">Example: <code class="docutils literal"><span class="pre">--max-task-threads</span> <span class="pre">5</span></code></p>
+<dt><strong class="command">--max-task-threads N</strong></dt><dd><p>Limit maximum number of task execution threads on this server.</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">--max-task-threads</span> <span class="pre">5</span></code></p>
 </dd>
-<dt><strong class="command">--disable-executor-loop</strong></dt>
-<dd><p class="first">Disable workflow executor on this server. Workflow executor loop updates state of tasks on the underlay database. At least one server that is sharing the same underlay database must enable workflow executor loop.</p>
-<p>This option is useful when there&#8217;re multiple servers sharing the same underlay database and some of the servers are prepared only for task execution or REST API. See also <code class="docutils literal"><span class="pre">--disable-local-agent</span></code> option.</p>
-<p class="last">Example: <code class="docutils literal"><span class="pre">--disable-executor-loop</span></code></p>
+<dt><strong class="command">--disable-executor-loop</strong></dt><dd><p>Disable workflow executor on this server. Workflow executor loop updates state of tasks on the underlay database. At least one server that is sharing the same underlay database must enable workflow executor loop.</p>
+<p>This option is useful when there’re multiple servers sharing the same underlay database and some of the servers are prepared only for task execution or REST API. See also <code class="docutils literal notranslate"><span class="pre">--disable-local-agent</span></code> option.</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">--disable-executor-loop</span></code></p>
 </dd>
-<dt><strong class="command">--disable-scheduler</strong></dt>
-<dd><p class="first">Disable a schedule executor on this server.</p>
-<p>This option is useful when you want to disable all schedules without modifying workflow files. See also <code class="docutils literal"><span class="pre">--disable-executor-loop</span></code> option.</p>
-<p class="last">Example: <code class="docutils literal"><span class="pre">--disable-scheduler</span></code></p>
+<dt><strong class="command">--disable-scheduler</strong></dt><dd><p>Disable a schedule executor on this server.</p>
+<p>This option is useful when you want to disable all schedules without modifying workflow files. See also <code class="docutils literal notranslate"><span class="pre">--disable-executor-loop</span></code> option.</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">--disable-scheduler</span></code></p>
 </dd>
-<dt><strong class="command">-p, --param KEY=VALUE</strong></dt>
-<dd><p class="first">Add a session parameter (use multiple times to set many parameters) in KEY=VALUE syntax. This parameter is available using <code class="docutils literal"><span class="pre">${...}</span></code> syntax in the YAML file, or using language API.</p>
-<p>Example: <code class="docutils literal"><span class="pre">-p</span> <span class="pre">environment=staging</span></code></p>
-<p class="last">Note: Variable defined in _export is not overwritable by &#8211;param option.</p>
+<dt><strong class="command">-p, --param KEY=VALUE</strong></dt><dd><p>Add a session parameter (use multiple times to set many parameters) in KEY=VALUE syntax. This parameter is available using <code class="docutils literal notranslate"><span class="pre">${...}</span></code> syntax in the YAML file, or using language API.</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">-p</span> <span class="pre">environment=staging</span></code></p>
+<p>Note: Variable defined in _export is not overwritable by –param option.</p>
 </dd>
-<dt><strong class="command">-P, --params-file PATH</strong></dt>
-<dd><p class="first">Read parameters from a YAML file. Nested parameter (like {mysql: {user: me}}) are accessible using &#8221;.&#8221; syntax (like ${mysql.user}).</p>
-<p class="last">Example: <code class="docutils literal"><span class="pre">-P</span> <span class="pre">params.yml</span></code></p>
+<dt><strong class="command">-P, --params-file PATH</strong></dt><dd><p>Read parameters from a YAML file. Nested parameter (like {mysql: {user: me}}) are accessible using “.” syntax (like ${mysql.user}).</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">-P</span> <span class="pre">params.yml</span></code></p>
 </dd>
-<dt><strong class="command">-c, --config PATH</strong></dt>
-<dd><p class="first">Server configuration property path. See the followings for details.</p>
-<p class="last">Example: <code class="docutils literal"><span class="pre">-c</span> <span class="pre">digdag.properties</span></code></p>
+<dt><strong class="command">-c, --config PATH</strong></dt><dd><p>Server configuration property path. See the followings for details.</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">-c</span> <span class="pre">digdag.properties</span></code></p>
 </dd>
 </dl>
 <p>In the config file, following parameters are available</p>
 <ul class="simple">
-<li>server.bind (ip address)</li>
-<li>server.port (integer)</li>
-<li>server.admin.bind (ip address)</li>
-<li>server.admin.port (integer)</li>
-<li>server.access-log.path (string. same with &#8211;access-log)</li>
-<li>server.access-log.pattern (string, &#8220;json&#8221;, &#8220;combined&#8221; or &#8220;common&#8221;)</li>
-<li>server.http.io-threads (number of HTTP IO threads in integer. default: available CPU cores or 2, whichever is greater)</li>
-<li>server.http.worker-threads (number of HTTP worker threads in integer. default: server.http.io-threads * 8)</li>
-<li>server.http.no-request-timeout (maximum allowed time for clients to keep a connection open without sending requests or receiving responses in seconds. default: 60)</li>
-<li>server.http.request-parse-timeout (maximum allowed time of reading a HTTP request in seconds. this doesn&#8217;t affect on reading request body. default: 30)</li>
-<li>server.http.io-idle-timeout (maximum allowed idle time of reading HTTP request and writing HTTP response in seconds. default: 300)</li>
-<li>server.http.enable-http2 (enable HTTP/2. default: false)</li>
-<li>server.http.headers.KEY = VALUE (HTTP header to set on API responses)</li>
-<li>server.jmx.port (port to listen JMX in integer. default: JMX is disabled)</li>
-<li>database.type (enum, &#8220;h2&#8221; or &#8220;postgresql&#8221;)</li>
-<li>database.user (string)</li>
-<li>database.password (string)</li>
-<li>database.host (string)</li>
-<li>database.port (integer)</li>
-<li>database.database (string)</li>
-<li>database.loginTimeout (seconds in integer, default: 30)</li>
-<li>database.socketTimeout (seconds in integer, default: 1800)</li>
-<li>database.ssl (boolean, default: false)</li>
-<li>database.connectionTimeout (seconds in integer, default: 30)</li>
-<li>database.idleTimeout (seconds in integer, default: 600)</li>
-<li>database.validationTimeout (seconds in integer, default: 5)</li>
-<li>database.maximumPoolSize (integer, default: available CPU cores * 32)</li>
-<li>database.leakDetectionThreshold (HikariCP leakDetectionThreshold milliseconds in integer. default: 0. To enable, set to &gt;= 2000.)</li>
-<li>database.migrate (enable DB migration. default: true)</li>
-<li>archive.type (type of project archiving, &#8220;db&#8221; or &#8220;s3&#8221;. default: &#8220;db&#8221;)</li>
-<li>archive.s3.endpoint (string. default: &#8220;s3.amazonaws.com&#8221;)</li>
-<li>archive.s3.bucket (string)</li>
-<li>archive.s3.path (string)</li>
-<li>archive.s3.credentials.access-key-id (string. default: instance profile)</li>
-<li>archive.s3.credentials.secret-access-key (string. default: instance profile)</li>
-<li>archive.s3.path-style-access (boolean. default: false)</li>
-<li>log-server.type (type of log storage, &#8220;local&#8221; , &#8220;null&#8221;, or &#8220;s3&#8221;. default: &#8220;null&#8221;. This parameter will be overwritten with &#8220;local&#8221; if <code class="docutils literal"><span class="pre">-O,</span> <span class="pre">--task-log</span> <span class="pre">DIR</span></code> is set.)</li>
-<li>log-server.s3.endpoint (string, default: &#8220;s3.amazonaws.com&#8221;)</li>
-<li>log-server.s3.bucket (string)</li>
-<li>log-server.s3.path (string)</li>
-<li>log-server.s3.direct_download (boolean. default: false)</li>
-<li>log-server.s3.credentials.access-key-id (string. default: instance profile)</li>
-<li>log-server.s3.credentials.secret-access-key (string. default: instance profile)</li>
-<li>log-server.s3.path-style-access (boolean. default: false)</li>
-<li>digdag.secret-encryption-key = (base64 encoded 128-bit AES encryption key)</li>
-<li>executor.task_ttl (string. default: 1d. A task is killed if it is running longer than this period.)</li>
-<li>executor.attempt_ttl (string. default: 7d. An attempt is killed if it is running longer than this period.)</li>
-<li>api.max_attempts_page_size (integer. The max number of rows of attempts in api response)</li>
-<li>api.max_sessions_page_size (integer. The max number of rows of sessions in api response)</li>
-<li>api.max_archive_total_size_limit (integer. The maximum size of an archived project. i.e. <code class="docutils literal"><span class="pre">digdag</span> <span class="pre">push</span></code> size. default: 2MB(2*1024*1024))</li>
+<li><p>server.bind (ip address)</p></li>
+<li><p>server.port (integer)</p></li>
+<li><p>server.admin.bind (ip address)</p></li>
+<li><p>server.admin.port (integer)</p></li>
+<li><p>server.access-log.path (string. same with –access-log)</p></li>
+<li><p>server.access-log.pattern (string, “json”, “combined” or “common”)</p></li>
+<li><p>server.http.io-threads (number of HTTP IO threads in integer. default: available CPU cores or 2, whichever is greater)</p></li>
+<li><p>server.http.worker-threads (number of HTTP worker threads in integer. default: server.http.io-threads * 8)</p></li>
+<li><p>server.http.no-request-timeout (maximum allowed time for clients to keep a connection open without sending requests or receiving responses in seconds. default: 60)</p></li>
+<li><p>server.http.request-parse-timeout (maximum allowed time of reading a HTTP request in seconds. this doesn’t affect on reading request body. default: 30)</p></li>
+<li><p>server.http.io-idle-timeout (maximum allowed idle time of reading HTTP request and writing HTTP response in seconds. default: 300)</p></li>
+<li><p>server.http.enable-http2 (enable HTTP/2. default: false)</p></li>
+<li><p>server.http.headers.KEY = VALUE (HTTP header to set on API responses)</p></li>
+<li><p>server.jmx.port (port to listen JMX in integer. default: JMX is disabled)</p></li>
+<li><p>database.type (enum, “h2” or “postgresql”)</p></li>
+<li><p>database.user (string)</p></li>
+<li><p>database.password (string)</p></li>
+<li><p>database.host (string)</p></li>
+<li><p>database.port (integer)</p></li>
+<li><p>database.database (string)</p></li>
+<li><p>database.loginTimeout (seconds in integer, default: 30)</p></li>
+<li><p>database.socketTimeout (seconds in integer, default: 1800)</p></li>
+<li><p>database.ssl (boolean, default: false)</p></li>
+<li><p>database.connectionTimeout (seconds in integer, default: 30)</p></li>
+<li><p>database.idleTimeout (seconds in integer, default: 600)</p></li>
+<li><p>database.validationTimeout (seconds in integer, default: 5)</p></li>
+<li><p>database.maximumPoolSize (integer, default: available CPU cores * 32)</p></li>
+<li><p>database.leakDetectionThreshold (HikariCP leakDetectionThreshold milliseconds in integer. default: 0. To enable, set to &gt;= 2000.)</p></li>
+<li><p>database.migrate (enable DB migration. default: true)</p></li>
+<li><p>archive.type (type of project archiving, “db” or “s3”. default: “db”)</p></li>
+<li><p>archive.s3.endpoint (string. default: “s3.amazonaws.com”)</p></li>
+<li><p>archive.s3.bucket (string)</p></li>
+<li><p>archive.s3.path (string)</p></li>
+<li><p>archive.s3.credentials.access-key-id (string. default: instance profile)</p></li>
+<li><p>archive.s3.credentials.secret-access-key (string. default: instance profile)</p></li>
+<li><p>archive.s3.path-style-access (boolean. default: false)</p></li>
+<li><p>log-server.type (type of log storage, “local” , “null”, or “s3”. default: “null”. This parameter will be overwritten with “local” if <code class="docutils literal notranslate"><span class="pre">-O,</span> <span class="pre">--task-log</span> <span class="pre">DIR</span></code> is set.)</p></li>
+<li><p>log-server.s3.endpoint (string, default: “s3.amazonaws.com”)</p></li>
+<li><p>log-server.s3.bucket (string)</p></li>
+<li><p>log-server.s3.path (string)</p></li>
+<li><p>log-server.s3.direct_download (boolean. default: false)</p></li>
+<li><p>log-server.s3.credentials.access-key-id (string. default: instance profile)</p></li>
+<li><p>log-server.s3.credentials.secret-access-key (string. default: instance profile)</p></li>
+<li><p>log-server.s3.path-style-access (boolean. default: false)</p></li>
+<li><p>digdag.secret-encryption-key = (base64 encoded 128-bit AES encryption key)</p></li>
+<li><p>executor.task_ttl (string. default: 1d. A task is killed if it is running longer than this period.)</p></li>
+<li><p>executor.attempt_ttl (string. default: 7d. An attempt is killed if it is running longer than this period.)</p></li>
+<li><p>api.max_attempts_page_size (integer. The max number of rows of attempts in api response)</p></li>
+<li><p>api.max_sessions_page_size (integer. The max number of rows of sessions in api response)</p></li>
+<li><p>api.max_archive_total_size_limit (integer. The maximum size of an archived project. i.e. <code class="docutils literal notranslate"><span class="pre">digdag</span> <span class="pre">push</span></code> size. default: 2MB(2*1024*1024))</p></li>
 </ul>
 <div class="section" id="secret-encryption-key">
 <h4><a class="toc-backref" href="#id9">Secret Encryption Key</a><a class="headerlink" href="#secret-encryption-key" title="Permalink to this headline">¶</a></h4>
 <p>The secret encryption key is used to encrypt secrets when they are stored in the digdag server database. It must be a valid 128-bit AES key, base64 encoded.</p>
 <p>Example:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>digdag.secret-encryption-key = MDEyMzQ1Njc4OTAxMjM0NQ==
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>digdag.secret-encryption-key = MDEyMzQ1Njc4OTAxMjM0NQ==
 # example
 echo -n &#39;16_bytes_phrase!&#39; | openssl base64
 MTZfYnl0ZXNfcGhyYXNlIQ==
@@ -596,138 +551,132 @@ MTZfYnl0ZXNfcGhyYXNlIQ==
 <div class="section" id="client-mode-commands">
 <h2><a class="toc-backref" href="#id10">Client-mode commands</a><a class="headerlink" href="#client-mode-commands" title="Permalink to this headline">¶</a></h2>
 <p>Client-mode common options:</p>
-<dl class="docutils">
-<dt><strong class="command">-e, --endpoint HOST</strong></dt>
-<dd><p class="first">HTTP endpoint of the server (default: <a class="reference external" href="http://127.0.0.1:65432">http://127.0.0.1:65432</a>)</p>
-<p class="last">Example: <code class="docutils literal"><span class="pre">--endpoint</span> <span class="pre">digdag-server.example.com:65432</span></code></p>
+<dl>
+<dt><strong class="command">-e, --endpoint HOST</strong></dt><dd><p>HTTP endpoint of the server (default: <a class="reference external" href="http://127.0.0.1:65432">http://127.0.0.1:65432</a>)</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">--endpoint</span> <span class="pre">digdag-server.example.com:65432</span></code></p>
 </dd>
-<dt><strong class="command">-H, --header KEY=VALUE</strong></dt>
-<dd>Add a custom HTTP header. Use multiple times to set multiple headers.</dd>
-<dt><strong class="command">-c, --config PATH</strong></dt>
-<dd><p class="first">Configuration file to load. (default: ~/.config/digdag/config)</p>
-<p class="last">Example: <code class="docutils literal"><span class="pre">-c</span> <span class="pre">digdag-server/client.properties</span></code></p>
+<dt><strong class="command">-H, --header KEY=VALUE</strong></dt><dd><p>Add a custom HTTP header. Use multiple times to set multiple headers.</p>
+</dd>
+<dt><strong class="command">-c, --config PATH</strong></dt><dd><p>Configuration file to load. (default: ~/.config/digdag/config)</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">-c</span> <span class="pre">digdag-server/client.properties</span></code></p>
 </dd>
 </dl>
 <p>You can include following parameters in ~/.config/digdag/config file:</p>
 <ul class="simple">
-<li>client.http.endpoint = <a class="reference external" href="http://HOST:PORT">http://HOST:PORT</a> or <a class="reference external" href="https://HOST:PORT">https://HOST:PORT</a></li>
-<li>client.http.headers.KEY = VALUE (set custom HTTP header)</li>
+<li><p>client.http.endpoint = <a class="reference external" href="http://HOST:PORT">http://HOST:PORT</a> or <a class="reference external" href="https://HOST:PORT">https://HOST:PORT</a></p></li>
+<li><p>client.http.headers.KEY = VALUE (set custom HTTP header)</p></li>
 </ul>
 <div class="section" id="start">
 <h3><a class="toc-backref" href="#id11">start</a><a class="headerlink" href="#start" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag start &lt;project-name&gt; &lt;name&gt; --session &lt;hourly <span class="p">|</span> daily <span class="p">|</span> now <span class="p">|</span> yyyy-MM-dd <span class="p">|</span> <span class="s2">&quot;yyyy-MM-dd HH:mm:ss&quot;</span>&gt;
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag start &lt;project-name&gt; &lt;name&gt; --session &lt;hourly <span class="p">|</span> daily <span class="p">|</span> now <span class="p">|</span> yyyy-MM-dd <span class="p">|</span> <span class="s2">&quot;yyyy-MM-dd HH:mm:ss&quot;</span>&gt;
 </pre></div>
 </div>
 <p>Starts a new session. This command requires project name, workflow name, and session_time. Examples:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag start myproj main --dry-run --session hourly
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag start myproj main --dry-run --session hourly
 <span class="gp">$</span> digdag start myproj main --session daily
 <span class="gp">$</span> digdag start myproj main --session <span class="s2">&quot;2016-01-01 00:00:00&quot;</span>
 <span class="gp">$</span> digdag start myproj main --session <span class="s2">&quot;2016-01-01&quot;</span> -p <span class="nv">environment</span><span class="o">=</span>staging -p <span class="nv">user</span><span class="o">=</span>frsyuki
 </pre></div>
 </div>
-<dl class="docutils">
-<dt><strong class="command">--session &lt;hourly | daily | now | yyyy-MM-dd | &quot;yyyy-MM-dd HH:mm:ss&quot;&gt;</strong></dt>
-<dd><p class="first">Use this time as session_time.</p>
-<p>If <code class="docutils literal"><span class="pre">daily</span></code> is set, today&#8217;s 00:00:00 is used.</p>
-<p>If <code class="docutils literal"><span class="pre">hourly</span></code> is set, this hour&#8217;s 00:00 is used.</p>
-<p>If a time is set in &#8220;yyyy-MM-dd&#8221; or &#8220;yyyy-MM-dd HH:mm:ss&#8221; format, this time is used.</p>
-<p class="last">Timezone is based on the workflow&#8217;s time zone (not your machine&#8217;s time zone). For example, if a workflow uses Europe/Moscow (+03:00), and your machine&#8217;s time zone is Asia/Tokyo (+09:00), <code class="docutils literal"><span class="pre">--session</span> <span class="pre">2016-01-01</span> <span class="pre">00:00:00</span></code> means 2016-01-01 00:00:00 +03:00 (2016-01-01 06:00:00 +09:00).</p>
+<dl>
+<dt><strong class="command">--session &lt;hourly | daily | now | yyyy-MM-dd | &quot;yyyy-MM-dd HH:mm:ss&quot;&gt;</strong></dt><dd><p>Use this time as session_time.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">daily</span></code> is set, today’s 00:00:00 is used.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">hourly</span></code> is set, this hour’s 00:00 is used.</p>
+<p>If a time is set in “yyyy-MM-dd” or “yyyy-MM-dd HH:mm:ss” format, this time is used.</p>
+<p>Timezone is based on the workflow’s time zone (not your machine’s time zone). For example, if a workflow uses Europe/Moscow (+03:00), and your machine’s time zone is Asia/Tokyo (+09:00), <code class="docutils literal notranslate"><span class="pre">--session</span> <span class="pre">2016-01-01</span> <span class="pre">00:00:00</span></code> means 2016-01-01 00:00:00 +03:00 (2016-01-01 06:00:00 +09:00).</p>
 </dd>
-<dt><strong class="command">--retry &lt;name&gt;</strong></dt>
-<dd>Set retry attempt name to the new attempt. Usually, you will use <code class="docutils literal"><span class="pre">digdag</span> <span class="pre">retry</span></code> command instead of using this option.</dd>
-<dt><strong class="command">-d, --dry-run</strong></dt>
-<dd>Tries to start a new session attempt and validates the results but does nothing.</dd>
-<dt><strong class="command">-p, --param KEY=VALUE</strong></dt>
-<dd><p class="first">Add a session parameter (use multiple times to set many parameters) in KEY=VALUE syntax. This parameter is available using <code class="docutils literal"><span class="pre">${...}</span></code> syntax in the YAML file, or using language API.</p>
-<p>Example: <code class="docutils literal"><span class="pre">-p</span> <span class="pre">environment=staging</span></code></p>
-<p class="last">Note: Variable defined in _export is not overwritable by &#8211;param option.</p>
+<dt><strong class="command">--retry &lt;name&gt;</strong></dt><dd><p>Set retry attempt name to the new attempt. Usually, you will use <code class="docutils literal notranslate"><span class="pre">digdag</span> <span class="pre">retry</span></code> command instead of using this option.</p>
 </dd>
-<dt><strong class="command">-P, --params-file PATH</strong></dt>
-<dd><p class="first">Read parameters from a YAML file. Nested parameter (like {mysql: {user: me}}) are accessible using &#8221;.&#8221; syntax (like ${mysql.user}).</p>
-<p class="last">Example: <code class="docutils literal"><span class="pre">-P</span> <span class="pre">params.yml</span></code></p>
+<dt><strong class="command">-d, --dry-run</strong></dt><dd><p>Tries to start a new session attempt and validates the results but does nothing.</p>
+</dd>
+<dt><strong class="command">-p, --param KEY=VALUE</strong></dt><dd><p>Add a session parameter (use multiple times to set many parameters) in KEY=VALUE syntax. This parameter is available using <code class="docutils literal notranslate"><span class="pre">${...}</span></code> syntax in the YAML file, or using language API.</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">-p</span> <span class="pre">environment=staging</span></code></p>
+<p>Note: Variable defined in _export is not overwritable by –param option.</p>
+</dd>
+<dt><strong class="command">-P, --params-file PATH</strong></dt><dd><p>Read parameters from a YAML file. Nested parameter (like {mysql: {user: me}}) are accessible using “.” syntax (like ${mysql.user}).</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">-P</span> <span class="pre">params.yml</span></code></p>
 </dd>
 </dl>
 </div>
 <div class="section" id="retry">
 <h3><a class="toc-backref" href="#id12">retry</a><a class="headerlink" href="#retry" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag retry &lt;attempt-id&gt;
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag retry &lt;attempt-id&gt;
 </pre></div>
 </div>
-<p>Retry a session. One of revision options (<code class="docutils literal"><span class="pre">--latest-revision</span></code>, <code class="docutils literal"><span class="pre">--keep-revision</span></code>, or <code class="docutils literal"><span class="pre">--revision</span> <span class="pre">&lt;name&gt;</span></code>) and one of resume options (<code class="docutils literal"><span class="pre">--all</span></code>, <code class="docutils literal"><span class="pre">--resume</span></code>, or <code class="docutils literal"><span class="pre">--resume-from</span> <span class="pre">&lt;+name&gt;</span></code>) are required.</p>
+<p>Retry a session. One of revision options (<code class="docutils literal notranslate"><span class="pre">--latest-revision</span></code>, <code class="docutils literal notranslate"><span class="pre">--keep-revision</span></code>, or <code class="docutils literal notranslate"><span class="pre">--revision</span> <span class="pre">&lt;name&gt;</span></code>) and one of resume options (<code class="docutils literal notranslate"><span class="pre">--all</span></code>, <code class="docutils literal notranslate"><span class="pre">--resume</span></code>, or <code class="docutils literal notranslate"><span class="pre">--resume-from</span> <span class="pre">&lt;+name&gt;</span></code>) are required.</p>
 <p>Examples:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag retry <span class="m">35</span> --latest-revision --all
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag retry <span class="m">35</span> --latest-revision --all
 <span class="gp">$</span> digdag retry <span class="m">35</span> --latest-revision --resume
 <span class="gp">$</span> digdag retry <span class="m">35</span> --latest-revision --resume-from +step2
 <span class="gp">$</span> digdag retry <span class="m">35</span> --keep-revision --resume
 <span class="gp">$</span> digdag retry <span class="m">35</span> --revision rev29a87a9c --resume
 </pre></div>
 </div>
-<dl class="docutils">
-<dt><strong class="command">--latest-revision</strong></dt>
-<dd>Use the latest revision to retry the session.</dd>
-<dt><strong class="command">--keep-revision</strong></dt>
-<dd>Use the same revision with the specified attempt to retry the session.</dd>
-<dt><strong class="command">--revision &lt;name&gt;</strong></dt>
-<dd>Use a specific revision to retry the session.</dd>
-<dt><strong class="command">--all</strong></dt>
-<dd>Retries all tasks.</dd>
-<dt><strong class="command">--resume</strong></dt>
-<dd>Retry only failed tasks. Successfully finished tasks are skipped.</dd>
-<dt><strong class="command">--resume-from +NAME</strong></dt>
-<dd>Retry from this task. This task and all following tasks will be executed. All tasks before this task must have been successfully finished.</dd>
-<dt><strong class="command">--name &lt;name&gt;</strong></dt>
-<dd>An unique identifier of this retry attempt. If another attempt with the same name already exists within the same session, request fails with 409 Conflict.</dd>
+<dl class="simple">
+<dt><strong class="command">--latest-revision</strong></dt><dd><p>Use the latest revision to retry the session.</p>
+</dd>
+<dt><strong class="command">--keep-revision</strong></dt><dd><p>Use the same revision with the specified attempt to retry the session.</p>
+</dd>
+<dt><strong class="command">--revision &lt;name&gt;</strong></dt><dd><p>Use a specific revision to retry the session.</p>
+</dd>
+<dt><strong class="command">--all</strong></dt><dd><p>Retries all tasks.</p>
+</dd>
+<dt><strong class="command">--resume</strong></dt><dd><p>Retry only failed tasks. Successfully finished tasks are skipped.</p>
+</dd>
+<dt><strong class="command">--resume-from +NAME</strong></dt><dd><p>Retry from this task. This task and all following tasks will be executed. All tasks before this task must have been successfully finished.</p>
+</dd>
+<dt><strong class="command">--name &lt;name&gt;</strong></dt><dd><p>An unique identifier of this retry attempt. If another attempt with the same name already exists within the same session, request fails with 409 Conflict.</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="log">
 <h3><a class="toc-backref" href="#id13">log</a><a class="headerlink" href="#log" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag log &lt;attempt-id&gt; <span class="o">[</span>+task name prefix<span class="o">]</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag log &lt;attempt-id&gt; <span class="o">[</span>+task name prefix<span class="o">]</span>
 </pre></div>
 </div>
-<p>Shows logs of a session attempt. This command works only if server (or scheduler) runs with <code class="docutils literal"><span class="pre">-O,</span> <span class="pre">--task-log</span></code> option.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag log <span class="m">32</span>
+<p>Shows logs of a session attempt. This command works only if server (or scheduler) runs with <code class="docutils literal notranslate"><span class="pre">-O,</span> <span class="pre">--task-log</span></code> option.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag log <span class="m">32</span>
 <span class="gp">$</span> digdag log <span class="m">32</span> -f
 <span class="gp">$</span> digdag log <span class="m">32</span> +main
 <span class="gp">$</span> digdag log <span class="m">32</span> +main+task1
 </pre></div>
 </div>
-<dl class="docutils">
-<dt><strong class="command">-v, --verbose</strong></dt>
-<dd>Show all logs. By default, log level less than INFO and lines following those lines are skipped.</dd>
-<dt><strong class="command">-f, --follow</strong></dt>
-<dd><p class="first">Show new logs until attempt or task finishes. This is similar to UNIX <code class="docutils literal"><span class="pre">tail</span> <span class="pre">-f</span></code> command. Because server buffers logs, there&#8217;re some delay until logs are actually show.</p>
-<p class="last">Example: <code class="docutils literal"><span class="pre">--follow</span></code></p>
+<dl>
+<dt><strong class="command">-v, --verbose</strong></dt><dd><p>Show all logs. By default, log level less than INFO and lines following those lines are skipped.</p>
+</dd>
+<dt><strong class="command">-f, --follow</strong></dt><dd><p>Show new logs until attempt or task finishes. This is similar to UNIX <code class="docutils literal notranslate"><span class="pre">tail</span> <span class="pre">-f</span></code> command. Because server buffers logs, there’re some delay until logs are actually show.</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">--follow</span></code></p>
 </dd>
 </dl>
 </div>
 <div class="section" id="kill">
 <h3><a class="toc-backref" href="#id14">kill</a><a class="headerlink" href="#kill" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag <span class="nb">kill</span> &lt;attempt-id&gt;
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag <span class="nb">kill</span> &lt;attempt-id&gt;
 </pre></div>
 </div>
 <p>Kills a session attempt. Examples:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag <span class="nb">kill</span> <span class="m">32</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag <span class="nb">kill</span> <span class="m">32</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="projects">
 <h3><a class="toc-backref" href="#id15">projects</a><a class="headerlink" href="#projects" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag projects <span class="o">[</span>name<span class="o">]</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag projects <span class="o">[</span>name<span class="o">]</span>
 </pre></div>
 </div>
 <p>Shows list of projects or details of a project. Examples:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag projects
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag projects
 <span class="gp">$</span> digdag projects myproj
 </pre></div>
 </div>
 </div>
 <div class="section" id="workflows">
 <h3><a class="toc-backref" href="#id16">workflows</a><a class="headerlink" href="#workflows" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag workflows <span class="o">[</span>project-name<span class="o">]</span> <span class="o">[</span>name<span class="o">]</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag workflows <span class="o">[</span>project-name<span class="o">]</span> <span class="o">[</span>name<span class="o">]</span>
 </pre></div>
 </div>
 <p>Shows list of workflows or details of a workflow. Examples:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag workflows
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag workflows
 <span class="gp">$</span> digdag workflows myproj
 <span class="gp">$</span> digdag workflows myproj main
 </pre></div>
@@ -735,23 +684,23 @@ MTZfYnl0ZXNfcGhyYXNlIQ==
 </div>
 <div class="section" id="schedules">
 <h3><a class="toc-backref" href="#id17">schedules</a><a class="headerlink" href="#schedules" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag schedules
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag schedules
 </pre></div>
 </div>
 <p>Shows list of schedules.</p>
 </div>
 <div class="section" id="disable">
 <h3><a class="toc-backref" href="#id18">disable</a><a class="headerlink" href="#disable" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag disable <span class="o">[</span>project-name<span class="o">]</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag disable <span class="o">[</span>project-name<span class="o">]</span>
 </pre></div>
 </div>
 <p>Disable all workflow schedules in a project.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag disable <span class="o">[</span>schedule-id<span class="o">]</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag disable <span class="o">[</span>schedule-id<span class="o">]</span>
 <span class="gp">$</span> digdag disable <span class="o">[</span>project-name<span class="o">]</span> <span class="o">[</span>name<span class="o">]</span>
 </pre></div>
 </div>
 <p>Disable a workflow schedule.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag disable &lt;schedule-id&gt;
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag disable &lt;schedule-id&gt;
 <span class="gp">$</span> digdag disable myproj
 <span class="gp">$</span> digdag disable myproj main
 </pre></div>
@@ -759,16 +708,16 @@ MTZfYnl0ZXNfcGhyYXNlIQ==
 </div>
 <div class="section" id="enable">
 <h3><a class="toc-backref" href="#id19">enable</a><a class="headerlink" href="#enable" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag <span class="nb">enable</span> <span class="o">[</span>project-name<span class="o">]</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag <span class="nb">enable</span> <span class="o">[</span>project-name<span class="o">]</span>
 </pre></div>
 </div>
 <p>Enable all workflow schedules in a project.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag <span class="nb">enable</span> <span class="o">[</span>schedule-id<span class="o">]</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag <span class="nb">enable</span> <span class="o">[</span>schedule-id<span class="o">]</span>
 <span class="gp">$</span> digdag <span class="nb">enable</span> <span class="o">[</span>project-name<span class="o">]</span> <span class="o">[</span>name<span class="o">]</span>
 </pre></div>
 </div>
 <p>Enable a workflow schedule.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag <span class="nb">enable</span> &lt;schedule-id&gt;
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag <span class="nb">enable</span> &lt;schedule-id&gt;
 <span class="gp">$</span> digdag <span class="nb">enable</span> myproj
 <span class="gp">$</span> digdag <span class="nb">enable</span> myproj main
 </pre></div>
@@ -776,181 +725,173 @@ MTZfYnl0ZXNfcGhyYXNlIQ==
 </div>
 <div class="section" id="backfill">
 <h3><a class="toc-backref" href="#id20">backfill</a><a class="headerlink" href="#backfill" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag backfill &lt;schedule-id&gt;
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag backfill &lt;schedule-id&gt;
 <span class="gp">$</span> digdag backfill &lt;project-name&gt; &lt;name&gt;
 </pre></div>
 </div>
 <p>Starts sessions of a schedule for past session times.</p>
-<dl class="docutils">
-<dt><strong class="command">-f, --from 'yyyy-MM-dd[ HH:mm:ss]'</strong></dt>
-<dd><p class="first">Timestamp to start backfill from (required). Sessions from this time (including this time) until current time will be started.</p>
-<p class="last">Example: <code class="docutils literal"><span class="pre">--from</span> <span class="pre">'2016-01-01'</span></code></p>
+<dl>
+<dt><strong class="command">-f, --from 'yyyy-MM-dd[ HH:mm:ss]'</strong></dt><dd><p>Timestamp to start backfill from (required). Sessions from this time (including this time) until current time will be started.</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">--from</span> <span class="pre">'2016-01-01'</span></code></p>
 </dd>
-<dt><strong class="command">--count N</strong></dt>
-<dd><p class="first">Starts given number of sessions. By default, this command starts all sessions until current time.</p>
-<p class="last">Example: <code class="docutils literal"><span class="pre">--count</span> <span class="pre">5</span></code></p>
+<dt><strong class="command">--count N</strong></dt><dd><p>Starts given number of sessions. By default, this command starts all sessions until current time.</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">--count</span> <span class="pre">5</span></code></p>
 </dd>
-<dt><strong class="command">--name NAME</strong></dt>
-<dd><p class="first">Unique name of the new attempts (required). This name is used not to run backfill sessions twice accidentally.</p>
-<p class="last">Example: <code class="docutils literal"><span class="pre">--name</span> <span class="pre">backfill1</span></code></p>
+<dt><strong class="command">--name NAME</strong></dt><dd><p>Unique name of the new attempts (required). This name is used not to run backfill sessions twice accidentally.</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">--name</span> <span class="pre">backfill1</span></code></p>
 </dd>
-<dt><strong class="command">-d, --dry-run</strong></dt>
-<dd>Tries to backfill and validates the results but does nothing.</dd>
+<dt><strong class="command">-d, --dry-run</strong></dt><dd><p>Tries to backfill and validates the results but does nothing.</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="reschedule">
 <h3><a class="toc-backref" href="#id21">reschedule</a><a class="headerlink" href="#reschedule" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag reschedule &lt;schedule-id&gt;
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag reschedule &lt;schedule-id&gt;
 <span class="gp">$</span> digdag reschedule &lt;project-name&gt; &lt;name&gt;
 </pre></div>
 </div>
 <p>Skips a workflow schedule forward to a future time. To run past schedules, use backfill instead.</p>
-<dl class="docutils">
-<dt><strong class="command">-s, --skip N</strong></dt>
-<dd>Skips specified number of schedules from now. This number &#8220;N&#8221; doesn&#8217;t mean number of sessions to be skipped. &#8220;N&#8221; is the number of sessions to be skipped.</dd>
-<dt><strong class="command">-t, --skip-to 'yyyy-MM-dd HH:mm:ss Z'</strong></dt>
-<dd>Skips schedules until the specified time (exclusive).</dd>
-<dt><strong class="command">-a, --run-at 'yyyy-MM-dd HH:mm:ss Z'</strong></dt>
-<dd>Set next run time to this time.</dd>
-<dt><strong class="command">-d, --dry-run</strong></dt>
-<dd>Tries to reschedule and validates the results but does nothing.</dd>
+<dl class="simple">
+<dt><strong class="command">-s, --skip N</strong></dt><dd><p>Skips specified number of schedules from now. This number “N” doesn’t mean number of sessions to be skipped. “N” is the number of sessions to be skipped.</p>
+</dd>
+<dt><strong class="command">-t, --skip-to 'yyyy-MM-dd HH:mm:ss Z'</strong></dt><dd><p>Skips schedules until the specified time (exclusive).</p>
+</dd>
+<dt><strong class="command">-a, --run-at 'yyyy-MM-dd HH:mm:ss Z'</strong></dt><dd><p>Set next run time to this time.</p>
+</dd>
+<dt><strong class="command">-d, --dry-run</strong></dt><dd><p>Tries to reschedule and validates the results but does nothing.</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="sessions">
 <h3><a class="toc-backref" href="#id22">sessions</a><a class="headerlink" href="#sessions" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag sessions <span class="o">[</span>project-name<span class="o">]</span> <span class="o">[</span>name<span class="o">]</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag sessions <span class="o">[</span>project-name<span class="o">]</span> <span class="o">[</span>name<span class="o">]</span>
 </pre></div>
 </div>
-<p>Shows list of sessions. This command shows only the latest attempts of sessions (doesn&#8217;t include attempts retried by another attempt). To show all attempts, use <code class="docutils literal"><span class="pre">digdag</span> <span class="pre">attempts</span></code>. Examples:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag sessions
+<p>Shows list of sessions. This command shows only the latest attempts of sessions (doesn’t include attempts retried by another attempt). To show all attempts, use <code class="docutils literal notranslate"><span class="pre">digdag</span> <span class="pre">attempts</span></code>. Examples:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag sessions
 <span class="gp">$</span> digdag sessions myproj
 <span class="gp">$</span> digdag sessions myproj main
 </pre></div>
 </div>
-<dl class="docutils">
-<dt><strong class="command">-i, --last-id ID</strong></dt>
-<dd>Shows more sessions older than this id.</dd>
-<dt><strong class="command">-s, --page-size N</strong></dt>
-<dd>Shows more sessions of the number of N (in default up to 100).</dd>
+<dl class="simple">
+<dt><strong class="command">-i, --last-id ID</strong></dt><dd><p>Shows more sessions older than this id.</p>
+</dd>
+<dt><strong class="command">-s, --page-size N</strong></dt><dd><p>Shows more sessions of the number of N (in default up to 100).</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="session">
 <h3><a class="toc-backref" href="#id23">session</a><a class="headerlink" href="#session" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag session <span class="o">[</span>session-id<span class="o">]</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag session <span class="o">[</span>session-id<span class="o">]</span>
 </pre></div>
 </div>
 <p>Show a single session. Examples:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag session &lt;session-id&gt;
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag session &lt;session-id&gt;
 </pre></div>
 </div>
 </div>
 <div class="section" id="attempts">
 <h3><a class="toc-backref" href="#id24">attempts</a><a class="headerlink" href="#attempts" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag attempts <span class="o">[</span>session-id<span class="o">]</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag attempts <span class="o">[</span>session-id<span class="o">]</span>
 </pre></div>
 </div>
 <p>Shows list of attempts. This command shows all attempts including attempts retried by another attempt. Examples:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag attempts
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag attempts
 <span class="gp">$</span> digdag attempts &lt;session-id&gt;
 </pre></div>
 </div>
-<dl class="docutils">
-<dt><strong class="command">-i, --last-id ID</strong></dt>
-<dd>Shows more attempts older than this id.</dd>
-<dt><strong class="command">-s, --page-size N</strong></dt>
-<dd>Shows more attempts of the number of N (in default up to 100).</dd>
+<dl class="simple">
+<dt><strong class="command">-i, --last-id ID</strong></dt><dd><p>Shows more attempts older than this id.</p>
+</dd>
+<dt><strong class="command">-s, --page-size N</strong></dt><dd><p>Shows more attempts of the number of N (in default up to 100).</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="attempt">
 <h3><a class="toc-backref" href="#id25">attempt</a><a class="headerlink" href="#attempt" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag attempt <span class="o">[</span>attempt-id<span class="o">]</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag attempt <span class="o">[</span>attempt-id<span class="o">]</span>
 </pre></div>
 </div>
 <p>Shows a single attempt. Examples:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag attempt &lt;attempt-id&gt;
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag attempt &lt;attempt-id&gt;
 </pre></div>
 </div>
 </div>
 <div class="section" id="tasks">
 <h3><a class="toc-backref" href="#id26">tasks</a><a class="headerlink" href="#tasks" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag tasks &lt;attempt-id&gt;
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag tasks &lt;attempt-id&gt;
 </pre></div>
 </div>
 <p>Shows tasks of an session attempt. Examples:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag tasks <span class="m">32</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag tasks <span class="m">32</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="push">
 <h3><a class="toc-backref" href="#id27">push</a><a class="headerlink" href="#push" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag push &lt;project&gt; <span class="o">[</span>options...<span class="o">]</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag push &lt;project&gt; <span class="o">[</span>options...<span class="o">]</span>
 </pre></div>
 </div>
 <p>Creates a project archive and upload it to the server. This command uploads workflow definition files (files with .dig suffix) at the current directory, and all other files from the current directory recursively. Examples:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag push myproj -r <span class="s2">&quot;</span><span class="k">$(</span>date +%Y-%m-%dT%H:%M:%S%z<span class="k">)</span><span class="s2">&quot;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag push myproj -r <span class="s2">&quot;</span><span class="k">$(</span>date +%Y-%m-%dT%H:%M:%S%z<span class="k">)</span><span class="s2">&quot;</span>
 <span class="gp">$</span> digdag push default -r <span class="s2">&quot;</span><span class="k">$(</span>git show --pretty<span class="o">=</span>format:<span class="s1">&#39;%T&#39;</span> <span class="p">|</span> head -n <span class="m">1</span><span class="k">)</span><span class="s2">&quot;</span>
 </pre></div>
 </div>
-<dl class="docutils">
-<dt><strong class="command">--project DIR</strong></dt>
-<dd><p class="first">Use this directory as the project directory (default: current directory).</p>
-<p class="last">Example: <code class="docutils literal"><span class="pre">--project</span> <span class="pre">workflow/</span></code></p>
+<dl>
+<dt><strong class="command">--project DIR</strong></dt><dd><p>Use this directory as the project directory (default: current directory).</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">--project</span> <span class="pre">workflow/</span></code></p>
 </dd>
-<dt><strong class="command">-r, --revision REVISION</strong></dt>
-<dd><p class="first">Unique name of the revision. If this is not set, a random UUID is automatically generated. Typical argument is git&#8217;s SHA1 hash (<code class="docutils literal"><span class="pre">git</span> <span class="pre">show</span> <span class="pre">--pretty=format:'%T'</span> <span class="pre">|</span> <span class="pre">head</span> <span class="pre">-n</span> <span class="pre">1</span></code>) or timestamp (<code class="docutils literal"><span class="pre">date</span> <span class="pre">+%Y-%m-%dT%H:%M:%S%z</span></code>).</p>
-<p class="last">Example: <code class="docutils literal"><span class="pre">-r</span> <span class="pre">f40172ebc58f58087b6132085982147efa9e81fb</span></code></p>
+<dt><strong class="command">-r, --revision REVISION</strong></dt><dd><p>Unique name of the revision. If this is not set, a random UUID is automatically generated. Typical argument is git’s SHA1 hash (<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">show</span> <span class="pre">--pretty=format:'%T'</span> <span class="pre">|</span> <span class="pre">head</span> <span class="pre">-n</span> <span class="pre">1</span></code>) or timestamp (<code class="docutils literal notranslate"><span class="pre">date</span> <span class="pre">+%Y-%m-%dT%H:%M:%S%z</span></code>).</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">-r</span> <span class="pre">f40172ebc58f58087b6132085982147efa9e81fb</span></code></p>
 </dd>
-<dt><strong class="command">--schedule-from &quot;yyyy-MM-dd HH:mm:ss Z&quot;</strong></dt>
-<dd><p class="first">Start schedules from this time. If this is not set, system time of the server is used. Parameter must include time zone offset. You can run <code class="docutils literal"><span class="pre">date</span> <span class="pre">\&quot;+%Y-%m-%d</span> <span class="pre">%H:%M:%S</span> <span class="pre">%z\&quot;</span></code> command to get current local time.</p>
-<p class="last">Example: <code class="docutils literal"><span class="pre">--schedule-from</span> <span class="pre">&quot;2017-07-29</span> <span class="pre">00:00:00</span> <span class="pre">+0200&quot;</span></code></p>
+<dt><strong class="command">--schedule-from &quot;yyyy-MM-dd HH:mm:ss Z&quot;</strong></dt><dd><p>Start schedules from this time. If this is not set, system time of the server is used. Parameter must include time zone offset. You can run <code class="docutils literal notranslate"><span class="pre">date</span> <span class="pre">\&quot;+%Y-%m-%d</span> <span class="pre">%H:%M:%S</span> <span class="pre">%z\&quot;</span></code> command to get current local time.</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">--schedule-from</span> <span class="pre">&quot;2017-07-29</span> <span class="pre">00:00:00</span> <span class="pre">+0200&quot;</span></code></p>
 </dd>
 </dl>
 </div>
 <div class="section" id="download">
 <h3><a class="toc-backref" href="#id28">download</a><a class="headerlink" href="#download" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag download &lt;project&gt;
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag download &lt;project&gt;
 </pre></div>
 </div>
 <p>Downloads a project archive and extract to a local directory.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag download myproj
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag download myproj
 <span class="gp">$</span> digdag download myproj -o output
 <span class="gp">$</span> digdag download myproj -r rev20161106
 </pre></div>
 </div>
-<dl class="docutils">
-<dt><strong class="command">-o, --output DIR</strong></dt>
-<dd><p class="first">Extract contents to this directory (default: same with project name).</p>
-<p class="last">Example: <code class="docutils literal"><span class="pre">-o</span> <span class="pre">output</span></code></p>
+<dl>
+<dt><strong class="command">-o, --output DIR</strong></dt><dd><p>Extract contents to this directory (default: same with project name).</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">-o</span> <span class="pre">output</span></code></p>
 </dd>
-<dt><strong class="command">-r, --revision REVISION</strong></dt>
-<dd><p class="first">Download project archive of this revision (default: latest revision).</p>
-<p class="last">Example: <code class="docutils literal"><span class="pre">-r</span> <span class="pre">f40172ebc58f58087b6132085982147efa9e81fb</span></code></p>
+<dt><strong class="command">-r, --revision REVISION</strong></dt><dd><p>Download project archive of this revision (default: latest revision).</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">-r</span> <span class="pre">f40172ebc58f58087b6132085982147efa9e81fb</span></code></p>
 </dd>
 </dl>
 </div>
 <div class="section" id="delete">
 <h3><a class="toc-backref" href="#id29">delete</a><a class="headerlink" href="#delete" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag delete &lt;project&gt; <span class="o">[</span>options...<span class="o">]</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag delete &lt;project&gt; <span class="o">[</span>options...<span class="o">]</span>
 </pre></div>
 </div>
 <p>Deletes a project. Sessions of the deleted project are kept retained so that we can review status of past executions later.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag delete myproj
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag delete myproj
 </pre></div>
 </div>
-<dl class="docutils">
-<dt><strong class="command">--force</strong></dt>
-<dd>Skip y/N prompt</dd>
+<dl class="simple">
+<dt><strong class="command">--force</strong></dt><dd><p>Skip y/N prompt</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="secrets">
 <h3><a class="toc-backref" href="#id30">secrets</a><a class="headerlink" href="#secrets" title="Permalink to this headline">¶</a></h3>
 <p>Digdag provides basic secret management that can be used to securely provide e.g. passwords and api keys etc to operators.</p>
 <p>Secrets are handled separately from normal workflow parameters and are stored encrypted by the server. Local secrets are stored in the user home directory.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag secrets --project &lt;project&gt;
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag secrets --project &lt;project&gt;
 </pre></div>
 </div>
 <p>List secrets set for a project. This will only list the secret keys and will not show the actual secret values.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag secrets --project &lt;project&gt; --set key
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag secrets --project &lt;project&gt; --set key
 </pre></div>
 </div>
 <p>Set a secret key value for a project. The cli will prompt for the secret value to be entered in the terminal. The entered
@@ -958,14 +899,14 @@ value will not be displayed.</p>
 <p>Multiple secrets can be entered by listing multiple keys.</p>
 <p>It is also possible to read a secret value from a file. Note that the entire raw file contents are read and used as the
 secret value. Any whitespace and newlines etc are included as-is.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> cat secret.txt
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> cat secret.txt
 <span class="go">foobar</span>
 
 <span class="gp">$</span> digdag secrets --project &lt;project&gt; --set <span class="nv">key</span><span class="o">=</span>@secret.txt
 </pre></div>
 </div>
 <p>Multiple secrets can be read from a single file in JSON format.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> cat secrets.json
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> cat secrets.json
 <span class="go">{</span>
 <span class="go">    &quot;foo&quot;: &quot;secret1&quot;,</span>
 <span class="go">    &quot;bar&quot;: &quot;secret2&quot;</span>
@@ -975,37 +916,37 @@ secret value. Any whitespace and newlines etc are included as-is.</p>
 </pre></div>
 </div>
 <p>Secrets can also be read from stdin. The below command would set the secret key <cite>foo</cite> to the value <cite>bar</cite>.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="nb">echo</span> -n <span class="s1">&#39;bar&#39;</span> <span class="p">|</span> digdag secrets --project &lt;project&gt; --set <span class="nv">foo</span><span class="o">=</span>-
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="nb">echo</span> -n <span class="s1">&#39;bar&#39;</span> <span class="p">|</span> digdag secrets --project &lt;project&gt; --set <span class="nv">foo</span><span class="o">=</span>-
 </pre></div>
 </div>
 <p>Note that only one secret value can be read using the above command. To read multiple secrets from stdin, omit the secret key
 name on the command line and provide secret keys and values on stdin in JSON format.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="nb">echo</span> -n <span class="s1">&#39;{&quot;foo&quot;: &quot;secret1&quot;, &quot;bar&quot;: &quot;secret2&quot;}&#39;</span> <span class="p">|</span> digdag secrets --project &lt;project&gt; --set -
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="nb">echo</span> -n <span class="s1">&#39;{&quot;foo&quot;: &quot;secret1&quot;, &quot;bar&quot;: &quot;secret2&quot;}&#39;</span> <span class="p">|</span> digdag secrets --project &lt;project&gt; --set -
 
 <span class="gp">$</span> cat secrets.json <span class="p">|</span> digdag secrets --project &lt;project&gt; --set -
 </pre></div>
 </div>
-<p>To delete secrets, use the <cite>&#8211;delete</cite> command.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag secrets --project &lt;project&gt; --delete foo bar
+<p>To delete secrets, use the <cite>–delete</cite> command.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag secrets --project &lt;project&gt; --delete foo bar
 </pre></div>
 </div>
 <p>Secrets can also be used in local mode. Local secrets are used when running workflows in local mode using <cite>digdag run</cite>.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag secrets --local
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag secrets --local
 </pre></div>
 </div>
 <p>The above command lists all local secrets.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag secrets --local --set foo
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag secrets --local --set foo
 </pre></div>
 </div>
 <p>The above command sets the local secret <cite>foo</cite>.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag secrets --local --delete foo bar
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag secrets --local --delete foo bar
 </pre></div>
 </div>
 <p>The above command deletes the local secrets <cite>foo</cite> and <cite>bar</cite>.</p>
 </div>
 <div class="section" id="version">
 <h3><a class="toc-backref" href="#id31">version</a><a class="headerlink" href="#version" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag version
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag version
 </pre></div>
 </div>
 <p>Show client and server version.</p>
@@ -1013,13 +954,13 @@ name on the command line and provide secret keys and values on stdin in JSON for
 </div>
 <div class="section" id="common-options">
 <h2><a class="toc-backref" href="#id32">Common options</a><a class="headerlink" href="#common-options" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils">
-<dt><strong class="command">-L, --log PATH</strong></dt>
-<dd>Output log messages to a file (default is STDOUT). If this option is set, log files are rotated every 10MB, compresses it using gzip, and keeps at most 5 old files.</dd>
-<dt><strong class="command">-l, --log-level LEVEL</strong></dt>
-<dd>Change log level (enum: trace, debug, info, warn, or error. default is info).</dd>
-<dt><strong class="command">-X KEY=VALUE</strong></dt>
-<dd>Add a performance system configuration. This option is for experimental use.</dd>
+<dl class="simple">
+<dt><strong class="command">-L, --log PATH</strong></dt><dd><p>Output log messages to a file (default is STDOUT). If this option is set, log files are rotated every 10MB, compresses it using gzip, and keeps at most 5 old files.</p>
+</dd>
+<dt><strong class="command">-l, --log-level LEVEL</strong></dt><dd><p>Change log level (enum: trace, debug, info, warn, or error. default is info).</p>
+</dd>
+<dt><strong class="command">-X KEY=VALUE</strong></dt><dd><p>Add a performance system configuration. This option is for experimental use.</p>
+</dd>
 </dl>
 </div>
 </div>

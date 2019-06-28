@@ -20,20 +20,11 @@
   <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
   
     
-      <script type="text/javascript">
-          var DOCUMENTATION_OPTIONS = {
-              URL_ROOT:'../',
-              VERSION:'0.9.37',
-              LANGUAGE:'None',
-              COLLAPSE_INDEX:false,
-              FILE_SUFFIX:'.html',
-              HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: '.txt'
-          };
-      </script>
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -282,20 +273,20 @@
 <div class="section" id="general-changes">
 <h2>General changes<a class="headerlink" href="#general-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>If a local parameter is not used at a task, digdag suggests &#8220;Did you mean [&lt;SIMILAR PARAMETER&gt;]?&#8221; in the error message.</li>
+<li><p>If a local parameter is not used at a task, digdag suggests “Did you mean [&lt;SIMILAR PARAMETER&gt;]?” in the error message.</p></li>
 </ul>
 </div>
 <div class="section" id="local-mode-changes">
 <h2>Local-mode changes<a class="headerlink" href="#local-mode-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">digdag</span> <span class="pre">run</span> <span class="pre">+task</span></code> doesn&#8217;t run following tasks of <code class="docutils literal"><span class="pre">+task</span></code>. It runs only subtree of the task.</li>
-<li><code class="docutils literal"><span class="pre">digdag</span> <span class="pre">run</span> <span class="pre">--all</span></code> is renamed to <code class="docutils literal"><span class="pre">digdag</span> <span class="pre">run</span> <span class="pre">--rerun</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">digdag</span> <span class="pre">run</span> <span class="pre">+task</span></code> doesn’t run following tasks of <code class="docutils literal notranslate"><span class="pre">+task</span></code>. It runs only subtree of the task.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">digdag</span> <span class="pre">run</span> <span class="pre">--all</span></code> is renamed to <code class="docutils literal notranslate"><span class="pre">digdag</span> <span class="pre">run</span> <span class="pre">--rerun</span></code></p></li>
 </ul>
 </div>
 <div class="section" id="operator-changes">
 <h2>Operator changes<a class="headerlink" href="#operator-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">td&gt;</span></code> operator drops table through Presto using <code class="docutils literal"><span class="pre">DROP</span> <span class="pre">TABLE</span> <span class="pre">IF</span> <span class="pre">EXISTS</span></code> statement instead of issuing an REST API call so that following <code class="docutils literal"><span class="pre">CREATE</span> <span class="pre">TABLE</span></code> doesn&#8217;t cause &#8220;table already exists&#8221; error because of internal cache that is not invalidated by REST API call.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">td&gt;</span></code> operator drops table through Presto using <code class="docutils literal notranslate"><span class="pre">DROP</span> <span class="pre">TABLE</span> <span class="pre">IF</span> <span class="pre">EXISTS</span></code> statement instead of issuing an REST API call so that following <code class="docutils literal notranslate"><span class="pre">CREATE</span> <span class="pre">TABLE</span></code> doesn’t cause “table already exists” error because of internal cache that is not invalidated by REST API call.</p></li>
 </ul>
 </div>
 <div class="section" id="release-date">
@@ -305,8 +296,8 @@
 <div class="section" id="contributors">
 <h2>Contributors<a class="headerlink" href="#contributors" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Daniel Norberg</li>
-<li>Sadayuki Furuhashi</li>
+<li><p>Daniel Norberg</p></li>
+<li><p>Sadayuki Furuhashi</p></li>
 </ul>
 </div>
 </div>

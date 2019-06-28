@@ -20,20 +20,11 @@
   <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
   
     
-      <script type="text/javascript">
-          var DOCUMENTATION_OPTIONS = {
-              URL_ROOT:'../',
-              VERSION:'0.9.37',
-              LANGUAGE:'None',
-              COLLAPSE_INDEX:false,
-              FILE_SUFFIX:'.html',
-              HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: '.txt'
-          };
-      </script>
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -283,32 +274,32 @@
 <div class="section" id="general-changes">
 <h2>General changes<a class="headerlink" href="#general-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Upgraded JDBI from 2.63.1 to 2.72. <a class="reference external" href="https://github.com/jdbi/jdbi/blob/5bef8b287d09ce82dcc76563a9e5134f98cd3892/RELEASE_NOTES">Release Notes</a>.</li>
-<li>Upgraded HikariCP from 2.4.3 to 2.4.5. <a class="reference external" href="https://github.com/brettwooldridge/HikariCP/blob/b4c358a4c3c003a9ffbb0ecfe7685dd07cbd759f/CHANGES">Changes</a>.</li>
-<li>Validation error is throw if workflow definition includes more than 1 operators in a task.</li>
-<li>YAML loader detects duplicated keys in a single mapping object and throws an exception.</li>
+<li><p>Upgraded JDBI from 2.63.1 to 2.72. <a class="reference external" href="https://github.com/jdbi/jdbi/blob/5bef8b287d09ce82dcc76563a9e5134f98cd3892/RELEASE_NOTES">Release Notes</a>.</p></li>
+<li><p>Upgraded HikariCP from 2.4.3 to 2.4.5. <a class="reference external" href="https://github.com/brettwooldridge/HikariCP/blob/b4c358a4c3c003a9ffbb0ecfe7685dd07cbd759f/CHANGES">Changes</a>.</p></li>
+<li><p>Validation error is throw if workflow definition includes more than 1 operators in a task.</p></li>
+<li><p>YAML loader detects duplicated keys in a single mapping object and throws an exception.</p></li>
 </ul>
 </div>
 <div class="section" id="cli-changes">
 <h2>CLI changes<a class="headerlink" href="#cli-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Added <code class="docutils literal"><span class="pre">backfill</span></code>, <code class="docutils literal"><span class="pre">reschedule</span></code>, and <code class="docutils literal"><span class="pre">log</span></code> to usage message.</li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">backfill</span></code>, <code class="docutils literal notranslate"><span class="pre">reschedule</span></code>, and <code class="docutils literal notranslate"><span class="pre">log</span></code> to usage message.</p></li>
 </ul>
 </div>
 <div class="section" id="client-mode-changes">
 <h2>Client-mode changes<a class="headerlink" href="#client-mode-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Added <code class="docutils literal"><span class="pre">DigdagClient.getRevisions</span></code>.</li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">DigdagClient.getRevisions</span></code>.</p></li>
 </ul>
 </div>
 <div class="section" id="server-mode-changes">
 <h2>Server-mode changes<a class="headerlink" href="#server-mode-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Added <code class="docutils literal"><span class="pre">/api/repositories/{id}/revisions</span></code> REST API.</li>
-<li>OperatorManager includes error message in task logs such as no-such-operator error.</li>
-<li>Fixed permission error when uuid-ossp module is already loaded on PostgreSQL.</li>
-<li>Fixed putAndLockRepository on PostgreSQL.</li>
-<li>insertAttempt validates existence of associated workflow definition and using foreign key validation.</li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">/api/repositories/{id}/revisions</span></code> REST API.</p></li>
+<li><p>OperatorManager includes error message in task logs such as no-such-operator error.</p></li>
+<li><p>Fixed permission error when uuid-ossp module is already loaded on PostgreSQL.</p></li>
+<li><p>Fixed putAndLockRepository on PostgreSQL.</p></li>
+<li><p>insertAttempt validates existence of associated workflow definition and using foreign key validation.</p></li>
 </ul>
 </div>
 <div class="section" id="release-date">
@@ -318,9 +309,9 @@
 <div class="section" id="contributors">
 <h2>Contributors<a class="headerlink" href="#contributors" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Daniel Norberg</li>
-<li>Hiroshi Nakamura</li>
-<li>Sadayuki Furuhashi</li>
+<li><p>Daniel Norberg</p></li>
+<li><p>Hiroshi Nakamura</p></li>
+<li><p>Sadayuki Furuhashi</p></li>
 </ul>
 </div>
 </div>

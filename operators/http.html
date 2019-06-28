@@ -20,20 +20,11 @@
   <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
   
     
-      <script type="text/javascript">
-          var DOCUMENTATION_OPTIONS = {
-              URL_ROOT:'../',
-              VERSION:'0.9.37',
-              LANGUAGE:'None',
-              COLLAPSE_INDEX:false,
-              FILE_SUFFIX:'.html',
-              HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: '.txt'
-          };
-      </script>
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -196,7 +187,7 @@
   <div class="section" id="http-making-http-requests">
 <h1>http&gt;: Making HTTP requests<a class="headerlink" href="#http-making-http-requests" title="Permalink to this headline">¶</a></h1>
 <p><strong>http&gt;</strong> operator can be used to make HTTP requests.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>+fetch:
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>+fetch:
   http&gt;: https://api.example.com/foobars
   store_content: true
 
@@ -207,7 +198,7 @@
     bq&gt;: query.sql
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span>+notify:
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>+notify:
   http&gt;: https://api.example.com/data/sessions/${session_uuid}
   method: POST
   content:
@@ -219,16 +210,16 @@
 <h2>Secrets<a class="headerlink" href="#secrets" title="Permalink to this headline">¶</a></h2>
 <p>When you set those parameters, use <a class="reference external" href="https://docs.digdag.io/command_reference.html#secrets">digdag secrets command</a>.</p>
 <ul>
-<li><p class="first"><strong>http.authorization</strong>: STRING</p>
-<p>A string that should be included in the HTTP request as the value of the <code class="docutils literal"><span class="pre">Authorization</span></code> header. This can be used to authenticate using e.g. Oauth bearer tokens.</p>
+<li><p><strong>http.authorization</strong>: STRING</p>
+<p>A string that should be included in the HTTP request as the value of the <code class="docutils literal notranslate"><span class="pre">Authorization</span></code> header. This can be used to authenticate using e.g. Oauth bearer tokens.</p>
 </li>
-<li><p class="first"><strong>http.user</strong>: STRING</p>
+<li><p><strong>http.user</strong>: STRING</p>
 <p>A user that should be used to authenticate using <em>Basic Authentication</em>.</p>
 </li>
-<li><p class="first"><strong>http.password</strong>: STRING</p>
+<li><p><strong>http.password</strong>: STRING</p>
 <p>A password that should be used to authenticate using <em>Basic Authentication</em>.</p>
 </li>
-<li><p class="first"><strong>http.uri</strong>: URI</p>
+<li><p><strong>http.uri</strong>: URI</p>
 <p>The URI of the HTTP request. This can be used instead of putting the URI on the operator command line in case the URI contains sensitive information.</p>
 </li>
 </ul>
@@ -236,68 +227,68 @@
 <div class="section" id="parameters">
 <h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
 <ul>
-<li><p class="first"><strong>http&gt;</strong>: URI</p>
+<li><p><strong>http&gt;</strong>: URI</p>
 <p>The URI of the HTTP request.</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">http</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">api</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">foobar</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">http</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">api</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">foobar</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span>http&gt;: https://api.example.com/data/sessions/${session_uuid}
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>http&gt;: https://api.example.com/data/sessions/${session_uuid}
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>method</strong>: STRING</p>
-<p>The method of the HTTP request. <em>Default:</em> <code class="docutils literal"><span class="pre">GET</span></code>.</p>
+<li><p><strong>method</strong>: STRING</p>
+<p>The method of the HTTP request. <em>Default:</em> <code class="docutils literal notranslate"><span class="pre">GET</span></code>.</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">method</span><span class="p">:</span> <span class="n">POST</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">method</span><span class="p">:</span> <span class="n">POST</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">method</span><span class="p">:</span> <span class="n">DELETE</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">method</span><span class="p">:</span> <span class="n">DELETE</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>content</strong>: STRING | INTEGER | BOOLEAN | OBJECT | ARRAY
+<li><p><strong>content</strong>: STRING | INTEGER | BOOLEAN | OBJECT | ARRAY
 The content of the HTTP request. <em>Default:</em> No content.</p>
-<p>Scalars (i.e. strings, integers, booleans, etc) will by default be sent as plain text. Objects and arrays will by default be JSON serialized. The <code class="docutils literal"><span class="pre">content_format</span></code> parameter can be used to control the content serialization format.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">content</span><span class="p">:</span> <span class="s1">&#39;hello world&#39;</span>
+<p>Scalars (i.e. strings, integers, booleans, etc) will by default be sent as plain text. Objects and arrays will by default be JSON serialized. The <code class="docutils literal notranslate"><span class="pre">content_format</span></code> parameter can be used to control the content serialization format.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">content</span><span class="p">:</span> <span class="s1">&#39;hello world&#39;</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">content</span><span class="p">:</span> <span class="s1">&#39;$</span><span class="si">{session_time}</span><span class="s1">&#39;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">content</span><span class="p">:</span> <span class="s1">&#39;$</span><span class="si">{session_time}</span><span class="s1">&#39;</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span>content:
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>content:
   status: RUNNING
   time: ${session_time}
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>content_format</strong>: text | json | form</p>
-<p>The serialization format of the content of the HTTP request. <em>Default:</em> Inferred from the <code class="docutils literal"><span class="pre">content</span></code> parameter value type. Objects and arrays use <code class="docutils literal"><span class="pre">json</span></code> by default. Other value types default to <code class="docutils literal"><span class="pre">text</span></code>.</p>
+<li><p><strong>content_format</strong>: text | json | form</p>
+<p>The serialization format of the content of the HTTP request. <em>Default:</em> Inferred from the <code class="docutils literal notranslate"><span class="pre">content</span></code> parameter value type. Objects and arrays use <code class="docutils literal notranslate"><span class="pre">json</span></code> by default. Other value types default to <code class="docutils literal notranslate"><span class="pre">text</span></code>.</p>
 <ul class="simple">
-<li><strong>text</strong>: Send raw content as <code class="docutils literal"><span class="pre">Content-Type:</span> <span class="pre">text/plain</span></code>. <em>Note:</em> This requires that the <code class="docutils literal"><span class="pre">content</span></code> parameter is <em>not</em> array or an object.</li>
-<li><strong>json</strong>: Serialize the content as <a class="reference external" href="http://json.org/">JSON</a> and send it as <code class="docutils literal"><span class="pre">Content-Type:</span> <span class="pre">application/json</span></code>. This format can handle any <code class="docutils literal"><span class="pre">content</span></code> parameter value type.</li>
-<li><strong>form</strong>: Encode content as an HTML form and send it as <code class="docutils literal"><span class="pre">Content-Type:</span> <span class="pre">application/x-www-form-urlencoded</span></code>. <em>Note:</em> This requires the <code class="docutils literal"><span class="pre">content</span></code> parameter value to be an object.</li>
+<li><p><strong>text</strong>: Send raw content as <code class="docutils literal notranslate"><span class="pre">Content-Type:</span> <span class="pre">text/plain</span></code>. <em>Note:</em> This requires that the <code class="docutils literal notranslate"><span class="pre">content</span></code> parameter is <em>not</em> array or an object.</p></li>
+<li><p><strong>json</strong>: Serialize the content as <a class="reference external" href="http://json.org/">JSON</a> and send it as <code class="docutils literal notranslate"><span class="pre">Content-Type:</span> <span class="pre">application/json</span></code>. This format can handle any <code class="docutils literal notranslate"><span class="pre">content</span></code> parameter value type.</p></li>
+<li><p><strong>form</strong>: Encode content as an HTML form and send it as <code class="docutils literal notranslate"><span class="pre">Content-Type:</span> <span class="pre">application/x-www-form-urlencoded</span></code>. <em>Note:</em> This requires the <code class="docutils literal notranslate"><span class="pre">content</span></code> parameter value to be an object.</p></li>
 </ul>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">content</span><span class="p">:</span> <span class="s1">&#39;hello world @ $</span><span class="si">{session_time}</span><span class="s1">&#39;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">content</span><span class="p">:</span> <span class="s1">&#39;hello world @ $</span><span class="si">{session_time}</span><span class="s1">&#39;</span>
 <span class="n">content_format</span><span class="p">:</span> <span class="n">text</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span>content:
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>content:
   status: RUNNING
   time: ${session_time}
 content_format: json
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span>content:
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>content:
   status: RUNNING
   time: ${session_time}
 content_format: form
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>content_type</strong>: STRING</p>
-<p>Override the inferred <code class="docutils literal"><span class="pre">Content-Type</span></code> header.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>content: |
+<li><p><strong>content_type</strong>: STRING</p>
+<p>Override the inferred <code class="docutils literal notranslate"><span class="pre">Content-Type</span></code> header.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>content: |
   &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
   &lt;notification&gt;
     &lt;status&gt;RUNNING&lt;/status&gt;
@@ -308,25 +299,25 @@ content_type: application/xml
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>store_content</strong>: BOOLEAN</p>
-<p>Whether to store the content of the response. <em>Default:</em> <code class="docutils literal"><span class="pre">false</span></code>.</p>
+<li><p><strong>store_content</strong>: BOOLEAN</p>
+<p>Whether to store the content of the response. <em>Default:</em> <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
 </li>
-<li><p class="first"><strong>headers</strong>: LIST OF KEY-VALUE PAIRS</p>
+<li><p><strong>headers</strong>: LIST OF KEY-VALUE PAIRS</p>
 <p>Additional custom headers to send with the HTTP request.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>  <span class="n">headers</span><span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">headers</span><span class="p">:</span>
     <span class="o">-</span> <span class="n">Accept</span><span class="p">:</span> <span class="n">application</span><span class="o">/</span><span class="n">json</span>
     <span class="o">-</span> <span class="n">X</span><span class="o">-</span><span class="n">Foo</span><span class="p">:</span> <span class="n">bar</span>
     <span class="o">-</span> <span class="n">Baz</span><span class="p">:</span> <span class="n">quux</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>retry</strong>: BOOLEAN</p>
-<p>Whether to retry ephemeral errors. <em>Default:</em> <code class="docutils literal"><span class="pre">true</span></code> if the request method is <code class="docutils literal"><span class="pre">GET</span></code>, <code class="docutils literal"><span class="pre">HEAD</span></code>, <code class="docutils literal"><span class="pre">OPTIONS</span></code> or <code class="docutils literal"><span class="pre">TRACE</span></code>. Otherwise <code class="docutils literal"><span class="pre">false</span></code>.</p>
-<p>Client <code class="docutils literal"><span class="pre">4xx</span></code> errors (except for <code class="docutils literal"><span class="pre">408</span> <span class="pre">Request</span> <span class="pre">Timeout</span></code> and <code class="docutils literal"><span class="pre">429</span> <span class="pre">Too</span> <span class="pre">Many</span> <span class="pre">Requests</span></code>) will not be retried even if <code class="docutils literal"><span class="pre">retry</span></code> is set to <code class="docutils literal"><span class="pre">true</span></code>.</p>
+<li><p><strong>retry</strong>: BOOLEAN</p>
+<p>Whether to retry ephemeral errors. <em>Default:</em> <code class="docutils literal notranslate"><span class="pre">true</span></code> if the request method is <code class="docutils literal notranslate"><span class="pre">GET</span></code>, <code class="docutils literal notranslate"><span class="pre">HEAD</span></code>, <code class="docutils literal notranslate"><span class="pre">OPTIONS</span></code> or <code class="docutils literal notranslate"><span class="pre">TRACE</span></code>. Otherwise <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+<p>Client <code class="docutils literal notranslate"><span class="pre">4xx</span></code> errors (except for <code class="docutils literal notranslate"><span class="pre">408</span> <span class="pre">Request</span> <span class="pre">Timeout</span></code> and <code class="docutils literal notranslate"><span class="pre">429</span> <span class="pre">Too</span> <span class="pre">Many</span> <span class="pre">Requests</span></code>) will not be retried even if <code class="docutils literal notranslate"><span class="pre">retry</span></code> is set to <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
 <p><em>Note:</em> Enabling retries might cause the target endpoint to receive multiple duplicate HTTP requests. Thus retries should only be enabled if duplicated requests are tolerable. E.g. when the outcome of the HTTP request is <em>idempotent</em>.</p>
 </li>
-<li><p class="first"><strong>timeout</strong>: INTEGER</p>
-<p>The timeout value used for http operations. <em>Default</em>: <code class="docutils literal"><span class="pre">30</span></code>(30 seconds).</p>
+<li><p><strong>timeout</strong>: INTEGER</p>
+<p>The timeout value used for http operations. <em>Default</em>: <code class="docutils literal notranslate"><span class="pre">30</span></code>(30 seconds).</p>
 </li>
 </ul>
 </div>

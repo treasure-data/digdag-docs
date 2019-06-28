@@ -20,20 +20,11 @@
   <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
   
     
-      <script type="text/javascript">
-          var DOCUMENTATION_OPTIONS = {
-              URL_ROOT:'../',
-              VERSION:'0.9.37',
-              LANGUAGE:'None',
-              COLLAPSE_INDEX:false,
-              FILE_SUFFIX:'.html',
-              HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: '.txt'
-          };
-      </script>
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -200,7 +191,7 @@
   <div class="section" id="gcs-wait-wait-for-a-file-in-google-cloud-storage">
 <h1>gcs_wait&gt;: Wait for a file in Google Cloud Storage<a class="headerlink" href="#gcs-wait-wait-for-a-file-in-google-cloud-storage" title="Permalink to this headline">¶</a></h1>
 <p><strong>gcs_wait&gt;</strong> operator can be used to wait for file to appear in Google Cloud Storage.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">wait</span><span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">wait</span><span class="p">:</span>
   <span class="n">gcs_wait</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">my_bucket</span><span class="o">/</span><span class="n">some</span><span class="o">/</span><span class="n">file</span>
 
 <span class="o">+</span><span class="n">wait</span><span class="p">:</span>
@@ -211,7 +202,7 @@
 <h2>Secrets<a class="headerlink" href="#secrets" title="Permalink to this headline">¶</a></h2>
 <p>When you set those parameters, use <a class="reference external" href="https://docs.digdag.io/command_reference.html#secrets">digdag secrets command</a>.</p>
 <ul>
-<li><p class="first"><strong>gcp.credential</strong>: CREDENTIAL</p>
+<li><p><strong>gcp.credential</strong>: CREDENTIAL</p>
 <p>See <a class="reference external" href="bq.html#secrets">gcp.credential</a>.</p>
 </li>
 </ul>
@@ -219,31 +210,31 @@
 <div class="section" id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
 <ul>
-<li><p class="first"><strong>gcs_wait&gt;</strong>: URI | BUCKET/OBJECT</p>
+<li><p><strong>gcs_wait&gt;</strong>: URI | BUCKET/OBJECT</p>
 <p>Google Cloud Storage URI or path of the file to wait for.</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">gcs_wait</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">my</span><span class="o">-</span><span class="n">bucket</span><span class="o">/</span><span class="n">my</span><span class="o">-</span><span class="n">directory</span><span class="o">/</span><span class="n">my</span><span class="o">-</span><span class="n">data</span><span class="o">.</span><span class="n">gz</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gcs_wait</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">my</span><span class="o">-</span><span class="n">bucket</span><span class="o">/</span><span class="n">my</span><span class="o">-</span><span class="n">directory</span><span class="o">/</span><span class="n">my</span><span class="o">-</span><span class="n">data</span><span class="o">.</span><span class="n">gz</span>
 </pre></div>
 </div>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">gcs_wait</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">gs</span><span class="p">:</span><span class="o">//</span><span class="n">my</span><span class="o">-</span><span class="n">bucket</span><span class="o">/</span><span class="n">my</span><span class="o">-</span><span class="n">directory</span><span class="o">/</span><span class="n">my</span><span class="o">-</span><span class="n">data</span><span class="o">.</span><span class="n">gz</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gcs_wait</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">gs</span><span class="p">:</span><span class="o">//</span><span class="n">my</span><span class="o">-</span><span class="n">bucket</span><span class="o">/</span><span class="n">my</span><span class="o">-</span><span class="n">directory</span><span class="o">/</span><span class="n">my</span><span class="o">-</span><span class="n">data</span><span class="o">.</span><span class="n">gz</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>bucket</strong>: NAME</p>
-<p>The GCS bucket where the file is located. Can be used together with the <code class="docutils literal"><span class="pre">object</span></code> parameter instead of putting the path on the operator command line.</p>
+<li><p><strong>bucket</strong>: NAME</p>
+<p>The GCS bucket where the file is located. Can be used together with the <code class="docutils literal notranslate"><span class="pre">object</span></code> parameter instead of putting the path on the operator command line.</p>
 </li>
-<li><p class="first"><strong>object</strong>: PATH</p>
-<p>The GCS path of the file. Can be used together with the <code class="docutils literal"><span class="pre">bucket</span></code> parameter instead of putting the path on the operator command line.</p>
+<li><p><strong>object</strong>: PATH</p>
+<p>The GCS path of the file. Can be used together with the <code class="docutils literal notranslate"><span class="pre">bucket</span></code> parameter instead of putting the path on the operator command line.</p>
 </li>
 </ul>
 </div>
 <div class="section" id="output-parameters">
 <h2>Output parameters<a class="headerlink" href="#output-parameters" title="Permalink to this headline">¶</a></h2>
 <ul>
-<li><p class="first"><strong>gcs_wait.last_object</strong></p>
+<li><p><strong>gcs_wait.last_object</strong></p>
 <p>Information about the detected file.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>  <span class="p">{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="p">{</span>
       <span class="s2">&quot;metadata&quot;</span><span class="p">:</span> <span class="p">{</span>
           <span class="s2">&quot;bucket&quot;</span><span class="p">:</span> <span class="s2">&quot;my_bucket&quot;</span><span class="p">,</span>
           <span class="s2">&quot;contentType&quot;</span><span class="p">:</span> <span class="s2">&quot;text/plain&quot;</span><span class="p">,</span>

@@ -20,20 +20,11 @@
   <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
   
     
-      <script type="text/javascript">
-          var DOCUMENTATION_OPTIONS = {
-              URL_ROOT:'../',
-              VERSION:'0.9.37',
-              LANGUAGE:'None',
-              COLLAPSE_INDEX:false,
-              FILE_SUFFIX:'.html',
-              HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: '.txt'
-          };
-      </script>
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -200,7 +191,7 @@
   <div class="section" id="bq-extract-exporting-data-from-google-bigquery">
 <h1>bq_extract&gt;: Exporting Data from Google BigQuery<a class="headerlink" href="#bq-extract-exporting-data-from-google-bigquery" title="Permalink to this headline">¶</a></h1>
 <p><strong>bq_extract&gt;</strong> operator can be used to export data from Google BigQuery tables.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">_export</span><span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">_export</span><span class="p">:</span>
   <span class="n">bq</span><span class="p">:</span>
     <span class="n">dataset</span><span class="p">:</span> <span class="n">my_dataset</span>
 
@@ -218,7 +209,7 @@
 <h2>Secrets<a class="headerlink" href="#secrets" title="Permalink to this headline">¶</a></h2>
 <p>When you set those parameters, use <a class="reference external" href="https://docs.digdag.io/command_reference.html#secrets">digdag secrets command</a>.</p>
 <ul>
-<li><p class="first"><strong>gcp.credential</strong>: CREDENTIAL</p>
+<li><p><strong>gcp.credential</strong>: CREDENTIAL</p>
 <p>See <a class="reference external" href="bq.html#secrets">gcp.credential</a>.</p>
 </li>
 </ul>
@@ -226,61 +217,60 @@
 <div class="section" id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
 <ul>
-<li><p class="first"><strong>bq_extract&gt;</strong>: TABLE
+<li><p><strong>bq_extract&gt;</strong>: TABLE
 A reference to the table that should be exported.</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">bq_extract</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">my_table</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bq_extract</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">my_table</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">bq_extract</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">my_dataset</span><span class="o">.</span><span class="n">my_table</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bq_extract</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">my_dataset</span><span class="o">.</span><span class="n">my_table</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">bq_extract</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">my_project</span><span class="p">:</span><span class="n">my_dataset</span><span class="o">.</span><span class="n">my_table</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bq_extract</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">my_project</span><span class="p">:</span><span class="n">my_dataset</span><span class="o">.</span><span class="n">my_table</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>destination</strong>: URI | LIST
+<li><p><strong>destination</strong>: URI | LIST
 A URI or list of URIs with the location of the destination export files. These must be Google Cloud Storage URIs.</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">destination</span><span class="p">:</span> <span class="n">gs</span><span class="p">:</span><span class="o">//</span><span class="n">my_bucket</span><span class="o">/</span><span class="n">my_export</span><span class="o">.</span><span class="n">csv</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">destination</span><span class="p">:</span> <span class="n">gs</span><span class="p">:</span><span class="o">//</span><span class="n">my_bucket</span><span class="o">/</span><span class="n">my_export</span><span class="o">.</span><span class="n">csv</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">destination</span><span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">destination</span><span class="p">:</span>
   <span class="o">-</span> <span class="n">gs</span><span class="p">:</span><span class="o">//</span><span class="n">my_bucket</span><span class="o">/</span><span class="n">my_export_1</span><span class="o">.</span><span class="n">csv</span>
   <span class="o">-</span> <span class="n">gs</span><span class="p">:</span><span class="o">//</span><span class="n">my_bucket</span><span class="o">/</span><span class="n">my_export_2</span><span class="o">.</span><span class="n">csv</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>print_header</strong>: BOOLEAN
-Whether to print out a header row in the results. <em>Default</em>: <code class="docutils literal"><span class="pre">true</span></code>.</p>
-</li>
-<li><p class="first"><strong>field_delimiter</strong>: CHARACTER
-A delimiter to use between fields in the output. <em>Default</em>: <code class="docutils literal"><span class="pre">,</span></code>.</p>
+<li><p><strong>print_header</strong>: BOOLEAN
+Whether to print out a header row in the results. <em>Default</em>: <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p></li>
+<li><p><strong>field_delimiter</strong>: CHARACTER
+A delimiter to use between fields in the output. <em>Default</em>: <code class="docutils literal notranslate"><span class="pre">,</span></code>.</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">field_delimiter</span><span class="p">:</span> <span class="s1">&#39;</span><span class="se">\\</span><span class="s1">t&#39;</span>
-</pre></div>
-</div>
-</li>
-<li><p class="first"><strong>destination_format</strong>: CSV | NEWLINE_DELIMITED_JSON | AVRO
-The format of the destination export file. <em>Default</em>: <code class="docutils literal"><span class="pre">CSV</span></code>.</p>
-<p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">destination_format</span><span class="p">:</span> <span class="n">CSV</span>
-</pre></div>
-</div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">destination_format</span><span class="p">:</span> <span class="n">NEWLINE_DELIMITED_JSON</span>
-</pre></div>
-</div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">destination_format</span><span class="p">:</span> <span class="n">AVRO</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">field_delimiter</span><span class="p">:</span> <span class="s1">&#39;</span><span class="se">\\</span><span class="s1">t&#39;</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>compression</strong>: GZIP | NONE
-The compression to use for the export file. <em>Default</em>: <code class="docutils literal"><span class="pre">NONE</span></code>.</p>
+<li><p><strong>destination_format</strong>: CSV | NEWLINE_DELIMITED_JSON | AVRO
+The format of the destination export file. <em>Default</em>: <code class="docutils literal notranslate"><span class="pre">CSV</span></code>.</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">compression</span><span class="p">:</span> <span class="n">NONE</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">destination_format</span><span class="p">:</span> <span class="n">CSV</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">compression</span><span class="p">:</span> <span class="n">GZIP</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">destination_format</span><span class="p">:</span> <span class="n">NEWLINE_DELIMITED_JSON</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">destination_format</span><span class="p">:</span> <span class="n">AVRO</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>compression</strong>: GZIP | NONE
+The compression to use for the export file. <em>Default</em>: <code class="docutils literal notranslate"><span class="pre">NONE</span></code>.</p>
+<p>Examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">compression</span><span class="p">:</span> <span class="n">NONE</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">compression</span><span class="p">:</span> <span class="n">GZIP</span>
 </pre></div>
 </div>
 </li>
@@ -289,7 +279,7 @@ The compression to use for the export file. <em>Default</em>: <code class="docut
 <div class="section" id="output-parameters">
 <h2>Output parameters<a class="headerlink" href="#output-parameters" title="Permalink to this headline">¶</a></h2>
 <ul>
-<li><p class="first"><strong>bq.last_job_id</strong></p>
+<li><p><strong>bq.last_job_id</strong></p>
 <p>The id of the BigQuery job that performed this export.</p>
 </li>
 </ul>

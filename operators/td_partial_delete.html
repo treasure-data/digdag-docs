@@ -20,20 +20,11 @@
   <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
   
     
-      <script type="text/javascript">
-          var DOCUMENTATION_OPTIONS = {
-              URL_ROOT:'../',
-              VERSION:'0.9.37',
-              LANGUAGE:'None',
-              COLLAPSE_INDEX:false,
-              FILE_SUFFIX:'.html',
-              HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: '.txt'
-          };
-      </script>
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -203,9 +194,9 @@
   <div class="section" id="td-partial-delete-delete-range-of-treasure-data-table">
 <h1>td_partial_delete&gt;: Delete range of Treasure Data table<a class="headerlink" href="#td-partial-delete-delete-range-of-treasure-data-table" title="Permalink to this headline">¶</a></h1>
 <p><strong>td_partial_delete&gt;</strong> operator deletes records from a Treasure Data table.</p>
-<p>Please be aware that records imported using streaming import can&#8216;t be deleted for several hours using td_partial_delete. Records imported by INSERT INTO, Data Connector (<a class="reference external" href="https://docs.treasuredata.com/articles/data-connector-hadoop-executor">MapReduce Executor</a>), and bulk imports can be deleted immediately.</p>
+<p>Please be aware that records imported using streaming import can’t be deleted for several hours using td_partial_delete. Records imported by INSERT INTO, Data Connector (<a class="reference external" href="https://docs.treasuredata.com/articles/data-connector-hadoop-executor">MapReduce Executor</a>), and bulk imports can be deleted immediately.</p>
 <p>Time range needs to be hourly. Setting non-zero values to minutes or seconds will be rejected.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">step1</span><span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">step1</span><span class="p">:</span>
   <span class="n">td_partial_delete</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">my_table</span>
   <span class="n">database</span><span class="p">:</span> <span class="n">mydb</span>
   <span class="n">from</span><span class="p">:</span> <span class="mi">2016</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="n">T00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="o">+</span><span class="mi">08</span><span class="p">:</span><span class="mi">00</span>
@@ -216,45 +207,45 @@
 <h2>Secrets<a class="headerlink" href="#secrets" title="Permalink to this headline">¶</a></h2>
 <p>When you set those parameters, use <a class="reference external" href="https://docs.digdag.io/command_reference.html#secrets">digdag secrets command</a>.</p>
 <ul class="simple">
-<li><strong>td.apikey</strong>: API_KEY
-The Treasure Data API key to use when running Treasure Data queries.</li>
+<li><p><strong>td.apikey</strong>: API_KEY
+The Treasure Data API key to use when running Treasure Data queries.</p></li>
 </ul>
 </div>
 <div class="section" id="parameters">
 <h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
 <ul>
-<li><p class="first"><strong>td_partial_delete&gt;</strong>: NAME</p>
+<li><p><strong>td_partial_delete&gt;</strong>: NAME</p>
 <p>Name of the table.</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">td_partial_delete</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">my_table</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">td_partial_delete</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">my_table</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>database</strong>: NAME</p>
+<li><p><strong>database</strong>: NAME</p>
 <p>Name of the database.</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">database</span><span class="p">:</span> <span class="n">my_database</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">database</span><span class="p">:</span> <span class="n">my_database</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>from</strong>: yyyy-MM-ddTHH:mm:ss[Z]</p>
-<p>Delete records from this time (inclusive). Actual time range is :command:<code class="docutils literal"><span class="pre">[from,</span> <span class="pre">to)</span></code>. Value should be a UNIX timestamp integer (seconds) or string in ISO-8601 (yyyy-MM-ddTHH:mm:ss[Z]) format.</p>
+<li><p><strong>from</strong>: yyyy-MM-ddTHH:mm:ss[Z]</p>
+<p>Delete records from this time (inclusive). Actual time range is :command:<code class="docutils literal notranslate"><span class="pre">[from,</span> <span class="pre">to)</span></code>. Value should be a UNIX timestamp integer (seconds) or string in ISO-8601 (yyyy-MM-ddTHH:mm:ss[Z]) format.</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">from</span><span class="p">:</span> <span class="mi">2016</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="n">T00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="o">+</span><span class="mi">08</span><span class="p">:</span><span class="mi">00</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">from</span><span class="p">:</span> <span class="mi">2016</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="n">T00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="o">+</span><span class="mi">08</span><span class="p">:</span><span class="mi">00</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>to</strong>: yyyy-MM-ddTHH:mm:ss[Z]</p>
-<p>Delete records to this time (exclusive). Actual time range is :command:<code class="docutils literal"><span class="pre">[from,</span> <span class="pre">to)</span></code>. Value should be a UNIX timestamp integer (seconds) or string in ISO-8601 (yyyy-MM-ddTHH:mm:ss[Z]) format.</p>
+<li><p><strong>to</strong>: yyyy-MM-ddTHH:mm:ss[Z]</p>
+<p>Delete records to this time (exclusive). Actual time range is :command:<code class="docutils literal notranslate"><span class="pre">[from,</span> <span class="pre">to)</span></code>. Value should be a UNIX timestamp integer (seconds) or string in ISO-8601 (yyyy-MM-ddTHH:mm:ss[Z]) format.</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">to</span><span class="p">:</span> <span class="mi">2016</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">01</span><span class="n">T00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="o">+</span><span class="mi">08</span><span class="p">:</span><span class="mi">00</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">to</span><span class="p">:</span> <span class="mi">2016</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">01</span><span class="n">T00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="o">+</span><span class="mi">08</span><span class="p">:</span><span class="mi">00</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>endpoint</strong>: ADDRESS</p>
+<li><p><strong>endpoint</strong>: ADDRESS</p>
 <p>API endpoint (default: api.treasuredata.com).</p>
 </li>
-<li><p class="first"><strong>use_ssl</strong>: BOOLEAN</p>
+<li><p><strong>use_ssl</strong>: BOOLEAN</p>
 <p>Enable SSL (https) to access to the endpoint (default: true).</p>
 </li>
 </ul>

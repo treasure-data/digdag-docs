@@ -20,20 +20,11 @@
   <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
   
     
-      <script type="text/javascript">
-          var DOCUMENTATION_OPTIONS = {
-              URL_ROOT:'../',
-              VERSION:'0.9.37',
-              LANGUAGE:'None',
-              COLLAPSE_INDEX:false,
-              FILE_SUFFIX:'.html',
-              HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: '.txt'
-          };
-      </script>
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -285,42 +276,42 @@
 <div class="section" id="general-changes">
 <h2>General changes<a class="headerlink" href="#general-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Added <code class="docutils literal"><span class="pre">fail&gt;:</span> <span class="pre">MESSAGE</span></code> operator.</li>
-<li>Added <code class="docutils literal"><span class="pre">if&gt;:</span> <span class="pre">BOOLEAN</span></code> operator.</li>
-<li>Added notification mechanism. Setting <code class="docutils literal"><span class="pre">notification.type</span></code> configuration enables notification. Notification is triggered using new <code class="docutils literal"><span class="pre">notify&gt;:</span> <span class="pre">MESSAGE</span></code> operator.</li>
-<li><code class="docutils literal"><span class="pre">sla:</span></code> parameter supports <code class="docutils literal"><span class="pre">duration:</span> <span class="pre">HH:MM:SS</span></code> syntax in addition to <code class="docutils literal"><span class="pre">time:</span> <span class="pre">HH:MM:SS</span></code> syntax.</li>
-<li><code class="docutils literal"><span class="pre">sla:</span></code> parameter supports <code class="docutils literal"><span class="pre">fail:</span> <span class="pre">BOOLEAN</span></code> and <code class="docutils literal"><span class="pre">alert:</span> <span class="pre">BOOLEAN</span></code> options. Setting <code class="docutils literal"><span class="pre">fail:</span> <span class="pre">true</span></code> makes the workflow failed. Setting <code class="docutils literal"><span class="pre">alert:</span> <span class="pre">true</span></code> sends an notification using above notification mechanism.</li>
-<li>Fixed an undeterministic error around H2 database that causes &#8220;Table not found&#8221; exception when a workflow is running for long time.</li>
-<li>Added <code class="docutils literal"><span class="pre">td_for_each&gt;:</span></code> operator.</li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">fail&gt;:</span> <span class="pre">MESSAGE</span></code> operator.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">if&gt;:</span> <span class="pre">BOOLEAN</span></code> operator.</p></li>
+<li><p>Added notification mechanism. Setting <code class="docutils literal notranslate"><span class="pre">notification.type</span></code> configuration enables notification. Notification is triggered using new <code class="docutils literal notranslate"><span class="pre">notify&gt;:</span> <span class="pre">MESSAGE</span></code> operator.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sla:</span></code> parameter supports <code class="docutils literal notranslate"><span class="pre">duration:</span> <span class="pre">HH:MM:SS</span></code> syntax in addition to <code class="docutils literal notranslate"><span class="pre">time:</span> <span class="pre">HH:MM:SS</span></code> syntax.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sla:</span></code> parameter supports <code class="docutils literal notranslate"><span class="pre">fail:</span> <span class="pre">BOOLEAN</span></code> and <code class="docutils literal notranslate"><span class="pre">alert:</span> <span class="pre">BOOLEAN</span></code> options. Setting <code class="docutils literal notranslate"><span class="pre">fail:</span> <span class="pre">true</span></code> makes the workflow failed. Setting <code class="docutils literal notranslate"><span class="pre">alert:</span> <span class="pre">true</span></code> sends an notification using above notification mechanism.</p></li>
+<li><p>Fixed an undeterministic error around H2 database that causes “Table not found” exception when a workflow is running for long time.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">td_for_each&gt;:</span></code> operator.</p></li>
 </ul>
 </div>
 <div class="section" id="client-mode-changes">
 <h2>Client mode changes<a class="headerlink" href="#client-mode-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Added <code class="docutils literal"><span class="pre">sessions</span></code> and <code class="docutils literal"><span class="pre">session</span></code> commands to show information of sessions. A session is an entity that has one or more attempts.</li>
-<li><code class="docutils literal"><span class="pre">-r,</span> <span class="pre">--revision</span></code> option of <code class="docutils literal"><span class="pre">push</span></code> command is now optional. It generates a random UUID if it&#8217;s not set.</li>
-<li><code class="docutils literal"><span class="pre">retry</span></code> command now supports <code class="docutils literal"><span class="pre">--resume</span></code> and <code class="docutils literal"><span class="pre">--resume-from</span></code> options.</li>
-<li><code class="docutils literal"><span class="pre">--name</span></code> option of <code class="docutils literal"><span class="pre">retry</span></code> command is now optional. It generates a random UUID if it&#8217;s not set.</li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">sessions</span></code> and <code class="docutils literal notranslate"><span class="pre">session</span></code> commands to show information of sessions. A session is an entity that has one or more attempts.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-r,</span> <span class="pre">--revision</span></code> option of <code class="docutils literal notranslate"><span class="pre">push</span></code> command is now optional. It generates a random UUID if it’s not set.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">retry</span></code> command now supports <code class="docutils literal notranslate"><span class="pre">--resume</span></code> and <code class="docutils literal notranslate"><span class="pre">--resume-from</span></code> options.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--name</span></code> option of <code class="docutils literal notranslate"><span class="pre">retry</span></code> command is now optional. It generates a random UUID if it’s not set.</p></li>
 </ul>
 </div>
 <div class="section" id="local-mode-changes">
 <h2>Local mode changes<a class="headerlink" href="#local-mode-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Added <code class="docutils literal"><span class="pre">--max-task-threads</span> <span class="pre">N</span></code> option to <code class="docutils literal"><span class="pre">run</span></code>, <code class="docutils literal"><span class="pre">server</span></code>, and <code class="docutils literal"><span class="pre">scheduler</span></code> commands. This option limits number of maximum running tasks.</li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">--max-task-threads</span> <span class="pre">N</span></code> option to <code class="docutils literal notranslate"><span class="pre">run</span></code>, <code class="docutils literal notranslate"><span class="pre">server</span></code>, and <code class="docutils literal notranslate"><span class="pre">scheduler</span></code> commands. This option limits number of maximum running tasks.</p></li>
 </ul>
 </div>
 <div class="section" id="server-mode-changes">
 <h2>Server mode changes<a class="headerlink" href="#server-mode-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Added <code class="docutils literal"><span class="pre">--disable-local-agent</span></code> option.</li>
-<li>Added <code class="docutils literal"><span class="pre">--disable-executor-loop</span></code> option.</li>
-<li>Added session REST API set that is used by the web UI.</li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">--disable-local-agent</span></code> option.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">--disable-executor-loop</span></code> option.</p></li>
+<li><p>Added session REST API set that is used by the web UI.</p></li>
 </ul>
 </div>
 <div class="section" id="plugin-api-changes">
 <h2>Plugin API changes<a class="headerlink" href="#plugin-api-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Added Plugin API that includes <code class="docutils literal"><span class="pre">io.digdag.util.BaseOperator</span></code>, <code class="docutils literal"><span class="pre">io.digdag.util.RetryControl</span></code>, and <code class="docutils literal"><span class="pre">io.digdag.util.Workspace</span></code> classes.</li>
+<li><p>Added Plugin API that includes <code class="docutils literal notranslate"><span class="pre">io.digdag.util.BaseOperator</span></code>, <code class="docutils literal notranslate"><span class="pre">io.digdag.util.RetryControl</span></code>, and <code class="docutils literal notranslate"><span class="pre">io.digdag.util.Workspace</span></code> classes.</p></li>
 </ul>
 </div>
 <div class="section" id="release-date">
@@ -330,9 +321,9 @@
 <div class="section" id="contributors">
 <h2>Contributors<a class="headerlink" href="#contributors" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Daniel Norberg</li>
-<li>Lewuathe</li>
-<li>Sadayuki Furuhashi</li>
+<li><p>Daniel Norberg</p></li>
+<li><p>Lewuathe</p></li>
+<li><p>Sadayuki Furuhashi</p></li>
 </ul>
 </div>
 </div>

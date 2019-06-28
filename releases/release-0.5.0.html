@@ -20,20 +20,11 @@
   <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
   
     
-      <script type="text/javascript">
-          var DOCUMENTATION_OPTIONS = {
-              URL_ROOT:'../',
-              VERSION:'0.9.37',
-              LANGUAGE:'None',
-              COLLAPSE_INDEX:false,
-              FILE_SUFFIX:'.html',
-              HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: '.txt'
-          };
-      </script>
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -283,39 +274,39 @@
 <div class="section" id="cli-changes">
 <h2>CLI changes<a class="headerlink" href="#cli-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Setting parameters in command line (<code class="docutils literal"><span class="pre">-p</span> <span class="pre">KEY=VALUE</span></code>) accepts dot-separated keys to set a nested value. For example, <code class="docutils literal"><span class="pre">-p</span> <span class="pre">td.apikey=value</span></code> sets <code class="docutils literal"><span class="pre">{td:</span> <span class="pre">{apikey:</span> <span class="pre">value}}</span></code>.</li>
+<li><p>Setting parameters in command line (<code class="docutils literal notranslate"><span class="pre">-p</span> <span class="pre">KEY=VALUE</span></code>) accepts dot-separated keys to set a nested value. For example, <code class="docutils literal notranslate"><span class="pre">-p</span> <span class="pre">td.apikey=value</span></code> sets <code class="docutils literal notranslate"><span class="pre">{td:</span> <span class="pre">{apikey:</span> <span class="pre">value}}</span></code>.</p></li>
 </ul>
 </div>
 <div class="section" id="client-mode-changes">
 <h2>Client-mode changes<a class="headerlink" href="#client-mode-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">start</span></code> command requires <code class="docutils literal"><span class="pre">--session</span></code> argument instead of <code class="docutils literal"><span class="pre">--now</span></code> or zoned timestamp.</li>
-<li><code class="docutils literal"><span class="pre">start</span></code> command accepts <code class="docutils literal"><span class="pre">--revision</span> <span class="pre">&lt;name&gt;</span></code> option to run a workflow using a past revision.</li>
-<li>Added <code class="docutils literal"><span class="pre">retry</span></code> command.</li>
-<li><code class="docutils literal"><span class="pre">workflows</span></code> command accepts repository name as an extra command line argument instead of -r, &#8211;repository option.</li>
-<li><code class="docutils literal"><span class="pre">backfill</span></code> command no longer accepts <code class="docutils literal"><span class="pre">-R</span></code> as an alias of <code class="docutils literal"><span class="pre">--attempt-name</span></code>.</li>
-<li>Added <code class="docutils literal"><span class="pre">attempts</span></code> command. <code class="docutils literal"><span class="pre">session</span></code> command no longer accepts <code class="docutils literal"><span class="pre">--with-retry</span></code> (use <code class="docutils literal"><span class="pre">attempts</span></code> command instead).</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">start</span></code> command requires <code class="docutils literal notranslate"><span class="pre">--session</span></code> argument instead of <code class="docutils literal notranslate"><span class="pre">--now</span></code> or zoned timestamp.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">start</span></code> command accepts <code class="docutils literal notranslate"><span class="pre">--revision</span> <span class="pre">&lt;name&gt;</span></code> option to run a workflow using a past revision.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">retry</span></code> command.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">workflows</span></code> command accepts repository name as an extra command line argument instead of -r, –repository option.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">backfill</span></code> command no longer accepts <code class="docutils literal notranslate"><span class="pre">-R</span></code> as an alias of <code class="docutils literal notranslate"><span class="pre">--attempt-name</span></code>.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">attempts</span></code> command. <code class="docutils literal notranslate"><span class="pre">session</span></code> command no longer accepts <code class="docutils literal notranslate"><span class="pre">--with-retry</span></code> (use <code class="docutils literal notranslate"><span class="pre">attempts</span></code> command instead).</p></li>
 </ul>
 </div>
 <div class="section" id="server-mode-changes">
 <h2>Server-mode changes<a class="headerlink" href="#server-mode-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">PUT</span> <span class="pre">/api/attempts</span></code> endpoint requires workflow id instead of a combination of repository name, revision name, and workflow name. This makes the request idempotent and deterministic.</li>
-<li>Added <code class="docutils literal"><span class="pre">GET</span> <span class="pre">/api/workflows/{id}/truncated_session_time</span></code> to calculate a session time using the workflow&#8217;s time zone. This API is useful to prepare a new session attempt.</li>
-<li>Added <code class="docutils literal"><span class="pre">/api/workflow?repository=&lt;name&gt;&amp;name=&lt;name&gt;[&amp;revision=&lt;name&gt;]</span></code> endpoint. This API is useful to lookup a workflow by name.</li>
-<li>Added <code class="docutils literal"><span class="pre">GET</span> <span class="pre">/api/workflows/{id}</span></code> endpoint.</li>
-<li><code class="docutils literal"><span class="pre">/api/repository</span></code> and <code class="docutils literal"><span class="pre">/api/repositories/{id}</span></code> endpoints no longer accept <code class="docutils literal"><span class="pre">?revision=&lt;name&gt;</span></code> parameter. These endpoints return always repositories with the last revision name.</li>
-<li><code class="docutils literal"><span class="pre">/api/schedules</span></code>, <code class="docutils literal"><span class="pre">/api/schedules/{id}</span></code>, and <code class="docutils literal"><span class="pre">/api/schedules/{id}/skip</span></code> endpoints return workflow id in addition to workflow name.</li>
-<li><code class="docutils literal"><span class="pre">/api/attempts</span></code>, <code class="docutils literal"><span class="pre">/api/attempts/{id}</span></code>, <code class="docutils literal"><span class="pre">/api/attempts/{id}/retries</span></code>, <code class="docutils literal"><span class="pre">/api/schedules/{id}/backfill</span></code>, <code class="docutils literal"><span class="pre">/api/repositories/{id}/workflow</span></code> and <code class="docutils literal"><span class="pre">/api/repositories/{id}/workflows</span></code> endpoints return a session attempt with optional workflow id in addition to workflow name.</li>
-<li><code class="docutils literal"><span class="pre">/api/schedules</span></code>, <code class="docutils literal"><span class="pre">/api/schedules/{id}</span></code>, and <code class="docutils literal"><span class="pre">/api/schedules/{id}/skip</span></code> endpoints return nextRunTime in ISO timestamp format in UTC instead of UNIX timestamp, and nextScheduleTime in ISO timestamp format with zone offset.</li>
-<li><code class="docutils literal"><span class="pre">/api/schedules/{id}/backfill</span></code> endpoint requires fromTime parameter in ISO timestamp format with zone offset instead of UNIX timestamp.</li>
-<li><code class="docutils literal"><span class="pre">/api/schedules/{id}/skip</span></code> endpoint requires fromTime and nextRunTime in ISO timestamp format with zone offset instead of UNIX timestamp. It requires nextTime in ISO timestamp with or without zone offset instead of UNIX timestamp.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PUT</span> <span class="pre">/api/attempts</span></code> endpoint requires workflow id instead of a combination of repository name, revision name, and workflow name. This makes the request idempotent and deterministic.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/api/workflows/{id}/truncated_session_time</span></code> to calculate a session time using the workflow’s time zone. This API is useful to prepare a new session attempt.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">/api/workflow?repository=&lt;name&gt;&amp;name=&lt;name&gt;[&amp;revision=&lt;name&gt;]</span></code> endpoint. This API is useful to lookup a workflow by name.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/api/workflows/{id}</span></code> endpoint.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/api/repository</span></code> and <code class="docutils literal notranslate"><span class="pre">/api/repositories/{id}</span></code> endpoints no longer accept <code class="docutils literal notranslate"><span class="pre">?revision=&lt;name&gt;</span></code> parameter. These endpoints return always repositories with the last revision name.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/api/schedules</span></code>, <code class="docutils literal notranslate"><span class="pre">/api/schedules/{id}</span></code>, and <code class="docutils literal notranslate"><span class="pre">/api/schedules/{id}/skip</span></code> endpoints return workflow id in addition to workflow name.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/api/attempts</span></code>, <code class="docutils literal notranslate"><span class="pre">/api/attempts/{id}</span></code>, <code class="docutils literal notranslate"><span class="pre">/api/attempts/{id}/retries</span></code>, <code class="docutils literal notranslate"><span class="pre">/api/schedules/{id}/backfill</span></code>, <code class="docutils literal notranslate"><span class="pre">/api/repositories/{id}/workflow</span></code> and <code class="docutils literal notranslate"><span class="pre">/api/repositories/{id}/workflows</span></code> endpoints return a session attempt with optional workflow id in addition to workflow name.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/api/schedules</span></code>, <code class="docutils literal notranslate"><span class="pre">/api/schedules/{id}</span></code>, and <code class="docutils literal notranslate"><span class="pre">/api/schedules/{id}/skip</span></code> endpoints return nextRunTime in ISO timestamp format in UTC instead of UNIX timestamp, and nextScheduleTime in ISO timestamp format with zone offset.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/api/schedules/{id}/backfill</span></code> endpoint requires fromTime parameter in ISO timestamp format with zone offset instead of UNIX timestamp.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/api/schedules/{id}/skip</span></code> endpoint requires fromTime and nextRunTime in ISO timestamp format with zone offset instead of UNIX timestamp. It requires nextTime in ISO timestamp with or without zone offset instead of UNIX timestamp.</p></li>
 </ul>
 </div>
 <div class="section" id="general-changes">
 <h2>General changes<a class="headerlink" href="#general-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Added <code class="docutils literal"><span class="pre">workflow_configs.timezone</span></code> column on database. This is not backward comptible if the data is persistent in H2 database file or PostgreSQL. Migration script is not available at least at this point.</li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">workflow_configs.timezone</span></code> column on database. This is not backward comptible if the data is persistent in H2 database file or PostgreSQL. Migration script is not available at least at this point.</p></li>
 </ul>
 </div>
 <div class="section" id="release-date">
@@ -325,7 +316,7 @@
 <div class="section" id="contributors">
 <h2>Contributors<a class="headerlink" href="#contributors" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Sadayuki Furuhashi</li>
+<li><p>Sadayuki Furuhashi</p></li>
 </ul>
 </div>
 </div>
