@@ -96,6 +96,7 @@
 <li class="toctree-l3"><a class="reference internal" href="call.html">call&gt;: Calls another workflow</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">http_call&gt;: Call workflow fetched by HTTP</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#options">Options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#other-options">Other options</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="require.html">require&gt;: Depends on another workflow</a></li>
@@ -198,6 +199,7 @@
 <li><p><strong>application/json</strong>: Parse the response as JSON.</p></li>
 <li><p><strong>application/x-yaml</strong>: Use the returned body as-is.</p></li>
 </ul>
+<p>If appropriate Content-Type header is not returned, use content_type_override option.</p>
 <div class="section" id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
 <ul>
@@ -208,7 +210,18 @@
 </pre></div>
 </div>
 </li>
+<li><p><strong>content_type_override</strong>: application/x-yaml or application/json</p>
+<p>Overrides Content-Type response header returned from the server. This option is useful when the server doesn’t return an appropriate Content-Type but returns a generic value such as text/plain or application/octet-stream.</p>
+<p>Examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">http_call</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">api</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">foobar</span>
+<span class="n">content_type_override</span><span class="p">:</span> <span class="n">application</span><span class="o">/</span><span class="n">x</span><span class="o">-</span><span class="n">yaml</span>
+</pre></div>
+</div>
+</li>
 </ul>
+</div>
+<div class="section" id="other-options">
+<h2>Other options<a class="headerlink" href="#other-options" title="Permalink to this headline">¶</a></h2>
 <p>Same parameters with <strong>http&gt;</strong> operator are also supported except the parameters listed below. The name of the operator is similar to <a class="reference external" href="http.html">http&gt; operator</a>. But the role is different. See also <a class="reference external" href="http.html">http&gt; operator document</a>.</p>
 <ul class="simple">
 <li><p>store_content</p></li>
