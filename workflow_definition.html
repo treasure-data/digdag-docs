@@ -520,7 +520,7 @@ last_executed_session_time variable is the previously executed session time.</p>
 </div>
 <div class="section" id="retrying-failed-tasks-automatically">
 <h2><a class="toc-backref" href="#id13">Retrying failed tasks automatically</a><a class="headerlink" href="#retrying-failed-tasks-automatically" title="Permalink to this headline">¶</a></h2>
-<p>If <code class="docutils literal notranslate"><span class="pre">_retry:</span> <span class="pre">N</span></code> (N is an integer: 1, 2, 3, …) parameter is set to a group, it retires the group from the beginning when one or more children failed.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">_retry:</span> <span class="pre">N</span></code> (N is an integer: 1, 2, 3, …) parameter is set to a group, it retries the group from the beginning when one or more children failed.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">+prepare</span><span class="p">:</span>
   <span class="c1"># If +erase_table, +load_data, or +check_loaded_data fail, it retries from</span>
   <span class="c1"># +erase_table again.</span>
@@ -539,7 +539,7 @@ last_executed_session_time variable is the previously executed session time.</p>
   <span class="nt">sh&gt;</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks/analyze_prepared_data_sets.sh</span>
 </pre></div>
 </div>
-<p>Tasks also support <code class="docutils literal notranslate"><span class="pre">_retry:</span> <span class="pre">N</span></code> parameter to retry the specific task. Note that some operators don’t support the generic <code class="docutils literal notranslate"><span class="pre">_retry</span></code> option but has its own options to control retrying behavior.</p>
+<p>Tasks also support <code class="docutils literal notranslate"><span class="pre">_retry:</span> <span class="pre">N</span></code> parameter to retry the specific task. Note that some operators don’t support the generic <code class="docutils literal notranslate"><span class="pre">_retry</span></code> option but have their own options to control retrying behavior. Operators that involve external systems may reuse previous results. To ensure an external task is repeated, you may use <code class="docutils literal notranslate"><span class="pre">_retry</span></code> at the group level.</p>
 <p>You can set interval to _retry as follows.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">+prepare</span><span class="p">:</span>
   <span class="nt">_retry</span><span class="p">:</span>
