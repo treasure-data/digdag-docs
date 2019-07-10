@@ -267,7 +267,7 @@
 <p>Extension (<code class="docutils literal notranslate"><span class="pre">io.digdag.spi.Extension</span></code>) is an interface to statically customize digdag using dependency injection (Guice). This is useful to override some built-in behavior, add built-in operators, or override default parameters.</p>
 <p>Extension needs least code to make some extension possible. But it’s the hardest to use because users need to write program to use.</p>
 <p>A typical use case is for system integrators to customize digdag for their internal use.</p>
-<p>Many of customization points in digdag are assuming Extension to override (e.g. <code class="docutils literal notranslate"><span class="pre">io.digdag.server.Authenticator</span></code>) because it needs less code. But for ease of use, they should also accept system plugins, eventually.</p>
+<p>Many of customization points in digdag are assuming Extension to override (i.e. most of what’s bound using guice) because it needs less code. But for ease of use, they should also accept system plugins, eventually.</p>
 </div>
 <div class="section" id="system-plugins">
 <h3>System plugins<a class="headerlink" href="#system-plugins" title="Permalink to this headline">¶</a></h3>

@@ -498,6 +498,7 @@
 <li><p>server.http.enable-http2 (enable HTTP/2. default: false)</p></li>
 <li><p>server.http.headers.KEY = VALUE (HTTP header to set on API responses)</p></li>
 <li><p>server.jmx.port (port to listen JMX in integer. default: JMX is disabled)</p></li>
+<li><p>server.authenticator-class (string) The FQCN of the <code class="docutils literal notranslate"><span class="pre">io.digdag.spi.Authenticator</span></code> implementation to use. The implementation is to be provided by a system plugin. The auth plugin configuration is implementation specific. Default: <code class="docutils literal notranslate"><span class="pre">io.digdag.standards.auth.jwt.JwtAuthenticator</span></code></p></li>
 <li><p>database.type (enum, “h2” or “postgresql”)</p></li>
 <li><p>database.user (string)</p></li>
 <li><p>database.password (string)</p></li>
