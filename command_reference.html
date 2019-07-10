@@ -103,6 +103,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#server-mode-commands">Server-mode commands</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#server">server</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#authenticator-plugins">Authenticator Plugins</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#secret-encryption-key">Secret Encryption Key</a></li>
 </ul>
 </li>
@@ -221,37 +222,38 @@
 <ul>
 <li><p><a class="reference internal" href="#server" id="id8">server</a></p>
 <ul>
-<li><p><a class="reference internal" href="#secret-encryption-key" id="id9">Secret Encryption Key</a></p></li>
+<li><p><a class="reference internal" href="#authenticator-plugins" id="id9">Authenticator Plugins</a></p></li>
+<li><p><a class="reference internal" href="#secret-encryption-key" id="id10">Secret Encryption Key</a></p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#client-mode-commands" id="id10">Client-mode commands</a></p>
+<li><p><a class="reference internal" href="#client-mode-commands" id="id11">Client-mode commands</a></p>
 <ul>
-<li><p><a class="reference internal" href="#start" id="id11">start</a></p></li>
-<li><p><a class="reference internal" href="#retry" id="id12">retry</a></p></li>
-<li><p><a class="reference internal" href="#log" id="id13">log</a></p></li>
-<li><p><a class="reference internal" href="#kill" id="id14">kill</a></p></li>
-<li><p><a class="reference internal" href="#projects" id="id15">projects</a></p></li>
-<li><p><a class="reference internal" href="#workflows" id="id16">workflows</a></p></li>
-<li><p><a class="reference internal" href="#schedules" id="id17">schedules</a></p></li>
-<li><p><a class="reference internal" href="#disable" id="id18">disable</a></p></li>
-<li><p><a class="reference internal" href="#enable" id="id19">enable</a></p></li>
-<li><p><a class="reference internal" href="#backfill" id="id20">backfill</a></p></li>
-<li><p><a class="reference internal" href="#reschedule" id="id21">reschedule</a></p></li>
-<li><p><a class="reference internal" href="#sessions" id="id22">sessions</a></p></li>
-<li><p><a class="reference internal" href="#session" id="id23">session</a></p></li>
-<li><p><a class="reference internal" href="#attempts" id="id24">attempts</a></p></li>
-<li><p><a class="reference internal" href="#attempt" id="id25">attempt</a></p></li>
-<li><p><a class="reference internal" href="#tasks" id="id26">tasks</a></p></li>
-<li><p><a class="reference internal" href="#push" id="id27">push</a></p></li>
-<li><p><a class="reference internal" href="#download" id="id28">download</a></p></li>
-<li><p><a class="reference internal" href="#delete" id="id29">delete</a></p></li>
-<li><p><a class="reference internal" href="#secrets" id="id30">secrets</a></p></li>
-<li><p><a class="reference internal" href="#version" id="id31">version</a></p></li>
+<li><p><a class="reference internal" href="#start" id="id12">start</a></p></li>
+<li><p><a class="reference internal" href="#retry" id="id13">retry</a></p></li>
+<li><p><a class="reference internal" href="#log" id="id14">log</a></p></li>
+<li><p><a class="reference internal" href="#kill" id="id15">kill</a></p></li>
+<li><p><a class="reference internal" href="#projects" id="id16">projects</a></p></li>
+<li><p><a class="reference internal" href="#workflows" id="id17">workflows</a></p></li>
+<li><p><a class="reference internal" href="#schedules" id="id18">schedules</a></p></li>
+<li><p><a class="reference internal" href="#disable" id="id19">disable</a></p></li>
+<li><p><a class="reference internal" href="#enable" id="id20">enable</a></p></li>
+<li><p><a class="reference internal" href="#backfill" id="id21">backfill</a></p></li>
+<li><p><a class="reference internal" href="#reschedule" id="id22">reschedule</a></p></li>
+<li><p><a class="reference internal" href="#sessions" id="id23">sessions</a></p></li>
+<li><p><a class="reference internal" href="#session" id="id24">session</a></p></li>
+<li><p><a class="reference internal" href="#attempts" id="id25">attempts</a></p></li>
+<li><p><a class="reference internal" href="#attempt" id="id26">attempt</a></p></li>
+<li><p><a class="reference internal" href="#tasks" id="id27">tasks</a></p></li>
+<li><p><a class="reference internal" href="#push" id="id28">push</a></p></li>
+<li><p><a class="reference internal" href="#download" id="id29">download</a></p></li>
+<li><p><a class="reference internal" href="#delete" id="id30">delete</a></p></li>
+<li><p><a class="reference internal" href="#secrets" id="id31">secrets</a></p></li>
+<li><p><a class="reference internal" href="#version" id="id32">version</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#common-options" id="id32">Common options</a></p></li>
+<li><p><a class="reference internal" href="#common-options" id="id33">Common options</a></p></li>
 </ul>
 </div>
 <div class="section" id="local-mode-commands">
@@ -536,8 +538,21 @@
 <li><p>api.max_sessions_page_size (integer. The max number of rows of sessions in api response)</p></li>
 <li><p>api.max_archive_total_size_limit (integer. The maximum size of an archived project. i.e. <code class="docutils literal notranslate"><span class="pre">digdag</span> <span class="pre">push</span></code> size. default: 2MB(2*1024*1024))</p></li>
 </ul>
+<div class="section" id="authenticator-plugins">
+<h4><a class="toc-backref" href="#id9">Authenticator Plugins</a><a class="headerlink" href="#authenticator-plugins" title="Permalink to this headline">¶</a></h4>
+<p><strong>Basic Auth</strong></p>
+<p>Enabled by setting the config parameter <code class="docutils literal notranslate"><span class="pre">server.authenticator-class</span></code> to <code class="docutils literal notranslate"><span class="pre">io.digdag.standards.auth.basic.BasicAuthenticator</span></code>.</p>
+<p>Configuration:</p>
+<ul class="simple">
+<li><p>basicauth.username (string) <em>required</em></p></li>
+<li><p>basicauth.password (string) <em>required</em></p></li>
+<li><p>basicauth.admin (boolean) optional, default <code class="docutils literal notranslate"><span class="pre">false</span></code></p></li>
+</ul>
+<p><strong>Jwt</strong></p>
+<p>Undocumented.</p>
+</div>
 <div class="section" id="secret-encryption-key">
-<h4><a class="toc-backref" href="#id9">Secret Encryption Key</a><a class="headerlink" href="#secret-encryption-key" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id10">Secret Encryption Key</a><a class="headerlink" href="#secret-encryption-key" title="Permalink to this headline">¶</a></h4>
 <p>The secret encryption key is used to encrypt secrets when they are stored in the digdag server database. It must be a valid 128-bit AES key, base64 encoded.</p>
 <p>Example:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>digdag.secret-encryption-key = MDEyMzQ1Njc4OTAxMjM0NQ==
@@ -550,13 +565,15 @@ MTZfYnl0ZXNfcGhyYXNlIQ==
 </div>
 </div>
 <div class="section" id="client-mode-commands">
-<h2><a class="toc-backref" href="#id10">Client-mode commands</a><a class="headerlink" href="#client-mode-commands" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id11">Client-mode commands</a><a class="headerlink" href="#client-mode-commands" title="Permalink to this headline">¶</a></h2>
 <p>Client-mode common options:</p>
 <dl>
 <dt><strong class="command">-e, --endpoint HOST</strong></dt><dd><p>HTTP endpoint of the server (default: <a class="reference external" href="http://127.0.0.1:65432">http://127.0.0.1:65432</a>)</p>
 <p>Example: <code class="docutils literal notranslate"><span class="pre">--endpoint</span> <span class="pre">digdag-server.example.com:65432</span></code></p>
 </dd>
 <dt><strong class="command">-H, --header KEY=VALUE</strong></dt><dd><p>Add a custom HTTP header. Use multiple times to set multiple headers.</p>
+</dd>
+<dt><strong class="command">--basic-auth &lt;user:pass&gt;</strong></dt><dd><p>Add an Authorization header with the provided username and password.</p>
 </dd>
 <dt><strong class="command">-c, --config PATH</strong></dt><dd><p>Configuration file to load. (default: ~/.config/digdag/config)</p>
 <p>Example: <code class="docutils literal notranslate"><span class="pre">-c</span> <span class="pre">digdag-server/client.properties</span></code></p>
@@ -568,7 +585,7 @@ MTZfYnl0ZXNfcGhyYXNlIQ==
 <li><p>client.http.headers.KEY = VALUE (set custom HTTP header)</p></li>
 </ul>
 <div class="section" id="start">
-<h3><a class="toc-backref" href="#id11">start</a><a class="headerlink" href="#start" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id12">start</a><a class="headerlink" href="#start" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag start &lt;project-name&gt; &lt;name&gt; --session &lt;hourly <span class="p">|</span> daily <span class="p">|</span> now <span class="p">|</span> yyyy-MM-dd <span class="p">|</span> <span class="s2">&quot;yyyy-MM-dd HH:mm:ss&quot;</span>&gt;
 </pre></div>
 </div>
@@ -600,7 +617,7 @@ MTZfYnl0ZXNfcGhyYXNlIQ==
 </dl>
 </div>
 <div class="section" id="retry">
-<h3><a class="toc-backref" href="#id12">retry</a><a class="headerlink" href="#retry" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id13">retry</a><a class="headerlink" href="#retry" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag retry &lt;attempt-id&gt;
 </pre></div>
 </div>
@@ -631,7 +648,7 @@ MTZfYnl0ZXNfcGhyYXNlIQ==
 </dl>
 </div>
 <div class="section" id="log">
-<h3><a class="toc-backref" href="#id13">log</a><a class="headerlink" href="#log" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id14">log</a><a class="headerlink" href="#log" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag log &lt;attempt-id&gt; <span class="o">[</span>+task name prefix<span class="o">]</span>
 </pre></div>
 </div>
@@ -651,7 +668,7 @@ MTZfYnl0ZXNfcGhyYXNlIQ==
 </dl>
 </div>
 <div class="section" id="kill">
-<h3><a class="toc-backref" href="#id14">kill</a><a class="headerlink" href="#kill" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id15">kill</a><a class="headerlink" href="#kill" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag <span class="nb">kill</span> &lt;attempt-id&gt;
 </pre></div>
 </div>
@@ -661,7 +678,7 @@ MTZfYnl0ZXNfcGhyYXNlIQ==
 </div>
 </div>
 <div class="section" id="projects">
-<h3><a class="toc-backref" href="#id15">projects</a><a class="headerlink" href="#projects" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id16">projects</a><a class="headerlink" href="#projects" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag projects <span class="o">[</span>name<span class="o">]</span>
 </pre></div>
 </div>
@@ -672,7 +689,7 @@ MTZfYnl0ZXNfcGhyYXNlIQ==
 </div>
 </div>
 <div class="section" id="workflows">
-<h3><a class="toc-backref" href="#id16">workflows</a><a class="headerlink" href="#workflows" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id17">workflows</a><a class="headerlink" href="#workflows" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag workflows <span class="o">[</span>project-name<span class="o">]</span> <span class="o">[</span>name<span class="o">]</span>
 </pre></div>
 </div>
@@ -684,14 +701,14 @@ MTZfYnl0ZXNfcGhyYXNlIQ==
 </div>
 </div>
 <div class="section" id="schedules">
-<h3><a class="toc-backref" href="#id17">schedules</a><a class="headerlink" href="#schedules" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id18">schedules</a><a class="headerlink" href="#schedules" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag schedules
 </pre></div>
 </div>
 <p>Shows list of schedules.</p>
 </div>
 <div class="section" id="disable">
-<h3><a class="toc-backref" href="#id18">disable</a><a class="headerlink" href="#disable" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id19">disable</a><a class="headerlink" href="#disable" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag disable <span class="o">[</span>project-name<span class="o">]</span>
 </pre></div>
 </div>
@@ -708,7 +725,7 @@ MTZfYnl0ZXNfcGhyYXNlIQ==
 </div>
 </div>
 <div class="section" id="enable">
-<h3><a class="toc-backref" href="#id19">enable</a><a class="headerlink" href="#enable" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id20">enable</a><a class="headerlink" href="#enable" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag <span class="nb">enable</span> <span class="o">[</span>project-name<span class="o">]</span>
 </pre></div>
 </div>
@@ -725,7 +742,7 @@ MTZfYnl0ZXNfcGhyYXNlIQ==
 </div>
 </div>
 <div class="section" id="backfill">
-<h3><a class="toc-backref" href="#id20">backfill</a><a class="headerlink" href="#backfill" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id21">backfill</a><a class="headerlink" href="#backfill" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag backfill &lt;schedule-id&gt;
 <span class="gp">$</span> digdag backfill &lt;project-name&gt; &lt;name&gt;
 </pre></div>
@@ -746,7 +763,7 @@ MTZfYnl0ZXNfcGhyYXNlIQ==
 </dl>
 </div>
 <div class="section" id="reschedule">
-<h3><a class="toc-backref" href="#id21">reschedule</a><a class="headerlink" href="#reschedule" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id22">reschedule</a><a class="headerlink" href="#reschedule" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag reschedule &lt;schedule-id&gt;
 <span class="gp">$</span> digdag reschedule &lt;project-name&gt; &lt;name&gt;
 </pre></div>
@@ -764,7 +781,7 @@ MTZfYnl0ZXNfcGhyYXNlIQ==
 </dl>
 </div>
 <div class="section" id="sessions">
-<h3><a class="toc-backref" href="#id22">sessions</a><a class="headerlink" href="#sessions" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id23">sessions</a><a class="headerlink" href="#sessions" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag sessions <span class="o">[</span>project-name<span class="o">]</span> <span class="o">[</span>name<span class="o">]</span>
 </pre></div>
 </div>
@@ -782,7 +799,7 @@ MTZfYnl0ZXNfcGhyYXNlIQ==
 </dl>
 </div>
 <div class="section" id="session">
-<h3><a class="toc-backref" href="#id23">session</a><a class="headerlink" href="#session" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id24">session</a><a class="headerlink" href="#session" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag session <span class="o">[</span>session-id<span class="o">]</span>
 </pre></div>
 </div>
@@ -792,7 +809,7 @@ MTZfYnl0ZXNfcGhyYXNlIQ==
 </div>
 </div>
 <div class="section" id="attempts">
-<h3><a class="toc-backref" href="#id24">attempts</a><a class="headerlink" href="#attempts" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id25">attempts</a><a class="headerlink" href="#attempts" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag attempts <span class="o">[</span>session-id<span class="o">]</span>
 </pre></div>
 </div>
@@ -809,7 +826,7 @@ MTZfYnl0ZXNfcGhyYXNlIQ==
 </dl>
 </div>
 <div class="section" id="attempt">
-<h3><a class="toc-backref" href="#id25">attempt</a><a class="headerlink" href="#attempt" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id26">attempt</a><a class="headerlink" href="#attempt" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag attempt <span class="o">[</span>attempt-id<span class="o">]</span>
 </pre></div>
 </div>
@@ -819,7 +836,7 @@ MTZfYnl0ZXNfcGhyYXNlIQ==
 </div>
 </div>
 <div class="section" id="tasks">
-<h3><a class="toc-backref" href="#id26">tasks</a><a class="headerlink" href="#tasks" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id27">tasks</a><a class="headerlink" href="#tasks" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag tasks &lt;attempt-id&gt;
 </pre></div>
 </div>
@@ -829,7 +846,7 @@ MTZfYnl0ZXNfcGhyYXNlIQ==
 </div>
 </div>
 <div class="section" id="push">
-<h3><a class="toc-backref" href="#id27">push</a><a class="headerlink" href="#push" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id28">push</a><a class="headerlink" href="#push" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag push &lt;project&gt; <span class="o">[</span>options...<span class="o">]</span>
 </pre></div>
 </div>
@@ -851,7 +868,7 @@ MTZfYnl0ZXNfcGhyYXNlIQ==
 </dl>
 </div>
 <div class="section" id="download">
-<h3><a class="toc-backref" href="#id28">download</a><a class="headerlink" href="#download" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id29">download</a><a class="headerlink" href="#download" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag download &lt;project&gt;
 </pre></div>
 </div>
@@ -871,7 +888,7 @@ MTZfYnl0ZXNfcGhyYXNlIQ==
 </dl>
 </div>
 <div class="section" id="delete">
-<h3><a class="toc-backref" href="#id29">delete</a><a class="headerlink" href="#delete" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id30">delete</a><a class="headerlink" href="#delete" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag delete &lt;project&gt; <span class="o">[</span>options...<span class="o">]</span>
 </pre></div>
 </div>
@@ -885,7 +902,7 @@ MTZfYnl0ZXNfcGhyYXNlIQ==
 </dl>
 </div>
 <div class="section" id="secrets">
-<h3><a class="toc-backref" href="#id30">secrets</a><a class="headerlink" href="#secrets" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id31">secrets</a><a class="headerlink" href="#secrets" title="Permalink to this headline">¶</a></h3>
 <p>Digdag provides basic secret management that can be used to securely provide e.g. passwords and api keys etc to operators.</p>
 <p>Secrets are handled separately from normal workflow parameters and are stored encrypted by the server. Local secrets are stored in the user home directory.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag secrets --project &lt;project&gt;
@@ -946,7 +963,7 @@ name on the command line and provide secret keys and values on stdin in JSON for
 <p>The above command deletes the local secrets <cite>foo</cite> and <cite>bar</cite>.</p>
 </div>
 <div class="section" id="version">
-<h3><a class="toc-backref" href="#id31">version</a><a class="headerlink" href="#version" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id32">version</a><a class="headerlink" href="#version" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> digdag version
 </pre></div>
 </div>
@@ -954,7 +971,7 @@ name on the command line and provide secret keys and values on stdin in JSON for
 </div>
 </div>
 <div class="section" id="common-options">
-<h2><a class="toc-backref" href="#id32">Common options</a><a class="headerlink" href="#common-options" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id33">Common options</a><a class="headerlink" href="#common-options" title="Permalink to this headline">¶</a></h2>
 <dl class="simple">
 <dt><strong class="command">-L, --log PATH</strong></dt><dd><p>Output log messages to a file (default is STDOUT). If this option is set, log files are rotated every 10MB, compresses it using gzip, and keeps at most 5 old files.</p>
 </dd>
