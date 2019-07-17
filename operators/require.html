@@ -192,7 +192,7 @@
             
   <div class="section" id="require-depends-on-another-workflow">
 <h1>require&gt;: Depends on another workflow<a class="headerlink" href="#require-depends-on-another-workflow" title="Permalink to this headline">¶</a></h1>
-<p><strong>require&gt;</strong> operator requires completion of another workflow. This operator is similar to <a class="reference external" href="call.html">call&gt; operator</a>, but this operator doesn’t start the other workflow if it’s already running or has done for the same session time of this workflow. If the workflow is running or newly started, this operator waits until it completes.</p>
+<p><strong>require&gt;</strong> operator requires completion of another workflow. This operator is similar to <a class="reference external" href="call.html">call&gt; operator</a>, but this operator doesn’t start the other workflow if it’s already running or has done for the same session time of this workflow. If the workflow is running or newly started, this operator waits until it completes. In  addition, require operator can kick the another project’s workflow.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># workflow1.dig</span>
 <span class="o">+</span><span class="n">step1</span><span class="p">:</span>
   <span class="n">require</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">another_workflow</span>
@@ -229,6 +229,14 @@ schedule:
   _do:
     require&gt;: daily_workflow
     session_time: ${moment(last_session_time).add(i, &#39;day&#39;)}
+</pre></div>
+</div>
+</li>
+<li><p><strong>project_id</strong>: project_id</p>
+<p>Id of another project. You can kick another project’s workflow by setting this parameter.</p>
+<p>Examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">require</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">another_project_wf</span>
+<span class="n">project_id</span><span class="p">:</span> <span class="mi">12345</span>
 </pre></div>
 </div>
 </li>
