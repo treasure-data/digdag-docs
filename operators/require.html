@@ -248,6 +248,16 @@ schedule:
 </pre></div>
 </div>
 </li>
+<li><p><strong>params</strong>: MAP</p>
+<p>This operator doesn’t pass a parameter to another workflow. <code class="docutils literal notranslate"><span class="pre">params</span></code> options set parameters.</p>
+<p>Examples:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">+example</span><span class="p">:</span>
+  <span class="nt">require&gt;</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">child</span>
+  <span class="nt">params</span><span class="p">:</span>
+    <span class="nt">param_name1</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">${parent_param_name}</span>
+</pre></div>
+</div>
+</li>
 </ul>
 </div>
 </div>
