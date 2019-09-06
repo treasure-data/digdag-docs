@@ -212,6 +212,17 @@
   <span class="n">rename_tables</span><span class="p">:</span> <span class="p">[{</span><span class="n">from</span><span class="p">:</span> <span class="s2">&quot;my_table_$</span><span class="si">{session_date_compact}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">to</span><span class="p">:</span> <span class="s2">&quot;my_table&quot;</span><span class="p">}]</span>
 </pre></div>
 </div>
+<p>If you would like to specify a different database which is not declared with _export, you can specify the database name under the options as below.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">_export</span><span class="p">:</span>
+  <span class="n">td</span><span class="p">:</span>
+    <span class="n">database</span><span class="p">:</span> <span class="n">test_db1</span>
+
+<span class="o">+</span><span class="n">task1</span><span class="p">:</span>
+  <span class="n">td_ddl</span><span class="o">&gt;</span><span class="p">:</span>
+  <span class="n">create_tables</span><span class="p">:</span> <span class="p">[</span><span class="n">test_ddl1</span><span class="p">,</span> <span class="n">test_ddl2</span><span class="p">]</span>
+  <span class="n">database</span><span class="p">:</span> <span class="n">test_db2</span>
+</pre></div>
+</div>
 <div class="section" id="secrets">
 <h2>Secrets<a class="headerlink" href="#secrets" title="Permalink to this headline">¶</a></h2>
 <p>When you set those parameters, use <a class="reference external" href="https://docs.digdag.io/command_reference.html#secrets">digdag secrets command</a>.</p>
