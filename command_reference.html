@@ -480,8 +480,8 @@
 <dt><strong class="command">-P, --params-file PATH</strong></dt><dd><p>Read parameters from a YAML file. Nested parameter (like {mysql: {user: me}}) are accessible using “.” syntax (like ${mysql.user}).</p>
 <p>Example: <code class="docutils literal notranslate"><span class="pre">-P</span> <span class="pre">params.yml</span></code></p>
 </dd>
-<dt><strong class="command">-c, --config PATH</strong></dt><dd><p>Server configuration property path. See the followings for details.</p>
-<p>Example: <code class="docutils literal notranslate"><span class="pre">-c</span> <span class="pre">digdag.properties</span></code></p>
+<dt><strong class="command">-c, --config PATH</strong></dt><dd><p>Configuration file to load. (default: ~/.config/digdag/config) See the followings for details.</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">-c</span> <span class="pre">digdag-server/server.properties</span></code></p>
 </dd>
 </dl>
 <p>In the config file, following parameters are available</p>
