@@ -234,6 +234,17 @@
 <p><code class="docutils literal notranslate"><span class="pre">_check</span></code> and <code class="docutils literal notranslate"><span class="pre">_error</span></code> options use dynamic task generation. Those parameters are used by Digdag to run another task only when the task succeeds or fails.</p>
 <p><code class="docutils literal notranslate"><span class="pre">_check</span></code> task is generated after successful completion of a task. This is useful especially when you want to validate results of a task before starting next tasks.</p>
 <p><code class="docutils literal notranslate"><span class="pre">_error</span></code> task is generated after failure of a task. This is useful to notify failure of a task to external systems.</p>
+<p>The following example output <code class="docutils literal notranslate"><span class="pre">success</span></code> on succeeding the tasks. And also, It output the message <code class="docutils literal notranslate"><span class="pre">fail</span></code> on failing the tasks.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">+example</span><span class="p">:</span>
+  <span class="nt">sh&gt;</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">your_script.sh</span>
+  <span class="nt">_check</span><span class="p">:</span>
+    <span class="nt">+succeed</span><span class="p">:</span>
+      <span class="nt">echo&gt;</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">success</span>
+  <span class="nt">_error</span><span class="p">:</span>
+    <span class="nt">+failed</span><span class="p">:</span>
+      <span class="nt">echo&gt;</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">fail</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="task-naming-and-resuming">
 <h2>Task naming and resuming<a class="headerlink" href="#task-naming-and-resuming" title="Permalink to this headline">¶</a></h2>
