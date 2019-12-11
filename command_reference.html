@@ -532,7 +532,7 @@
 <li><p>log-server.s3.credentials.secret-access-key (string. default: instance profile)</p></li>
 <li><p>log-server.s3.path-style-access (boolean. default: false)</p></li>
 <li><p>log-server.local.path (string. default: digdag.log)</p></li>
-<li><p>log-server.local.split_size (long. default: 0  (not splitted))</p></li>
+<li><p>log-server.local.split_size (long. max log file size in bytes(uncompressed).  default: 0  (not splitted))</p></li>
 <li><p>digdag.secret-encryption-key = (base64 encoded 128-bit AES encryption key)</p></li>
 <li><p>executor.task_ttl (string. default: 1d. A task is killed if it is running longer than this period.)</p></li>
 <li><p>executor.attempt_ttl (string. default: 7d. An attempt is killed if it is running longer than this period.)</p></li>
