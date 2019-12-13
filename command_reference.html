@@ -516,14 +516,17 @@
 <li><p>database.maximumPoolSize (integer, default: available CPU cores * 32)</p></li>
 <li><p>database.leakDetectionThreshold (HikariCP leakDetectionThreshold milliseconds in integer. default: 0. To enable, set to &gt;= 2000.)</p></li>
 <li><p>database.migrate (enable DB migration. default: true)</p></li>
-<li><p>archive.type (type of project archiving, “db” or “s3”. default: “db”)</p></li>
+<li><p>archive.type (type of project archiving, “db”, “s3” or “gcs”. default: “db”)</p></li>
 <li><p>archive.s3.endpoint (string. default: “s3.amazonaws.com”)</p></li>
 <li><p>archive.s3.bucket (string)</p></li>
 <li><p>archive.s3.path (string)</p></li>
 <li><p>archive.s3.credentials.access-key-id (string. default: instance profile)</p></li>
 <li><p>archive.s3.credentials.secret-access-key (string. default: instance profile)</p></li>
 <li><p>archive.s3.path-style-access (boolean. default: false)</p></li>
-<li><p>log-server.type (type of log storage, “local” , “null”, or “s3”. default: “null”. This parameter will be overwritten with “local” if <code class="docutils literal notranslate"><span class="pre">-O,</span> <span class="pre">--task-log</span> <span class="pre">DIR</span></code> is set.)</p></li>
+<li><p>archive.gcs.bucket (string)</p></li>
+<li><p>archive.gcs.credentials.json.path (string. if not set, auth with local authentication information. Also if path and content are set, path has priority.)</p></li>
+<li><p>archive.gcs.credentials.json.content (string. if not set, auth with local authentication information. Also if path and content are set, path has priority.)</p></li>
+<li><p>log-server.type (type of log storage, “local” , “null”, “s3” or “gcs”. default: “null”. This parameter will be overwritten with “local” if <code class="docutils literal notranslate"><span class="pre">-O,</span> <span class="pre">--task-log</span> <span class="pre">DIR</span></code> is set.)</p></li>
 <li><p>log-server.s3.endpoint (string, default: “s3.amazonaws.com”)</p></li>
 <li><p>log-server.s3.bucket (string)</p></li>
 <li><p>log-server.s3.path (string)</p></li>
@@ -531,6 +534,9 @@
 <li><p>log-server.s3.credentials.access-key-id (string. default: instance profile)</p></li>
 <li><p>log-server.s3.credentials.secret-access-key (string. default: instance profile)</p></li>
 <li><p>log-server.s3.path-style-access (boolean. default: false)</p></li>
+<li><p>log-server.gcs.bucket (string)</p></li>
+<li><p>log-server.gcs.credentials.json.path (string. if not set, auth with local authentication information. Also if path and content are set, path has priority.)</p></li>
+<li><p>log-server.gcs.credentials.json.content (string. if not set, auth with local authentication information. Also if path and content are set, path has priority.)</p></li>
 <li><p>log-server.local.path (string. default: digdag.log)</p></li>
 <li><p>log-server.local.split_size (long. max log file size in bytes(uncompressed).  default: 0  (not splitted))</p></li>
 <li><p>digdag.secret-encryption-key = (base64 encoded 128-bit AES encryption key)</p></li>
