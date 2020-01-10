@@ -411,8 +411,9 @@ The character encoding of the data in the files to import. <em>Default</em>: <co
 <div class="section" id="output-parameters">
 <h2>Output parameters<a class="headerlink" href="#output-parameters" title="Permalink to this headline">¶</a></h2>
 <ul>
-<li><p><strong>bq.last_job_id</strong> or <strong>bq.last_jobid</strong></p>
-<p>The id of the BigQuery job that performed this import. <code class="docutils literal notranslate"><span class="pre">bq.last_jobid</span></code> will be kept for compatibility and remove in near future release.</p>
+<li><p><strong>bq.last_job_id</strong></p>
+<p>The id of the BigQuery job that performed this import.</p>
+<p>Note: <code class="docutils literal notranslate"><span class="pre">bq.last_jobid</span></code> parameter is kept only for backward compatibility but you must not use it because it will be removed removed in a near future release.</p>
 </li>
 </ul>
 </div>
@@ -438,7 +439,7 @@ The character encoding of the data in the files to import. <em>Default</em>: <co
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016-2019, Digdag Project
+        &copy; Copyright 2016-2020, Digdag Project
 
     </p>
   </div>
