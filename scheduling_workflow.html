@@ -331,29 +331,6 @@
 </pre></div>
 </div>
 <p>In sla: directive, you can select either the <code class="docutils literal notranslate"><span class="pre">time</span></code> or <code class="docutils literal notranslate"><span class="pre">duration</span></code> option.</p>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 29%" />
-<col style="width: 47%" />
-<col style="width: 24%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Syntax</p></th>
-<th class="head"><p>Description</p></th>
-<th class="head"><p>Example</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>time&gt;: <code class="docutils literal notranslate"><span class="pre">HH:MM:SS</span></code></p></td>
-<td><p>Set this job must be completed by <code class="docutils literal notranslate"><span class="pre">HH:MM:SS</span></code></p></td>
-<td><p>time&gt;: 12:30:00</p></td>
-</tr>
-<tr class="row-odd"><td><p>duration&gt;: <code class="docutils literal notranslate"><span class="pre">HH:MM:SS</span></code></p></td>
-<td><p>Set this job must be completed during <code class="docutils literal notranslate"><span class="pre">HH:MM:SS</span></code></p></td>
-<td><p>duration&gt;: 00:05:00</p></td>
-</tr>
-</tbody>
-</table>
 <div class="section" id="options">
 <h3><a class="toc-backref" href="#id6">Options</a><a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h3>
 <p>This parameter supports fail: BOOLEAN and alert: BOOLEAN options. Setting fail: true makes the workflow failed. Setting alert: true sends an notification using above notification mechanism.</p>
@@ -369,13 +346,13 @@
 <p>For example, let’s say we have a workflow that is running hourly, and it normally takes only 30 minutes. But it’s the holiday season and now there has been a huge increase in usage of your site – so much data is now being process the workflow is taking 1 hour and 30 minutes. During this time period, a 2nd workflow has started running for the following hour, which causes further strain on your available resources because both are running at the same time.</p>
 <p>It’s this case it’s best to skip the next hour’s workflow session, and instead utilize the subsequent session to process 2 hours of data. To do this, we’ve added the following:</p>
 <ul class="simple">
-<li><p>Added a <cite>skip_on_overtime: true | false</cite> schedule option that can be used to control whether scheduled session execution should be skipped if another session is already running.</p></li>
-<li><p>Scheduled workflow sessions now have a <cite>last_executed_session_time</cite> variable which contains the previously executed session time. It is usually same with <cite>last_session_time</cite> but has different value when <cite>skip_on_overtime: true</cite> is set or the session is the first execution.</p></li>
+<li><p>Added a <code class="docutils literal notranslate"><span class="pre">skip_on_overtime:</span> <span class="pre">true</span> <span class="pre">|</span> <span class="pre">false</span></code> schedule option that can be used to control whether scheduled session execution should be skipped if another session is already running.</p></li>
+<li><p>Scheduled workflow sessions now have a <code class="docutils literal notranslate"><span class="pre">last_executed_session_time</span></code> variable which contains the previously executed session time. It is usually same with <code class="docutils literal notranslate"><span class="pre">last_session_time</span></code> but has different value when <code class="docutils literal notranslate"><span class="pre">skip_on_overtime:</span> <span class="pre">true</span></code> is set or the session is the first execution.</p></li>
 </ul>
 </div>
 <div class="section" id="skipping-backfill">
 <h2><a class="toc-backref" href="#id8">Skipping backfill.</a><a class="headerlink" href="#skipping-backfill" title="Permalink to this headline">¶</a></h2>
-<p>The <cite>skip_delayed_by</cite> option enables <a class="reference external" href="command_reference.html#backfill">backfill</a> command to skip creating sessions delayed by the specified time. When Digdag restarts, sessions of a schedule are automatically created until the next of <cite>last_session_time</cite>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">skip_delayed_by</span></code> option enables <a class="reference external" href="command_reference.html#backfill">backfill</a> command to skip creating sessions delayed by the specified time. When Digdag restarts, sessions of a schedule are automatically created until the next of <code class="docutils literal notranslate"><span class="pre">last_session_time</span></code>.</p>
 <p>For example, If Digdag restarts at 20:00:00 and a workflow scheduled as below, it creates three sessions (19:59:00, 19:58:00 and 19:57:00). And then, Digdag doesn’t create sessions which are before 19:56:00 by the option.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">schedule</span><span class="p">:</span>
   <span class="nt">minutes_interval&gt;</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
