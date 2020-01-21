@@ -359,8 +359,8 @@ If the query that created the status table completed 24 hours ago, this operator
 </div>
 </li>
 <li><p><strong>password_override</strong>: NAME</p>
-<p>Secret key name that has a non-default database password as its value. This would be useful whey you want to use multiple database credentials. If it’s set, Digdag looks up secrets with this value as a secret key name. If not, the default secret key <code class="docutils literal notranslate"><span class="pre">redshift.password</span></code> is used.</p>
-<p>Examples (let’s say you’ve already added a secret key value <code class="docutils literal notranslate"><span class="pre">redshift.another_password=password1234</span></code>):</p>
+<p>Secret key name that has a non-default database password as its value. This would be useful whey you want to use multiple database credentials. If it’s set, Digdag looks up secrets with this value as a secret key name. If not, the default secret key <code class="docutils literal notranslate"><span class="pre">aws.redshift.password</span></code> is used.</p>
+<p>Examples (let’s say you’ve already added a secret key value <code class="docutils literal notranslate"><span class="pre">aws.redshift.another_password=password1234</span></code>):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">password_override</span><span class="p">:</span> <span class="n">another_password</span>
 </pre></div>
 </div>
