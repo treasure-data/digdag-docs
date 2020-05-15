@@ -197,7 +197,7 @@
 <h1>td_for_each&gt;: Repeat using Treasure Data queries<a class="headerlink" href="#td-for-each-repeat-using-treasure-data-queries" title="Permalink to this headline">¶</a></h1>
 <p><strong>td_for_each&gt;</strong> operator loops subtasks for each result rows of a Hive or Presto query on Treasure Data.</p>
 <p>Subtasks set at <code class="docutils literal notranslate"><span class="pre">_do</span></code> section can reference results using ${td.each.COLUMN_NAME} syntax where COLUMN_NAME is a name of column.</p>
-<p>For example, if you run a query <code class="docutils literal notranslate"><span class="pre">select</span> <span class="pre">email,</span> <span class="pre">name</span> <span class="pre">from</span> <span class="pre">users</span></code> and the query returns 3 rows, this operator runs subtasks 3 times with <code class="docutils literal notranslate"><span class="pre">${td.each.email}</span></code> and <code class="docutils literal notranslate"><span class="pre">${td.each.name}}</span></code> parameters.</p>
+<p>For example, if you run a query <code class="docutils literal notranslate"><span class="pre">select</span> <span class="pre">email,</span> <span class="pre">name</span> <span class="pre">from</span> <span class="pre">users</span></code> and the query returns 3 rows, this operator runs subtasks 3 times with <code class="docutils literal notranslate"><span class="pre">${td.each.email}</span></code> and <code class="docutils literal notranslate"><span class="pre">${td.each.name}</span></code> parameters.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>_export:
   td:
     database: www_access
@@ -225,6 +225,30 @@
 <p>Path to a query template file. This file can contain <code class="docutils literal notranslate"><span class="pre">${...}</span></code> syntax to embed variables.</p>
 <p>Examples:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">td</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">queries</span><span class="o">/</span><span class="n">step1</span><span class="o">.</span><span class="n">sql</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>_parallel</strong>: BOOLEAN</p>
+<p>Runs the repeating tasks in parallel.</p>
+<p>Examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">_parallel</span><span class="p">:</span> <span class="n">true</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>_do</strong>: TASKS</p>
+<p>Tasks to run.</p>
+<p>Examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># Runs a single task
+_do:
+  echo&gt;: ${td.each}
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># Runs multiple tasks
+_do:
+  +show_email:
+    echo&gt;: ${td.each.email}
+  +show_name:
+    echo&gt;: ${td.each.name}
 </pre></div>
 </div>
 </li>

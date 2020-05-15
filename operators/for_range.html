@@ -200,18 +200,18 @@
   _do:
     echo&gt;: processing from ${range.from} to ${range.to}.
     # this will generate 4 tasks:
-    #  +range-from=10&amp;verb=20:
+    #  +range-from=10&amp;to=20:
     #    echo&gt;: processing from 10 to 20.
-    #  +range-from=20&amp;verb=30:
+    #  +range-from=20&amp;to=30:
     #    echo&gt;: processing from 20 to 30.
-    #  +range-from=30&amp;verb=40:
+    #  +range-from=30&amp;to=40:
     #    echo&gt;: processing from 30 to 40.
-    #  +range-from=40&amp;verb=50:
+    #  +range-from=40&amp;to=50:
     #    echo&gt;: processing from 40 to 50.
 </pre></div>
 </div>
 <ul>
-<li><p><strong>for_each&gt;</strong>: object of from, to, and slices or step</p>
+<li><p><strong>for_range&gt;</strong>: object of from, to, and slices or step</p>
 <p>This nested object is used to declare a range from <strong>from</strong> to <strong>to</strong>.</p>
 <p>Then you divide the range into fixed number of slices using <strong>slices</strong> option, or divide the range by width by <strong>step</strong> option. Setting both slices and step is error.</p>
 <p>Examples:</p>

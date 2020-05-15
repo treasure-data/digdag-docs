@@ -195,7 +195,7 @@
   <div class="section" id="td-partial-delete-delete-range-of-treasure-data-table">
 <h1>td_partial_delete&gt;: Delete range of Treasure Data table<a class="headerlink" href="#td-partial-delete-delete-range-of-treasure-data-table" title="Permalink to this headline">¶</a></h1>
 <p><strong>td_partial_delete&gt;</strong> operator deletes records from a Treasure Data table.</p>
-<p>Please be aware that records imported using streaming import can’t be deleted for several hours using td_partial_delete. Records imported by INSERT INTO, Data Connector (<a class="reference external" href="https://docs.treasuredata.com/articles/data-connector-hadoop-executor">MapReduce Executor</a>), and bulk imports can be deleted immediately.</p>
+<p>Please be aware that records imported using streaming import can’t be deleted for several hours using td_partial_delete. Records imported by INSERT INTO, Data Connector, and bulk imports can be deleted immediately.</p>
 <p>Time range needs to be hourly. Setting non-zero values to minutes or seconds will be rejected.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">step1</span><span class="p">:</span>
   <span class="n">td_partial_delete</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">my_table</span>
