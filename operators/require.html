@@ -97,6 +97,7 @@
 <li class="toctree-l3"><a class="reference internal" href="http_call.html">http_call&gt;: Call workflow fetched by HTTP</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">require&gt;: Depends on another workflow</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#options">Options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#notes">Notes</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="loop.html">loop&gt;: Repeat tasks</a></li>
@@ -233,13 +234,29 @@ schedule:
 </pre></div>
 </div>
 </li>
-<li><p><strong>project_id</strong>: project_id</p>
-<p>Id of another project. You can kick another project’s workflow by setting this parameter.</p>
-<p>Examples:</p>
+<li><p><strong>project_id</strong>: project_id</p></li>
+<li><p><strong>project_name</strong>: project_name</p>
+<p>You can kick another project’s workflow by setting project_id or project_name.
+If the project does not exist, the task will fail.
+If you set both project_id and project_name, the task will fail.</p>
+<p>Examples 1:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">require</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">another_project_wf</span>
 <span class="n">project_id</span><span class="p">:</span> <span class="mi">12345</span>
 </pre></div>
 </div>
+<p>Examples 2:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">require</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">another_project_wf</span>
+<span class="n">project_name</span><span class="p">:</span> <span class="n">another_project</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>rerun_on</strong>: none, failed, all (default: none)</p>
+<p><em>rerun_on</em> control require&gt; really kicks or not if the attempt for the dependent workflow already exists.</p>
+<ul class="simple">
+<li><p><em>none</em> … Not kick the workflow if the attempt already exists.</p></li>
+<li><p><em>failed</em> … Kick the workflow if the attempt exists and its result is not success.</p></li>
+<li><p><em>all</em> … require&gt; kick the workflow regardless of the result of the attempt.</p></li>
+</ul>
 </li>
 <li><p><strong>ignore_failure</strong>: BOOLEAN</p>
 <p>This operator fails when the dependent workflow finished with errors by default.</p>
@@ -258,7 +275,15 @@ schedule:
     <span class="nt">param_name1</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">${parent_param_name}</span>
 </pre></div>
 </div>
+<p>require&gt; evaluates <em>ignore_failure</em> at last of its process. If rerun_on is set and require&gt; run new attempt, the result of new attempt is checked.</p>
 </li>
+</ul>
+</div>
+<div class="section" id="notes">
+<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>require&gt; has been changed to ignore inherited <em>retry_attempt_name</em> parameter.
+<code class="docutils literal notranslate"><span class="pre">digdag</span> <span class="pre">retry</span></code> command generates unique retry_attempt_name to run, but it is not passed to require&gt;.</p></li>
 </ul>
 </div>
 </div>
