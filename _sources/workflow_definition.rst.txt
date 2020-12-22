@@ -128,6 +128,11 @@ You can define variables in 3 ways:
 * Setting variable programmably using API
 * Starting a session with variables
 
+.. note::
+
+    You cannot overwrite built-in variables.
+
+
 Using _export: parameter
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -235,6 +240,32 @@ If ``_parallel: true`` parameter is set to a group, child tasks in the group run
 
       +data3:
         sh>: tasks/prepare_data3.sh
+
+    +analyze:
+      sh>: tasks/analyze_prepared_data_sets.sh
+
+If ``_parallel: {limit: N}`` (N is an integer: 1, 2, 3, …) parameter is set to a group,
+child tasks in the group run in parallel is limited to N  (grandchildren are not affected):
+
+.. code-block:: yaml
+
+    +prepare:
+      # +data1 and +data2 run in parallel, then +data3 and +data4 run in parallel.
+      # (+data1 and +data2 need to be successful.)
+      _parallel:
+        limit: 2
+
+      +data1:
+        sh>: tasks/prepare_data1.sh
+
+      +data2:
+        sh>: tasks/prepare_data2.sh
+
+      +data3:
+        sh>: tasks/prepare_data3.sh
+
+      +data4:
+        sh>: tasks/prepare_data4.sh
 
     +analyze:
       sh>: tasks/analyze_prepared_data_sets.sh

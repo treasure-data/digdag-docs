@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Command reference &mdash; Digdag 0.9.42 documentation</title>
+  <title>Command reference &mdash; Digdag 0_10_before_merge_v0_9_38 documentation</title>
   
 
   
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                0.9
+                0.10
               </div>
             
           
@@ -140,6 +140,7 @@
 <li class="toctree-l1"><a class="reference internal" href="ruby_api.html">Language API - Ruby</a></li>
 <li class="toctree-l1"><a class="reference internal" href="rest_api.html">REST API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="internal.html">Internal architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="metrics.html">Digdag metrics (experimental)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="releases.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="logo.html">Logo</a></li>
 </ul>
@@ -501,7 +502,7 @@
 <li><p>server.http.enable-http2 (enable HTTP/2. default: false)</p></li>
 <li><p>server.http.headers.KEY = VALUE (HTTP header to set on API responses)</p></li>
 <li><p>server.jmx.port (port to listen JMX in integer. default: JMX is disabled) Since Java 9, to use this option, you need to set ‘-Djdk.attach.allowAttachSelf=true’ to command line option of java or to JDK_JAVA_OPTIONS environment variable.</p></li>
-<li><p>server.authenticator-class (string) The FQCN of the <code class="docutils literal notranslate"><span class="pre">io.digdag.spi.Authenticator</span></code> implementation to use. The implementation is to be provided by a system plugin. The auth plugin configuration is implementation specific. Default: <code class="docutils literal notranslate"><span class="pre">io.digdag.standards.auth.jwt.JwtAuthenticator</span></code></p></li>
+<li><p>server.authenticator.type (string) The name an authenticator plugin. (See also Authenticator Plugins section bellow): <code class="docutils literal notranslate"><span class="pre">basic</span></code></p></li>
 <li><p>database.type (enum, “h2” or “postgresql”)</p></li>
 <li><p>database.user (string)</p></li>
 <li><p>database.password (string)</p></li>
@@ -543,23 +544,28 @@
 <li><p>log-server.local.split_size (long. max log file size in bytes(uncompressed).  default: 0  (not splitted))</p></li>
 <li><p>digdag.secret-encryption-key = (base64 encoded 128-bit AES encryption key)</p></li>
 <li><p>executor.task_ttl (string. default: 1d. A task is killed if it is running longer than this period.)</p></li>
+<li><p>executor.task_max_run (integer. default: 1000. Max number of tasks in workflow.)</p></li>
 <li><p>executor.attempt_ttl (string. default: 7d. An attempt is killed if it is running longer than this period.)</p></li>
+<li><p>executor.attempt_max_run (integer. default: 100. Max number of running attempts at once per each site_id.)</p></li>
+<li><p>executor.enqueue_random_fetch (enqueue ready tasks randomly. default: false)</p></li>
+<li><p>executor.enqueue_fetch_size ( Number of tasks to be enqueued. default: 100)</p></li>
 <li><p>api.max_attempts_page_size (integer. The max number of rows of attempts in api response)</p></li>
 <li><p>api.max_sessions_page_size (integer. The max number of rows of sessions in api response)</p></li>
 <li><p>api.max_archive_total_size_limit (integer. The maximum size of an archived project. i.e. <code class="docutils literal notranslate"><span class="pre">digdag</span> <span class="pre">push</span></code> size. default: 2MB(2*1024*1024))</p></li>
+<li><p>eval.js-engine-type (type of ConfigEvalEngine. “nashorn” or “graal”. “nashorn” is default on Java8 and “graal” is default on Java11)</p></li>
+<li><p>eval.extended-syntax (boolean, default: true. Enable or disable extended syntax in graal. If true, nested <code class="docutils literal notranslate"><span class="pre">{..}</span></code> is allowed)</p></li>
 </ul>
 <div class="section" id="authenticator-plugins">
 <h4><a class="toc-backref" href="#id9">Authenticator Plugins</a><a class="headerlink" href="#authenticator-plugins" title="Permalink to this headline">¶</a></h4>
+<p>Authenticator implementation is to be provided by a system plugin (See <cite>System plugins section in Internal architecture &lt;internal.html#system-plugins&gt;</cite>). Interface is <code class="docutils literal notranslate"><span class="pre">io.digdag.spi.AuthenticatorFactory</span></code>.</p>
 <p><strong>Basic Auth</strong></p>
-<p>Enabled by setting the config parameter <code class="docutils literal notranslate"><span class="pre">server.authenticator-class</span></code> to <code class="docutils literal notranslate"><span class="pre">io.digdag.standards.auth.basic.BasicAuthenticator</span></code>.</p>
+<p>Enabled by default (<code class="docutils literal notranslate"><span class="pre">server.authenticator.type</span> <span class="pre">=</span> <span class="pre">basic</span></code>).</p>
 <p>Configuration:</p>
 <ul class="simple">
-<li><p>basicauth.username (string) <em>required</em></p></li>
-<li><p>basicauth.password (string) <em>required</em></p></li>
-<li><p>basicauth.admin (boolean) optional, default <code class="docutils literal notranslate"><span class="pre">false</span></code></p></li>
+<li><p>server.authenticator.basic.username (string, if not set, no authentications happen)</p></li>
+<li><p>server.authenticator.basic.password (string. Required if username is set)</p></li>
+<li><p>server.authenticator.basic.admin (boolean. default <cite>false</cite>)</p></li>
 </ul>
-<p><strong>Jwt</strong></p>
-<p>Undocumented.</p>
 </div>
 <div class="section" id="secret-encryption-key">
 <h4><a class="toc-backref" href="#id10">Secret Encryption Key</a><a class="headerlink" href="#secret-encryption-key" title="Permalink to this headline">¶</a></h4>

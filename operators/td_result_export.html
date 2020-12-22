@@ -1,0 +1,270 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>td_result_export&gt;: Treasure Data result exporter &mdash; Digdag 0_10_before_merge_v0_9_38 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Digdag
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.10
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture.html">Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts.html">Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workflow_definition.html">Workflow definition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scheduling_workflow.html">Scheduling workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operators.html">Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../command_reference.html">Command reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_api.html">Language API - Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ruby_api.html">Language API - Ruby</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rest_api.html">REST API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../internal.html">Internal architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../metrics.html">Digdag metrics (experimental)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../releases.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logo.html">Logo</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Digdag</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>td_result_export&gt;: Treasure Data result exporter</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/operators/td_result_export.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="td-result-export-treasure-data-result-exporter">
+<h1>td_result_export&gt;: Treasure Data result exporter<a class="headerlink" href="#td-result-export-treasure-data-result-exporter" title="Permalink to this headline">¶</a></h1>
+<p><strong>td_result_export&gt;</strong> operator exports a job result to an output destination.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">_export</span><span class="p">:</span>
+  <span class="n">td</span><span class="p">:</span>
+    <span class="n">database</span><span class="p">:</span> <span class="n">www_access</span>
+
+<span class="o">+</span><span class="n">simple_query</span><span class="p">:</span>
+  <span class="n">td</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">queries</span><span class="o">/</span><span class="n">simple_query</span><span class="o">.</span><span class="n">sql</span>
+
+<span class="o">+</span><span class="n">export_query_result</span><span class="p">:</span>
+  <span class="n">td_result_export</span><span class="o">&gt;</span><span class="p">:</span>
+  <span class="n">job_id</span><span class="p">:</span> <span class="mi">12345</span>
+  <span class="n">result_connection</span><span class="p">:</span> <span class="n">my_s3_connection</span>
+  <span class="n">result_settings</span><span class="p">:</span>
+    <span class="n">bucket</span><span class="p">:</span> <span class="n">my_bucket</span>
+    <span class="n">path</span><span class="p">:</span> <span class="o">/</span><span class="n">logs</span><span class="o">/</span>
+</pre></div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p><strong>job_id</strong>: NUMBER The id of a job that is exported.</p>
+<p>Examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">job_id</span><span class="p">:</span> <span class="mi">12345</span>
+</pre></div>
+</div>
+<p>You can also specify <code class="docutils literal notranslate"><span class="pre">${td.last_job_id}</span></code> as the last executed job id.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>job_id: ${td.last_job_id}
+</pre></div>
+</div>
+</li>
+<li><p><strong>result_connection</strong>: NAME</p>
+<p>Use a connection to write the query results to an external system.</p>
+<p>You can create a connection using the web console.</p>
+<p>Examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">result_connection</span><span class="p">:</span> <span class="n">my_s3_connection</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>result_settings</strong>: MAP</p>
+<p>Add additional settings to the result connection.</p>
+<p>Examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">result_connection</span><span class="p">:</span> <span class="n">my_s3_connection</span>
+<span class="n">result_settings</span><span class="p">:</span>
+  <span class="n">bucket</span><span class="p">:</span> <span class="n">my_s3_bucket</span>
+  <span class="n">path</span><span class="p">:</span> <span class="o">/</span><span class="n">logs</span><span class="o">/</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">result_connection</span><span class="p">:</span> <span class="n">my_http</span>
+<span class="n">result_settings</span><span class="p">:</span>
+  <span class="n">path</span><span class="p">:</span> <span class="o">/</span><span class="n">endpoint</span>
+</pre></div>
+</div>
+<p>We <strong>strongly</strong> recommend using secrets to store all sensitive items (e.g. user, password, etc.) instead of writing down them in YAML files directly.</p>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016-2020, Digdag Project
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+    <br/>
+    <br/>
+    <p><a href="https://digdag.io/">Digdag</a> is an open source project, invented and sponsored by <a href="https://www.treasuredata.com/">Treasure Data, Inc.</a> under the Apache 2.0 Licence.</p>
+     
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

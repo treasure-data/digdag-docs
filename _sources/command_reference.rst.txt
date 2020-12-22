@@ -115,7 +115,7 @@ Options:
   Add a session parameter (use multiple times to set many parameters) in KEY=VALUE syntax. This parameter is available using ``${...}`` syntax in the YAML file, or using language API.
 
   Example: ``-p environment=staging``
-  
+
   Note: Variable defined in _export is not overwritable by --param option.
 
 :command:`-P, --params-file PATH`
@@ -158,7 +158,7 @@ Shows workflow definitions and schedules. "c" is alias of check command. Example
   Overwrite a parameter (use multiple times to set many parameters) in KEY=VALUE syntax. This parameter is available using ``${...}`` syntax in the YAML file, or using language API.
 
   Example: ``-p environment=staging``
-  
+
   Note: Variable defined in _export is not overwritable by --param option.
 
 :command:`-P, --params-file PATH`
@@ -216,7 +216,7 @@ Runs a workflow scheduler that runs schedules periodically. This picks up all wo
   Add a session parameter (use multiple times to set many parameters) in KEY=VALUE syntax. This parameter is available using ``${...}`` syntax in the YAML file, or using language API.
 
   Example: ``-p environment=staging``
-  
+
   Note: Variable defined in _export is not overwritable by --param option.
 
 :command:`-P, --params-file PATH`
@@ -321,7 +321,7 @@ Runs a digdag server. --memory or --database option is required. Examples:
   Add a session parameter (use multiple times to set many parameters) in KEY=VALUE syntax. This parameter is available using ``${...}`` syntax in the YAML file, or using language API.
 
   Example: ``-p environment=staging``
-  
+
   Note: Variable defined in _export is not overwritable by --param option.
 
 :command:`-P, --params-file PATH`
@@ -351,7 +351,7 @@ In the config file, following parameters are available
 * server.http.enable-http2 (enable HTTP/2. default: false)
 * server.http.headers.KEY = VALUE (HTTP header to set on API responses)
 * server.jmx.port (port to listen JMX in integer. default: JMX is disabled) Since Java 9, to use this option, you need to set '-Djdk.attach.allowAttachSelf=true' to command line option of java or to JDK_JAVA_OPTIONS environment variable.
-* server.authenticator-class (string) The FQCN of the ``io.digdag.spi.Authenticator`` implementation to use. The implementation is to be provided by a system plugin. The auth plugin configuration is implementation specific. Default: ``io.digdag.standards.auth.jwt.JwtAuthenticator``
+* server.authenticator.type (string) The name an authenticator plugin. (See also Authenticator Plugins section bellow): ``basic``
 * database.type (enum, "h2" or "postgresql")
 * database.user (string)
 * database.password (string)
@@ -393,28 +393,31 @@ In the config file, following parameters are available
 * log-server.local.split_size (long. max log file size in bytes(uncompressed).  default: 0  (not splitted))
 * digdag.secret-encryption-key = (base64 encoded 128-bit AES encryption key)
 * executor.task_ttl (string. default: 1d. A task is killed if it is running longer than this period.)
+* executor.task_max_run (integer. default: 1000. Max number of tasks in workflow.)
 * executor.attempt_ttl (string. default: 7d. An attempt is killed if it is running longer than this period.)
+* executor.attempt_max_run (integer. default: 100. Max number of running attempts at once per each site_id.)
+* executor.enqueue_random_fetch (enqueue ready tasks randomly. default: false)
+* executor.enqueue_fetch_size ( Number of tasks to be enqueued. default: 100)
 * api.max_attempts_page_size (integer. The max number of rows of attempts in api response)
 * api.max_sessions_page_size (integer. The max number of rows of sessions in api response)
 * api.max_archive_total_size_limit (integer. The maximum size of an archived project. i.e. ``digdag push`` size. default: 2MB(2\*1024\*1024))
+* eval.js-engine-type (type of ConfigEvalEngine. "nashorn" or "graal". "nashorn" is default on Java8 and "graal" is default on Java11)
+* eval.extended-syntax (boolean, default: true. Enable or disable extended syntax in graal. If true, nested ``{..}`` is allowed)
 
 Authenticator Plugins
 *********************
 
+Authenticator implementation is to be provided by a system plugin (See `System plugins section in Internal architecture <internal.html#system-plugins>`). Interface is ``io.digdag.spi.AuthenticatorFactory``.
+
 **Basic Auth**
 
-Enabled by setting the config parameter ``server.authenticator-class`` to ``io.digdag.standards.auth.basic.BasicAuthenticator``.
+Enabled by default (``server.authenticator.type = basic``).
 
 Configuration:
 
-* basicauth.username (string) *required*
-* basicauth.password (string) *required*
-* basicauth.admin (boolean) optional, default ``false``
-
-
-**Jwt**
-
-Undocumented.
+* server.authenticator.basic.username (string, if not set, no authentications happen)
+* server.authenticator.basic.password (string. Required if username is set)
+* server.authenticator.basic.admin (boolean. default `false`)
 
 
 Secret Encryption Key
@@ -498,7 +501,7 @@ Starts a new session. This command requires project name, workflow name, and ses
   Add a session parameter (use multiple times to set many parameters) in KEY=VALUE syntax. This parameter is available using ``${...}`` syntax in the YAML file, or using language API.
 
   Example: ``-p environment=staging``
-  
+
   Note: Variable defined in _export is not overwritable by --param option.
 
 :command:`-P, --params-file PATH`

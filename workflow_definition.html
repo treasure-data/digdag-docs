@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Workflow definition &mdash; Digdag 0.9.42 documentation</title>
+  <title>Workflow definition &mdash; Digdag 0_10_before_merge_v0_9_38 documentation</title>
   
 
   
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                0.9
+                0.10
               </div>
             
           
@@ -114,6 +114,7 @@
 <li class="toctree-l1"><a class="reference internal" href="ruby_api.html">Language API - Ruby</a></li>
 <li class="toctree-l1"><a class="reference internal" href="rest_api.html">REST API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="internal.html">Internal architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="metrics.html">Digdag metrics (experimental)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="releases.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="logo.html">Logo</a></li>
 </ul>
@@ -408,6 +409,10 @@ last_executed_session_time variable is the previously executed session time.</p>
 <li><p>Setting variable programmably using API</p></li>
 <li><p>Starting a session with variables</p></li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You cannot overwrite built-in variables.</p>
+</div>
 <div class="section" id="using-export-parameter">
 <h3><a class="toc-backref" href="#id8">Using _export: parameter</a><a class="headerlink" href="#using-export-parameter" title="Permalink to this headline">¶</a></h3>
 <p>In a YAML file, <code class="docutils literal notranslate"><span class="pre">_export:</span></code> directive defines variables. This is useful to load static configurations such as host name of a database.</p>
@@ -499,6 +504,30 @@ last_executed_session_time variable is the previously executed session time.</p>
 
   <span class="nt">+data3</span><span class="p">:</span>
     <span class="nt">sh&gt;</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks/prepare_data3.sh</span>
+
+<span class="nt">+analyze</span><span class="p">:</span>
+  <span class="nt">sh&gt;</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks/analyze_prepared_data_sets.sh</span>
+</pre></div>
+</div>
+<p>If <code class="docutils literal notranslate"><span class="pre">_parallel:</span> <span class="pre">{limit:</span> <span class="pre">N}</span></code> (N is an integer: 1, 2, 3, …) parameter is set to a group,
+child tasks in the group run in parallel is limited to N  (grandchildren are not affected):</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">+prepare</span><span class="p">:</span>
+  <span class="c1"># +data1 and +data2 run in parallel, then +data3 and +data4 run in parallel.</span>
+  <span class="c1"># (+data1 and +data2 need to be successful.)</span>
+  <span class="nt">_parallel</span><span class="p">:</span>
+    <span class="nt">limit</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
+
+  <span class="nt">+data1</span><span class="p">:</span>
+    <span class="nt">sh&gt;</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks/prepare_data1.sh</span>
+
+  <span class="nt">+data2</span><span class="p">:</span>
+    <span class="nt">sh&gt;</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks/prepare_data2.sh</span>
+
+  <span class="nt">+data3</span><span class="p">:</span>
+    <span class="nt">sh&gt;</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks/prepare_data3.sh</span>
+
+  <span class="nt">+data4</span><span class="p">:</span>
+    <span class="nt">sh&gt;</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks/prepare_data4.sh</span>
 
 <span class="nt">+analyze</span><span class="p">:</span>
   <span class="nt">sh&gt;</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks/analyze_prepared_data_sets.sh</span>

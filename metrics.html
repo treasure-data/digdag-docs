@@ -1,0 +1,305 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Digdag metrics (experimental) &mdash; Digdag 0_10_before_merge_v0_9_38 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Release Notes" href="releases.html" />
+    <link rel="prev" title="Internal architecture" href="internal.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Digdag
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.10
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="concepts.html">Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflow_definition.html">Workflow definition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scheduling_workflow.html">Scheduling workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operators.html">Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="command_reference.html">Command reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_api.html">Language API - Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ruby_api.html">Language API - Ruby</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rest_api.html">REST API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="internal.html">Internal architecture</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Digdag metrics (experimental)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#metrics-category">Metrics category</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#setup">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#api-metrics">API metrics</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="releases.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logo.html">Logo</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Digdag</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Digdag metrics (experimental)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/metrics.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="digdag-metrics-experimental">
+<h1>Digdag metrics (experimental)<a class="headerlink" href="#digdag-metrics-experimental" title="Permalink to this headline">¶</a></h1>
+<p>Digdag supports JMX and provides a few metrics. But it is not enough to monitor its performance and stability.
+To improve it, new metrics framework <em>digdag metrics</em> has been introduced.
+<em>Digdag metrics</em> integrates <a class="reference external" href="https://micrometer.io/">micrometer</a>.
+micrometer supports many monitoring tools. Currently <em>digdag metrics</em> supports JMX and Fluentd(Fluency).
+We may add a few monitoring tools in the future.</p>
+<div class="section" id="metrics-category">
+<h2>Metrics category<a class="headerlink" href="#metrics-category" title="Permalink to this headline">¶</a></h2>
+<p>There are many metrics in <em>digdag metrics</em>.
+So metrics are categorized as follows.</p>
+<p>| Category  | JMX domain        | Metrics name prefix | Description                 |
+|———–|——————-|———————|—————————–|
+| Agent     | io.digdag.agent   | agent_              | Agent related metrics       |
+| API       | io.digdag.api     | api_                | API endpoint metrics        |
+| DB        | io.digdag.db      | db_                 | Database access methods     |
+| Executor  | io.digdag.executor| executor_           | Workflow executor metrics   |
+| Default   | io.digdag         |                     | Others                      |</p>
+</div>
+<div class="section" id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
+<p>Digdag metrics is disabled as default. To enable it, add configuration to server config as follows.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">metrics</span><span class="o">.</span><span class="n">enable</span> <span class="o">=</span> <span class="n">jmx</span><span class="p">,</span><span class="n">fluency</span>
+</pre></div>
+</div>
+<p>As default, all categories metrics are enable.
+You can choose enabled categories as follows.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">metrics</span><span class="o">.</span><span class="n">enable</span> <span class="o">=</span> <span class="n">jmx</span><span class="p">,</span><span class="n">fluency</span>
+<span class="n">metrics</span><span class="o">.</span><span class="n">jmx</span><span class="o">.</span><span class="n">categories</span> <span class="o">=</span> <span class="n">api</span><span class="p">,</span><span class="n">default</span>
+<span class="n">metrics</span><span class="o">.</span><span class="n">fluency</span><span class="o">.</span><span class="n">categories</span> <span class="o">=</span> <span class="n">agent</span><span class="p">,</span><span class="n">executor</span><span class="p">,</span><span class="n">default</span>
+<span class="n">metrics</span><span class="o">.</span><span class="n">fluency</span><span class="o">.</span><span class="n">host</span> <span class="o">=</span> <span class="n">localhost</span><span class="p">:</span><span class="mi">24224</span>
+<span class="n">metrics</span><span class="o">.</span><span class="n">fluency</span><span class="o">.</span><span class="n">tag</span> <span class="o">=</span> <span class="n">digdag_metrics</span>
+<span class="n">metrics</span><span class="o">.</span><span class="n">fluency</span><span class="o">.</span><span class="n">step</span> <span class="o">=</span> <span class="mi">60</span>   <span class="c1">#step to send metrics. default is 60 seconds</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="api-metrics">
+<h2>API metrics<a class="headerlink" href="#api-metrics" title="Permalink to this headline">¶</a></h2>
+<p>API endpoint list and corresponding metrics are as follows</p>
+<p>|No.  |Http method| URI                                       | Metrics name                 | Metrics type |
+|:—:|———–|——————————————-|——————————|————–|
+|1    | GET       | /api/attempts/{id}                        | api_getAttempt               | timing       |
+|2    | GET       | /api/attempts/{id}/retries                | api_getAttemptRetries        | timing       |
+|3    | GET       | /api/attempts/{id}/tasks                  | api_getTasks                 | timing       |
+|4    | PUT       | /api/attempts                             | api_startAttempt             | timing       |
+|5    | POST      | /api/attempts/{id}/kill                   | api_killAttempt              | timing       |
+|6    | GET       | /api/logs/{attempt_id}/files              | api_getFileHandles           | timing       |
+|7    | GET       | /api/logs/{attempt_id}/files/{file_name}  | api_getFile                  | timing       |
+|8    | GET       | /api/project                              | api_getProject               | timing       |
+|9    | GET       | /api/projects                             | api_getProjects              | timing       |
+|10   | GET       | /api/projects/{id}                        | api_getProjectById           | timing       |
+|11   | GET       | /api/projects/{id}/revisions              | api_getRevisions             | timing       |
+|12   | GET       | /api/projects/{id}/workflow               | api_getWorkflow              | timing       |
+|13   | GET       | /api/projects/{id}/workflows/{name}       | api_getWorkflowByName        | timing       |
+|14   | GET       | /api/projects/{id}/workflows              | api_getWorkflows             | timing       |
+|15   | GET       | /api/projects/{id}/schedules              | api_getProjectSchedules      | timing       |
+|16   | GET       | /api/projects/{id}/sessions               | api_getProjectSessions       | timing       |
+|17   | GET       | /api/projects/{id}/archive                | api_getArchive               | timing       |
+|18   | DELETE    | /api/projects/{id}                        | api_deleteProject            | timing       |
+|19   | PUT       | /api/projects                             | api_putProject               | timing       |
+|20   | PUT       | /api/projects/{id}/secrets/{key}          | api_putProjectSecret         | timing       |
+|21   | DELETE    | /api/projects/{id}/secrets/{key}          | api_deleteProjectSecret      | timing       |
+|22   | GET       | /api/projects/{id}/secrets                | api_getProjectSecretList     | timing       |
+|23   | GET       | /api/workflow                             | api_getWorkflowDefinition    | timing       |
+|24   | GET       | /api/workflows                            | api_getWorkflowDefinitions   | timing       |
+|25   | GET       | /api/workflows/{id}                       | api_getWorkflowDefinitionById| timing       |
+|26   | GET       | /api/workflows/{id}/truncated_session_time| api_getTruncatedSessionTime  | timing       |
+|27   | GET       | /api/sessions                             | api_getSessions              | timing       |
+|28   | GET       | /api/sessions/{id}                        | api_getSession               | timing       |
+|29   | GET       | /api/sessions/{id}/attempts               | api_getSessionAttempts       | timing       |
+|30   | GET       | /api/schedules                            | api_getSchedules             | timing       |
+|31   | GET       | /api/schedules/{id}                       | api_getScheduleById          | timing       |
+|32   | POST      | /api/schedules/{id}/skip                  | api_skipSchedule             | timing       |
+|33   | POST      | /api/schedules/{id}/backfill              | api_backfillSchedule         | timing       |
+|34   | POST      | /api/schedules/{id}/disable               | api_disableSchedule          | timing       |
+|35   | POST      | /api/schedules/{id}/enable                | api_enableSchedule           | timing       |</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="releases.html" class="btn btn-neutral float-right" title="Release Notes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="internal.html" class="btn btn-neutral float-left" title="Internal architecture" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016-2020, Digdag Project
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+    <br/>
+    <br/>
+    <p><a href="https://digdag.io/">Digdag</a> is an open source project, invented and sponsored by <a href="https://www.treasuredata.com/">Treasure Data, Inc.</a> under the Apache 2.0 Licence.</p>
+     
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

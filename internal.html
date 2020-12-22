@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Internal architecture &mdash; Digdag 0.9.42 documentation</title>
+  <title>Internal architecture &mdash; Digdag 0_10_before_merge_v0_9_38 documentation</title>
   
 
   
@@ -36,7 +36,7 @@
     <link rel="stylesheet" href="_static/custom.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Release Notes" href="releases.html" />
+    <link rel="next" title="Digdag metrics (experimental)" href="metrics.html" />
     <link rel="prev" title="REST API" href="rest_api.html" /> 
 </head>
 
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                0.9
+                0.10
               </div>
             
           
@@ -117,6 +117,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#next-steps">Next steps</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="metrics.html">Digdag metrics (experimental)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="releases.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="logo.html">Logo</a></li>
 </ul>
@@ -272,9 +273,9 @@
 </div>
 <div class="section" id="system-plugins">
 <h3>System plugins<a class="headerlink" href="#system-plugins" title="Permalink to this headline">¶</a></h3>
-<p>System plugins are plugins loaded when digdag starts. System plugins are used to customize global behavior of digdag. Adding a scheduler is one of the intended use cases (although this is not implemented yet).</p>
+<p>System plugins are plugins loaded when digdag starts. System plugins are used to customize global behavior of digdag. Adding an authenticator is one of the use cases.</p>
 <p>If <code class="docutils literal notranslate"><span class="pre">io.digdag.spi.Plugin</span></code> implementations are available using Java’s ServiceLoader mechanism in classpath, digdag uses them automatically.</p>
-<p>If plugin dependencies are written in config file, digdag downloads them from remote maven repositories, and loads <code class="docutils literal notranslate"><span class="pre">io.digdag.spi.Plugin</span></code> implementations using ServiceLoader. These plugins are loaded using isolated classloaders.</p>
+<p>If plugins are written in config file (<code class="docutils literal notranslate"><span class="pre">system-plugin.repositories</span></code> and <code class="docutils literal notranslate"><span class="pre">system-plugin.dependencies</span></code>), digdag downloads them from remote maven repositories, and loads <code class="docutils literal notranslate"><span class="pre">io.digdag.spi.Plugin</span></code> implementations using ServiceLoader. These plugins are loaded using isolated classloaders.</p>
 <p>Plugins share the same Guice instance with digdag core. Thus plugins can get any internal resources as long as an instance is available through <code class="docutils literal notranslate"><span class="pre">io.digdag.spi</span></code> interface which are shared even with isolated classloaders.</p>
 <p>A system plugin is instantiated once when digdag starts.</p>
 <p>All dynamic plugins can be loaded as system plugins. But system plugins can’t be loaded as dynamic plugins.</p>
@@ -302,7 +303,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="releases.html" class="btn btn-neutral float-right" title="Release Notes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="metrics.html" class="btn btn-neutral float-right" title="Digdag metrics (experimental)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="rest_api.html" class="btn btn-neutral float-left" title="REST API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

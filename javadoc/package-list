@@ -1,1 +1,4 @@
+io.digdag.metrics
 io.digdag.spi
+io.digdag.spi.ac
+io.digdag.spi.metrics
