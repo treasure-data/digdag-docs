@@ -1,0 +1,457 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Command Executor &mdash; Digdag 0.10.0-SNAPSHOT documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Internal architecture" href="internal.html" />
+    <link rel="prev" title="REST API" href="rest_api.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Digdag
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.10
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="concepts.html">Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflow_definition.html">Workflow definition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scheduling_workflow.html">Scheduling workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operators.html">Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="command_reference.html">Command reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_api.html">Language API - Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ruby_api.html">Language API - Ruby</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rest_api.html">REST API</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Command Executor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#ecs">ECS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#setup">Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-use-from-workflow">How to use from workflow</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#set-ecs-task-definition-arn">Set <code class="docutils literal notranslate"><span class="pre">ecs.task_definition_arn</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#set-docker-image">Set <code class="docutils literal notranslate"><span class="pre">docker.image</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#docker">Docker</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">How to use from workflow</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="internal.html">Internal architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="metrics.html">Digdag metrics (experimental)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releases.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logo.html">Logo</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Digdag</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Command Executor</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/command_executor.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="command-executor">
+<h1>Command Executor<a class="headerlink" href="#command-executor" title="Permalink to this headline">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">Command</span> <span class="pre">Executor</span></code> provides a functionality to run operators in various environment like Docker.</p>
+<p><code class="docutils literal notranslate"><span class="pre">sh&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">py&gt;</span></code>, and <code class="docutils literal notranslate"><span class="pre">rb&gt;</span></code> support Command Executor.</p>
+<p>Supported environments are <code class="docutils literal notranslate"><span class="pre">AWS</span> <span class="pre">ECS</span> <span class="pre">(Elastic</span> <span class="pre">Container</span> <span class="pre">Service)</span></code>, <code class="docutils literal notranslate"><span class="pre">Docker</span></code>, and local.
+<code class="docutils literal notranslate"><span class="pre">Kubernetes</span></code> is under development.</p>
+<p>For example, if you define a task with <code class="docutils literal notranslate"><span class="pre">sh&gt;</span></code>, the task runs in local. If you add configuration for Docker, the task is executed in a docker container.
+You can switch environment to run a task without changing task definition.</p>
+<p>Currently, ECS is default Command Executor.
+If there is no valid configuration for ECS, fallback to Docker.
+If there is no valid configuration for Docker, fallback to local.</p>
+<div class="section" id="ecs">
+<h2>ECS<a class="headerlink" href="#ecs" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="setup">
+<h3>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h3>
+<p>The following is an example configuration for ECS Command Executor.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">agent</span><span class="o">.</span><span class="n">command_executor</span><span class="o">.</span><span class="n">ecs</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">digdag</span><span class="o">-</span><span class="n">test</span>
+
+<span class="n">agent</span><span class="o">.</span><span class="n">command_executor</span><span class="o">.</span><span class="n">ecs</span><span class="o">.</span><span class="n">digdag</span><span class="o">-</span><span class="n">test</span><span class="o">.</span><span class="n">access_key_id</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">ACCESS</span> <span class="n">KEY</span><span class="o">&gt;</span>
+<span class="n">agent</span><span class="o">.</span><span class="n">command_executor</span><span class="o">.</span><span class="n">ecs</span><span class="o">.</span><span class="n">digdag</span><span class="o">-</span><span class="n">test</span><span class="o">.</span><span class="n">secret_access_key</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">SECRET</span> <span class="n">KEY</span><span class="o">&gt;</span>
+<span class="n">agent</span><span class="o">.</span><span class="n">command_executor</span><span class="o">.</span><span class="n">ecs</span><span class="o">.</span><span class="n">digdag</span><span class="o">-</span><span class="n">test</span><span class="o">.</span><span class="n">launch_type</span> <span class="o">=</span> <span class="n">FARGATE</span>
+<span class="n">agent</span><span class="o">.</span><span class="n">command_executor</span><span class="o">.</span><span class="n">ecs</span><span class="o">.</span><span class="n">digdag</span><span class="o">-</span><span class="n">test</span><span class="o">.</span><span class="n">region</span> <span class="o">=</span> <span class="n">us</span><span class="o">-</span><span class="n">east</span><span class="o">-</span><span class="mi">1</span>
+<span class="n">agent</span><span class="o">.</span><span class="n">command_executor</span><span class="o">.</span><span class="n">ecs</span><span class="o">.</span><span class="n">digdag</span><span class="o">-</span><span class="n">test</span><span class="o">.</span><span class="n">subnets</span> <span class="o">=</span> <span class="n">subnet</span><span class="o">-</span><span class="n">NNNNN</span>
+<span class="n">agent</span><span class="o">.</span><span class="n">command_executor</span><span class="o">.</span><span class="n">ecs</span><span class="o">.</span><span class="n">digdag</span><span class="o">-</span><span class="n">test</span><span class="o">.</span><span class="n">max_retries</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="n">agent</span><span class="o">.</span><span class="n">command_executor</span><span class="o">.</span><span class="n">ecs</span><span class="o">.</span><span class="n">temporal_storage</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">s3</span>
+<span class="n">agent</span><span class="o">.</span><span class="n">command_executor</span><span class="o">.</span><span class="n">ecs</span><span class="o">.</span><span class="n">temporal_storage</span><span class="o">.</span><span class="n">s3</span><span class="o">.</span><span class="n">bucket</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">Bucket</span><span class="o">&gt;</span>
+<span class="n">agent</span><span class="o">.</span><span class="n">command_executor</span><span class="o">.</span><span class="n">ecs</span><span class="o">.</span><span class="n">temporal_storage</span><span class="o">.</span><span class="n">s3</span><span class="o">.</span><span class="n">endpoint</span> <span class="o">=</span> <span class="n">s3</span><span class="o">.</span><span class="n">amazonaws</span><span class="o">.</span><span class="n">com</span>
+<span class="n">agent</span><span class="o">.</span><span class="n">command_executor</span><span class="o">.</span><span class="n">ecs</span><span class="o">.</span><span class="n">temporal_storage</span><span class="o">.</span><span class="n">s3</span><span class="o">.</span><span class="n">credentials</span><span class="o">.</span><span class="n">access</span><span class="o">-</span><span class="n">key</span><span class="o">-</span><span class="nb">id</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">ACCESS</span> <span class="n">KEY</span><span class="o">&gt;</span>
+<span class="n">agent</span><span class="o">.</span><span class="n">command_executor</span><span class="o">.</span><span class="n">ecs</span><span class="o">.</span><span class="n">temporal_storage</span><span class="o">.</span><span class="n">s3</span><span class="o">.</span><span class="n">credentials</span><span class="o">.</span><span class="n">secret</span><span class="o">-</span><span class="n">access</span><span class="o">-</span><span class="n">key</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">SECRET</span> <span class="n">KEY</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Each sub keys of <code class="docutils literal notranslate"><span class="pre">agent.command_executor</span></code> are as follows:</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th align="left">key</th>
+<th align="left">description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">ecs.name</td>
+<td align="left">ECS Cluster name. The value &lt;name&gt; is used as the key of following configuration</td>
+</tr>
+<tr>
+<td align="left">ecs.&lt;name&gt;.access_key_id</td>
+<td align="left">AWS access key for ECS. The key needs permissions for ECS and CloudWatch</td>
+</tr>
+<tr>
+<td align="left">ecs.&lt;name&gt;.secret_access_key</td>
+<td align="left">AWS secret key</td>
+</tr>
+<tr>
+<td align="left">ecs.&lt;name&gt;.launch_type</td>
+<td align="left">The launch type of container. <code>FARGATE</code> or <code>EC2</code></td>
+</tr>
+<tr>
+<td align="left">ecs.&lt;name&gt;.region</td>
+<td align="left">AWS region</td>
+</tr>
+<tr>
+<td align="left">ecs.&lt;name&gt;.subnets</td>
+<td align="left">AWS subnet</td>
+</tr>
+<tr>
+<td align="left">ecs.&lt;name&gt;.max_retries</td>
+<td align="left">Number of retry for AWS client</td>
+</tr>
+</tbody>
+</table><p>Following keys are for configuration of temporal storage with AWS S3.</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th align="left">key</th>
+<th align="left">description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">ecs.temporal_storage.type</td>
+<td align="left">The bucket type. <code>s3</code> for AWS S3</td>
+</tr>
+<tr>
+<td align="left">ecs.temporal_storage.s3.bucket</td>
+<td align="left">Bucket name</td>
+</tr>
+<tr>
+<td align="left">ecs.temporal_storage.s3.endpoint</td>
+<td align="left">The end point URL for S3</td>
+</tr>
+<tr>
+<td align="left">ecs.temporal_storage.s3.credentials.access-key-id</td>
+<td align="left">AWS access key for the bucket</td>
+</tr>
+<tr>
+<td align="left">ecs.temporal_storage.s3.credentials.secret-access-key</td>
+<td align="left">AWS secret key</td>
+</tr>
+</tbody>
+</table></div>
+<div class="section" id="how-to-use-from-workflow">
+<h3>How to use from workflow<a class="headerlink" href="#how-to-use-from-workflow" title="Permalink to this headline">¶</a></h3>
+<p>In workflow definition, there are two ways to set a task on ECS.</p>
+<div class="section" id="set-ecs-task-definition-arn">
+<h4>Set <code class="docutils literal notranslate"><span class="pre">ecs.task_definition_arn</span></code><a class="headerlink" href="#set-ecs-task-definition-arn" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">_export</span><span class="p">:</span>
+  <span class="n">ecs</span><span class="p">:</span>
+    <span class="n">task_definition_arn</span><span class="p">:</span> <span class="s2">&quot;arn:aws:ecs:us-east-1:...&quot;</span>
+
+<span class="o">+</span><span class="n">task1</span><span class="p">:</span>
+  <span class="n">py</span><span class="o">&gt;</span><span class="p">:</span> <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="set-docker-image">
+<h4>Set <code class="docutils literal notranslate"><span class="pre">docker.image</span></code><a class="headerlink" href="#set-docker-image" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">_export</span><span class="p">:</span>
+  <span class="n">docker</span><span class="p">:</span>
+    <span class="n">image</span><span class="p">:</span> <span class="s2">&quot;digdag/digdag-python:3.7&quot;</span>
+
+<span class="o">+</span><span class="n">task1</span><span class="p">:</span>
+  <span class="n">py</span><span class="o">&gt;</span><span class="p">:</span> <span class="o">...</span>
+</pre></div>
+</div>
+<p>You need to set a tag <code class="docutils literal notranslate"><span class="pre">digdag.docker.image</span></code> in the task definition.
+ECS Command Executor try to search the tagged task definition.</p>
+<p>(This way lists and check all task definitions until found and take long time to run the task. See issue <a class="reference external" href="https://github.com/treasure-data/digdag/issues/1488">#1488</a>)</p>
+</div>
+</div>
+</div>
+<div class="section" id="docker">
+<h2>Docker<a class="headerlink" href="#docker" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>Setup<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>No configuration is required to use Docker Command Executor.</p>
+</div>
+<div class="section" id="id2">
+<h3>How to use from workflow<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>The following is an example workflow definition for Docker Command Executor.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">_export</span><span class="p">:</span>
+  <span class="n">docker</span><span class="p">:</span>
+    <span class="n">image</span><span class="p">:</span> <span class="s2">&quot;python:3.7&quot;</span>
+    <span class="n">docker</span><span class="p">:</span> <span class="s2">&quot;/usr/local/bin/docker&quot;</span>
+    <span class="n">run_options</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;-m&quot;</span><span class="p">,</span> <span class="s2">&quot;1G&quot;</span> <span class="p">]</span>
+    <span class="n">pull_always</span><span class="p">:</span> <span class="n">true</span>
+
+<span class="o">+</span><span class="n">task1</span><span class="p">:</span>
+  <span class="n">py</span><span class="o">&gt;</span><span class="p">:</span> <span class="o">...</span>
+</pre></div>
+</div>
+<p>The sub keys in docker are as follows.</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th align="left">key</th>
+<th align="left">description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">image</td>
+<td align="left">Docker image</td>
+</tr>
+<tr>
+<td align="left">docker</td>
+<td align="left">Docker command. default is <code>docker</code></td>
+</tr>
+<tr>
+<td align="left">run_options</td>
+<td align="left">Arguments to be passed to <code>docker run</code>1</td>
+</tr>
+<tr>
+<td align="left">pull_always</td>
+<td align="left">Digdag caches the docker image. If you want to pull the image always, set to <code>true</code>. Default is <code>false</code></td>
+</tr>
+</tbody>
+</table><p>You can build a docker image to be used with <code class="docutils literal notranslate"><span class="pre">build</span></code> parameter.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">_export</span><span class="p">:</span>
+  <span class="n">docker</span><span class="p">:</span>
+    <span class="n">image</span><span class="p">:</span> <span class="s2">&quot;azul/zulu-openjdk:8&quot;</span>
+    <span class="n">docker</span><span class="p">:</span> <span class="s2">&quot;/usr/local/bin/docker&quot;</span>
+    <span class="n">run_options</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;-m&quot;</span><span class="p">,</span> <span class="s2">&quot;1G&quot;</span> <span class="p">]</span>
+    <span class="n">build</span><span class="p">:</span>
+      <span class="o">-</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="o">-</span><span class="n">y</span> <span class="n">update</span>
+      <span class="o">-</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">software</span><span class="o">-</span><span class="n">properties</span><span class="o">-</span><span class="n">common</span>
+    <span class="n">build_options</span><span class="p">:</span>
+      <span class="o">-</span> <span class="o">--</span><span class="n">build</span><span class="o">-</span><span class="n">arg</span> <span class="n">var1</span><span class="o">=</span><span class="n">test1</span>
+
+<span class="o">+</span><span class="n">task1</span><span class="p">:</span>
+  <span class="n">py</span><span class="o">&gt;</span><span class="p">:</span> <span class="o">...</span>
+</pre></div>
+</div>
+<p>Docker Command Executor generates a Dockerfile and build an image then run a container with the image.</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th align="left">key</th>
+<th align="left">description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">image</td>
+<td align="left">Base image in the generated Dockerfile</td>
+</tr>
+<tr>
+<td align="left">build</td>
+<td align="left">Command list which are described in the generated Dockerfile with <code>RUN</code></td>
+</tr>
+<tr>
+<td align="left">build_options</td>
+<td align="left">Option list for <code>docker build</code> command</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="internal.html" class="btn btn-neutral float-right" title="Internal architecture" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="rest_api.html" class="btn btn-neutral float-left" title="REST API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016-2021, Digdag Project
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+    <br/>
+    <br/>
+    <p><a href="https://digdag.io/">Digdag</a> is an open source project, invented and sponsored by <a href="https://www.treasuredata.com/">Treasure Data, Inc.</a> under the Apache 2.0 Licence.</p>
+     
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
