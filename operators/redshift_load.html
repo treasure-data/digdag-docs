@@ -215,7 +215,6 @@
     <span class="n">schema</span><span class="p">:</span> <span class="n">myschema</span>
     <span class="n">table</span><span class="p">:</span> <span class="n">access_logs</span>
     <span class="n">from</span><span class="p">:</span> <span class="n">s3</span><span class="p">:</span><span class="o">//</span><span class="n">my</span><span class="o">-</span><span class="n">app</span><span class="o">-</span><span class="n">bucket</span><span class="o">/</span><span class="n">access_logs</span><span class="o">/</span><span class="n">today</span>
-    <span class="n">column_list</span><span class="p">:</span> <span class="n">host</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">referer</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">agent</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">method</span>
     <span class="n">manifest</span><span class="p">:</span> <span class="n">true</span>
     <span class="n">encrypted</span><span class="p">:</span> <span class="n">true</span>
     <span class="n">region</span><span class="p">:</span> <span class="n">us</span><span class="o">-</span><span class="n">east</span><span class="o">-</span><span class="mi">1</span>
@@ -351,13 +350,6 @@ This operator creates and uses a status table in the database to make an operati
 <p>Parameter mapped to <code class="docutils literal notranslate"><span class="pre">FROM</span></code> parameter of Redshift’s <code class="docutils literal notranslate"><span class="pre">COPY</span></code> statement</p>
 <p>Examples:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">from</span><span class="p">:</span> <span class="n">s3</span><span class="p">:</span><span class="o">//</span><span class="n">my</span><span class="o">-</span><span class="n">app</span><span class="o">-</span><span class="n">bucket</span><span class="o">/</span><span class="n">access_logs</span><span class="o">/</span><span class="n">today</span>
-</pre></div>
-</div>
-</li>
-<li><p><strong>column_list</strong>: CSV</p>
-<p>Parameter mapped to <code class="docutils literal notranslate"><span class="pre">COLUMN_LIST</span></code> parameter of Redshift’s <code class="docutils literal notranslate"><span class="pre">COPY</span></code> statement</p>
-<p>Examples:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">column_list</span><span class="p">:</span> <span class="n">host</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">referer</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">agent</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">method</span>
 </pre></div>
 </div>
 </li>
