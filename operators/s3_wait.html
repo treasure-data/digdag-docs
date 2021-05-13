@@ -307,7 +307,7 @@ s3.last_object is empty in this case. Empty check is required in following tasks
 </div>
 </li>
 </ul>
-<p>Note: The <strong>s3_wait&gt;</strong> operator makes use of polling with <em>exponential backoff</em>. As such there might be some time interval between a file being created and the <strong>s3_wait&gt;</strong> operator detecting it.</p>
+<p>Note: The <strong>s3_wait&gt;</strong> operator makes use of polling with <em>exponential backoff</em>. As such there might be some time interval between a file being created and the <strong>s3_wait&gt;</strong> operator detecting it.</p><p>This interval starts at 5 seconds and increases to double each cycle, with a maximum interval of 5 minutes.</p>
 </div>
 </div>
 
