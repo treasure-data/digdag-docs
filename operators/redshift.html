@@ -368,6 +368,13 @@ If the query that created the status table completed 24 hours ago, this operator
 </pre></div>
 </div>
 </li>
+<li><p><strong>status_table_cleanup</strong>: TIME VALUES</p>
+<p>Specifies the period of time to clean up the status_table. When “strict_transaction: true” (default), the status_table will be created. status_table will be deleted when the status_table_cleanup period expires and the redshift operator is executed. <em>Default</em>: <code class="docutils literal notranslate"><span class="pre">24h</span></code>(24 hours).</p>
+<p>Examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">status_table_cleanup</span><span class="p">:</span> <span class="mi">5</span><span class="n">s</span>
+</pre></div>
+</div>
+</li>
 </ul>
 </div>
 </div>
