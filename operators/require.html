@@ -233,7 +233,7 @@ schedule:
   loop&gt;: ${moment(last_session_time).daysInMonth()}
   _do:
     require&gt;: daily_workflow
-    session_time: ${moment(last_session_time).add(i, &#39;day&#39;)}
+    session_time: ${moment(last_session_time).add(i, &#39;day&#39;).format()}
 </pre></div>
 </div>
 </li>
