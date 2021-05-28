@@ -884,8 +884,8 @@ MTZfYnl0ZXNfcGhyYXNlIQ==
 <dt><strong class="command">--schedule-from &quot;yyyy-MM-dd HH:mm:ss Z&quot;</strong></dt><dd><p>Start schedules from this time. If this is not set, system time of the server is used. Parameter must include time zone offset. You can run <code class="docutils literal notranslate"><span class="pre">date</span> <span class="pre">\&quot;+%Y-%m-%d</span> <span class="pre">%H:%M:%S</span> <span class="pre">%z\&quot;</span></code> command to get current local time.</p>
 <p>Example: <code class="docutils literal notranslate"><span class="pre">--schedule-from</span> <span class="pre">&quot;2017-07-29</span> <span class="pre">00:00:00</span> <span class="pre">+0200&quot;</span></code></p>
 </dd>
-<dt><strong class="command">--copy-outside-symlinks</strong></dt><dd><p>Transform symlinks to regular files or directories if the symlink points a file or directory outside of the target directory. Without this option, such case fails because the files or directories won’t be included unless copying.</p>
-<p>Example: <code class="docutils literal notranslate"><span class="pre">--copy-outside-symlinks</span></code></p>
+<dt><strong class="command">--copy-outgoing-symlinks</strong></dt><dd><p>Transform symlinks to regular files or directories if the symlink points a file or directory outside of the target directory. Without this option, such case fails because the files or directories won’t be included unless copying.</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">--copy-outgoing-symlinks</span></code></p>
 </dd>
 </dl>
 </div>
