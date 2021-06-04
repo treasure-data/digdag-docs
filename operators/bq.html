@@ -219,6 +219,7 @@
 <p>For information on how to generate a service account key, see the <a class="reference external" href="https://cloud.google.com/storage/docs/authentication#generating-a-private-key">Google Cloud Platform Documentation</a>.</p>
 <p>Upload the private key JSON file to the digdag server using the <code class="docutils literal notranslate"><span class="pre">secrets</span></code> client command:</p>
 <p>digdag secrets –project my_project –set gcp.credential=&#64;my-svc-account-b4df00d.json</p>
+<p>If gcp.credential is not set, digdag tries to get <a class="reference external" href="https://cloud.google.com/docs/authentication/production#automatically">Application Default Credential</a>.</p>
 </li>
 </ul>
 </div>
