@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>td&gt;: Treasure Data queries &mdash; Digdag 0.10.1 documentation</title>
+  <title>td&gt;: Treasure Data queries &mdash; Digdag 0.10.2 documentation</title>
   
 
   
@@ -209,11 +209,11 @@
 
 +simple_query_expanded:
   td&gt;:
-    data: &quot;SELECT &#39;${session_id}&#39; FROM nasdaq&quot;
+  query: &quot;SELECT &#39;${session_id}&#39; FROM nasdaq&quot;
 
 +simple_query_nonexpanded:
   td&gt;:
-  query: &quot;SELECT * FROM nasdaq&quot;
+    data: &quot;SELECT * FROM nasdaq&quot;
 
 +create_new_table_using_result_of_select:
   td&gt;: queries/select_sql.sql
