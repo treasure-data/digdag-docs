@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Getting started &mdash; Digdag 0.10.3 documentation</title>
+  <title>Getting started &mdash; Digdag 0.10.0 documentation</title>
   
 
   
@@ -87,14 +87,15 @@
             
               <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Getting started</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#downloading-the-latest-version">1. Downloading the latest version</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#requirements">1. Requirements.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#downloading-the-latest-version">2. Downloading the latest version</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#on-windows">On Windows?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#using-packages">Using packages?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#curl-did-not-work">curl did not work?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#got-error">Got error?</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#running-sample-workflow">2. Running sample workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#running-sample-workflow">3. Running sample workflow</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#next-steps">Next steps</a></li>
 </ul>
 </li>
@@ -179,8 +180,29 @@
             
   <div class="section" id="getting-started">
 <h1>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="requirements">
+<h2>1. Requirements.<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<p>Digdag runs on Java. Make sure Java Runtime is installed.</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>Digdag version</th>
+<th>Java Runtime Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&gt;= 0.10.0</td>
+<td>Java 8 or 11</td>
+</tr>
+<tr>
+<td>&lt;  0.10.0</td>
+<td>Java 8</td>
+</tr>
+</tbody>
+</table></div>
 <div class="section" id="downloading-the-latest-version">
-<h2>1. Downloading the latest version<a class="headerlink" href="#downloading-the-latest-version" title="Permalink to this headline">¶</a></h2>
+<h2>2. Downloading the latest version<a class="headerlink" href="#downloading-the-latest-version" title="Permalink to this headline">¶</a></h2>
 <p>Digdag is a single executable file. You can install the file to <code class="docutils literal notranslate"><span class="pre">~/bin</span></code> using <code class="docutils literal notranslate"><span class="pre">curl</span></code> command as following:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ curl -o ~/bin/digdag --create-dirs -L &quot;https://dl.digdag.io/digdag-latest&quot;
 $ chmod +x ~/bin/digdag
@@ -232,7 +254,7 @@ $ sudo cp /etc/ssl/certs/ca-certificates.crt /etc/pki/tls/certs/ca-bundle.crt
 </div>
 </div>
 <div class="section" id="running-sample-workflow">
-<h2>2. Running sample workflow<a class="headerlink" href="#running-sample-workflow" title="Permalink to this headline">¶</a></h2>
+<h2>3. Running sample workflow<a class="headerlink" href="#running-sample-workflow" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">digdag</span> <span class="pre">init</span> <span class="pre">&lt;dir&gt;</span></code> command generates sample workflow for you:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ digdag init mydag
 $ cd mydag
