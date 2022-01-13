@@ -328,6 +328,7 @@ ECS Command Executor try to search the tagged task definition.</p>
     <span class="n">docker</span><span class="p">:</span> <span class="s2">&quot;/usr/local/bin/docker&quot;</span>
     <span class="n">run_options</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;-m&quot;</span><span class="p">,</span> <span class="s2">&quot;1G&quot;</span> <span class="p">]</span>
     <span class="n">pull_always</span><span class="p">:</span> <span class="n">true</span>
+    <span class="n">selinux</span><span class="p">:</span> <span class="n">true</span>
 
 <span class="o">+</span><span class="n">task1</span><span class="p">:</span>
   <span class="n">py</span><span class="o">&gt;</span><span class="p">:</span> <span class="o">...</span>
@@ -357,6 +358,10 @@ ECS Command Executor try to search the tagged task definition.</p>
 <tr>
 <td align="left">pull_always</td>
 <td align="left">Digdag caches the docker image. If you want to pull the image always, set to <code>true</code>. Default is <code>false</code></td>
+</tr>
+<tr>
+<td align="left">selinux</td>
+<td align="left">Set to <code>true</code> when using SELinux. Default is <code>false</code></td>
 </tr>
 </tbody>
 </table><p>You can build a docker image to be used with <code class="docutils literal notranslate"><span class="pre">build</span></code> parameter.</p>
