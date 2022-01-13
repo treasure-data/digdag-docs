@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>for_each&gt;: Repeat tasks for values &mdash; Digdag 0.10.3 documentation</title>
+  <title>wait&gt;: Wait for a specific duration &mdash; Digdag 0.10.3 documentation</title>
   
 
   
@@ -36,8 +36,8 @@
     <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="for_range&gt;: Repeat tasks for a range" href="for_range.html" />
-    <link rel="prev" title="loop&gt;: Repeat tasks" href="loop.html" /> 
+    <link rel="next" title="Treasure Data operators" href="treasure_data.html" />
+    <link rel="prev" title="echo&gt;: Shows a message" href="echo.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -97,15 +97,15 @@
 <li class="toctree-l3"><a class="reference internal" href="http_call.html">http_call&gt;: Call workflow fetched by HTTP</a></li>
 <li class="toctree-l3"><a class="reference internal" href="require.html">require&gt;: Depends on another workflow</a></li>
 <li class="toctree-l3"><a class="reference internal" href="loop.html">loop&gt;: Repeat tasks</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">for_each&gt;: Repeat tasks for values</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#options">Options</a></li>
-</ul>
-</li>
+<li class="toctree-l3"><a class="reference internal" href="for_each.html">for_each&gt;: Repeat tasks for values</a></li>
 <li class="toctree-l3"><a class="reference internal" href="for_range.html">for_range&gt;: Repeat tasks for a range</a></li>
 <li class="toctree-l3"><a class="reference internal" href="if.html">if&gt;: Conditional execution</a></li>
 <li class="toctree-l3"><a class="reference internal" href="fail.html">fail&gt;: Makes the workflow failed</a></li>
 <li class="toctree-l3"><a class="reference internal" href="echo.html">echo&gt;: Shows a message</a></li>
-<li class="toctree-l3"><a class="reference internal" href="wait.html">wait&gt;: Wait for a specific duration</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">wait&gt;: Wait for a specific duration</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#options">Options</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="treasure_data.html">Treasure Data operators</a></li>
@@ -176,13 +176,13 @@
         
           <li><a href="workflow_control.html">Workflow control operators</a> &raquo;</li>
         
-      <li>for_each&gt;: Repeat tasks for values</li>
+      <li>wait&gt;: Wait for a specific duration</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/operators/for_each.md.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/operators/wait.md.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -195,57 +195,33 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="for-each-repeat-tasks-for-values">
-<h1>for_each&gt;: Repeat tasks for values<a class="headerlink" href="#for-each-repeat-tasks-for-values" title="Permalink to this headline">¶</a></h1>
-<p><strong>for_each&gt;</strong> operator runs subtasks multiple times using sets of variables.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>+repeat:
-  for_each&gt;:
-    fruit: [apple, orange]
-    verb: [eat, throw]
-  _do:
-    echo&gt;: ${verb} ${fruit}
-    # this will generate 4 tasks:
-    #  +for-fruit=apple&amp;verb=eat:
-    #    echo&gt;: eat apple
-    #  +for-fruit=apple&amp;verb=throw:
-    #    echo&gt;: throw apple
-    #  +for-fruit=orange&amp;verb=eat:
-    #    echo&gt;: eat orange
-    #  +for-fruit=orange&amp;verb=throw:
-    #    echo&gt;: throw orange
+  <div class="section" id="wait-wait-for-a-specific-duration">
+<h1>wait&gt;: Wait for a specific duration<a class="headerlink" href="#wait-wait-for-a-specific-duration" title="Permalink to this headline">¶</a></h1>
+<p><strong>wait&gt;</strong> operator waits a specific duration in the workflow.</p>
+<p>This operator seems similar to <code class="docutils literal notranslate"><span class="pre">sh&gt;:</span> <span class="pre">sleep</span> <span class="pre">5</span></code>, but this works in both blocking and non-blocking modes and should be always available even in security-restricted environment.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">wait_10s</span><span class="p">:</span>
+  <span class="n">wait</span><span class="o">&gt;</span><span class="p">:</span> <span class="mi">10</span><span class="n">s</span>
 </pre></div>
 </div>
 <div class="section" id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
 <ul>
-<li><p><strong>for_each&gt;</strong>: VARIABLES</p>
-<p>Variables used for the loop in <code class="docutils literal notranslate"><span class="pre">key:</span> <span class="pre">[value,</span> <span class="pre">value,</span> <span class="pre">...]</span></code> syntax. Variables can be an object or JSON string.</p>
+<li><p><strong>wait&gt;</strong>: DURATION</p>
+<p>Duration to wait.</p>
+</li>
+<li><p><strong>blocking</strong>: BOOLEAN</p>
+<p>Digdag agent internally executes this operator in blocking mode and the agent keeps waiting if this option is set to true (default: false)</p>
 <p>Examples:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">for_each</span><span class="o">&gt;</span><span class="p">:</span> <span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]}</span>
-</pre></div>
-</div>
-<p>Examples:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">for_each</span><span class="o">&gt;</span><span class="p">:</span> <span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="s1">&#39;[1, 2, 3]&#39;</span><span class="p">}</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">blocking</span><span class="p">:</span> <span class="n">true</span>
 </pre></div>
 </div>
 </li>
-<li><p><strong>_parallel</strong>: BOOLEAN | OBJECT</p>
-<p>Runs the repeating tasks in parallel.
-If <code class="docutils literal notranslate"><span class="pre">_parallel:</span> <span class="pre">{limit:</span> <span class="pre">N}</span></code> (N is an integer: 1, 2, 3, …) parameter is set,
-the number of tasks running in parallel is limited to N.
-Note that the tasks in the loop will be running in serial.</p>
+<li><p><strong>poll_interval</strong>: DURATION</p>
+<p>This option is used only with non-blocking mode. If it’s set, digdag agent internally gets awake and checks at a specific interval if the duration has passed. If not set, digdag agent gets awake only when a specific duration passes.</p>
 <p>Examples:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">_parallel</span><span class="p">:</span> <span class="n">true</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">poll_interval</span><span class="p">:</span> <span class="mi">5</span><span class="n">s</span>
 </pre></div>
 </div>
-<p>Examples:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">_parallel</span><span class="p">:</span>
-  <span class="n">limit</span><span class="p">:</span> <span class="mi">2</span>
-</pre></div>
-</div>
-</li>
-<li><p><strong>_do</strong>: TASKS</p>
-<p>Tasks to run.</p>
 </li>
 </ul>
 </div>
@@ -259,10 +235,10 @@ Note that the tasks in the loop will be running in serial.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="for_range.html" class="btn btn-neutral float-right" title="for_range&gt;: Repeat tasks for a range" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="treasure_data.html" class="btn btn-neutral float-right" title="Treasure Data operators" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="loop.html" class="btn btn-neutral float-left" title="loop&gt;: Repeat tasks" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="echo.html" class="btn btn-neutral float-left" title="echo&gt;: Shows a message" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
