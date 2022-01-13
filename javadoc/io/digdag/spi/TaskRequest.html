@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":17,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6,"i12":6,"i13":6,"i14":6,"i15":6,"i16":6,"i17":6,"i18":6,"i19":6,"i20":6,"i21":17};
+var methods = {"i0":17,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":18,"i11":6,"i12":6,"i13":6,"i14":6,"i15":6,"i16":18,"i17":6,"i18":6,"i19":6,"i20":6,"i21":6,"i22":6,"i23":17};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],16:["t5","Default Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -160,50 +160,58 @@ public interface <span class="typeNameLabel">TaskRequest</span></pre>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../io/digdag/spi/TaskRequest.html#getRetryAttemptName--">getRetryAttemptName</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i10" class="altColor">
+<td class="colFirst"><code>default int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/digdag/spi/TaskRequest.html#getRetryCount--">getRetryCount</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>com.google.common.base.Optional&lt;java.lang.String&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../io/digdag/spi/TaskRequest.html#getRevision--">getRevision</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>long</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../io/digdag/spi/TaskRequest.html#getSessionId--">getSessionId</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code>java.time.Instant</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../io/digdag/spi/TaskRequest.html#getSessionTime--">getSessionTime</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code>java.util.UUID</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../io/digdag/spi/TaskRequest.html#getSessionUuid--">getSessionUuid</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../io/digdag/spi/TaskRequest.html#getSiteId--">getSiteId</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i15" class="rowColor">
+<tr id="i16" class="altColor">
+<td class="colFirst"><code>default com.google.common.base.Optional&lt;java.time.Instant&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/digdag/spi/TaskRequest.html#getStartedAt--">getStartedAt</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i17" class="rowColor">
 <td class="colFirst"><code>long</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../io/digdag/spi/TaskRequest.html#getTaskId--">getTaskId</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i16" class="altColor">
+<tr id="i18" class="altColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../io/digdag/spi/TaskRequest.html#getTaskName--">getTaskName</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i17" class="rowColor">
+<tr id="i19" class="rowColor">
 <td class="colFirst"><code>java.time.ZoneId</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../io/digdag/spi/TaskRequest.html#getTimeZone--">getTimeZone</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i18" class="altColor">
+<tr id="i20" class="altColor">
 <td class="colFirst"><code>com.google.common.base.Optional&lt;java.lang.Long&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../io/digdag/spi/TaskRequest.html#getWorkflowDefinitionId--">getWorkflowDefinitionId</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i19" class="rowColor">
+<tr id="i21" class="rowColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../io/digdag/spi/TaskRequest.html#getWorkflowName--">getWorkflowName</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i20" class="altColor">
+<tr id="i22" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../io/digdag/spi/TaskRequest.html#isCancelRequested--">isCancelRequested</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i21" class="rowColor">
+<tr id="i23" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../io/digdag/spi/TaskRequest.html" title="interface in io.digdag.spi">TaskRequest</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../io/digdag/spi/TaskRequest.html#withLockId-io.digdag.spi.TaskRequest-java.lang.String-">withLockId</a></span>(<a href="../../../io/digdag/spi/TaskRequest.html" title="interface in io.digdag.spi">TaskRequest</a>&nbsp;source,
           java.lang.String&nbsp;lockId)</code>&nbsp;</td>
@@ -401,6 +409,26 @@ public interface <span class="typeNameLabel">TaskRequest</span></pre>
 <li class="blockList">
 <h4>getLastStateParams</h4>
 <pre>io.digdag.client.config.Config&nbsp;getLastStateParams()</pre>
+</li>
+</ul>
+<a name="getRetryCount--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getRetryCount</h4>
+<pre>@Value.Default
+default&nbsp;int&nbsp;getRetryCount()</pre>
+</li>
+</ul>
+<a name="getStartedAt--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getStartedAt</h4>
+<pre>@Value.Default
+default&nbsp;com.google.common.base.Optional&lt;java.time.Instant&gt;&nbsp;getStartedAt()</pre>
 </li>
 </ul>
 <a name="builder--">
