@@ -275,7 +275,7 @@ s3.last_object is empty in this case. Empty check is required in following tasks
   timeout: 60s
   continue_on_timeout: true
 +task2:
-  if&gt;: ${s3.last_object}
+  if&gt;: ${!!s3.last_object}
   _do:
     echo&gt;: &quot;No timeout&quot;
 </pre></div>
