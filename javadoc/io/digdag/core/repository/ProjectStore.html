@@ -148,8 +148,9 @@ var activeTableTab = "activeTableTab";
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>java.util.List&lt;<a href="../../../../io/digdag/core/repository/StoredWorkflowDefinitionWithProject.html" title="class in io.digdag.core.repository">StoredWorkflowDefinitionWithProject</a>&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/core/repository/ProjectStore.html#getLatestActiveWorkflowDefinitions-int-com.google.common.base.Optional-io.digdag.spi.ac.AccessController.ListFilter-">getLatestActiveWorkflowDefinitions</a></span>(int&nbsp;pageSize,
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/core/repository/ProjectStore.html#getLatestActiveWorkflowDefinitions-int-com.google.common.base.Optional-com.google.common.base.Optional-io.digdag.spi.ac.AccessController.ListFilter-">getLatestActiveWorkflowDefinitions</a></span>(int&nbsp;pageSize,
                                   com.google.common.base.Optional&lt;java.lang.Long&gt;&nbsp;lastId,
+                                  com.google.common.base.Optional&lt;java.lang.String&gt;&nbsp;namePattern,
                                   io.digdag.spi.ac.AccessController.ListFilter&nbsp;acFilter)</code>&nbsp;</td>
 </tr>
 <tr id="i2" class="altColor">
@@ -171,8 +172,9 @@ var activeTableTab = "activeTableTab";
 </tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code>java.util.List&lt;<a href="../../../../io/digdag/core/repository/StoredProject.html" title="class in io.digdag.core.repository">StoredProject</a>&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/core/repository/ProjectStore.html#getProjects-int-com.google.common.base.Optional-io.digdag.spi.ac.AccessController.ListFilter-">getProjects</a></span>(int&nbsp;pageSize,
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/core/repository/ProjectStore.html#getProjects-int-com.google.common.base.Optional-com.google.common.base.Optional-io.digdag.spi.ac.AccessController.ListFilter-">getProjects</a></span>(int&nbsp;pageSize,
            com.google.common.base.Optional&lt;java.lang.Integer&gt;&nbsp;lastId,
+           com.google.common.base.Optional&lt;java.lang.String&gt;&nbsp;namePattern,
            io.digdag.spi.ac.AccessController.ListFilter&nbsp;acFilter)</code>&nbsp;</td>
 </tr>
 <tr id="i7" class="rowColor">
@@ -181,8 +183,9 @@ var activeTableTab = "activeTableTab";
 </tr>
 <tr id="i8" class="altColor">
 <td class="colFirst"><code>java.util.List&lt;<a href="../../../../io/digdag/core/repository/StoredProjectWithRevision.html" title="class in io.digdag.core.repository">StoredProjectWithRevision</a>&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/core/repository/ProjectStore.html#getProjectsWithLatestRevision-int-com.google.common.base.Optional-io.digdag.spi.ac.AccessController.ListFilter-">getProjectsWithLatestRevision</a></span>(int&nbsp;pageSize,
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/core/repository/ProjectStore.html#getProjectsWithLatestRevision-int-com.google.common.base.Optional-com.google.common.base.Optional-io.digdag.spi.ac.AccessController.ListFilter-">getProjectsWithLatestRevision</a></span>(int&nbsp;pageSize,
                              com.google.common.base.Optional&lt;java.lang.Integer&gt;&nbsp;lastId,
+                             com.google.common.base.Optional&lt;java.lang.String&gt;&nbsp;namePattern,
                              io.digdag.spi.ac.AccessController.ListFilter&nbsp;acFilter)</code>&nbsp;</td>
 </tr>
 <tr id="i9" class="rowColor">
@@ -244,7 +247,7 @@ var activeTableTab = "activeTableTab";
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a name="getProjects-int-com.google.common.base.Optional-io.digdag.spi.ac.AccessController.ListFilter-">
+<a name="getProjects-int-com.google.common.base.Optional-com.google.common.base.Optional-io.digdag.spi.ac.AccessController.ListFilter-">
 <!--   -->
 </a>
 <ul class="blockList">
@@ -252,10 +255,11 @@ var activeTableTab = "activeTableTab";
 <h4>getProjects</h4>
 <pre>java.util.List&lt;<a href="../../../../io/digdag/core/repository/StoredProject.html" title="class in io.digdag.core.repository">StoredProject</a>&gt;&nbsp;getProjects(int&nbsp;pageSize,
                                           com.google.common.base.Optional&lt;java.lang.Integer&gt;&nbsp;lastId,
+                                          com.google.common.base.Optional&lt;java.lang.String&gt;&nbsp;namePattern,
                                           io.digdag.spi.ac.AccessController.ListFilter&nbsp;acFilter)</pre>
 </li>
 </ul>
-<a name="getProjectsWithLatestRevision-int-com.google.common.base.Optional-io.digdag.spi.ac.AccessController.ListFilter-">
+<a name="getProjectsWithLatestRevision-int-com.google.common.base.Optional-com.google.common.base.Optional-io.digdag.spi.ac.AccessController.ListFilter-">
 <!--   -->
 </a>
 <ul class="blockList">
@@ -263,6 +267,7 @@ var activeTableTab = "activeTableTab";
 <h4>getProjectsWithLatestRevision</h4>
 <pre>java.util.List&lt;<a href="../../../../io/digdag/core/repository/StoredProjectWithRevision.html" title="class in io.digdag.core.repository">StoredProjectWithRevision</a>&gt;&nbsp;getProjectsWithLatestRevision(int&nbsp;pageSize,
                                                                         com.google.common.base.Optional&lt;java.lang.Integer&gt;&nbsp;lastId,
+                                                                        com.google.common.base.Optional&lt;java.lang.String&gt;&nbsp;namePattern,
                                                                         io.digdag.spi.ac.AccessController.ListFilter&nbsp;acFilter)</pre>
 </li>
 </ul>
@@ -457,7 +462,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 </li>
 </ul>
-<a name="getLatestActiveWorkflowDefinitions-int-com.google.common.base.Optional-io.digdag.spi.ac.AccessController.ListFilter-">
+<a name="getLatestActiveWorkflowDefinitions-int-com.google.common.base.Optional-com.google.common.base.Optional-io.digdag.spi.ac.AccessController.ListFilter-">
 <!--   -->
 </a>
 <ul class="blockList">
@@ -465,6 +470,7 @@ var activeTableTab = "activeTableTab";
 <h4>getLatestActiveWorkflowDefinitions</h4>
 <pre>java.util.List&lt;<a href="../../../../io/digdag/core/repository/StoredWorkflowDefinitionWithProject.html" title="class in io.digdag.core.repository">StoredWorkflowDefinitionWithProject</a>&gt;&nbsp;getLatestActiveWorkflowDefinitions(int&nbsp;pageSize,
                                                                                        com.google.common.base.Optional&lt;java.lang.Long&gt;&nbsp;lastId,
+                                                                                       com.google.common.base.Optional&lt;java.lang.String&gt;&nbsp;namePattern,
                                                                                        io.digdag.spi.ac.AccessController.ListFilter&nbsp;acFilter)
                                                                                 throws <a href="../../../../io/digdag/core/repository/ResourceNotFoundException.html" title="class in io.digdag.core.repository">ResourceNotFoundException</a></pre>
 <dl>

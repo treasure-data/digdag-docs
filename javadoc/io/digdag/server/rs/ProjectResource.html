@@ -207,7 +207,10 @@ extends <a href="../../../../io/digdag/server/rs/AuthenticatedResource.html" tit
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>io.digdag.client.api.RestProjectCollection</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/server/rs/ProjectResource.html#getProjects-java.lang.String-">getProjects</a></span>(java.lang.String&nbsp;name)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/server/rs/ProjectResource.html#getProjects-java.lang.String-java.lang.Integer-java.lang.Integer-java.lang.String-">getProjects</a></span>(java.lang.String&nbsp;name,
+           java.lang.Integer&nbsp;lastId,
+           java.lang.Integer&nbsp;count,
+           java.lang.String&nbsp;namePattern)</code>&nbsp;</td>
 </tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code>io.digdag.client.api.RestSecretList</code></td>
@@ -348,7 +351,7 @@ public&nbsp;io.digdag.client.api.RestProject&nbsp;getProject(@QueryParam(value="
 </dl>
 </li>
 </ul>
-<a name="getProjects-java.lang.String-">
+<a name="getProjects-java.lang.String-java.lang.Integer-java.lang.Integer-java.lang.String-">
 <!--   -->
 </a>
 <ul class="blockList">
@@ -357,7 +360,13 @@ public&nbsp;io.digdag.client.api.RestProject&nbsp;getProject(@QueryParam(value="
 <pre>@GET
  @Path(value="/api/projects")
 public&nbsp;io.digdag.client.api.RestProjectCollection&nbsp;getProjects(@QueryParam(value="name")
-                                                                                                 java.lang.String&nbsp;name)</pre>
+                                                                                                 java.lang.String&nbsp;name,
+                                                                                                 @QueryParam(value="last_id")
+                                                                                                 java.lang.Integer&nbsp;lastId,
+                                                                                                 @QueryParam(value="count")
+                                                                                                 java.lang.Integer&nbsp;count,
+                                                                                                 @QueryParam(value="name_pattern")
+                                                                                                 java.lang.String&nbsp;namePattern)</pre>
 </li>
 </ul>
 <a name="getProject-int-">
