@@ -191,9 +191,11 @@ extends <a href="../../../../io/digdag/server/rs/AuthenticatedResource.html" tit
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>io.digdag.client.api.RestWorkflowDefinitionCollection</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/server/rs/WorkflowResource.html#getWorkflowDefinitions-java.lang.Long-java.lang.Integer-java.lang.String-">getWorkflowDefinitions</a></span>(java.lang.Long&nbsp;lastId,
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/server/rs/WorkflowResource.html#getWorkflowDefinitions-java.lang.Long-java.lang.Integer-java.lang.String-java.lang.String-java.lang.Boolean-">getWorkflowDefinitions</a></span>(java.lang.Long&nbsp;lastId,
                       java.lang.Integer&nbsp;count,
-                      java.lang.String&nbsp;namePattern)</code>&nbsp;</td>
+                      java.lang.String&nbsp;orderDirection,
+                      java.lang.String&nbsp;namePattern,
+                      java.lang.Boolean&nbsp;searchProjectName)</code>&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -272,7 +274,7 @@ public&nbsp;io.digdag.client.api.RestWorkflowDefinition&nbsp;getWorkflowDefiniti
 </dl>
 </li>
 </ul>
-<a name="getWorkflowDefinitions-java.lang.Long-java.lang.Integer-java.lang.String-">
+<a name="getWorkflowDefinitions-java.lang.Long-java.lang.Integer-java.lang.String-java.lang.String-java.lang.Boolean-">
 <!--   -->
 </a>
 <ul class="blockList">
@@ -284,8 +286,12 @@ public&nbsp;io.digdag.client.api.RestWorkflowDefinitionCollection&nbsp;getWorkfl
                                                                                                                         java.lang.Long&nbsp;lastId,
                                                                                                                         @QueryParam(value="count")
                                                                                                                         java.lang.Integer&nbsp;count,
+                                                                                                                        @DefaultValue(value="asc") @QueryParam(value="order")
+                                                                                                                        java.lang.String&nbsp;orderDirection,
                                                                                                                         @QueryParam(value="name_pattern")
-                                                                                                                        java.lang.String&nbsp;namePattern)
+                                                                                                                        java.lang.String&nbsp;namePattern,
+                                                                                                                        @DefaultValue(value="false") @QueryParam(value="search_project_name")
+                                                                                                                        java.lang.Boolean&nbsp;searchProjectName)
                                                                                                                  throws io.digdag.core.repository.ResourceNotFoundException,
                                                                                                                         io.digdag.spi.ac.AccessControlException</pre>
 <dl>

@@ -17,8 +17,8 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6,"i12":6,"i13":6,"i14":6,"i15":6,"i16":6,"i17":6,"i18":6,"i19":6,"i20":6,"i21":6,"i22":6,"i23":6,"i24":6,"i25":6,"i26":6,"i27":6,"i28":6,"i29":6};
-var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
+var methods = {"i0":6,"i1":6,"i2":6,"i3":18,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6,"i12":6,"i13":6,"i14":6,"i15":6,"i16":6,"i17":6,"i18":6,"i19":6,"i20":6,"i21":6,"i22":6,"i23":6,"i24":6,"i25":6,"i26":6,"i27":6,"i28":6,"i29":6,"i30":6};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],16:["t5","Default Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -121,7 +121,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t5" class="tableTab"><span><a href="javascript:show(16);">Default Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colLast" scope="col">Method and Description</th>
@@ -140,7 +140,7 @@ var activeTableTab = "activeTableTab";
                           long&nbsp;configDigest)</code>&nbsp;</td>
 </tr>
 <tr id="i3" class="rowColor">
-<td class="colFirst"><code>java.util.List&lt;<a href="../../../../io/digdag/core/repository/StoredWorkflowDefinitionWithProject.html" title="class in io.digdag.core.repository">StoredWorkflowDefinitionWithProject</a>&gt;</code></td>
+<td class="colFirst"><code>default java.util.List&lt;<a href="../../../../io/digdag/core/repository/StoredWorkflowDefinitionWithProject.html" title="class in io.digdag.core.repository">StoredWorkflowDefinitionWithProject</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/core/database/DatabaseProjectStoreManager.Dao.html#getLatestActiveWorkflowDefinitions-int-int-long-java.lang.String-java.lang.String-">getLatestActiveWorkflowDefinitions</a></span>(int&nbsp;siteId,
                                   int&nbsp;limit,
                                   long&nbsp;lastId,
@@ -148,36 +148,46 @@ var activeTableTab = "activeTableTab";
                                   java.lang.String&nbsp;acFilter)</code>&nbsp;</td>
 </tr>
 <tr id="i4" class="altColor">
+<td class="colFirst"><code>java.util.List&lt;<a href="../../../../io/digdag/core/repository/StoredWorkflowDefinitionWithProject.html" title="class in io.digdag.core.repository">StoredWorkflowDefinitionWithProject</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/core/database/DatabaseProjectStoreManager.Dao.html#getLatestActiveWorkflowDefinitions-int-int-java.lang.String-java.lang.String-java.lang.String-java.lang.String-java.lang.String-">getLatestActiveWorkflowDefinitions</a></span>(int&nbsp;siteId,
+                                  int&nbsp;limit,
+                                  java.lang.String&nbsp;lastIdCond,
+                                  java.lang.String&nbsp;namePattern,
+                                  java.lang.String&nbsp;projectNamePattern,
+                                  java.lang.String&nbsp;orderDirection,
+                                  java.lang.String&nbsp;acFilter)</code>&nbsp;</td>
+</tr>
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code><a href="../../../../io/digdag/core/repository/StoredRevision.html" title="class in io.digdag.core.repository">StoredRevision</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/core/database/DatabaseProjectStoreManager.Dao.html#getLatestRevision-int-int-">getLatestRevision</a></span>(int&nbsp;siteId,
                  int&nbsp;projId)</code>&nbsp;</td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code><a href="../../../../io/digdag/core/repository/StoredWorkflowDefinitionWithProject.html" title="class in io.digdag.core.repository">StoredWorkflowDefinitionWithProject</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/core/database/DatabaseProjectStoreManager.Dao.html#getLatestWorkflowDefinitionByName-int-int-java.lang.String-">getLatestWorkflowDefinitionByName</a></span>(int&nbsp;siteId,
                                  int&nbsp;projId,
                                  java.lang.String&nbsp;name)</code>&nbsp;</td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code><a href="../../../../io/digdag/core/repository/StoredProject.html" title="class in io.digdag.core.repository">StoredProject</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/core/database/DatabaseProjectStoreManager.Dao.html#getProjectById-int-int-">getProjectById</a></span>(int&nbsp;siteId,
               int&nbsp;id)</code>&nbsp;</td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code><a href="../../../../io/digdag/core/repository/StoredProject.html" title="class in io.digdag.core.repository">StoredProject</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/core/database/DatabaseProjectStoreManager.Dao.html#getProjectByIdInternal-int-">getProjectByIdInternal</a></span>(int&nbsp;id)</code>&nbsp;</td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code><a href="../../../../io/digdag/core/repository/StoredProject.html" title="class in io.digdag.core.repository">StoredProject</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/core/database/DatabaseProjectStoreManager.Dao.html#getProjectByIdWithLockForDelete-int-int-">getProjectByIdWithLockForDelete</a></span>(int&nbsp;siteId,
                                int&nbsp;id)</code>&nbsp;</td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code><a href="../../../../io/digdag/core/repository/StoredProject.html" title="class in io.digdag.core.repository">StoredProject</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/core/database/DatabaseProjectStoreManager.Dao.html#getProjectByName-int-java.lang.String-">getProjectByName</a></span>(int&nbsp;siteId,
                 java.lang.String&nbsp;name)</code>&nbsp;</td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>java.util.List&lt;<a href="../../../../io/digdag/core/repository/StoredProject.html" title="class in io.digdag.core.repository">StoredProject</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/core/database/DatabaseProjectStoreManager.Dao.html#getProjects-int-int-int-java.lang.String-java.lang.String-">getProjects</a></span>(int&nbsp;siteId,
            int&nbsp;limit,
@@ -185,7 +195,7 @@ var activeTableTab = "activeTableTab";
            java.lang.String&nbsp;namePattern,
            java.lang.String&nbsp;acFilter)</code>&nbsp;</td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>java.util.List&lt;<a href="../../../../io/digdag/core/repository/StoredProjectWithRevision.html" title="class in io.digdag.core.repository">StoredProjectWithRevision</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/core/database/DatabaseProjectStoreManager.Dao.html#getProjectsWithLatestRevision-int-int-int-java.lang.String-java.lang.String-">getProjectsWithLatestRevision</a></span>(int&nbsp;siteId,
                              int&nbsp;limit,
@@ -193,44 +203,44 @@ var activeTableTab = "activeTableTab";
                              java.lang.String&nbsp;namePattern,
                              java.lang.String&nbsp;acFilter)</code>&nbsp;</td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code><a href="../../../../io/digdag/core/repository/StoredRevision.html" title="class in io.digdag.core.repository">StoredRevision</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/core/database/DatabaseProjectStoreManager.Dao.html#getRevisionById-int-int-">getRevisionById</a></span>(int&nbsp;siteId,
                int&nbsp;id)</code>&nbsp;</td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code><a href="../../../../io/digdag/core/repository/StoredRevision.html" title="class in io.digdag.core.repository">StoredRevision</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/core/database/DatabaseProjectStoreManager.Dao.html#getRevisionByName-int-int-java.lang.String-">getRevisionByName</a></span>(int&nbsp;siteId,
                  int&nbsp;projId,
                  java.lang.String&nbsp;name)</code>&nbsp;</td>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code><a href="../../../../io/digdag/core/repository/StoredRevision.html" title="class in io.digdag.core.repository">StoredRevision</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/core/database/DatabaseProjectStoreManager.Dao.html#getRevisionOfWorkflowDefinition-long-">getRevisionOfWorkflowDefinition</a></span>(long&nbsp;wfId)</code>&nbsp;</td>
 </tr>
-<tr id="i15" class="rowColor">
+<tr id="i16" class="altColor">
 <td class="colFirst"><code>java.util.List&lt;<a href="../../../../io/digdag/core/repository/StoredRevision.html" title="class in io.digdag.core.repository">StoredRevision</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/core/database/DatabaseProjectStoreManager.Dao.html#getRevisions-int-int-int-int-">getRevisions</a></span>(int&nbsp;siteId,
             int&nbsp;projId,
             int&nbsp;limit,
             int&nbsp;lastId)</code>&nbsp;</td>
 </tr>
-<tr id="i16" class="altColor">
+<tr id="i17" class="rowColor">
 <td class="colFirst"><code>java.util.List&lt;io.digdag.core.database.IdName&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/core/database/DatabaseProjectStoreManager.Dao.html#getScheduleNames-int-">getScheduleNames</a></span>(int&nbsp;projId)</code>&nbsp;</td>
 </tr>
-<tr id="i17" class="rowColor">
+<tr id="i18" class="altColor">
 <td class="colFirst"><code><a href="../../../../io/digdag/core/repository/StoredWorkflowDefinition.html" title="class in io.digdag.core.repository">StoredWorkflowDefinition</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/core/database/DatabaseProjectStoreManager.Dao.html#getWorkflowDefinitionById-int-long-">getWorkflowDefinitionById</a></span>(int&nbsp;siteId,
                          long&nbsp;id)</code>&nbsp;</td>
 </tr>
-<tr id="i18" class="altColor">
+<tr id="i19" class="rowColor">
 <td class="colFirst"><code><a href="../../../../io/digdag/core/repository/StoredWorkflowDefinition.html" title="class in io.digdag.core.repository">StoredWorkflowDefinition</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/core/database/DatabaseProjectStoreManager.Dao.html#getWorkflowDefinitionByName-int-int-java.lang.String-">getWorkflowDefinitionByName</a></span>(int&nbsp;siteId,
                            int&nbsp;revId,
                            java.lang.String&nbsp;name)</code>&nbsp;</td>
 </tr>
-<tr id="i19" class="rowColor">
+<tr id="i20" class="altColor">
 <td class="colFirst"><code>java.util.List&lt;<a href="../../../../io/digdag/core/repository/StoredWorkflowDefinition.html" title="class in io.digdag.core.repository">StoredWorkflowDefinition</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/core/database/DatabaseProjectStoreManager.Dao.html#getWorkflowDefinitions-int-int-int-long-java.lang.String-">getWorkflowDefinitions</a></span>(int&nbsp;siteId,
                       int&nbsp;revId,
@@ -238,16 +248,16 @@ var activeTableTab = "activeTableTab";
                       long&nbsp;lastId,
                       java.lang.String&nbsp;acFilter)</code>&nbsp;</td>
 </tr>
-<tr id="i20" class="altColor">
+<tr id="i21" class="rowColor">
 <td class="colFirst"><code><a href="../../../../io/digdag/core/repository/StoredWorkflowDefinitionWithProject.html" title="class in io.digdag.core.repository">StoredWorkflowDefinitionWithProject</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/core/database/DatabaseProjectStoreManager.Dao.html#getWorkflowDetailsById-int-long-">getWorkflowDetailsById</a></span>(int&nbsp;siteId,
                       long&nbsp;id)</code>&nbsp;</td>
 </tr>
-<tr id="i21" class="rowColor">
+<tr id="i22" class="altColor">
 <td class="colFirst"><code><a href="../../../../io/digdag/core/repository/StoredWorkflowDefinitionWithProject.html" title="class in io.digdag.core.repository">StoredWorkflowDefinitionWithProject</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/core/database/DatabaseProjectStoreManager.Dao.html#getWorkflowDetailsByIdInternal-long-">getWorkflowDetailsByIdInternal</a></span>(long&nbsp;id)</code>&nbsp;</td>
 </tr>
-<tr id="i22" class="altColor">
+<tr id="i23" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/core/database/DatabaseProjectStoreManager.Dao.html#insertRevision-int-java.lang.String-io.digdag.client.config.Config-java.lang.String-byte:A-java.lang.String-io.digdag.client.config.Config-">insertRevision</a></span>(int&nbsp;projId,
               java.lang.String&nbsp;name,
@@ -257,40 +267,40 @@ var activeTableTab = "activeTableTab";
               java.lang.String&nbsp;archivePath,
               io.digdag.client.config.Config&nbsp;userInfo)</code>&nbsp;</td>
 </tr>
-<tr id="i23" class="rowColor">
+<tr id="i24" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/core/database/DatabaseProjectStoreManager.Dao.html#insertRevisionArchiveData-int-byte:A-">insertRevisionArchiveData</a></span>(int&nbsp;revId,
                          byte[]&nbsp;data)</code>&nbsp;</td>
 </tr>
-<tr id="i24" class="altColor">
+<tr id="i25" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/core/database/DatabaseProjectStoreManager.Dao.html#insertSchedule-int-long-long-long-">insertSchedule</a></span>(int&nbsp;projid,
               long&nbsp;workflowDefinitionId,
               long&nbsp;nextRunTime,
               long&nbsp;nextScheduleTime)</code>&nbsp;</td>
 </tr>
-<tr id="i25" class="rowColor">
+<tr id="i26" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/core/database/DatabaseProjectStoreManager.Dao.html#insertWorkflowConfig-int-java.lang.String-java.lang.String-long-">insertWorkflowConfig</a></span>(int&nbsp;projId,
                     java.lang.String&nbsp;config,
                     java.lang.String&nbsp;timezone,
                     long&nbsp;configDigest)</code>&nbsp;</td>
 </tr>
-<tr id="i26" class="altColor">
+<tr id="i27" class="rowColor">
 <td class="colFirst"><code>long</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/core/database/DatabaseProjectStoreManager.Dao.html#insertWorkflowDefinition-int-java.lang.String-int-">insertWorkflowDefinition</a></span>(int&nbsp;revId,
                         java.lang.String&nbsp;name,
                         int&nbsp;configId)</code>&nbsp;</td>
 </tr>
-<tr id="i27" class="rowColor">
+<tr id="i28" class="altColor">
 <td class="colFirst"><code><a href="../../../../io/digdag/core/schedule/ScheduleStatus.html" title="interface in io.digdag.core.schedule">ScheduleStatus</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/core/database/DatabaseProjectStoreManager.Dao.html#lockScheduleById-int-">lockScheduleById</a></span>(int&nbsp;schedId)</code>&nbsp;</td>
 </tr>
-<tr id="i28" class="altColor">
+<tr id="i29" class="rowColor">
 <td class="colFirst"><code>byte[]</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/core/database/DatabaseProjectStoreManager.Dao.html#selectRevisionArchiveData-int-">selectRevisionArchiveData</a></span>(int&nbsp;revId)</code>&nbsp;</td>
 </tr>
-<tr id="i29" class="rowColor">
+<tr id="i30" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/core/database/DatabaseProjectStoreManager.Dao.html#updateScheduleById-int-long-long-long-">updateScheduleById</a></span>(int&nbsp;schedId,
                   long&nbsp;workflowDefinitionId,
@@ -464,11 +474,37 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>getLatestActiveWorkflowDefinitions</h4>
+<pre>default&nbsp;java.util.List&lt;<a href="../../../../io/digdag/core/repository/StoredWorkflowDefinitionWithProject.html" title="class in io.digdag.core.repository">StoredWorkflowDefinitionWithProject</a>&gt;&nbsp;getLatestActiveWorkflowDefinitions(int&nbsp;siteId,
+                                                                                               int&nbsp;limit,
+                                                                                               long&nbsp;lastId,
+                                                                                               java.lang.String&nbsp;namePattern,
+                                                                                               java.lang.String&nbsp;acFilter)</pre>
+</li>
+</ul>
+<a name="getLatestActiveWorkflowDefinitions-int-int-java.lang.String-java.lang.String-java.lang.String-java.lang.String-java.lang.String-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getLatestActiveWorkflowDefinitions</h4>
 <pre>java.util.List&lt;<a href="../../../../io/digdag/core/repository/StoredWorkflowDefinitionWithProject.html" title="class in io.digdag.core.repository">StoredWorkflowDefinitionWithProject</a>&gt;&nbsp;getLatestActiveWorkflowDefinitions(int&nbsp;siteId,
                                                                                        int&nbsp;limit,
-                                                                                       long&nbsp;lastId,
+                                                                                       java.lang.String&nbsp;lastIdCond,
                                                                                        java.lang.String&nbsp;namePattern,
+                                                                                       java.lang.String&nbsp;projectNamePattern,
+                                                                                       java.lang.String&nbsp;orderDirection,
                                                                                        java.lang.String&nbsp;acFilter)</pre>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>siteId</code> - Target site_id</dd>
+<dd><code>limit</code> - Number of workflows to be returned</dd>
+<dd><code>lastIdCond</code> - Pagination based on workflow id. Must "&gt; n" or "&lt; n"</dd>
+<dd><code>namePattern</code> - Search by workflow name with partial match. namePattern and projectNamePattern is "OR" search.</dd>
+<dd><code>projectNamePattern</code> - Search by project name with partial match. namePattern and projectNamePattern is "OR" search.</dd>
+<dd><code>orderDirection</code> - Order based on workflow id. "asc" or "desc". The parameter must be validated before calling to avoid SQL injection.</dd>
+<dd><code>acFilter</code> - AccessControl filter clause. The parameter must be validated before calling to avoid SQL injection.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+</dl>
 </li>
 </ul>
 <a name="getWorkflowDetailsByIdInternal-long-">
