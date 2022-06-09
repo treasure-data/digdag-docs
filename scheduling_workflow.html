@@ -365,6 +365,14 @@
   <span class="nt">sh&gt;</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">echo ${session_time}</span>
 </pre></div>
 </div>
+<p>Also, if your workflow starts with delay <code class="docutils literal notranslate"><span class="pre">skip_delayed_by</span></code> option takes effect as well.</p>
+<p>For example, your scheduling looks like this.
+If the workflow is executed at 16:02 due to some reason, the session will be skipped because <code class="docutils literal notranslate"><span class="pre">skip_delayed_by</span></code> is set to 1s and it is too late for the configured value.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">schedule</span><span class="p">:</span>
+  <span class="nt">cron&gt;</span><span class="p">:</span> <span class="s">&#39;0</span><span class="nv"> </span><span class="s">16</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*&#39;</span>
+  <span class="nt">skip_delayed_by</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1s</span>
+</pre></div>
+</div>
 </div>
 </div>
 
