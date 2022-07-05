@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -155,65 +155,79 @@ implements <a href="../../../../../io/digdag/standards/command/kubernetes/Kubern
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../io/digdag/standards/command/kubernetes/DefaultKubernetesClient.html#close--">close</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code>protected io.fabric8.kubernetes.api.model.Container</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../io/digdag/standards/command/kubernetes/DefaultKubernetesClient.html#createContainer-io.digdag.spi.CommandContext-io.digdag.spi.CommandRequest-java.lang.String-java.util.List-java.util.List-">createContainer</a></span>(io.digdag.spi.CommandContext&nbsp;context,
-               io.digdag.spi.CommandRequest&nbsp;request,
-               java.lang.String&nbsp;name,
-               java.util.List&lt;java.lang.String&gt;&nbsp;commands,
-               java.util.List&lt;java.lang.String&gt;&nbsp;arguments)</code>&nbsp;</td>
+<td class="colFirst"><code>protected &lt;T&gt;&nbsp;java.util.List&lt;T&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../io/digdag/standards/command/kubernetes/DefaultKubernetesClient.html#convertToResourceList-com.fasterxml.jackson.databind.JsonNode-java.lang.Class-">convertToResourceList</a></span>(com.fasterxml.jackson.databind.JsonNode&nbsp;node,
+                     java.lang.Class&lt;T&gt;&nbsp;type)</code>&nbsp;</td>
 </tr>
 <tr id="i2" class="altColor">
-<td class="colFirst"><code>protected io.fabric8.kubernetes.api.model.PodSpec</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../io/digdag/standards/command/kubernetes/DefaultKubernetesClient.html#createPodSpec-io.digdag.spi.CommandContext-io.digdag.spi.CommandRequest-io.fabric8.kubernetes.api.model.Container-">createPodSpec</a></span>(io.digdag.spi.CommandContext&nbsp;context,
-             io.digdag.spi.CommandRequest&nbsp;request,
-             io.fabric8.kubernetes.api.model.Container&nbsp;container)</code>&nbsp;</td>
+<td class="colFirst"><code>protected io.fabric8.kubernetes.api.model.PersistentVolume</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../io/digdag/standards/command/kubernetes/DefaultKubernetesClient.html#createPersistentVolume-io.digdag.spi.CommandContext-">createPersistentVolume</a></span>(io.digdag.spi.CommandContext&nbsp;context)</code>&nbsp;</td>
 </tr>
 <tr id="i3" class="rowColor">
+<td class="colFirst"><code>protected io.fabric8.kubernetes.api.model.PersistentVolumeClaim</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../io/digdag/standards/command/kubernetes/DefaultKubernetesClient.html#createPersistentVolumeClaim-io.digdag.spi.CommandContext-">createPersistentVolumeClaim</a></span>(io.digdag.spi.CommandContext&nbsp;context)</code>&nbsp;</td>
+</tr>
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../io/digdag/standards/command/kubernetes/DefaultKubernetesClient.html#deletePod-java.lang.String-">deletePod</a></span>(java.lang.String&nbsp;podName)</code>&nbsp;</td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>protected io.digdag.client.config.Config</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../io/digdag/standards/command/kubernetes/DefaultKubernetesClient.html#extractTargetKindConfig-io.digdag.spi.CommandContext-java.lang.String-">extractTargetKindConfig</a></span>(io.digdag.spi.CommandContext&nbsp;context,
+                       java.lang.String&nbsp;kind)</code>&nbsp;</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>protected io.fabric8.kubernetes.api.model.Affinity</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../io/digdag/standards/command/kubernetes/DefaultKubernetesClient.html#getAffinity-io.digdag.client.config.Config-">getAffinity</a></span>(io.digdag.client.config.Config&nbsp;kubernetesPodConfig)</code>&nbsp;</td>
+</tr>
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../io/digdag/standards/command/kubernetes/KubernetesClientConfig.html" title="class in io.digdag.standards.command.kubernetes">KubernetesClientConfig</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../io/digdag/standards/command/kubernetes/DefaultKubernetesClient.html#getConfig--">getConfig</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>protected java.lang.String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../io/digdag/standards/command/kubernetes/DefaultKubernetesClient.html#getContainerImage-io.digdag.spi.CommandContext-io.digdag.spi.CommandRequest-">getContainerImage</a></span>(io.digdag.spi.CommandContext&nbsp;context,
                  io.digdag.spi.CommandRequest&nbsp;request)</code>&nbsp;</td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>protected java.util.Map&lt;java.lang.String,java.lang.String&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../io/digdag/standards/command/kubernetes/DefaultKubernetesClient.html#getEnvironments-io.digdag.spi.CommandContext-io.digdag.spi.CommandRequest-">getEnvironments</a></span>(io.digdag.spi.CommandContext&nbsp;context,
                io.digdag.spi.CommandRequest&nbsp;request)</code>&nbsp;</td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../io/digdag/standards/command/kubernetes/DefaultKubernetesClient.html#getLog-java.lang.String-long-">getLog</a></span>(java.lang.String&nbsp;podName,
       long&nbsp;offset)</code>&nbsp;</td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>protected java.util.Map&lt;java.lang.String,java.lang.String&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../io/digdag/standards/command/kubernetes/DefaultKubernetesClient.html#getPodLabels--">getPodLabels</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i9" class="rowColor">
-<td class="colFirst"><code>protected java.util.Map&lt;java.lang.String,java.lang.String&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../io/digdag/standards/command/kubernetes/DefaultKubernetesClient.html#getResourceLimits-io.digdag.spi.CommandContext-io.digdag.spi.CommandRequest-">getResourceLimits</a></span>(io.digdag.spi.CommandContext&nbsp;context,
-                 io.digdag.spi.CommandRequest&nbsp;request)</code>&nbsp;</td>
+<tr id="i12" class="altColor">
+<td class="colFirst"><code>protected io.fabric8.kubernetes.api.model.ResourceRequirements</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../io/digdag/standards/command/kubernetes/DefaultKubernetesClient.html#getResources-io.digdag.client.config.Config-">getResources</a></span>(io.digdag.client.config.Config&nbsp;kubernetesPodConfig)</code>&nbsp;</td>
 </tr>
-<tr id="i10" class="altColor">
-<td class="colFirst"><code>protected java.util.Map&lt;java.lang.String,java.lang.String&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../io/digdag/standards/command/kubernetes/DefaultKubernetesClient.html#getResourceRequests-io.digdag.spi.CommandContext-io.digdag.spi.CommandRequest-">getResourceRequests</a></span>(io.digdag.spi.CommandContext&nbsp;context,
-                   io.digdag.spi.CommandRequest&nbsp;request)</code>&nbsp;</td>
+<tr id="i13" class="rowColor">
+<td class="colFirst"><code>protected java.util.List&lt;io.fabric8.kubernetes.api.model.Toleration&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../io/digdag/standards/command/kubernetes/DefaultKubernetesClient.html#getTolerations-io.digdag.client.config.Config-">getTolerations</a></span>(io.digdag.client.config.Config&nbsp;kubernetesPodConfig)</code>&nbsp;</td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i14" class="altColor">
+<td class="colFirst"><code>protected java.util.List&lt;io.fabric8.kubernetes.api.model.VolumeMount&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../io/digdag/standards/command/kubernetes/DefaultKubernetesClient.html#getVolumeMounts-io.digdag.client.config.Config-">getVolumeMounts</a></span>(io.digdag.client.config.Config&nbsp;kubernetesPodConfig)</code>&nbsp;</td>
+</tr>
+<tr id="i15" class="rowColor">
+<td class="colFirst"><code>protected java.util.List&lt;io.fabric8.kubernetes.api.model.Volume&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../io/digdag/standards/command/kubernetes/DefaultKubernetesClient.html#getVolumes-io.digdag.client.config.Config-">getVolumes</a></span>(io.digdag.client.config.Config&nbsp;kubernetesPodConfig)</code>&nbsp;</td>
+</tr>
+<tr id="i16" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../io/digdag/standards/command/kubernetes/DefaultKubernetesClient.html#isWaitingContainerCreation-io.digdag.standards.command.kubernetes.Pod-">isWaitingContainerCreation</a></span>(<a href="../../../../../io/digdag/standards/command/kubernetes/Pod.html" title="class in io.digdag.standards.command.kubernetes">Pod</a>&nbsp;pod)</code>&nbsp;</td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i17" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../io/digdag/standards/command/kubernetes/Pod.html" title="class in io.digdag.standards.command.kubernetes">Pod</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../io/digdag/standards/command/kubernetes/DefaultKubernetesClient.html#pollPod-java.lang.String-">pollPod</a></span>(java.lang.String&nbsp;podName)</code>&nbsp;</td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i18" class="altColor">
 <td class="colFirst"><code><a href="../../../../../io/digdag/standards/command/kubernetes/Pod.html" title="class in io.digdag.standards.command.kubernetes">Pod</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../io/digdag/standards/command/kubernetes/DefaultKubernetesClient.html#runPod-io.digdag.spi.CommandContext-io.digdag.spi.CommandRequest-java.lang.String-java.util.List-java.util.List-">runPod</a></span>(io.digdag.spi.CommandContext&nbsp;context,
       io.digdag.spi.CommandRequest&nbsp;request,
@@ -356,28 +370,87 @@ implements <a href="../../../../../io/digdag/standards/command/kubernetes/Kubern
 <pre>protected&nbsp;java.util.Map&lt;java.lang.String,java.lang.String&gt;&nbsp;getPodLabels()</pre>
 </li>
 </ul>
-<a name="createContainer-io.digdag.spi.CommandContext-io.digdag.spi.CommandRequest-java.lang.String-java.util.List-java.util.List-">
+<a name="createPersistentVolume-io.digdag.spi.CommandContext-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>createContainer</h4>
-<pre>protected&nbsp;io.fabric8.kubernetes.api.model.Container&nbsp;createContainer(io.digdag.spi.CommandContext&nbsp;context,
-                                                                    io.digdag.spi.CommandRequest&nbsp;request,
-                                                                    java.lang.String&nbsp;name,
-                                                                    java.util.List&lt;java.lang.String&gt;&nbsp;commands,
-                                                                    java.util.List&lt;java.lang.String&gt;&nbsp;arguments)</pre>
+<h4>createPersistentVolume</h4>
+<pre>protected&nbsp;io.fabric8.kubernetes.api.model.PersistentVolume&nbsp;createPersistentVolume(io.digdag.spi.CommandContext&nbsp;context)</pre>
 </li>
 </ul>
-<a name="createPodSpec-io.digdag.spi.CommandContext-io.digdag.spi.CommandRequest-io.fabric8.kubernetes.api.model.Container-">
+<a name="createPersistentVolumeClaim-io.digdag.spi.CommandContext-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>createPodSpec</h4>
-<pre>protected&nbsp;io.fabric8.kubernetes.api.model.PodSpec&nbsp;createPodSpec(io.digdag.spi.CommandContext&nbsp;context,
-                                                                io.digdag.spi.CommandRequest&nbsp;request,
-                                                                io.fabric8.kubernetes.api.model.Container&nbsp;container)</pre>
+<h4>createPersistentVolumeClaim</h4>
+<pre>protected&nbsp;io.fabric8.kubernetes.api.model.PersistentVolumeClaim&nbsp;createPersistentVolumeClaim(io.digdag.spi.CommandContext&nbsp;context)</pre>
+</li>
+</ul>
+<a name="extractTargetKindConfig-io.digdag.spi.CommandContext-java.lang.String-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>extractTargetKindConfig</h4>
+<pre>protected&nbsp;io.digdag.client.config.Config&nbsp;extractTargetKindConfig(io.digdag.spi.CommandContext&nbsp;context,
+                                                                 java.lang.String&nbsp;kind)</pre>
+</li>
+</ul>
+<a name="getResources-io.digdag.client.config.Config-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getResources</h4>
+<pre>protected&nbsp;io.fabric8.kubernetes.api.model.ResourceRequirements&nbsp;getResources(io.digdag.client.config.Config&nbsp;kubernetesPodConfig)</pre>
+</li>
+</ul>
+<a name="getVolumeMounts-io.digdag.client.config.Config-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getVolumeMounts</h4>
+<pre>protected&nbsp;java.util.List&lt;io.fabric8.kubernetes.api.model.VolumeMount&gt;&nbsp;getVolumeMounts(io.digdag.client.config.Config&nbsp;kubernetesPodConfig)</pre>
+</li>
+</ul>
+<a name="getAffinity-io.digdag.client.config.Config-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAffinity</h4>
+<pre>protected&nbsp;io.fabric8.kubernetes.api.model.Affinity&nbsp;getAffinity(io.digdag.client.config.Config&nbsp;kubernetesPodConfig)</pre>
+</li>
+</ul>
+<a name="getTolerations-io.digdag.client.config.Config-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTolerations</h4>
+<pre>protected&nbsp;java.util.List&lt;io.fabric8.kubernetes.api.model.Toleration&gt;&nbsp;getTolerations(io.digdag.client.config.Config&nbsp;kubernetesPodConfig)</pre>
+</li>
+</ul>
+<a name="getVolumes-io.digdag.client.config.Config-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getVolumes</h4>
+<pre>protected&nbsp;java.util.List&lt;io.fabric8.kubernetes.api.model.Volume&gt;&nbsp;getVolumes(io.digdag.client.config.Config&nbsp;kubernetesPodConfig)</pre>
+</li>
+</ul>
+<a name="convertToResourceList-com.fasterxml.jackson.databind.JsonNode-java.lang.Class-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>convertToResourceList</h4>
+<pre>protected&nbsp;&lt;T&gt;&nbsp;java.util.List&lt;T&gt;&nbsp;convertToResourceList(com.fasterxml.jackson.databind.JsonNode&nbsp;node,
+                                                      java.lang.Class&lt;T&gt;&nbsp;type)</pre>
 </li>
 </ul>
 <a name="getContainerImage-io.digdag.spi.CommandContext-io.digdag.spi.CommandRequest-">
@@ -398,26 +471,6 @@ implements <a href="../../../../../io/digdag/standards/command/kubernetes/Kubern
 <h4>getEnvironments</h4>
 <pre>protected&nbsp;java.util.Map&lt;java.lang.String,java.lang.String&gt;&nbsp;getEnvironments(io.digdag.spi.CommandContext&nbsp;context,
                                                                            io.digdag.spi.CommandRequest&nbsp;request)</pre>
-</li>
-</ul>
-<a name="getResourceLimits-io.digdag.spi.CommandContext-io.digdag.spi.CommandRequest-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getResourceLimits</h4>
-<pre>protected&nbsp;java.util.Map&lt;java.lang.String,java.lang.String&gt;&nbsp;getResourceLimits(io.digdag.spi.CommandContext&nbsp;context,
-                                                                             io.digdag.spi.CommandRequest&nbsp;request)</pre>
-</li>
-</ul>
-<a name="getResourceRequests-io.digdag.spi.CommandContext-io.digdag.spi.CommandRequest-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getResourceRequests</h4>
-<pre>protected&nbsp;java.util.Map&lt;java.lang.String,java.lang.String&gt;&nbsp;getResourceRequests(io.digdag.spi.CommandContext&nbsp;context,
-                                                                               io.digdag.spi.CommandRequest&nbsp;request)</pre>
 </li>
 </ul>
 <a name="close--">
