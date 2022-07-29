@@ -516,6 +516,11 @@
 <li><p>database.loginTimeout (seconds in integer, default: 30)</p></li>
 <li><p>database.socketTimeout (seconds in integer, default: 1800)</p></li>
 <li><p>database.ssl (boolean, default: false)</p></li>
+<li><p>database.sslfactory (string, default: “org.postgresql.ssl.NonValidatingFactory”, “org.postgresql.ssl.LibPQFactory” is also available)</p></li>
+<li><p>database.sslmode (string, “disable”, “allow”, “prefer”, “require”, “verify-ca” or “verify-full”. enable if sslfactory is set to “org.postgresql.ssl.LibPQFactory”)</p></li>
+<li><p>database.sslcert (path to ssl cert file in string. enable if sslfactory is set to “org.postgresql.ssl.LibPQFactory”)</p></li>
+<li><p>database.sslkey (path to ssl key file in string. enable if sslfactory is set to “org.postgresql.ssl.LibPQFactory”)</p></li>
+<li><p>database.sslrootcert (path to ssl root cert file. enable if sslfactory is set to “org.postgresql.ssl.LibPQFactory”)</p></li>
 <li><p>database.connectionTimeout (seconds in integer, default: 30)</p></li>
 <li><p>database.idleTimeout (seconds in integer, default: 600)</p></li>
 <li><p>database.keepaliveTime (seconds in integer, default: 0)</p></li>
