@@ -35,7 +35,9 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Database operators" href="database.html" />
+    <link rel="prev" title="td_table_export&gt;: Treasure Data table export to S3" href="td_table_export.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -83,13 +85,38 @@
               
             
             
-              <ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../architecture.html">Architecture</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../concepts.html">Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../workflow_definition.html">Workflow definition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../scheduling_workflow.html">Scheduling workflow</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../operators.html">Operators</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../operators.html">Operators</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="workflow_control.html">Workflow control operators</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="treasure_data.html">Treasure Data operators</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="td.html">td&gt;: Treasure Data queries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="td_run.html">td_run&gt;: Treasure Data saved queries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="td_ddl.html">td_ddl&gt;: Treasure Data operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="td_load.html">td_load&gt;: Treasure Data bulk loading</a></li>
+<li class="toctree-l3"><a class="reference internal" href="td_for_each.html">td_for_each&gt;: Repeat using Treasure Data queries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="td_wait.html">td_wait&gt;: Waits for data arriving at Treasure Data table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="td_wait_table.html">td_wait_table&gt;: Waits for data arriving at Treasure Data table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="td_partial_delete.html">td_partial_delete&gt;: Delete range of Treasure Data table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="td_table_export.html">td_table_export&gt;: Treasure Data table export to S3</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">td_result_export&gt;: Treasure Data result exporter</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#options">Options</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="database.html">Database operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="network.html">Network operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aws.html">Amazon Web Services operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gcp.html">Google Cloud Platform operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripting.html">Scripting operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="param.html">Param operators</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../command_reference.html">Command reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../python_api.html">Language API - Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ruby_api.html">Language API - Ruby</a></li>
@@ -144,6 +171,10 @@
   <ul class="wy-breadcrumbs">
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../operators.html">Operators</a> &raquo;</li>
+        
+          <li><a href="treasure_data.html">Treasure Data operators</a> &raquo;</li>
         
       <li>td_result_export&gt;: Treasure Data result exporter</li>
     
@@ -229,6 +260,15 @@
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="database.html" class="btn btn-neutral float-right" title="Database operators" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="td_table_export.html" class="btn btn-neutral float-left" title="td_table_export&gt;: Treasure Data table export to S3" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
