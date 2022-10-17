@@ -246,6 +246,13 @@ A URI or list of URIs with the location of the destination export files. These m
 </pre></div>
 </div>
 </li>
+<li><p><strong>location</strong>: LOCATION
+The location where the job should run. The table and the destination must be in this location. See <a class="reference external" href="https://cloud.google.com/bigquery/docs/locations">BigQuery locations</a> for a list of available locations.</p>
+<p>Examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">location</span><span class="p">:</span> <span class="n">asia</span><span class="o">-</span><span class="n">northeast1</span>
+</pre></div>
+</div>
+</li>
 <li><p><strong>print_header</strong>: BOOLEAN
 Whether to print out a header row in the results. <em>Default</em>: <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p></li>
 <li><p><strong>field_delimiter</strong>: CHARACTER
