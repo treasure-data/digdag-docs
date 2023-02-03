@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10,"i25":10,"i26":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10,"i25":10,"i26":10,"i27":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -236,8 +236,9 @@ implements io.digdag.spi.CommandExecutor</pre>
 </tr>
 <tr id="i15" class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/standards/command/EcsCommandExecutor.html#setEcsContainerOverrideEnvironment-io.digdag.spi.CommandContext-io.digdag.spi.CommandRequest-com.amazonaws.services.ecs.model.ContainerOverride-">setEcsContainerOverrideEnvironment</a></span>(io.digdag.spi.CommandContext&nbsp;commandContext,
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/standards/command/EcsCommandExecutor.html#setEcsContainerOverrideEnvironment-io.digdag.spi.CommandContext-io.digdag.spi.CommandRequest-io.digdag.standards.command.ecs.EcsClientConfig-com.amazonaws.services.ecs.model.ContainerOverride-">setEcsContainerOverrideEnvironment</a></span>(io.digdag.spi.CommandContext&nbsp;commandContext,
                                   io.digdag.spi.CommandRequest&nbsp;commandRequest,
+                                  <a href="../../../../io/digdag/standards/command/ecs/EcsClientConfig.html" title="class in io.digdag.standards.command.ecs">EcsClientConfig</a>&nbsp;clientConfig,
                                   com.amazonaws.services.ecs.model.ContainerOverride&nbsp;containerOverride)</code>&nbsp;</td>
 </tr>
 <tr id="i16" class="altColor">
@@ -301,6 +302,13 @@ implements io.digdag.spi.CommandExecutor</pre>
           io.digdag.spi.CommandRequest&nbsp;commandRequest,
           <a href="../../../../io/digdag/standards/command/ecs/EcsClient.html" title="interface in io.digdag.standards.command.ecs">EcsClient</a>&nbsp;client,
           com.amazonaws.services.ecs.model.TaskDefinition&nbsp;td)</code>&nbsp;</td>
+</tr>
+<tr id="i27" class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/standards/command/EcsCommandExecutor.html#uploadEnvironmentFileToTemporalStorage-io.digdag.spi.CommandContext-java.nio.file.Path-com.amazonaws.services.ecs.model.EnvironmentFile-java.nio.file.Path-">uploadEnvironmentFileToTemporalStorage</a></span>(io.digdag.spi.CommandContext&nbsp;commandContext,
+                                      java.nio.file.Path&nbsp;lastEnvFilePath,
+                                      com.amazonaws.services.ecs.model.EnvironmentFile&nbsp;environmentFile,
+                                      java.nio.file.Path&nbsp;envFilePath)</code>&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -616,7 +624,7 @@ protected&nbsp;com.amazonaws.services.ecs.model.TaskDefinition&nbsp;findTaskDefi
 <pre>protected&nbsp;java.util.List&lt;java.lang.String&gt;&nbsp;setEcsContainerOverrideArgumentsAfterCommand()</pre>
 </li>
 </ul>
-<a name="setEcsContainerOverrideEnvironment-io.digdag.spi.CommandContext-io.digdag.spi.CommandRequest-com.amazonaws.services.ecs.model.ContainerOverride-">
+<a name="setEcsContainerOverrideEnvironment-io.digdag.spi.CommandContext-io.digdag.spi.CommandRequest-io.digdag.standards.command.ecs.EcsClientConfig-com.amazonaws.services.ecs.model.ContainerOverride-">
 <!--   -->
 </a>
 <ul class="blockList">
@@ -624,7 +632,20 @@ protected&nbsp;com.amazonaws.services.ecs.model.TaskDefinition&nbsp;findTaskDefi
 <h4>setEcsContainerOverrideEnvironment</h4>
 <pre>protected&nbsp;void&nbsp;setEcsContainerOverrideEnvironment(io.digdag.spi.CommandContext&nbsp;commandContext,
                                                   io.digdag.spi.CommandRequest&nbsp;commandRequest,
+                                                  <a href="../../../../io/digdag/standards/command/ecs/EcsClientConfig.html" title="class in io.digdag.standards.command.ecs">EcsClientConfig</a>&nbsp;clientConfig,
                                                   com.amazonaws.services.ecs.model.ContainerOverride&nbsp;containerOverride)</pre>
+</li>
+</ul>
+<a name="uploadEnvironmentFileToTemporalStorage-io.digdag.spi.CommandContext-java.nio.file.Path-com.amazonaws.services.ecs.model.EnvironmentFile-java.nio.file.Path-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>uploadEnvironmentFileToTemporalStorage</h4>
+<pre>protected&nbsp;void&nbsp;uploadEnvironmentFileToTemporalStorage(io.digdag.spi.CommandContext&nbsp;commandContext,
+                                                      java.nio.file.Path&nbsp;lastEnvFilePath,
+                                                      com.amazonaws.services.ecs.model.EnvironmentFile&nbsp;environmentFile,
+                                                      java.nio.file.Path&nbsp;envFilePath)</pre>
 </li>
 </ul>
 <a name="setEcsContainerOverrideResource-io.digdag.standards.command.ecs.EcsClientConfig-com.amazonaws.services.ecs.model.ContainerOverride-">
