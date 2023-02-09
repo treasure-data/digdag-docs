@@ -155,13 +155,14 @@ implements <a href="../../../../../io/digdag/standards/command/ecs/EcsClient.htm
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>protected </code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../io/digdag/standards/command/ecs/DefaultEcsClient.html#DefaultEcsClient-io.digdag.standards.command.ecs.EcsClientConfig-com.amazonaws.services.ecs.AmazonECSClient-com.amazonaws.services.logs.AWSLogs-int-long-long-long-">DefaultEcsClient</a></span>(<a href="../../../../../io/digdag/standards/command/ecs/EcsClientConfig.html" title="class in io.digdag.standards.command.ecs">EcsClientConfig</a>&nbsp;config,
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../io/digdag/standards/command/ecs/DefaultEcsClient.html#DefaultEcsClient-io.digdag.standards.command.ecs.EcsClientConfig-com.amazonaws.services.ecs.AmazonECSClient-com.amazonaws.services.logs.AWSLogs-int-long-long-long-int-">DefaultEcsClient</a></span>(<a href="../../../../../io/digdag/standards/command/ecs/EcsClientConfig.html" title="class in io.digdag.standards.command.ecs">EcsClientConfig</a>&nbsp;config,
                 com.amazonaws.services.ecs.AmazonECSClient&nbsp;client,
                 com.amazonaws.services.logs.AWSLogs&nbsp;logs,
                 int&nbsp;rateLimitMaxRetry,
                 long&nbsp;rateLimitMaxJitterSecs,
                 long&nbsp;rateLimitMaxBaseWaitSecs,
-                long&nbsp;rateLimitBaseIncrementalSecs)</code>&nbsp;</td>
+                long&nbsp;rateLimitBaseIncrementalSecs,
+                int&nbsp;retryDelayOnAgentErrorSecs)</code>&nbsp;</td>
 </tr>
 </table>
 </li>
@@ -274,7 +275,7 @@ implements <a href="../../../../../io/digdag/standards/command/ecs/EcsClient.htm
                            com.amazonaws.services.logs.AWSLogs&nbsp;logs)</pre>
 </li>
 </ul>
-<a name="DefaultEcsClient-io.digdag.standards.command.ecs.EcsClientConfig-com.amazonaws.services.ecs.AmazonECSClient-com.amazonaws.services.logs.AWSLogs-int-long-long-long-">
+<a name="DefaultEcsClient-io.digdag.standards.command.ecs.EcsClientConfig-com.amazonaws.services.ecs.AmazonECSClient-com.amazonaws.services.logs.AWSLogs-int-long-long-long-int-">
 <!--   -->
 </a>
 <ul class="blockListLast">
@@ -286,7 +287,8 @@ implements <a href="../../../../../io/digdag/standards/command/ecs/EcsClient.htm
                            int&nbsp;rateLimitMaxRetry,
                            long&nbsp;rateLimitMaxJitterSecs,
                            long&nbsp;rateLimitMaxBaseWaitSecs,
-                           long&nbsp;rateLimitBaseIncrementalSecs)</pre>
+                           long&nbsp;rateLimitBaseIncrementalSecs,
+                           int&nbsp;retryDelayOnAgentErrorSecs)</pre>
 </li>
 </ul>
 </li>
@@ -316,18 +318,17 @@ implements <a href="../../../../../io/digdag/standards/command/ecs/EcsClient.htm
 <ul class="blockList">
 <li class="blockList">
 <h4>submitTask</h4>
-<pre>public&nbsp;com.amazonaws.services.ecs.model.RunTaskResult&nbsp;submitTask(com.amazonaws.services.ecs.model.RunTaskRequest&nbsp;request)
-                                                          throws io.digdag.client.config.ConfigException</pre>
+<pre>public&nbsp;com.amazonaws.services.ecs.model.RunTaskResult&nbsp;submitTask(com.amazonaws.services.ecs.model.RunTaskRequest&nbsp;request)</pre>
 <div class="block">Run task on AWS ECS.
- https://docs.aws.amazon.com/cli/latest/reference/ecs/run-task.html</div>
+ Retry once on AGENT error, which can happen as a part of the agent's normal operation.
+ https://docs.aws.amazon.com/cli/latest/reference/ecs/run-task.html
+ https://docs.aws.amazon.com/AmazonECS/latest/developerguide/api_failures_messages.html</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../io/digdag/standards/command/ecs/EcsClient.html#submitTask-com.amazonaws.services.ecs.model.RunTaskRequest-">submitTask</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../io/digdag/standards/command/ecs/EcsClient.html" title="interface in io.digdag.standards.command.ecs">EcsClient</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>request</code> - </dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>io.digdag.client.config.ConfigException</code></dd>
 </dl>
 </li>
 </ul>
