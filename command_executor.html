@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Command Executor &mdash; Digdag 0.10.4 documentation</title>
+  <title>Command Executor &mdash; Digdag 0.10.5 documentation</title>
   
 
   
@@ -99,7 +99,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Command Executor</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#ecs">ECS</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#setup">Setup</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#the-ways-of-authorizing-to-ecs-cluster-and-tasks">The ways of authorizing to ECS cluster and tasks.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-ways-of-authorizing-to-ecs-cluster-tasks-and-s3-temporal-storage">The ways of authorizing to ECS cluster, tasks and S3 temporal storage.</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#how-to-use-from-workflow">How to use from workflow</a><ul>
@@ -256,7 +256,7 @@ If there is no valid configuration for Docker, fallback to local.</p>
 </tr>
 <tr>
 <td align="left">ecs.&lt;name&gt;.use_environment_file</td>
-<td align="left">(Optional) whether use environmentFiles or environment when setting variables to ECS. Default value is false and set variables individually.</td>
+<td align="left">(Optional) whether use environmentFiles or environment when setting variables to ECS. Default value is false</td>
 </tr>
 </tbody>
 </table><p>Following keys are for configuration of temporal storage with AWS S3.</p>
@@ -282,16 +282,17 @@ If there is no valid configuration for Docker, fallback to local.</p>
 </tr>
 <tr>
 <td align="left">ecs.temporal_storage.s3.credentials.access-key-id</td>
-<td align="left">AWS access key for the bucket</td>
+<td align="left">(Optional) AWS access key for the bucket</td>
 </tr>
 <tr>
 <td align="left">ecs.temporal_storage.s3.credentials.secret-access-key</td>
-<td align="left">AWS secret key</td>
+<td align="left">(Optional) AWS secret key</td>
 </tr>
 </tbody>
-</table><div class="section" id="the-ways-of-authorizing-to-ecs-cluster-and-tasks">
-<h4>The ways of authorizing to ECS cluster and tasks.<a class="headerlink" href="#the-ways-of-authorizing-to-ecs-cluster-and-tasks" title="Permalink to this headline">¶</a></h4>
-<p><a class="reference external" href="https://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/auth/DefaultAWSCredentialsProviderChain.html">DefaultAWSCredentialsProviderChain</a> besides AWS access key and secret can be used as a credential for connecting with ECS on version 0.10.5 or above . As a result of that, if <code class="docutils literal notranslate"><span class="pre">ecs.&lt;name&gt;.access_key_id</span></code> is not specified, digdag server looks for one of the credentials described in the document.</p>
+</table><div class="section" id="the-ways-of-authorizing-to-ecs-cluster-tasks-and-s3-temporal-storage">
+<h4>The ways of authorizing to ECS cluster, tasks and S3 temporal storage.<a class="headerlink" href="#the-ways-of-authorizing-to-ecs-cluster-tasks-and-s3-temporal-storage" title="Permalink to this headline">¶</a></h4>
+<p><a class="reference external" href="https://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/auth/DefaultAWSCredentialsProviderChain.html">DefaultAWSCredentialsProviderChain</a> besides AWS access key and secret can be used as a credential for connecting with ECS on version 0.10.5 or above . As a result of that, if <code class="docutils literal notranslate"><span class="pre">ecs.&lt;name&gt;.access_key_id</span></code> is not specified, digdag server looks for one of the credentials described in the document.
+Digdag server uses the same credentials when connecting with S3 temporal storage, thus if <code class="docutils literal notranslate"><span class="pre">ecs.temporal_storage.s3.credentials.access-key-id</span></code> is not specified, digdag server also looks for credentials same as ECS.</p>
 </div>
 </div>
 <div class="section" id="how-to-use-from-workflow">
