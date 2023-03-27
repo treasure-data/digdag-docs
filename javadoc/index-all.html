@@ -278,6 +278,10 @@
 <dd>
 <div class="block">Check if the user has permissions to put a project.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="io/digdag/spi/ac/AccessController.html#checkPutProjectContent-io.digdag.spi.ac.ProjectContentTarget-io.digdag.spi.AuthenticatedUser-">checkPutProjectContent(ProjectContentTarget, AuthenticatedUser)</a></span> - Method in interface io.digdag.spi.ac.<a href="io/digdag/spi/ac/AccessController.html" title="interface in io.digdag.spi.ac">AccessController</a></dt>
+<dd>
+<div class="block">Check if the user has permissions to put a project in considering of the content.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="io/digdag/spi/ac/AccessController.html#checkPutProjectSecret-io.digdag.spi.ac.SecretTarget-io.digdag.spi.AuthenticatedUser-">checkPutProjectSecret(SecretTarget, AuthenticatedUser)</a></span> - Method in interface io.digdag.spi.ac.<a href="io/digdag/spi/ac/AccessController.html" title="interface in io.digdag.spi.ac">AccessController</a></dt>
 <dd>
 <div class="block">Check if the user has permissions to put a secret to the project.</div>
@@ -594,6 +598,8 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="io/digdag/spi/OperatorContext.html#getProjectPath--">getProjectPath()</a></span> - Method in interface io.digdag.spi.<a href="io/digdag/spi/OperatorContext.html" title="interface in io.digdag.spi">OperatorContext</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="io/digdag/spi/ac/ProjectContentTarget.html#getProjectTarget--">getProjectTarget()</a></span> - Method in interface io.digdag.spi.ac.<a href="io/digdag/spi/ac/ProjectContentTarget.html" title="interface in io.digdag.spi.ac">ProjectContentTarget</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="io/digdag/metrics/StdDigdagMetrics.html#getRegistry--">getRegistry()</a></span> - Method in class io.digdag.metrics.<a href="io/digdag/metrics/StdDigdagMetrics.html" title="class in io.digdag.metrics">StdDigdagMetrics</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="io/digdag/metrics/StdDigdagMetrics.html#getRegistry-io.digdag.spi.metrics.DigdagMetrics.Category-">getRegistry(DigdagMetrics.Category)</a></span> - Method in class io.digdag.metrics.<a href="io/digdag/metrics/StdDigdagMetrics.html" title="class in io.digdag.metrics">StdDigdagMetrics</a></dt>
@@ -908,6 +914,8 @@
 <dl>
 <dt><span class="memberNameLink"><a href="io/digdag/spi/ac/AttemptTarget.html#of-int-java.lang.String-java.lang.String-long-long-">of(int, String, String, long, long)</a></span> - Static method in interface io.digdag.spi.ac.<a href="io/digdag/spi/ac/AttemptTarget.html" title="interface in io.digdag.spi.ac">AttemptTarget</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="io/digdag/spi/ac/ProjectContentTarget.html#of-io.digdag.spi.ac.ProjectTarget-java.util.List-">of(ProjectTarget, List&lt;Config&gt;)</a></span> - Static method in interface io.digdag.spi.ac.<a href="io/digdag/spi/ac/ProjectContentTarget.html" title="interface in io.digdag.spi.ac">ProjectContentTarget</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="io/digdag/spi/ac/ProjectTarget.html#of-int-java.lang.String-">of(int, String)</a></span> - Static method in interface io.digdag.spi.ac.<a href="io/digdag/spi/ac/ProjectTarget.html" title="interface in io.digdag.spi.ac">ProjectTarget</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="io/digdag/spi/ac/ProjectTarget.html#of-int-java.lang.String-int-">of(int, String, int)</a></span> - Static method in interface io.digdag.spi.ac.<a href="io/digdag/spi/ac/ProjectTarget.html" title="interface in io.digdag.spi.ac">ProjectTarget</a></dt>
@@ -985,6 +993,8 @@
 <dt><span class="memberNameLink"><a href="io/digdag/spi/SecretScopes.html#PROJECT">PROJECT</a></span> - Static variable in interface io.digdag.spi.<a href="io/digdag/spi/SecretScopes.html" title="interface in io.digdag.spi">SecretScopes</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="io/digdag/spi/SecretScopes.html#PROJECT_DEFAULT">PROJECT_DEFAULT</a></span> - Static variable in interface io.digdag.spi.<a href="io/digdag/spi/SecretScopes.html" title="interface in io.digdag.spi">SecretScopes</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="io/digdag/spi/ac/ProjectContentTarget.html" title="interface in io.digdag.spi.ac"><span class="typeNameLink">ProjectContentTarget</span></a> - Interface in <a href="io/digdag/spi/ac/package-summary.html">io.digdag.spi.ac</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="io/digdag/spi/SecretAccessContext.Builder.html#projectId-int-">projectId(int)</a></span> - Method in interface io.digdag.spi.<a href="io/digdag/spi/SecretAccessContext.Builder.html" title="interface in io.digdag.spi">SecretAccessContext.Builder</a></dt>
 <dd>&nbsp;</dd>
@@ -1131,6 +1141,8 @@
 </a>
 <h2 class="title">T</h2>
 <dl>
+<dt><span class="memberNameLink"><a href="io/digdag/spi/ac/ProjectContentTarget.html#taskConfigs--">taskConfigs()</a></span> - Method in interface io.digdag.spi.ac.<a href="io/digdag/spi/ac/ProjectContentTarget.html" title="interface in io.digdag.spi.ac">ProjectContentTarget</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="io/digdag/spi/TaskConflictException.html" title="class in io.digdag.spi"><span class="typeNameLink">TaskConflictException</span></a> - Exception in <a href="io/digdag/spi/package-summary.html">io.digdag.spi</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="io/digdag/spi/TaskConflictException.html#TaskConflictException-java.lang.String-">TaskConflictException(String)</a></span> - Constructor for exception io.digdag.spi.<a href="io/digdag/spi/TaskConflictException.html" title="class in io.digdag.spi">TaskConflictException</a></dt>

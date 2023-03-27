@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":9,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10};
+var methods = {"i0":9,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -189,15 +189,31 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>java.util.List&lt;<a href="../../../../io/digdag/core/repository/StoredWorkflowDefinition.html" title="class in io.digdag.core.repository">StoredWorkflowDefinition</a>&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/core/repository/ProjectControl.html#insertWorkflowDefinitions-io.digdag.core.repository.StoredRevision-java.util.List-io.digdag.core.schedule.SchedulerManager-java.time.Instant-">insertWorkflowDefinitions</a></span>(<a href="../../../../io/digdag/core/repository/StoredRevision.html" title="class in io.digdag.core.repository">StoredRevision</a>&nbsp;revision,
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/core/repository/ProjectControl.html#insertWorkflowDefinitions-io.digdag.core.repository.StoredRevision-java.util.List-java.util.Map-io.digdag.core.schedule.SchedulerManager-java.time.Instant-">insertWorkflowDefinitions</a></span>(<a href="../../../../io/digdag/core/repository/StoredRevision.html" title="class in io.digdag.core.repository">StoredRevision</a>&nbsp;revision,
                          java.util.List&lt;<a href="../../../../io/digdag/core/repository/WorkflowDefinition.html" title="class in io.digdag.core.repository">WorkflowDefinition</a>&gt;&nbsp;defs,
+                         java.util.Map&lt;java.lang.String,java.lang.Boolean&gt;&nbsp;clearSchedules,
                          <a href="../../../../io/digdag/core/schedule/SchedulerManager.html" title="class in io.digdag.core.schedule">SchedulerManager</a>&nbsp;srm,
                          java.time.Instant&nbsp;currentTime)</code>&nbsp;</td>
 </tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code>java.util.List&lt;<a href="../../../../io/digdag/core/repository/StoredWorkflowDefinition.html" title="class in io.digdag.core.repository">StoredWorkflowDefinition</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/core/repository/ProjectControl.html#insertWorkflowDefinitions-io.digdag.core.repository.StoredRevision-java.util.List-io.digdag.core.schedule.SchedulerManager-java.time.Instant-">insertWorkflowDefinitions</a></span>(<a href="../../../../io/digdag/core/repository/StoredRevision.html" title="class in io.digdag.core.repository">StoredRevision</a>&nbsp;revision,
+                         java.util.List&lt;<a href="../../../../io/digdag/core/repository/WorkflowDefinition.html" title="class in io.digdag.core.repository">WorkflowDefinition</a>&gt;&nbsp;defs,
+                         <a href="../../../../io/digdag/core/schedule/SchedulerManager.html" title="class in io.digdag.core.schedule">SchedulerManager</a>&nbsp;srm,
+                         java.time.Instant&nbsp;currentTime)</code>&nbsp;</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>java.util.List&lt;<a href="../../../../io/digdag/core/repository/StoredWorkflowDefinition.html" title="class in io.digdag.core.repository">StoredWorkflowDefinition</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/core/repository/ProjectControl.html#insertWorkflowDefinitionsWithoutSchedules-io.digdag.core.repository.StoredRevision-java.util.List-">insertWorkflowDefinitionsWithoutSchedules</a></span>(<a href="../../../../io/digdag/core/repository/StoredRevision.html" title="class in io.digdag.core.repository">StoredRevision</a>&nbsp;revision,
                                          java.util.List&lt;<a href="../../../../io/digdag/core/repository/WorkflowDefinition.html" title="class in io.digdag.core.repository">WorkflowDefinition</a>&gt;&nbsp;defs)</code>&nbsp;</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/core/repository/ProjectControl.html#updateSchedules-io.digdag.core.repository.StoredRevision-java.util.List-java.util.Map-io.digdag.core.schedule.SchedulerManager-java.time.Instant-">updateSchedules</a></span>(<a href="../../../../io/digdag/core/repository/StoredRevision.html" title="class in io.digdag.core.repository">StoredRevision</a>&nbsp;revision,
+               java.util.List&lt;<a href="../../../../io/digdag/core/repository/StoredWorkflowDefinition.html" title="class in io.digdag.core.repository">StoredWorkflowDefinition</a>&gt;&nbsp;defs,
+               java.util.Map&lt;java.lang.String,java.lang.Boolean&gt;&nbsp;clearSchedules,
+               <a href="../../../../io/digdag/core/schedule/SchedulerManager.html" title="class in io.digdag.core.schedule">SchedulerManager</a>&nbsp;srm,
+               java.time.Instant&nbsp;currentTime)</code>&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -310,6 +326,24 @@ extends java.lang.Object</pre>
 </dl>
 </li>
 </ul>
+<a name="insertWorkflowDefinitions-io.digdag.core.repository.StoredRevision-java.util.List-java.util.Map-io.digdag.core.schedule.SchedulerManager-java.time.Instant-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>insertWorkflowDefinitions</h4>
+<pre>public&nbsp;java.util.List&lt;<a href="../../../../io/digdag/core/repository/StoredWorkflowDefinition.html" title="class in io.digdag.core.repository">StoredWorkflowDefinition</a>&gt;&nbsp;insertWorkflowDefinitions(<a href="../../../../io/digdag/core/repository/StoredRevision.html" title="class in io.digdag.core.repository">StoredRevision</a>&nbsp;revision,
+                                                                          java.util.List&lt;<a href="../../../../io/digdag/core/repository/WorkflowDefinition.html" title="class in io.digdag.core.repository">WorkflowDefinition</a>&gt;&nbsp;defs,
+                                                                          java.util.Map&lt;java.lang.String,java.lang.Boolean&gt;&nbsp;clearSchedules,
+                                                                          <a href="../../../../io/digdag/core/schedule/SchedulerManager.html" title="class in io.digdag.core.schedule">SchedulerManager</a>&nbsp;srm,
+                                                                          java.time.Instant&nbsp;currentTime)
+                                                                   throws <a href="../../../../io/digdag/core/repository/ResourceConflictException.html" title="class in io.digdag.core.repository">ResourceConflictException</a></pre>
+<dl>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../../io/digdag/core/repository/ResourceConflictException.html" title="class in io.digdag.core.repository">ResourceConflictException</a></code></dd>
+</dl>
+</li>
+</ul>
 <a name="insertWorkflowDefinitionsWithoutSchedules-io.digdag.core.repository.StoredRevision-java.util.List-">
 <!--   -->
 </a>
@@ -319,6 +353,24 @@ extends java.lang.Object</pre>
 <pre>public&nbsp;java.util.List&lt;<a href="../../../../io/digdag/core/repository/StoredWorkflowDefinition.html" title="class in io.digdag.core.repository">StoredWorkflowDefinition</a>&gt;&nbsp;insertWorkflowDefinitionsWithoutSchedules(<a href="../../../../io/digdag/core/repository/StoredRevision.html" title="class in io.digdag.core.repository">StoredRevision</a>&nbsp;revision,
                                                                                           java.util.List&lt;<a href="../../../../io/digdag/core/repository/WorkflowDefinition.html" title="class in io.digdag.core.repository">WorkflowDefinition</a>&gt;&nbsp;defs)
                                                                                    throws <a href="../../../../io/digdag/core/repository/ResourceConflictException.html" title="class in io.digdag.core.repository">ResourceConflictException</a></pre>
+<dl>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../../io/digdag/core/repository/ResourceConflictException.html" title="class in io.digdag.core.repository">ResourceConflictException</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="updateSchedules-io.digdag.core.repository.StoredRevision-java.util.List-java.util.Map-io.digdag.core.schedule.SchedulerManager-java.time.Instant-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>updateSchedules</h4>
+<pre>public&nbsp;void&nbsp;updateSchedules(<a href="../../../../io/digdag/core/repository/StoredRevision.html" title="class in io.digdag.core.repository">StoredRevision</a>&nbsp;revision,
+                            java.util.List&lt;<a href="../../../../io/digdag/core/repository/StoredWorkflowDefinition.html" title="class in io.digdag.core.repository">StoredWorkflowDefinition</a>&gt;&nbsp;defs,
+                            java.util.Map&lt;java.lang.String,java.lang.Boolean&gt;&nbsp;clearSchedules,
+                            <a href="../../../../io/digdag/core/schedule/SchedulerManager.html" title="class in io.digdag.core.schedule">SchedulerManager</a>&nbsp;srm,
+                            java.time.Instant&nbsp;currentTime)
+                     throws <a href="../../../../io/digdag/core/repository/ResourceConflictException.html" title="class in io.digdag.core.repository">ResourceConflictException</a></pre>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../../../../io/digdag/core/repository/ResourceConflictException.html" title="class in io.digdag.core.repository">ResourceConflictException</a></code></dd>

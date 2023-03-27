@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6,"i12":6,"i13":6,"i14":6,"i15":6,"i16":6,"i17":6,"i18":6,"i19":6,"i20":6,"i21":6,"i22":6,"i23":6,"i24":6,"i25":6,"i26":6,"i27":6,"i28":6,"i29":6,"i30":6,"i31":6,"i32":6,"i33":6,"i34":6,"i35":6,"i36":6,"i37":6};
+var methods = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6,"i12":6,"i13":6,"i14":6,"i15":6,"i16":6,"i17":6,"i18":6,"i19":6,"i20":6,"i21":6,"i22":6,"i23":6,"i24":6,"i25":6,"i26":6,"i27":6,"i28":6,"i29":6,"i30":6,"i31":6,"i32":6,"i33":6,"i34":6,"i35":6,"i36":6,"i37":6,"i38":6};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -328,75 +328,82 @@ var activeTableTab = "activeTableTab";
 </tr>
 <tr id="i27" class="rowColor">
 <td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/spi/ac/AccessController.html#checkPutProjectContent-io.digdag.spi.ac.ProjectContentTarget-io.digdag.spi.AuthenticatedUser-">checkPutProjectContent</a></span>(<a href="../../../../io/digdag/spi/ac/ProjectContentTarget.html" title="interface in io.digdag.spi.ac">ProjectContentTarget</a>&nbsp;target,
+                      <a href="../../../../io/digdag/spi/AuthenticatedUser.html" title="interface in io.digdag.spi">AuthenticatedUser</a>&nbsp;user)</code>
+<div class="block">Check if the user has permissions to put a project in considering of the content.</div>
+</td>
+</tr>
+<tr id="i28" class="altColor">
+<td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/spi/ac/AccessController.html#checkPutProjectSecret-io.digdag.spi.ac.SecretTarget-io.digdag.spi.AuthenticatedUser-">checkPutProjectSecret</a></span>(<a href="../../../../io/digdag/spi/ac/SecretTarget.html" title="interface in io.digdag.spi.ac">SecretTarget</a>&nbsp;target,
                      <a href="../../../../io/digdag/spi/AuthenticatedUser.html" title="interface in io.digdag.spi">AuthenticatedUser</a>&nbsp;user)</code>
 <div class="block">Check if the user has permissions to put a secret to the project.</div>
 </td>
 </tr>
-<tr id="i28" class="altColor">
+<tr id="i29" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/spi/ac/AccessController.html#checkRunWorkflow-io.digdag.spi.ac.WorkflowTarget-io.digdag.spi.AuthenticatedUser-">checkRunWorkflow</a></span>(<a href="../../../../io/digdag/spi/ac/WorkflowTarget.html" title="interface in io.digdag.spi.ac">WorkflowTarget</a>&nbsp;target,
                 <a href="../../../../io/digdag/spi/AuthenticatedUser.html" title="interface in io.digdag.spi">AuthenticatedUser</a>&nbsp;user)</code>
 <div class="block">Check if the user has permissions to run the workflow.</div>
 </td>
 </tr>
-<tr id="i29" class="rowColor">
+<tr id="i30" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/spi/ac/AccessController.html#checkSkipSchedule-io.digdag.spi.ac.ScheduleTarget-io.digdag.spi.AuthenticatedUser-">checkSkipSchedule</a></span>(<a href="../../../../io/digdag/spi/ac/ScheduleTarget.html" title="interface in io.digdag.spi.ac">ScheduleTarget</a>&nbsp;target,
                  <a href="../../../../io/digdag/spi/AuthenticatedUser.html" title="interface in io.digdag.spi">AuthenticatedUser</a>&nbsp;user)</code>
 <div class="block">Check if the user has permissions to skip the schedule.</div>
 </td>
 </tr>
-<tr id="i30" class="altColor">
+<tr id="i31" class="rowColor">
 <td class="colFirst"><code><a href="../../../../io/digdag/spi/ac/AccessController.ListFilter.html" title="interface in io.digdag.spi.ac">AccessController.ListFilter</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/spi/ac/AccessController.html#getListProjectsFilterOfSite-io.digdag.spi.ac.SiteTarget-io.digdag.spi.AuthenticatedUser-">getListProjectsFilterOfSite</a></span>(<a href="../../../../io/digdag/spi/ac/SiteTarget.html" title="interface in io.digdag.spi.ac">SiteTarget</a>&nbsp;target,
                            <a href="../../../../io/digdag/spi/AuthenticatedUser.html" title="interface in io.digdag.spi">AuthenticatedUser</a>&nbsp;user)</code>
 <div class="block">Return a filter to return only allowed projects within the site.</div>
 </td>
 </tr>
-<tr id="i31" class="rowColor">
+<tr id="i32" class="altColor">
 <td class="colFirst"><code><a href="../../../../io/digdag/spi/ac/AccessController.ListFilter.html" title="interface in io.digdag.spi.ac">AccessController.ListFilter</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/spi/ac/AccessController.html#getListSchedulesFilterOfProject-io.digdag.spi.ac.ProjectTarget-io.digdag.spi.AuthenticatedUser-">getListSchedulesFilterOfProject</a></span>(<a href="../../../../io/digdag/spi/ac/ProjectTarget.html" title="interface in io.digdag.spi.ac">ProjectTarget</a>&nbsp;target,
                                <a href="../../../../io/digdag/spi/AuthenticatedUser.html" title="interface in io.digdag.spi">AuthenticatedUser</a>&nbsp;user)</code>
 <div class="block">Return a filter to return only allowed schedules within the project.</div>
 </td>
 </tr>
-<tr id="i32" class="altColor">
+<tr id="i33" class="rowColor">
 <td class="colFirst"><code><a href="../../../../io/digdag/spi/ac/AccessController.ListFilter.html" title="interface in io.digdag.spi.ac">AccessController.ListFilter</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/spi/ac/AccessController.html#getListSchedulesFilterOfSite-io.digdag.spi.ac.SiteTarget-io.digdag.spi.AuthenticatedUser-">getListSchedulesFilterOfSite</a></span>(<a href="../../../../io/digdag/spi/ac/SiteTarget.html" title="interface in io.digdag.spi.ac">SiteTarget</a>&nbsp;target,
                             <a href="../../../../io/digdag/spi/AuthenticatedUser.html" title="interface in io.digdag.spi">AuthenticatedUser</a>&nbsp;user)</code>
 <div class="block">Return a filter to return only allowed schedules within the site.</div>
 </td>
 </tr>
-<tr id="i33" class="rowColor">
+<tr id="i34" class="altColor">
 <td class="colFirst"><code><a href="../../../../io/digdag/spi/ac/AccessController.ListFilter.html" title="interface in io.digdag.spi.ac">AccessController.ListFilter</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/spi/ac/AccessController.html#getListSessionsFilterOfProject-io.digdag.spi.ac.ProjectTarget-io.digdag.spi.AuthenticatedUser-">getListSessionsFilterOfProject</a></span>(<a href="../../../../io/digdag/spi/ac/ProjectTarget.html" title="interface in io.digdag.spi.ac">ProjectTarget</a>&nbsp;target,
                               <a href="../../../../io/digdag/spi/AuthenticatedUser.html" title="interface in io.digdag.spi">AuthenticatedUser</a>&nbsp;user)</code>
 <div class="block">Return a filter to return only allowed sessions within the project.</div>
 </td>
 </tr>
-<tr id="i34" class="altColor">
+<tr id="i35" class="rowColor">
 <td class="colFirst"><code><a href="../../../../io/digdag/spi/ac/AccessController.ListFilter.html" title="interface in io.digdag.spi.ac">AccessController.ListFilter</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/spi/ac/AccessController.html#getListSessionsFilterOfSite-io.digdag.spi.ac.SiteTarget-io.digdag.spi.AuthenticatedUser-">getListSessionsFilterOfSite</a></span>(<a href="../../../../io/digdag/spi/ac/SiteTarget.html" title="interface in io.digdag.spi.ac">SiteTarget</a>&nbsp;target,
                            <a href="../../../../io/digdag/spi/AuthenticatedUser.html" title="interface in io.digdag.spi">AuthenticatedUser</a>&nbsp;user)</code>
 <div class="block">Return a filter to return only allowed sessions within the site.</div>
 </td>
 </tr>
-<tr id="i35" class="rowColor">
+<tr id="i36" class="altColor">
 <td class="colFirst"><code><a href="../../../../io/digdag/spi/ac/AccessController.ListFilter.html" title="interface in io.digdag.spi.ac">AccessController.ListFilter</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/spi/ac/AccessController.html#getListSessionsFilterOfWorkflow-io.digdag.spi.ac.WorkflowTarget-io.digdag.spi.AuthenticatedUser-">getListSessionsFilterOfWorkflow</a></span>(<a href="../../../../io/digdag/spi/ac/WorkflowTarget.html" title="interface in io.digdag.spi.ac">WorkflowTarget</a>&nbsp;target,
                                <a href="../../../../io/digdag/spi/AuthenticatedUser.html" title="interface in io.digdag.spi">AuthenticatedUser</a>&nbsp;user)</code>
 <div class="block">Return a filter to return only allowed sessions within the workflow.</div>
 </td>
 </tr>
-<tr id="i36" class="altColor">
+<tr id="i37" class="rowColor">
 <td class="colFirst"><code><a href="../../../../io/digdag/spi/ac/AccessController.ListFilter.html" title="interface in io.digdag.spi.ac">AccessController.ListFilter</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/spi/ac/AccessController.html#getListWorkflowsFilterOfProject-io.digdag.spi.ac.ProjectTarget-io.digdag.spi.AuthenticatedUser-">getListWorkflowsFilterOfProject</a></span>(<a href="../../../../io/digdag/spi/ac/ProjectTarget.html" title="interface in io.digdag.spi.ac">ProjectTarget</a>&nbsp;target,
                                <a href="../../../../io/digdag/spi/AuthenticatedUser.html" title="interface in io.digdag.spi">AuthenticatedUser</a>&nbsp;user)</code>
 <div class="block">Return a filter to return only allowed workflows within the project.</div>
 </td>
 </tr>
-<tr id="i37" class="rowColor">
+<tr id="i38" class="altColor">
 <td class="colFirst"><code><a href="../../../../io/digdag/spi/ac/AccessController.ListFilter.html" title="interface in io.digdag.spi.ac">AccessController.ListFilter</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/spi/ac/AccessController.html#getListWorkflowsFilterOfSite-io.digdag.spi.ac.SiteTarget-io.digdag.spi.AuthenticatedUser-">getListWorkflowsFilterOfSite</a></span>(<a href="../../../../io/digdag/spi/ac/SiteTarget.html" title="interface in io.digdag.spi.ac">SiteTarget</a>&nbsp;target,
                             <a href="../../../../io/digdag/spi/AuthenticatedUser.html" title="interface in io.digdag.spi">AuthenticatedUser</a>&nbsp;user)</code>
@@ -428,6 +435,25 @@ var activeTableTab = "activeTableTab";
                      <a href="../../../../io/digdag/spi/AuthenticatedUser.html" title="interface in io.digdag.spi">AuthenticatedUser</a>&nbsp;user)
               throws <a href="../../../../io/digdag/spi/ac/AccessControlException.html" title="class in io.digdag.spi.ac">AccessControlException</a></pre>
 <div class="block">Check if the user has permissions to put a project.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>target</code> - </dd>
+<dd><code>user</code> - </dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../../io/digdag/spi/ac/AccessControlException.html" title="class in io.digdag.spi.ac">AccessControlException</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="checkPutProjectContent-io.digdag.spi.ac.ProjectContentTarget-io.digdag.spi.AuthenticatedUser-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>checkPutProjectContent</h4>
+<pre>void&nbsp;checkPutProjectContent(<a href="../../../../io/digdag/spi/ac/ProjectContentTarget.html" title="interface in io.digdag.spi.ac">ProjectContentTarget</a>&nbsp;target,
+                            <a href="../../../../io/digdag/spi/AuthenticatedUser.html" title="interface in io.digdag.spi">AuthenticatedUser</a>&nbsp;user)
+                     throws <a href="../../../../io/digdag/spi/ac/AccessControlException.html" title="class in io.digdag.spi.ac">AccessControlException</a></pre>
+<div class="block">Check if the user has permissions to put a project in considering of the content.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>target</code> - </dd>

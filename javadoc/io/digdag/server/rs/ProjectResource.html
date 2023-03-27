@@ -257,11 +257,13 @@ extends <a href="../../../../io/digdag/server/rs/AuthenticatedResource.html" tit
 </tr>
 <tr id="i13" class="rowColor">
 <td class="colFirst"><code>io.digdag.client.api.RestProject</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/server/rs/ProjectResource.html#putProject-java.lang.String-java.lang.String-java.io.InputStream-long-java.lang.String-">putProject</a></span>(java.lang.String&nbsp;name,
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/server/rs/ProjectResource.html#putProject-java.lang.String-java.lang.String-java.io.InputStream-long-java.lang.String-java.util.List-boolean-">putProject</a></span>(java.lang.String&nbsp;name,
           java.lang.String&nbsp;revision,
           java.io.InputStream&nbsp;body,
           long&nbsp;contentLength,
-          java.lang.String&nbsp;scheduleFromString)</code>&nbsp;</td>
+          java.lang.String&nbsp;scheduleFromString,
+          java.util.List&lt;java.lang.String&gt;&nbsp;clearSchedules,
+          boolean&nbsp;clearAllSchedules)</code>&nbsp;</td>
 </tr>
 <tr id="i14" class="altColor">
 <td class="colFirst"><code>io.digdag.client.api.RestSecret</code></td>
@@ -571,7 +573,7 @@ public&nbsp;io.digdag.client.api.RestProject&nbsp;deleteProject(@PathParam(value
 </dl>
 </li>
 </ul>
-<a name="putProject-java.lang.String-java.lang.String-java.io.InputStream-long-java.lang.String-">
+<a name="putProject-java.lang.String-java.lang.String-java.io.InputStream-long-java.lang.String-java.util.List-boolean-">
 <!--   -->
 </a>
 <ul class="blockList">
@@ -588,7 +590,11 @@ public&nbsp;io.digdag.client.api.RestProject&nbsp;putProject(@QueryParam(value="
                                                                                                                            @HeaderParam(value="Content-Length")
                                                                                                                            long&nbsp;contentLength,
                                                                                                                            @QueryParam(value="schedule_from")
-                                                                                                                           java.lang.String&nbsp;scheduleFromString)
+                                                                                                                           java.lang.String&nbsp;scheduleFromString,
+                                                                                                                           @QueryParam(value="clear_schedule")
+                                                                                                                           java.util.List&lt;java.lang.String&gt;&nbsp;clearSchedules,
+                                                                                                                           @DefaultValue(value="false") @QueryParam(value="clear_schedule_all")
+                                                                                                                           boolean&nbsp;clearAllSchedules)
                                                                                                                     throws io.digdag.core.repository.ResourceConflictException,
                                                                                                                            java.io.IOException,
                                                                                                                            io.digdag.core.repository.ResourceNotFoundException,
