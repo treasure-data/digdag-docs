@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9,"i7":9,"i8":9,"i9":9,"i10":9,"i11":9,"i12":9,"i13":9,"i14":9,"i15":9,"i16":9,"i17":9,"i18":9,"i19":9,"i20":9};
+var methods = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9,"i7":9,"i8":9,"i9":9,"i10":9,"i11":9,"i12":9,"i13":9,"i14":9,"i15":9,"i16":9,"i17":9,"i18":9,"i19":9,"i20":9,"i21":9};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -154,79 +154,83 @@ extends java.lang.Object</pre>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/server/rs/RestModels.html#logFileHandleCollection-java.util.List-">logFileHandleCollection</a></span>(java.util.List&lt;io.digdag.spi.LogFileHandle&gt;&nbsp;handles)</code>&nbsp;</td>
 </tr>
 <tr id="i5" class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/server/rs/RestModels.html#parseProjectId-io.digdag.client.api.Id-">parseProjectId</a></span>(io.digdag.client.api.Id&nbsp;id)</code>&nbsp;</td>
+</tr>
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>static io.digdag.client.api.RestProject</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/server/rs/RestModels.html#project-io.digdag.core.repository.StoredProject-io.digdag.core.repository.StoredRevision-">project</a></span>(io.digdag.core.repository.StoredProject&nbsp;proj,
        io.digdag.core.repository.StoredRevision&nbsp;lastRevision)</code>&nbsp;</td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>static io.digdag.client.api.RestProject</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/server/rs/RestModels.html#project-io.digdag.core.repository.StoredProjectWithRevision-">project</a></span>(io.digdag.core.repository.StoredProjectWithRevision&nbsp;projWithRev)</code>&nbsp;</td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>static io.digdag.client.api.RestProjectCollection</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/server/rs/RestModels.html#projectCollection-java.util.List-">projectCollection</a></span>(java.util.List&lt;io.digdag.client.api.RestProject&gt;&nbsp;collection)</code>&nbsp;</td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>static io.digdag.client.api.RestRevision</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/server/rs/RestModels.html#revision-io.digdag.core.repository.StoredProject-io.digdag.core.repository.StoredRevision-">revision</a></span>(io.digdag.core.repository.StoredProject&nbsp;proj,
         io.digdag.core.repository.StoredRevision&nbsp;rev)</code>&nbsp;</td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>static io.digdag.client.api.RestRevisionCollection</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/server/rs/RestModels.html#revisionCollection-io.digdag.core.repository.StoredProject-java.util.List-">revisionCollection</a></span>(io.digdag.core.repository.StoredProject&nbsp;proj,
                   java.util.List&lt;io.digdag.core.repository.StoredRevision&gt;&nbsp;revs)</code>&nbsp;</td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>static io.digdag.client.api.RestSchedule</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/server/rs/RestModels.html#schedule-io.digdag.core.schedule.StoredSchedule-io.digdag.core.repository.StoredProject-java.time.ZoneId-">schedule</a></span>(io.digdag.core.schedule.StoredSchedule&nbsp;sched,
         io.digdag.core.repository.StoredProject&nbsp;proj,
         java.time.ZoneId&nbsp;timeZone)</code>&nbsp;</td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>static io.digdag.client.api.RestScheduleSummary</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/server/rs/RestModels.html#scheduleSummary-io.digdag.core.schedule.StoredSchedule-io.digdag.core.repository.StoredProject-java.time.ZoneId-">scheduleSummary</a></span>(io.digdag.core.schedule.StoredSchedule&nbsp;sched,
                io.digdag.core.repository.StoredProject&nbsp;proj,
                java.time.ZoneId&nbsp;timeZone)</code>&nbsp;</td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code>static io.digdag.client.api.RestSecret</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/server/rs/RestModels.html#secret-io.digdag.core.repository.StoredProject-java.lang.String-">secret</a></span>(io.digdag.core.repository.StoredProject&nbsp;proj,
       java.lang.String&nbsp;key)</code>&nbsp;</td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code>static io.digdag.client.api.RestSession</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/server/rs/RestModels.html#session-io.digdag.core.session.StoredSessionWithLastAttempt-java.lang.String-">session</a></span>(io.digdag.core.session.StoredSessionWithLastAttempt&nbsp;session,
        java.lang.String&nbsp;projectName)</code>&nbsp;</td>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code>static io.digdag.client.api.RestTask</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/server/rs/RestModels.html#task-io.digdag.core.session.ArchivedTask-">task</a></span>(io.digdag.core.session.ArchivedTask&nbsp;task)</code>&nbsp;</td>
 </tr>
-<tr id="i15" class="rowColor">
+<tr id="i16" class="altColor">
 <td class="colFirst"><code>static io.digdag.client.api.RestTaskCollection</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/server/rs/RestModels.html#taskCollection-java.util.List-">taskCollection</a></span>(java.util.List&lt;io.digdag.core.session.ArchivedTask&gt;&nbsp;tasks)</code>&nbsp;</td>
 </tr>
-<tr id="i16" class="altColor">
+<tr id="i17" class="rowColor">
 <td class="colFirst"><code>static io.digdag.client.api.RestWorkflowDefinition</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/server/rs/RestModels.html#workflowDefinition-io.digdag.core.repository.StoredProject-io.digdag.core.repository.Revision-io.digdag.core.repository.StoredWorkflowDefinition-">workflowDefinition</a></span>(io.digdag.core.repository.StoredProject&nbsp;proj,
                   io.digdag.core.repository.Revision&nbsp;rev,
                   io.digdag.core.repository.StoredWorkflowDefinition&nbsp;def)</code>&nbsp;</td>
 </tr>
-<tr id="i17" class="rowColor">
+<tr id="i18" class="altColor">
 <td class="colFirst"><code>static io.digdag.client.api.RestWorkflowDefinition</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/server/rs/RestModels.html#workflowDefinition-io.digdag.core.repository.StoredWorkflowDefinitionWithProject-">workflowDefinition</a></span>(io.digdag.core.repository.StoredWorkflowDefinitionWithProject&nbsp;wfDetails)</code>&nbsp;</td>
 </tr>
-<tr id="i18" class="altColor">
+<tr id="i19" class="rowColor">
 <td class="colFirst"><code>static io.digdag.client.api.RestWorkflowDefinitionCollection</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/server/rs/RestModels.html#workflowDefinitionCollection-java.util.List-">workflowDefinitionCollection</a></span>(java.util.List&lt;io.digdag.core.repository.StoredWorkflowDefinitionWithProject&gt;&nbsp;defs)</code>&nbsp;</td>
 </tr>
-<tr id="i19" class="rowColor">
+<tr id="i20" class="altColor">
 <td class="colFirst"><code>static io.digdag.client.api.RestWorkflowDefinitionCollection</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/server/rs/RestModels.html#workflowDefinitionCollection-io.digdag.core.repository.StoredProject-io.digdag.core.repository.StoredRevision-java.util.List-">workflowDefinitionCollection</a></span>(io.digdag.core.repository.StoredProject&nbsp;proj,
                             io.digdag.core.repository.StoredRevision&nbsp;rev,
                             java.util.List&lt;io.digdag.core.repository.StoredWorkflowDefinition&gt;&nbsp;defs)</code>&nbsp;</td>
 </tr>
-<tr id="i20" class="altColor">
+<tr id="i21" class="rowColor">
 <td class="colFirst"><code>static io.digdag.client.api.RestWorkflowSessionTime</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/server/rs/RestModels.html#workflowSessionTime-io.digdag.core.repository.StoredWorkflowDefinitionWithProject-java.time.Instant-java.time.ZoneId-">workflowSessionTime</a></span>(io.digdag.core.repository.StoredWorkflowDefinitionWithProject&nbsp;def,
                    java.time.Instant&nbsp;sessionTime,
@@ -458,10 +462,19 @@ extends java.lang.Object</pre>
 <a name="logFileHandleCollection-java.util.List-">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>logFileHandleCollection</h4>
 <pre>public static&nbsp;io.digdag.client.api.RestLogFileHandleCollection&nbsp;logFileHandleCollection(java.util.List&lt;io.digdag.spi.LogFileHandle&gt;&nbsp;handles)</pre>
+</li>
+</ul>
+<a name="parseProjectId-io.digdag.client.api.Id-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>parseProjectId</h4>
+<pre>public static&nbsp;int&nbsp;parseProjectId(io.digdag.client.api.Id&nbsp;id)</pre>
 </li>
 </ul>
 </li>

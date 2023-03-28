@@ -149,21 +149,16 @@ extends <a href="../../../../io/digdag/server/rs/AuthenticatedResource.html" tit
 <th class="colOne" scope="col">Constructor and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><span class="memberNameLink"><a href="../../../../io/digdag/server/rs/ProjectResource.html#ProjectResource-io.digdag.client.config.ConfigFactory-io.digdag.core.config.YamlConfigLoader-io.digdag.core.workflow.WorkflowCompiler-io.digdag.core.storage.ArchiveManager-io.digdag.core.repository.ProjectStoreManager-io.digdag.core.schedule.ScheduleStoreManager-io.digdag.spi.ac.AccessController-io.digdag.core.schedule.SchedulerManager-io.digdag.core.TempFileManager-io.digdag.core.session.SessionStoreManager-io.digdag.spi.SecretControlStoreManager-io.digdag.core.database.TransactionManager-io.digdag.core.archive.ProjectArchiveLoader-io.digdag.client.config.Config-io.digdag.spi.metrics.DigdagMetrics-">ProjectResource</a></span>(io.digdag.client.config.ConfigFactory&nbsp;cf,
-               io.digdag.core.config.YamlConfigLoader&nbsp;rawLoader,
-               io.digdag.core.workflow.WorkflowCompiler&nbsp;compiler,
-               io.digdag.core.storage.ArchiveManager&nbsp;archiveManager,
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../io/digdag/server/rs/ProjectResource.html#ProjectResource-io.digdag.core.storage.ArchiveManager-io.digdag.core.repository.ProjectStoreManager-io.digdag.core.schedule.ScheduleStoreManager-io.digdag.spi.ac.AccessController-io.digdag.core.session.SessionStoreManager-io.digdag.spi.SecretControlStoreManager-io.digdag.core.database.TransactionManager-io.digdag.client.config.Config-io.digdag.spi.metrics.DigdagMetrics-io.digdag.server.service.ProjectService-">ProjectResource</a></span>(io.digdag.core.storage.ArchiveManager&nbsp;archiveManager,
                io.digdag.core.repository.ProjectStoreManager&nbsp;rm,
                io.digdag.core.schedule.ScheduleStoreManager&nbsp;sm,
                io.digdag.spi.ac.AccessController&nbsp;ac,
-               io.digdag.core.schedule.SchedulerManager&nbsp;srm,
-               io.digdag.core.TempFileManager&nbsp;tempFiles,
                io.digdag.core.session.SessionStoreManager&nbsp;ssm,
                io.digdag.spi.SecretControlStoreManager&nbsp;scsp,
                io.digdag.core.database.TransactionManager&nbsp;tm,
-               io.digdag.core.archive.ProjectArchiveLoader&nbsp;projectArchiveLoader,
                io.digdag.client.config.Config&nbsp;systemConfig,
-               io.digdag.spi.metrics.DigdagMetrics&nbsp;metrics)</code>&nbsp;</td>
+               io.digdag.spi.metrics.DigdagMetrics&nbsp;metrics,
+               <a href="../../../../io/digdag/server/service/ProjectService.html" title="class in io.digdag.server.service">ProjectService</a>&nbsp;projectService)</code>&nbsp;</td>
 </tr>
 </table>
 </li>
@@ -300,28 +295,23 @@ extends <a href="../../../../io/digdag/server/rs/AuthenticatedResource.html" tit
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a name="ProjectResource-io.digdag.client.config.ConfigFactory-io.digdag.core.config.YamlConfigLoader-io.digdag.core.workflow.WorkflowCompiler-io.digdag.core.storage.ArchiveManager-io.digdag.core.repository.ProjectStoreManager-io.digdag.core.schedule.ScheduleStoreManager-io.digdag.spi.ac.AccessController-io.digdag.core.schedule.SchedulerManager-io.digdag.core.TempFileManager-io.digdag.core.session.SessionStoreManager-io.digdag.spi.SecretControlStoreManager-io.digdag.core.database.TransactionManager-io.digdag.core.archive.ProjectArchiveLoader-io.digdag.client.config.Config-io.digdag.spi.metrics.DigdagMetrics-">
+<a name="ProjectResource-io.digdag.core.storage.ArchiveManager-io.digdag.core.repository.ProjectStoreManager-io.digdag.core.schedule.ScheduleStoreManager-io.digdag.spi.ac.AccessController-io.digdag.core.session.SessionStoreManager-io.digdag.spi.SecretControlStoreManager-io.digdag.core.database.TransactionManager-io.digdag.client.config.Config-io.digdag.spi.metrics.DigdagMetrics-io.digdag.server.service.ProjectService-">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>ProjectResource</h4>
 <pre>@Inject
-public&nbsp;ProjectResource(io.digdag.client.config.ConfigFactory&nbsp;cf,
-                               io.digdag.core.config.YamlConfigLoader&nbsp;rawLoader,
-                               io.digdag.core.workflow.WorkflowCompiler&nbsp;compiler,
-                               io.digdag.core.storage.ArchiveManager&nbsp;archiveManager,
+public&nbsp;ProjectResource(io.digdag.core.storage.ArchiveManager&nbsp;archiveManager,
                                io.digdag.core.repository.ProjectStoreManager&nbsp;rm,
                                io.digdag.core.schedule.ScheduleStoreManager&nbsp;sm,
                                io.digdag.spi.ac.AccessController&nbsp;ac,
-                               io.digdag.core.schedule.SchedulerManager&nbsp;srm,
-                               io.digdag.core.TempFileManager&nbsp;tempFiles,
                                io.digdag.core.session.SessionStoreManager&nbsp;ssm,
                                io.digdag.spi.SecretControlStoreManager&nbsp;scsp,
                                io.digdag.core.database.TransactionManager&nbsp;tm,
-                               io.digdag.core.archive.ProjectArchiveLoader&nbsp;projectArchiveLoader,
                                io.digdag.client.config.Config&nbsp;systemConfig,
-                               io.digdag.spi.metrics.DigdagMetrics&nbsp;metrics)</pre>
+                               io.digdag.spi.metrics.DigdagMetrics&nbsp;metrics,
+                               <a href="../../../../io/digdag/server/service/ProjectService.html" title="class in io.digdag.server.service">ProjectService</a>&nbsp;projectService)</pre>
 </li>
 </ul>
 </li>

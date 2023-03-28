@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6};
+var methods = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -143,26 +143,36 @@ var activeTableTab = "activeTableTab";
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/core/repository/ProjectControlStore.html#deleteSchedules-int-">deleteSchedules</a></span>(int&nbsp;projId)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/core/repository/ProjectControlStore.html#deleteProjectMetadata-int-">deleteProjectMetadata</a></span>(int&nbsp;projId)</code>&nbsp;</td>
 </tr>
 <tr id="i1" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/core/repository/ProjectControlStore.html#deleteSchedules-int-">deleteSchedules</a></span>(int&nbsp;projId)</code>&nbsp;</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/core/repository/ProjectControlStore.html#insertProjectMetadata-int-int-io.digdag.core.repository.ProjectMetadataMap-">insertProjectMetadata</a></span>(int&nbsp;projId,
+                     int&nbsp;siteId,
+                     <a href="../../../../io/digdag/core/repository/ProjectMetadataMap.html" title="class in io.digdag.core.repository">ProjectMetadataMap</a>&nbsp;metadataMap)</code>&nbsp;</td>
+</tr>
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code><a href="../../../../io/digdag/core/repository/StoredRevision.html" title="class in io.digdag.core.repository">StoredRevision</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/core/repository/ProjectControlStore.html#insertRevision-int-io.digdag.core.repository.Revision-">insertRevision</a></span>(int&nbsp;projId,
               <a href="../../../../io/digdag/core/repository/Revision.html" title="class in io.digdag.core.repository">Revision</a>&nbsp;revision)</code>&nbsp;</td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/core/repository/ProjectControlStore.html#insertRevisionArchiveData-int-byte:A-">insertRevisionArchiveData</a></span>(int&nbsp;revId,
                          byte[]&nbsp;data)</code>&nbsp;</td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code><a href="../../../../io/digdag/core/repository/StoredWorkflowDefinition.html" title="class in io.digdag.core.repository">StoredWorkflowDefinition</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/core/repository/ProjectControlStore.html#insertWorkflowDefinition-int-int-io.digdag.core.repository.WorkflowDefinition-java.time.ZoneId-">insertWorkflowDefinition</a></span>(int&nbsp;projId,
                         int&nbsp;revId,
                         <a href="../../../../io/digdag/core/repository/WorkflowDefinition.html" title="class in io.digdag.core.repository">WorkflowDefinition</a>&nbsp;workflow,
                         java.time.ZoneId&nbsp;workflowTimeZone)</code>&nbsp;</td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>&lt;T extends <a href="../../../../io/digdag/core/schedule/Schedule.html" title="class in io.digdag.core.schedule">Schedule</a>&gt;<br>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/digdag/core/repository/ProjectControlStore.html#updateSchedules-int-java.util.List-io.digdag.core.repository.ProjectControlStore.ScheduleUpdateAction-">updateSchedules</a></span>(int&nbsp;projId,
                java.util.List&lt;T&gt;&nbsp;schedules,
@@ -211,6 +221,31 @@ var activeTableTab = "activeTableTab";
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../../../../io/digdag/core/repository/ResourceConflictException.html" title="class in io.digdag.core.repository">ResourceConflictException</a></code></dd>
 </dl>
+</li>
+</ul>
+<a name="insertProjectMetadata-int-int-io.digdag.core.repository.ProjectMetadataMap-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>insertProjectMetadata</h4>
+<pre>void&nbsp;insertProjectMetadata(int&nbsp;projId,
+                           int&nbsp;siteId,
+                           <a href="../../../../io/digdag/core/repository/ProjectMetadataMap.html" title="class in io.digdag.core.repository">ProjectMetadataMap</a>&nbsp;metadataMap)
+                    throws <a href="../../../../io/digdag/core/repository/ResourceConflictException.html" title="class in io.digdag.core.repository">ResourceConflictException</a></pre>
+<dl>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../../io/digdag/core/repository/ResourceConflictException.html" title="class in io.digdag.core.repository">ResourceConflictException</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="deleteProjectMetadata-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>deleteProjectMetadata</h4>
+<pre>void&nbsp;deleteProjectMetadata(int&nbsp;projId)</pre>
 </li>
 </ul>
 <a name="insertWorkflowDefinition-int-int-io.digdag.core.repository.WorkflowDefinition-java.time.ZoneId-">
