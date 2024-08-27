@@ -183,7 +183,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/operators/td_partial_delete.md.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/operators/td_partial_delete.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -199,18 +199,22 @@
   <div class="section" id="td-partial-delete-delete-range-of-treasure-data-table">
 <h1>td_partial_delete&gt;: Delete range of Treasure Data table<a class="headerlink" href="#td-partial-delete-delete-range-of-treasure-data-table" title="Permalink to this headline">¶</a></h1>
 <p><strong>td_partial_delete&gt;</strong> operator deletes records from a Treasure Data table.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This operator is deprecated. Use DELETE function in Trino/Presto by td operator instead.</p>
+</div>
 <p>Please be aware that records imported using streaming import can’t be deleted for several hours using td_partial_delete. Records imported by INSERT INTO, Data Connector, and bulk imports can be deleted immediately.</p>
 <p>Time range needs to be hourly. Setting non-zero values to minutes or seconds will be rejected.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">step1</span><span class="p">:</span>
-  <span class="n">td_partial_delete</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">my_table</span>
-  <span class="n">database</span><span class="p">:</span> <span class="n">mydb</span>
-  <span class="n">from</span><span class="p">:</span> <span class="mi">2016</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="n">T00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="o">+</span><span class="mi">08</span><span class="p">:</span><span class="mi">00</span>
-  <span class="n">to</span><span class="p">:</span>   <span class="mi">2016</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">01</span><span class="n">T00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="o">+</span><span class="mi">08</span><span class="p">:</span><span class="mi">00</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">+step1</span><span class="p">:</span>
+  <span class="nt">td_partial_delete&gt;</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">my_table</span>
+  <span class="nt">database</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">mydb</span>
+  <span class="nt">from</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2016-01-01T00:00:00+08:00</span>
+  <span class="nt">to</span><span class="p">:</span>   <span class="l l-Scalar l-Scalar-Plain">2016-02-01T00:00:00+08:00</span>
 </pre></div>
 </div>
 <div class="section" id="secrets">
 <h2>Secrets<a class="headerlink" href="#secrets" title="Permalink to this headline">¶</a></h2>
-<p>When you set those parameters, use <a class="reference external" href="https://docs.digdag.io/command_reference.html#secrets">digdag secrets command</a>.</p>
+<p>When you set those parameters, use <cite>digdag secrets command &lt;https://docs.digdag.io/command_reference.html#secrets&gt;</cite>.</p>
 <ul class="simple">
 <li><p><strong>td.apikey</strong>: API_KEY
 The Treasure Data API key to use when running Treasure Data queries.</p></li>
@@ -222,36 +226,36 @@ The Treasure Data API key to use when running Treasure Data queries.</p></li>
 <li><p><strong>td_partial_delete&gt;</strong>: NAME</p>
 <p>Name of the table.</p>
 <p>Examples:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">td_partial_delete</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">my_table</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">td_partial_delete&gt;</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">my_table</span>
 </pre></div>
 </div>
 </li>
 <li><p><strong>database</strong>: NAME</p>
 <p>Name of the database.</p>
 <p>Examples:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">database</span><span class="p">:</span> <span class="n">my_database</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">database</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">my_database</span>
 </pre></div>
 </div>
 </li>
 <li><p><strong>from</strong>: yyyy-MM-ddTHH:mm:ss[Z]</p>
-<p>Delete records from this time (inclusive). Actual time range is :command:<code class="docutils literal notranslate"><span class="pre">[from,</span> <span class="pre">to)</span></code>. Value should be a UNIX timestamp integer (seconds) or string in ISO-8601 (yyyy-MM-ddTHH:mm:ss[Z]) format.</p>
+<p>Delete records from this time (inclusive). Actual time range is <code class="docutils literal notranslate"><span class="pre">[from,</span> <span class="pre">to)</span></code>. Value should be a UNIX timestamp integer (seconds) or string in ISO-8601 (yyyy-MM-ddTHH:mm:ss[Z]) format.</p>
 <p>Examples:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">from</span><span class="p">:</span> <span class="mi">2016</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="n">T00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="o">+</span><span class="mi">08</span><span class="p">:</span><span class="mi">00</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">from</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2016-01-01T00:00:00+08:00</span>
 </pre></div>
 </div>
 </li>
 <li><p><strong>to</strong>: yyyy-MM-ddTHH:mm:ss[Z]</p>
-<p>Delete records to this time (exclusive). Actual time range is :command:<code class="docutils literal notranslate"><span class="pre">[from,</span> <span class="pre">to)</span></code>. Value should be a UNIX timestamp integer (seconds) or string in ISO-8601 (yyyy-MM-ddTHH:mm:ss[Z]) format.</p>
+<p>Delete records to this time (exclusive). Actual time range is <code class="docutils literal notranslate"><span class="pre">[from,</span> <span class="pre">to)</span></code>. Value should be a UNIX timestamp integer (seconds) or string in ISO-8601 (yyyy-MM-ddTHH:mm:ss[Z]) format.</p>
 <p>Examples:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">to</span><span class="p">:</span> <span class="mi">2016</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">01</span><span class="n">T00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="o">+</span><span class="mi">08</span><span class="p">:</span><span class="mi">00</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">to</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2016-02-01T00:00:00+08:00</span>
 </pre></div>
 </div>
 </li>
 <li><p><strong>endpoint</strong>: ADDRESS</p>
-<p>API endpoint (default: api.treasuredata.com).</p>
+<p>API endpoint (default: api.treasuredata.com)</p>
 </li>
 <li><p><strong>use_ssl</strong>: BOOLEAN</p>
-<p>Enable SSL (https) to access to the endpoint (default: true).</p>
+<p>Enable SSL (https) to access to the endpoint (default: true)</p>
 </li>
 </ul>
 </div>
